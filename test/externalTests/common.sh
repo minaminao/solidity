@@ -171,14 +171,17 @@ function force_hardhat_compiler_binary
     echo "-------------------------------------"
     echo "Config file: ${config_file}"
     echo "Compiler path: ${solc_path}"
-    hardhat_solc_build_subtask "$SOLCVERSION_SHORT" "$SOLCVERSION" "$solc_path" >> "$config_file"
+
+    local language="${config_file##*.}"
+    hardhat_solc_build_subtask "$SOLCVERSION_SHORT" "$SOLCVERSION" "$solc_path" "$language" >> "$config_file"
 }
 
 function force_hardhat_compiler_settings
 {
     local config_file="$1"
     local level="$2"
-    local evm_version="${3:-"$CURRENT_EVM_VERSION"}"
+    local config_var_name="$3"
+    local evm_version="${4:-"$CURRENT_EVM_VERSION"}"
 
     printLog "Configuring Hardhat..."
     echo "-------------------------------------"
@@ -190,10 +193,16 @@ function force_hardhat_compiler_settings
     echo "Compiler version (full): ${SOLCVERSION}"
     echo "-------------------------------------"
 
-    {
-        echo -n 'module.exports["solidity"] = '
-        hardhat_compiler_settings "$SOLCVERSION_SHORT" "$level" "$evm_version"
-    } >> "$config_file"
+    local settings
+    settings=$(hardhat_compiler_settings "$SOLCVERSION_SHORT" "$level" "$evm_version")
+    if [[ $config_file == *\.js ]]; then
+        [[ $config_var_name == "" ]] || assertFail
+        echo "module.exports['solidity'] = ${settings}" >> "$config_file"
+    else
+        [[ $config_file == *\.ts ]] || assertFail
+        [[ $config_var_name != "" ]] || assertFail
+        echo "${config_var_name}.solidity = {compilers: [${settings}]}"  >> "$config_file"
+    fi
 }
 
 function truffle_verify_compiler_version
@@ -275,11 +284,22 @@ function hardhat_solc_build_subtask {
     local solc_version="$1"
     local full_solc_version="$2"
     local solc_path="$3"
+    local language="$4"
 
-    echo "const {TASK_COMPILE_SOLIDITY_GET_SOLC_BUILD} = require('hardhat/builtin-tasks/task-names');"
-    echo "const assert = require('assert');"
-    echo
-    echo "subtask(TASK_COMPILE_SOLIDITY_GET_SOLC_BUILD, async (args, hre, runSuper) => {"
+    if [[ $language == js ]]; then
+        echo "const {TASK_COMPILE_SOLIDITY_GET_SOLC_BUILD} = require('hardhat/builtin-tasks/task-names');"
+        echo "const assert = require('assert');"
+        echo
+        echo "subtask(TASK_COMPILE_SOLIDITY_GET_SOLC_BUILD, async (args, hre, runSuper) => {"
+    else
+        [[ $language == ts ]] || assertFail
+        echo "import {TASK_COMPILE_SOLIDITY_GET_SOLC_BUILD} from 'hardhat/builtin-tasks/task-names';"
+        echo "import assert = require('assert');"
+        echo "import {subtask} from 'hardhat/config';"
+        echo
+        echo "subtask(TASK_COMPILE_SOLIDITY_GET_SOLC_BUILD, async (args: any, _hre: any, _runSuper: any) => {"
+    fi
+
     echo "    assert(args.solcVersion == '${solc_version}', 'Unexpected solc version: ' + args.solcVersion)"
     echo "    return {"
     echo "        compilerPath: '$(realpath "$solc_path")',"
@@ -341,9 +361,10 @@ function hardhat_run_test
     local optimizer_level="$2"
     local compile_fn="$3"
     local test_fn="$4"
+    local config_var_name="$5"
 
     hardhat_clean
-    force_hardhat_compiler_settings "$config_file" "$optimizer_level"
+    force_hardhat_compiler_settings "$config_file" "$optimizer_level" "$config_var_name"
     compile_and_run_test compile_fn test_fn hardhat_verify_compiler_version
 }
 
