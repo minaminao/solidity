@@ -1230,6 +1230,11 @@ workflows:
           compile_only: 1
           # NOTE: One of the dependencies (fsevents) fails to build its native extension on node.js 12+.
           nodejs_version: '10'
+      - t_ems_ext:
+          <<: *workflow_emscripten
+          name: t_ems_compile_ext_trident
+          project: trident
+          compile_only: 1
 
       # FIXME: Gnosis tests are pretty flaky right now. They often fail on CircleCI due to random ProviderError
       # and there are also other less frequent problems. See https://github.com/gnosis/safe-contracts/issues/216.
@@ -1257,6 +1262,12 @@ workflows:
           project: ens
           # NOTE: One of the dependencies (fsevents) fails to build its native extension on node.js 12+.
           nodejs_version: '10'
+      - t_ems_ext:
+          <<: *workflow_emscripten
+          name: t_ems_test_ext_trident
+          project: trident
+          # NOTE: Tests crash on nodejs 17: "Error: error:0308010C:digital envelope routines::unsupported"
+          nodejs_version: '16'
 
       # Windows build and tests
       - b_win: *workflow_trigger_on_tags
