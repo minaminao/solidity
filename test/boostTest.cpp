@@ -179,59 +179,72 @@ bool initializeOptions()
 
 // TODO: Prototype -- why isn't this declared in the boost headers?
 // TODO: replace this with a (global) fixture.
-test_suite* init_unit_test_suite( int /*argc*/, char* /*argv*/[] );
+test_suite* init_unit_test_suite(int /*argc*/, char* /*argv*/[]);
 
-test_suite* init_unit_test_suite( int /*argc*/, char* /*argv*/[] )
+test_suite* init_unit_test_suite(int /*argc*/, char* /*argv*/[])
 {
 	master_test_suite_t& master = framework::master_test_suite();
 	master.p_name.value = "SolidityTests";
 
-	bool shouldContinue = initializeOptions();
-	if (!shouldContinue)
-		exit(0);
-
-	if (!solidity::test::loadVMs(solidity::test::CommonOptions::get()))
-		exit(1);
-
-	if (solidity::test::CommonOptions::get().disableSemanticTests)
-		cout << endl << "--- SKIPPING ALL SEMANTICS TESTS ---" << endl << endl;
-
-	// Include the interactive tests in the automatic tests as well
-	for (auto const& ts: g_interactiveTestsuites)
+	try
 	{
-		auto const& options = solidity::test::CommonOptions::get();
+		bool shouldContinue = initializeOptions();
+		if (!shouldContinue)
+			exit(0);
 
-		if (ts.smt && options.disableSMT)
-			continue;
+		if (!solidity::test::loadVMs(solidity::test::CommonOptions::get()))
+			exit(1);
 
-		if (ts.needsVM && solidity::test::CommonOptions::get().disableSemanticTests)
-			continue;
+		if (solidity::test::CommonOptions::get().disableSemanticTests)
+			cout << endl << "--- SKIPPING ALL SEMANTICS TESTS ---" << endl << endl;
 
-		solAssert(registerTests(
-			master,
-			options.testPath / ts.path,
-			ts.subpath,
-			options.enforceViaYul,
-			options.enforceCompileToEwasm,
-			ts.labels,
-			ts.testCaseCreator
-		) > 0, std::string("no ") + ts.title + " tests found");
+		// Include the interactive tests in the automatic tests as well
+		for (auto const& ts: g_interactiveTestsuites)
+		{
+			auto const& options = solidity::test::CommonOptions::get();
+
+			if (ts.smt && options.disableSMT)
+				continue;
+
+			if (ts.needsVM && solidity::test::CommonOptions::get().disableSemanticTests)
+				continue;
+
+			solAssert(registerTests(
+				master,
+				options.testPath / ts.path,
+				ts.subpath,
+				options.enforceViaYul,
+				options.enforceCompileToEwasm,
+				ts.labels,
+				ts.testCaseCreator
+			) > 0, std::string("no ") + ts.title + " tests found");
+		}
+
+		if (solidity::test::CommonOptions::get().disableSemanticTests)
+		{
+			for (auto suite: {
+				"ABIDecoderTest",
+				"ABIEncoderTest",
+				"SolidityAuctionRegistrar",
+				"SolidityFixedFeeRegistrar",
+				"SolidityWallet",
+				"GasMeterTests",
+				"GasCostTests",
+				"SolidityEndToEndTest",
+				"SolidityOptimizer"
+			})
+				removeTestSuite(suite);
+		}
 	}
-
-	if (solidity::test::CommonOptions::get().disableSemanticTests)
+	catch (solidity::test::ConfigException const& exception)
 	{
-		for (auto suite: {
-			"ABIDecoderTest",
-			"ABIEncoderTest",
-			"SolidityAuctionRegistrar",
-			"SolidityFixedFeeRegistrar",
-			"SolidityWallet",
-			"GasMeterTests",
-			"GasCostTests",
-			"SolidityEndToEndTest",
-			"SolidityOptimizer"
-		})
-			removeTestSuite(suite);
+		cerr << exception.what() << endl;
+		exit(1);
+	}
+	catch (std::runtime_error const& exception)
+	{
+		cerr << exception.what() << endl;
+		exit(1);
 	}
 
 	return nullptr;
