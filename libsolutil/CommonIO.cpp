@@ -79,6 +79,16 @@ string solidity::util::readUntilEnd(istream& _stdin)
 	return ss.str();
 }
 
+string solidity::util::readBytes(istream& _input, size_t _length)
+{
+	string ret;
+	ret.resize(_length);
+	_input.read(ret.data(), static_cast<streamsize>(_length));
+	if (!_input)
+		ret.resize(static_cast<size_t>(_input.gcount()));
+	return ret;
+}
+
 #if defined(_WIN32)
 class DisableConsoleBuffering
 {
