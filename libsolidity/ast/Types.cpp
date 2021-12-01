@@ -47,6 +47,7 @@
 #include <range/v3/view/reverse.hpp>
 #include <range/v3/view/tail.hpp>
 #include <range/v3/view/transform.hpp>
+#include <range/v3/view/filter.hpp>
 
 #include <limits>
 #include <unordered_set>
@@ -328,19 +329,18 @@ Type const* Type::fullEncodingType(bool _inLibraryCall, bool _encoderV2, bool) c
 	return encodingType;
 }
 
-MemberList::MemberMap Type::boundFunctions(Type const& _type, ASTNode const& _scope)
+namespace
+{
+
+vector<UsingForDirective const*> usingForDirectivesForType(Type const& _type, ASTNode const& _scope)
 {
 	vector<UsingForDirective const*> usingForDirectives;
-	SourceUnit const* sourceUnit = dynamic_cast<SourceUnit const*>(&_scope);
-	if (sourceUnit)
-		usingForDirectives += ASTNode::filteredNodes<UsingForDirective>(sourceUnit->nodes());
+	if (SourceUnit const* sourceUnit = dynamic_cast<SourceUnit const*>(&_scope))
+		usingForDirectives = ASTNode::filteredNodes<UsingForDirective>(sourceUnit->nodes());
 	else if (auto const* contract = dynamic_cast<ContractDefinition const*>(&_scope))
-	{
-		sourceUnit = &contract->sourceUnit();
-		usingForDirectives +=
+		usingForDirectives =
 			contract->usingForDirectives() +
 			ASTNode::filteredNodes<UsingForDirective>(contract->sourceUnit().nodes());
-	}
 	else
 		solAssert(false, "");
 
@@ -349,6 +349,60 @@ MemberList::MemberMap Type::boundFunctions(Type const& _type, ASTNode const& _sc
 	if (auto refType = dynamic_cast<ReferenceType const*>(&_type))
 		typeLocation = refType->location();
 
+	return usingForDirectives | ranges::view::filter([&](UsingForDirective const* _directive) -> bool {
+		// Convert both types to pointers for comparison to see if the `using for`
+		// directive applies.
+		// Further down, we check more detailed for each function if `_type` is
+		// convertible to the function parameter type.
+		return
+			!_directive->typeName() ||
+			*TypeProvider::withLocationIfReference(typeLocation, &_type, true) ==
+			*TypeProvider::withLocationIfReference(
+				typeLocation,
+				_directive->typeName()->annotation().type,
+				true
+			);
+	}) | ranges::to<vector<UsingForDirective const*>>;
+}
+
+}
+
+FunctionDefinition const* Type::userDefinedOperator(Token _token, ASTNode const& _scope) const
+{
+	// TOOD do nothing if this is not a struct, enum, or user defined value type.
+	set<FunctionDefinition const*> seenFunctions;
+	for (UsingForDirective const* ufd: usingForDirectivesForType(*this, _scope))
+		for (auto const& pathPointer: ufd->functions())
+		{
+			// TODO this can still be combined with boundFunctions
+			if (pathPointer.operator_ != _token)
+				continue;
+			solAssert(pathPointer.function);
+			FunctionDefinition const& function = dynamic_cast<FunctionDefinition const&>(
+					*pathPointer.function->annotation().referencedDeclaration
+			);
+			Type const* functionType =
+				function.libraryFunction() ? function.typeViaContractName() : function.type();
+			solAssert(functionType);
+			FunctionType const* asBoundFunction =
+				dynamic_cast<FunctionType const&>(*functionType).asBoundFunction();
+			solAssert(asBoundFunction);
+
+			// TODO some place needs to check that the second parameter type is the same.
+
+			if (isImplicitlyConvertibleTo(*asBoundFunction->selfType()))
+				seenFunctions.insert(&function);
+		}
+	// TODO proper error handling.
+	if (seenFunctions.size() == 1)
+		return *seenFunctions.begin();
+	else
+		return nullptr;
+}
+
+
+MemberList::MemberMap Type::boundFunctions(Type const& _type, ASTNode const& _scope)
+{
 	set<pair<string, Declaration const*>> seenFunctions;
 	MemberList::MemberMap members;
 
@@ -368,41 +422,28 @@ MemberList::MemberMap Type::boundFunctions(Type const& _type, ASTNode const& _sc
 				members.emplace_back(&_function, asBoundFunction, *_name);
 	};
 
-	for (UsingForDirective const* ufd: usingForDirectives)
+	for (UsingForDirective const* ufd: usingForDirectivesForType(_type, _scope))
 	{
-		// Convert both types to pointers for comparison to see if the `using for`
-		// directive applies.
-		// Further down, we check more detailed for each function if `_type` is
-		// convertible to the function parameter type.
-		if (
-			ufd->typeName() &&
-			*TypeProvider::withLocationIfReference(typeLocation, &_type, true) !=
-			*TypeProvider::withLocationIfReference(
-				typeLocation,
-				ufd->typeName()->annotation().type,
-				true
-			)
-		)
-			continue;
-
 		if (ufd->usesBraces())
 			for (auto const& pathPointer: ufd->functions())
 			{
+				if (pathPointer.operator_)
+					continue;
 				solAssert(
-					pathPointer &&
-					pathPointer->annotation().referencedDeclaration
+					pathPointer.function &&
+					pathPointer.function->annotation().referencedDeclaration
 				);
 				addFunction(
 					dynamic_cast<FunctionDefinition const&>(
-						*pathPointer->annotation().referencedDeclaration
+						*pathPointer.function->annotation().referencedDeclaration
 					),
-					pathPointer->path().back()
+					pathPointer.function->path().back()
 				);
 			}
 		else
 		{
 			ContractDefinition const& library = dynamic_cast<ContractDefinition const&>(
-				*ufd->functions().front()->annotation().referencedDeclaration
+				*ufd->functions().front().function->annotation().referencedDeclaration
 			);
 
 			solAssert(library.isLibrary());

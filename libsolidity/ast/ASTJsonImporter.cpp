@@ -348,18 +348,21 @@ ASTPointer<InheritanceSpecifier> ASTJsonImporter::createInheritanceSpecifier(Jso
 
 ASTPointer<UsingForDirective> ASTJsonImporter::createUsingForDirective(Json::Value const& _node)
 {
-	vector<ASTPointer<IdentifierPath>> functions;
+	vector<UsingForDirective::Function> functions;
+	/*
 	if (_node.isMember("libraryName"))
-		functions.emplace_back(createIdentifierPath(_node["libraryName"]));
+		functions.emplace_back(createIdentifierPath(_node["libraryName"]), nullopt);
 	else if (_node.isMember("functionList"))
 	{
 		Json::Value array = _node["functionList"];
 		for (Json::ArrayIndex i = 0; i < array.size(); ++i)
-			functions.emplace_back(createIdentifierPath(array[i]));
+			// TODO handle token
+			functions.emplace_back(createIdentifierPath(array[i]), nullopt);
 	}
+	*/
 	return createASTNode<UsingForDirective>(
 		_node,
-		move(functions),
+		{},//move(functions),
 		!_node.isMember("libraryName"),
 		_node["typeName"].isNull() ? nullptr  : convertJsonToASTNode<TypeName>(_node["typeName"])
 	);

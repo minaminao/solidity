@@ -966,24 +966,36 @@ ASTPointer<UsingForDirective> Parser::parseUsingDirective()
 
 	expectToken(Token::Using);
 
-	vector<ASTPointer<IdentifierPath>> functions;
+	vector<UsingForDirective::Function> functions;
 	bool const usesBraces = m_scanner->currentToken() == Token::LBrace;
 	if (usesBraces)
 	{
-		vector<ASTPointer<IdentifierPath>> functionList;
 		advance();
 		while (true)
 		{
-			functionList.emplace_back(parseIdentifierPath());
+			ASTPointer<IdentifierPath> function = parseIdentifierPath();
+			optional<Token> operator_;
+			if (m_scanner->currentToken() == Token::As)
+			{
+				advance();
+				operator_ = m_scanner->currentToken();
+				if (
+					!TokenTraits::isBinaryOp(*operator_) &&
+					!TokenTraits::isUnaryOp(*operator_) &&
+					!TokenTraits::isCompareOp(*operator_)
+				)
+					parserError(1885_error, "Expected unary, binary or comparison operator.");
+				advance();
+			}
+			functions.push_back({move(function), operator_});
 			if (m_scanner->currentToken() != Token::Comma)
 				break;
 			advance();
 		}
 		expectToken(Token::RBrace);
-		functions = move(functionList);
 	}
 	else
-		functions.emplace_back(parseIdentifierPath());
+		functions.push_back({parseIdentifierPath(), nullopt});
 
 	ASTPointer<TypeName> typeName;
 	expectToken(Token::For);

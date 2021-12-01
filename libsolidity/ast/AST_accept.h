@@ -188,7 +188,10 @@ void UsingForDirective::accept(ASTVisitor& _visitor)
 {
 	if (_visitor.visit(*this))
 	{
-		listAccept(functions(), _visitor);
+		for (auto const& function: m_functions)
+			if (function.function)
+				function.function->accept(_visitor);
+
 		if (m_typeName)
 			m_typeName->accept(_visitor);
 	}
@@ -199,7 +202,10 @@ void UsingForDirective::accept(ASTConstVisitor& _visitor) const
 {
 	if (_visitor.visit(*this))
 	{
-		listAccept(functions(), _visitor);
+		for (auto const& function: m_functions)
+			if (function.function)
+				function.function->accept(_visitor);
+
 		if (m_typeName)
 			m_typeName->accept(_visitor);
 	}

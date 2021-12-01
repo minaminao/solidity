@@ -1678,6 +1678,25 @@ void TypeChecker::endVisit(BinaryOperation const& _operation)
 {
 	Type const* leftType = type(_operation.leftExpression());
 	Type const* rightType = type(_operation.rightExpression());
+	if (FunctionDefinition const* function = leftType->userDefinedOperator(_operation.getOperator(), *currentDefinitionScope()))
+	{
+		// TODO check the right type
+		_operation.annotation().userDefinedFunction = function;
+		// TODO isPure?
+		// TODO get this from Type::userDefinedOperator
+		Type const* functionType =
+			function->libraryFunction() ? function->typeViaContractName() : function->type();
+		solAssert(functionType);
+		FunctionType const* asBoundFunction =
+			dynamic_cast<FunctionType const&>(*functionType).asBoundFunction();
+		solAssert(asBoundFunction);
+		_operation.annotation().type =
+			asBoundFunction->returnParameterTypes().size() == 1 ?
+			asBoundFunction->returnParameterTypes().front() :
+			TypeProvider::tuple(asBoundFunction->returnParameterTypes());
+		return;
+	}
+
 	TypeResult result = leftType->binaryOperatorResult(_operation.getOperator(), rightType);
 	Type const* commonType = result.get();
 	if (!commonType)
@@ -3466,12 +3485,12 @@ void TypeChecker::endVisit(UsingForDirective const& _usingFor)
 		solAssert(normalizedType);
 	}
 
-	for (ASTPointer<IdentifierPath> const& path: _usingFor.functions())
+	for (auto const& path: _usingFor.functions())
 	{
-		solAssert(path->annotation().referencedDeclaration);
+		solAssert(path.function->annotation().referencedDeclaration);
 		// No type checking if it is a library.
 		FunctionDefinition const* functionDefinition =
-			dynamic_cast<FunctionDefinition const*>(path->annotation().referencedDeclaration);
+			dynamic_cast<FunctionDefinition const*>(path.function->annotation().referencedDeclaration);
 		if (!functionDefinition)
 			continue;
 
@@ -3480,7 +3499,7 @@ void TypeChecker::endVisit(UsingForDirective const& _usingFor)
 		if (functionDefinition->parameters().empty())
 			m_errorReporter.fatalTypeError(
 				4731_error,
-				path->location(),
+				path.function->location(),
 				"The function \"" + functionDefinition->name() + "\" " +
 				"does not have any parameters, and therefore cannot be bound to the type \"" +
 				(normalizedType ? normalizedType->toString(true) : "*") + "\"."
@@ -3493,7 +3512,7 @@ void TypeChecker::endVisit(UsingForDirective const& _usingFor)
 		))
 			m_errorReporter.typeError(
 				3100_error,
-				path->location(),
+				path.function->location(),
 				"The function \"" + functionDefinition->name() + "\" "+
 				"cannot be bound to the type \"" + _usingFor.typeName()->annotation().type->toString() +
 				"\" because the type cannot be implicitly converted to the first argument" +

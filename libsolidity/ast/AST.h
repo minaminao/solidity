@@ -645,12 +645,16 @@ private:
 class UsingForDirective: public ASTNode
 {
 public:
-	struct Asterisk {};
+	struct Function
+	{
+		ASTPointer<IdentifierPath> function;
+		std::optional<Token> operator_;
+	};
 
 	UsingForDirective(
 		int64_t _id,
 		SourceLocation const& _location,
-		std::vector<ASTPointer<IdentifierPath>> _functions,
+		std::vector<Function> _functions,
 		bool _usesBraces,
 		ASTPointer<TypeName> _typeName
 	):
@@ -664,11 +668,11 @@ public:
 	/// @returns the type name the library is attached to, null for `*`.
 	TypeName const* typeName() const { return m_typeName.get(); }
 
-	std::vector<ASTPointer<IdentifierPath>> const& functions() const { return m_functions; }
+	std::vector<Function> const& functions() const { return m_functions; }
 	bool usesBraces() const { return m_usesBraces; }
 
 private:
-	std::vector<ASTPointer<IdentifierPath>> m_functions;
+	std::vector<Function> m_functions;
 	bool m_usesBraces;
 	ASTPointer<TypeName> m_typeName;
 };

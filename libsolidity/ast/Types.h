@@ -372,6 +372,8 @@ public:
 	/// Clears all internally cached values (if any).
 	virtual void clearCache() const;
 
+	FunctionDefinition const* userDefinedOperator(Token _token, ASTNode const& _scope) const;
+
 private:
 	/// @returns a member list containing all members added to this type by `using for` directives.
 	static MemberList::MemberMap boundFunctions(Type const& _type, ASTNode const& _scope);
@@ -383,6 +385,7 @@ protected:
 	{
 		return MemberList::MemberMap();
 	}
+
 	/// Generates the stack items to be returned by ``stackItems()``. Defaults
 	/// to exactly one unnamed and untyped stack item referring to a single stack slot.
 	virtual std::vector<std::tuple<std::string, Type const*>> makeStackItems() const

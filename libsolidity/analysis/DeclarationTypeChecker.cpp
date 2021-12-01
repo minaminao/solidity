@@ -456,8 +456,10 @@ bool DeclarationTypeChecker::visit(UsingForDirective const& _usingFor)
 {
 	if (_usingFor.usesBraces())
 	{
-		for (ASTPointer<IdentifierPath> const& function: _usingFor.functions())
-			if (auto functionDefinition = dynamic_cast<FunctionDefinition const*>(function.get()))
+		for (auto const& function: _usingFor.functions())
+			if (auto functionDefinition = dynamic_cast<FunctionDefinition const*>(
+				function.function->annotation().referencedDeclaration
+			))
 			{
 				if (!functionDefinition->isFree() && !(
 					dynamic_cast<ContractDefinition const*>(functionDefinition->scope()) &&
@@ -465,22 +467,22 @@ bool DeclarationTypeChecker::visit(UsingForDirective const& _usingFor)
 				))
 					m_errorReporter.typeError(
 						4167_error,
-						function->location(),
+						function.function->location(),
 						"Only free functions and library functions can be bound to a type in a \"using\" statement"
 					);
 			}
 			else
-				m_errorReporter.fatalTypeError(8187_error, function->location(), "Expected function name." );
+				m_errorReporter.fatalTypeError(8187_error, function.function->location(), "Expected function name." );
 	}
 	else
 	{
 		ContractDefinition const* library = dynamic_cast<ContractDefinition const*>(
-			_usingFor.functions().front()->annotation().referencedDeclaration
+			_usingFor.functions().front().function->annotation().referencedDeclaration
 		);
 		if (!library || !library->isLibrary())
 			m_errorReporter.fatalTypeError(
 				4357_error,
-				_usingFor.functions().front()->location(),
+				_usingFor.functions().front().function->location(),
 				"Library name expected. If you want to attach a function, use '{...}'."
 			);
 	}

@@ -314,11 +314,12 @@ bool ASTJsonConverter::visit(UsingForDirective const& _node)
 	std::vector<pair<string, Json::Value>> attributes = {
 		make_pair("typeName", _node.typeName() ? toJson(*_node.typeName()) : Json::nullValue)
 	};
+	/*
 	if (_node.usesBraces())
 		attributes.emplace_back("functionList", toJson(_node.functions()));
 	else
-		attributes.emplace_back("libraryName", toJson(*_node.functions().front()));
-
+		attributes.emplace_back("libraryName", toJson(*_node.functions().front().function));
+*/
 	setJsonNode(_node, "UsingForDirective", move(attributes));
 
 	return false;
