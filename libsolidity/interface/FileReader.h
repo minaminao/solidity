@@ -74,6 +74,9 @@ public:
 	/// Does not enforce @a allowedDirectories().
 	void setSource(boost::filesystem::path const& _path, SourceCode _source);
 
+	/// Adds the source code directly without normalizing the source unit name.
+	void setSourceDirectly(std::string _sourceUnitName, SourceCode _source);
+
 	/// Adds the source code under the source unit name of @a <stdin>.
 	/// Does not enforce @a allowedDirectories().
 	void setStdin(SourceCode _source);
@@ -94,7 +97,7 @@ public:
 
 	/// Creates a source unit name by normalizing a path given on the command line and, if possible,
 	/// making it relative to base path or one of the include directories.
-	std::string cliPathToSourceUnitName(boost::filesystem::path const& _cliPath);
+	std::string cliPathToSourceUnitName(boost::filesystem::path const& _cliPath) const;
 
 	/// Checks if a set contains any paths that lead to different files but would receive identical
 	/// source unit names. Files are considered the same if their paths are exactly the same after

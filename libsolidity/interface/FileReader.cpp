@@ -89,6 +89,11 @@ void FileReader::setSource(boost::filesystem::path const& _path, SourceCode _sou
 	m_sourceCodes[cliPathToSourceUnitName(_path)] = std::move(_source);
 }
 
+void FileReader::setSourceDirectly(std::string _sourceUnitName, SourceCode _source)
+{
+	m_sourceCodes[std::move(_sourceUnitName)] = std::move(_source);
+}
+
 void FileReader::setStdin(SourceCode _source)
 {
 	m_sourceCodes["<stdin>"] = std::move(_source);
@@ -172,7 +177,7 @@ ReadCallback::Result FileReader::readFile(string const& _kind, string const& _so
 	}
 }
 
-string FileReader::cliPathToSourceUnitName(boost::filesystem::path const& _cliPath)
+string FileReader::cliPathToSourceUnitName(boost::filesystem::path const& _cliPath) const
 {
 	vector<boost::filesystem::path> prefixes = {m_basePath.empty() ? normalizeCLIPathForVFS(".") : m_basePath};
 	prefixes += m_includePaths;
