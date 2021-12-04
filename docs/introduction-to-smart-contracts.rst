@@ -8,9 +8,11 @@ Introduction to Smart Contracts
 A Simple Smart Contract
 ***********************
 
-Let us begin with a basic example that sets the value of a variable and exposes
-it for other contracts to access. It is fine if you do not understand
-everything right now, we will go into more detail later.
+.. Let us begin with a basic example that sets the value of a variable and exposes
+.. it for other contracts to access. It is fine if you do not understand
+.. everything right now, we will go into more detail later.
+
+まずは、変数の値を設定し、他のコントラクトがアクセスできるように公開する基本的な例から始めましょう。今はまだ全てを理解していなくても構いません、後でもっと詳しく説明します。
 
 Storage Example
 ===============
@@ -32,55 +34,81 @@ Storage Example
         }
     }
 
-The first line tells you that the source code is licensed under the
-GPL version 3.0. Machine-readable license specifiers are important
-in a setting where publishing the source code is the default.
+.. The first line tells you that the source code is licensed under the
+.. GPL version 3.0. Machine-readable license specifiers are important
+.. in a setting where publishing the source code is the default.
 
-The next line specifies that the source code is written for
-Solidity version 0.4.16, or a newer version of the language up to, but not including version 0.9.0.
-This is to ensure that the contract is not compilable with a new (breaking) compiler version, where it could behave differently.
-:ref:`Pragmas<pragma>` are common instructions for compilers about how to treat the
-source code (e.g. `pragma once <https://en.wikipedia.org/wiki/Pragma_once>`_).
+最初の行は、ソースコードがGPLバージョン3.0でライセンスされていることを示しています。機械的に読み取り可能なライセンス指定子は、ソースコードの公開がデフォルトとなっている環境では重要です。
 
-A contract in the sense of Solidity is a collection of code (its *functions*) and
-data (its *state*) that resides at a specific address on the Ethereum
-blockchain. The line ``uint storedData;`` declares a state variable called ``storedData`` of
-type ``uint`` (*u*\nsigned *int*\eger of *256* bits). You can think of it as a single slot
-in a database that you can query and alter by calling functions of the
-code that manages the database. In this example, the contract defines the
-functions ``set`` and ``get`` that can be used to modify
-or retrieve the value of the variable.
+.. The next line specifies that the source code is written for
+.. Solidity version 0.4.16, or a newer version of the language up to, but not including version 0.9.0.
+.. This is to ensure that the contract is not compilable with a new (breaking) compiler version, where it could behave differently.
+.. :ref:`Pragmas<pragma>` are common instructions for compilers about how to treat the
+.. source code (e.g. `pragma once <https://en.wikipedia.org/wiki/Pragma_once>`_).
 
-To access a member (like a state variable) of the current contract, you do not typically add the ``this.`` prefix,
-you just access it directly via its name.
-Unlike in some other languages, omitting it is not just a matter of style,
-it results in a completely different way to access the member, but more on this later.
+次の行では、ソースコードがSolidityバージョン0.4.16、またはバージョン0.9.0までの新しいバージョンの言語で書かれたものであることを指定しています（バージョン0.9.0は含まない）。
+これは、コントラクトが新しい（破壊的変更があった）コンパイラのバージョンでコンパイルできないことを保証するためです。
+:ref:`Pragma<pragma>` は、ソースコードをどのように扱うかについての、コンパイラに対する一般的な指示です（例: `pragma once <https://en.wikipedia.org/wiki/Pragma_once>`_ ）。
 
-This contract does not do much yet apart from (due to the infrastructure
-built by Ethereum) allowing anyone to store a single number that is accessible by
-anyone in the world without a (feasible) way to prevent you from publishing
-this number. Anyone could call ``set`` again with a different value
-and overwrite your number, but the number is still stored in the history
-of the blockchain. Later, you will see how you can impose access restrictions
-so that only you can alter the number.
+.. A contract in the sense of Solidity is a collection of code (its *functions*) and
+.. data (its *state*) that resides at a specific address on the Ethereum
+.. blockchain. The line ``uint storedData;`` declares a state variable called ``storedData`` of
+.. type ``uint`` (*u*\nsigned *int*\eger of *256* bits). You can think of it as a single slot
+.. in a database that you can query and alter by calling functions of the
+.. code that manages the database. In this example, the contract defines the
+.. functions ``set`` and ``get`` that can be used to modify
+.. or retrieve the value of the variable.
+
+Solidityでいうコントラクトとは、Ethereumブロックチェーン上の特定のアドレスに存在するコード（その *functions* ）とデータ（その *state* ）の集合体です。
+``uint storedData;`` という行は、 ``uint`` （256ビットの *u*\nsigned *int*\eger）型の ``storedData`` という状態変数を宣言しています。
+これは、データベースを管理するコードの関数を呼び出すことで問い合わせや変更ができる、データベースの1つのスロットと考えることができます。
+この例では、コントラクトによって、変数の値を変更したり取得したりするのに使用できる関数 ``set`` と ``get`` が定義されています。
+
+.. To access a member (like a state variable) of the current contract, you do not typically add the ``this.`` prefix,
+.. you just access it directly via its name.
+.. Unlike in some other languages, omitting it is not just a matter of style,
+.. it results in a completely different way to access the member, but more on this later.
+
+現在のコントラクトのメンバー（ステート変数など）にアクセスする場合、通常は ``this.`` という接頭辞を付けずに、その名前で直接アクセスします。
+他のいくつかの言語とは異なり、これを省略することは単なるスタイルの問題ではなく、メンバーへのアクセス方法が全く異なるものになります。
+
+.. This contract does not do much yet apart from (due to the infrastructure
+.. built by Ethereum) allowing anyone to store a single number that is accessible by
+.. anyone in the world without a (feasible) way to prevent you from publishing
+.. this number. Anyone could call ``set`` again with a different value
+.. and overwrite your number, but the number is still stored in the history
+.. of the blockchain. Later, you will see how you can impose access restrictions
+.. so that only you can alter the number.
+
+このコントラクトは、（Ethereumが構築したインフラにより）世界中の誰もがアクセス可能な1つの番号を、あなたがこの番号を公開するのを防ぐ（実現可能な）方法なしに、誰もが保存できることを除けば、まだあまり意味がありません。
+誰もが ``set`` に別の値で再度callをし、あなたの番号を上書きすることができますが、その番号はブロックチェーンの履歴に保存されたままです。
+後で、自分だけが番号を変更できるようにアクセス制限をかける方法を見てみましょう。
 
 .. warning::
-    Be careful with using Unicode text, as similar looking (or even identical) characters can
-    have different code points and as such are encoded as a different byte array.
+    .. Be careful with using Unicode text, as similar looking (or even identical) characters can
+    .. have different code points and as such are encoded as a different byte array.
+
+    Unicodeテキストを使用する際には、見た目が似ている（あるいは同じ）文字でもコードポイントが異なる場合があり、その場合は異なるバイト配列としてエンコードされるので注意が必要です。
 
 .. note::
-    All identifiers (contract names, function names and variable names) are restricted to
-    the ASCII character set. It is possible to store UTF-8 encoded data in string variables.
+    .. All identifiers (contract names, function names and variable names) are restricted to
+    .. the ASCII character set. It is possible to store UTF-8 encoded data in string variables.
+
+    すべての識別子（コントラクト名、関数名、変数名）は、ASCII文字セットに制限されています。文字列変数にUTF-8でエンコードされたデータを格納することは可能です。
 
 .. index:: ! subcurrency
 
 Subcurrency Example
 ===================
 
-The following contract implements the simplest form of a
-cryptocurrency. The contract allows only its creator to create new coins (different issuance schemes are possible).
-Anyone can send coins to each other without a need for
-registering with a username and password, all you need is an Ethereum keypair.
+.. The following contract implements the simplest form of a
+.. cryptocurrency. The contract allows only its creator to create new coins (different issuance schemes are possible).
+.. Anyone can send coins to each other without a need for
+.. registering with a username and password, all you need is an Ethereum keypair.
+
+以下の契約は、最も単純な形態の暗号通貨を実装したものです。
+このコントラクトでは、作成者のみが新しいコインを作成することができます（異なる発行スキームが可能です）。
+誰もがユーザー名とパスワードを登録することなく、Ethereumのキーペアさえあればコインを送り合うことができます。
 
 .. code-block:: solidity
 
