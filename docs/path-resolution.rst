@@ -884,7 +884,7 @@ Import Remapping
 
 #. **Context and prefix must match source unit names, not import paths.**
 
-   - つまり、 ``./`` や ``../`` はソースユニット名への変換時に置き換えられてしまうため、直接リマップすることはできませんが、置き換えられた部分をリマップすることは可能です。
+   - つまり、 ``./`` や ``../`` はソースユニット名への変換時に置き換えられてしまうため、直接リマップできませんが、置き換えられた部分をリマップすることは可能です。
 
 #. **Target is inserted directly into the source unit name and does not necessarily have to be a valid path.**
 

@@ -17,7 +17,7 @@ Function Modifiers
 .. if they are marked ``virtual``. For details, please see
 .. :ref:`Modifier Overriding <modifier-overriding>`.
 
-修飾子はコントラクトの継承可能なプロパティであり、派生コントラクトでオーバーライドできるが、 ``virtual`` マークが付いている場合に限る。詳細は、 :ref:`Modifier Overriding <modifier-overriding>` を参照してください。
+修飾子はコントラクトの継承可能なプロパティであり、派生コントラクトでオーバーライドできますが、 ``virtual`` マークが付いている場合に限ります。詳細は、 :ref:`Modifier Overriding <modifier-overriding>` を参照してください。
 
 .. code-block:: solidity
 
@@ -119,7 +119,7 @@ Function Modifiers
 .. Modifiers cannot implicitly access or change the arguments and return values of functions they modify.
 .. Their values can only be passed to them explicitly at the point of invocation.
 
-修飾子は、自分が修飾する関数の引数や戻り値に暗黙のうちにアクセスしたり変更したりすることはできません。修飾子の値は、呼び出しの時点で明示的に渡されるだけです。
+修飾子は、自分が修飾する関数の引数や戻り値に暗黙のうちにアクセスしたり変更したりできません。修飾子の値は、呼び出しの時点で明示的に渡されるだけです。
 
 .. Explicit returns from a modifier or function body only leave the current
 .. modifier or function body. Return variables are assigned and

@@ -428,7 +428,7 @@ Assignments
 .. The same variable may not occur multiple times on the left-hand side of
 .. an assignment, e.g. ``x, x := f()`` is invalid.
 
-変数は、その定義後に ``:=`` 演算子を使って代入できます。複数の変数を同時に割り当てることも可能です。そのためには、値の数と型が一致している必要があります。複数のリターンパラメーターを持つ関数から返される値を代入する場合は、複数の変数を用意する必要があります。代入の左辺に同じ変数を複数回使用することはできません（例： ``x, x := f()`` は無効）。
+変数は、その定義後に ``:=`` 演算子を使って代入できます。複数の変数を同時に割り当てることも可能です。そのためには、値の数と型が一致している必要があります。複数のリターンパラメーターを持つ関数から返される値を代入する場合は、複数の変数を用意する必要があります。代入の左辺に同じ変数を複数回使用できません（例： ``x, x := f()`` は無効）。
 
 .. code-block:: yul
 
@@ -555,7 +555,7 @@ EVMでは、Yul関数はスタックから引数（およびリターンPC）を
 .. declared in. Inside a function, you cannot access local variables
 .. defined outside of that function.
 
-関数はどこでも定義でき、宣言されたブロック内で表示されます。関数の内部では、その関数の外部で定義されたローカル変数にアクセスすることはできません。
+関数はどこでも定義でき、宣言されたブロック内で表示されます。関数の内部では、その関数の外部で定義されたローカル変数にアクセスできません。
 
 .. Functions declare parameters and return variables, similar to Solidity.
 .. To return a value, you assign it to the return variable(s).
@@ -689,7 +689,7 @@ Restrictions on the Grammar
 .. The same variable name cannot occur more than once in the left-hand-side of
 .. an assignment or variable declaration.
 
-変数宣言や代入では、右辺の式（存在する場合）は、左辺の変数の数と同じ数の値に評価されなければなりません。これは、複数の値に評価される式が許される唯一の状況です。代入や変数宣言の左辺には、同じ変数名を複数回使用することはできません。
+変数宣言や代入では、右辺の式（存在する場合）は、左辺の変数の数と同じ数の値に評価されなければなりません。これは、複数の値に評価される式が許される唯一の状況です。代入や変数宣言の左辺には、同じ変数名を複数回使用できません。
 
 .. Expressions that are also statements (i.e. at the block level) have to
 .. evaluate to zero values.
@@ -721,7 +721,7 @@ for-loopのcondition部分は、正確に1つの値に評価されなければ�
 
 .. Literals cannot be larger than their type. The largest type defined is 256-bit wide.
 
-リテラルはその型より大きくすることはできません。定義されている最大の型は256ビット幅です。
+リテラルはその型より大きくできません。定義されている最大の型は256ビット幅です。
 
 .. During assignments and function calls, the types of the respective values have to match.
 .. There is no implicit type conversion. Type conversion in general can only be achieved
@@ -779,13 +779,13 @@ forループの他の部分で宣言された識別子は、通常の構文上�
 .. Inside functions, it is not possible to reference a variable that was declared
 .. outside of that function.
 
-関数内では、その関数の外で宣言された変数を参照することはできません。
+関数内では、その関数の外で宣言された変数を参照できません。
 
 .. Shadowing is disallowed, i.e. you cannot declare an identifier at a point
 .. where another identifier with the same name is also visible, even if it is
 .. not possible to reference it because it was declared outside the current function.
 
-シャドーイングは禁止されています。つまり、現在の関数の外で宣言されたために参照できなくても、同じ名前の別の識別子が見える場所で識別子を宣言することはできません。
+シャドーイングは禁止されています。つまり、現在の関数の外で宣言されたために参照できなくても、同じ名前の別の識別子が見える場所で識別子を宣言できません。
 
 Formal Specification
 --------------------
@@ -1354,7 +1354,7 @@ verbatim
 
 .. warning::
 
-    EVMの改善が既存のスマートコントラクトを破壊するかどうかを議論する際、 ``verbatim`` の機能はSolidityのコンパイラ自体が使用する機能と同じように考慮することはできません。
+    EVMの改善が既存のスマートコントラクトを破壊するかどうかを議論する際、 ``verbatim`` の機能はSolidityのコンパイラ自体が使用する機能と同じように考慮できません。
 
 .. .. note::
 
@@ -1400,7 +1400,7 @@ Yulオブジェクトは、名前の付いたコードおよびデータセク�
 
 .. note::
 
-    ``.`` を含む名前のデータ・オブジェクトやサブ・オブジェクトを定義することはできますが、 ``.`` は他のオブジェクトの内部にあるオブジェクトにアクセスするためのセパレータとして使用されるため、 ``datasize`` 、 ``dataoffset`` 、 ``datacopy`` を介してアクセスすることはできません。
+    ``.`` を含む名前のデータ・オブジェクトやサブ・オブジェクトを定義できますが、 ``.`` は他のオブジェクトの内部にあるオブジェクトにアクセスするためのセパレータとして使用されるため、 ``datasize`` 、 ``dataoffset`` 、 ``datacopy`` を介してアクセスできません。
 
 .. .. note::
 
@@ -1538,7 +1538,7 @@ Optimization Step Sequence
 .. apply that part until it no longer improves the size of the resulting assembly.
 .. You can use brackets multiple times in a single sequence but they cannot be nested.
 
-ステップの順番は重要で、出力の質に影響します。さらに、あるステップを適用すると、既に適用されている他のステップについても新たな最適化の機会が見つかる可能性があるため、ステップを繰り返すことが有益な場合もあります。シーケンスの一部を角括弧（ ``[]`` ）で囲むと、結果として得られるアセンブリのサイズが改善されなくなるまで、その部分を繰り返し適用するようにオプティマイザに指示します。括弧は1つのシーケンスに複数回使用できますが、入れ子にすることはできません。
+ステップの順番は重要で、出力の質に影響します。さらに、あるステップを適用すると、既に適用されている他のステップについても新たな最適化の機会が見つかる可能性があるため、ステップを繰り返すことが有益な場合もあります。シーケンスの一部を角括弧（ ``[]`` ）で囲むと、結果として得られるアセンブリのサイズが改善されなくなるまで、その部分を繰り返し適用するようにオプティマイザに指示します。括弧は1つのシーケンスに複数回使用できますが、入れ子にできません。
 
 .. The following optimization steps are available:
 

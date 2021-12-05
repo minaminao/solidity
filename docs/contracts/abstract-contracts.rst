@@ -29,7 +29,7 @@ Abstract Contracts
 .. Such abstract contracts can not be instantiated directly. This is also true, if an abstract contract itself does implement
 .. all defined functions. The usage of an abstract contract as a base class is shown in the following example:
 
-このような抽象コントラクトは、直接インスタンス化することはできません。これは、抽象コントラクト自体がすべての定義された機能を実装している場合にも当てはまります。ベースクラスとしての抽象コントラクトの使い方を以下の例で示します。
+このような抽象コントラクトは、直接インスタンス化できません。これは、抽象コントラクト自体がすべての定義された機能を実装している場合にも当てはまります。ベースクラスとしての抽象コントラクトの使い方を以下の例で示します。
 
 .. code-block:: solidity
 
@@ -87,4 +87,4 @@ Abstract Contracts
 
 .. note::
 
-  抽象コントラクトは、実装済みの仮想関数を未実装の仮想関数で上書きすることはできません。
+  抽象コントラクトは、実装済みの仮想関数を未実装の仮想関数で上書きできません。

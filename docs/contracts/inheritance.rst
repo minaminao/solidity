@@ -226,7 +226,7 @@ Function Overriding
 .. ``nonpayable`` can be overridden by ``view`` and ``pure``. ``view`` can be overridden by ``pure``.
 .. ``payable`` is an exception and cannot be changed to any other mutability.
 
-ベース関数は、コントラクトを継承することでオーバーライドでき、 ``virtual`` としてマークされている場合は、その動作を変更できます。オーバーライドされた関数は、関数ヘッダーで ``override`` キーワードを使用しなければなりません。オーバーライドされた関数は、オーバーライドされた関数の可視性を ``external`` から ``public`` に変更するだけです。変異可能性は、順序に従って、より厳密なものに変更できます。 ``nonpayable`` は ``view`` と ``pure`` でオーバーライドできます。 ``nonpayable`` は ``view`` と ``pure`` でオーバーライドでき、 ``view`` は ``pure`` でオーバーライドできます。 ``payable`` は例外で、他のミュータビリティに変更することはできません。
+ベース関数は、コントラクトを継承することでオーバーライドでき、 ``virtual`` としてマークされている場合は、その動作を変更できます。オーバーライドされた関数は、関数ヘッダーで ``override`` キーワードを使用しなければなりません。オーバーライドされた関数は、オーバーライドされた関数の可視性を ``external`` から ``public`` に変更するだけです。変異可能性は、順序に従って、より厳密なものに変更できます。 ``nonpayable`` は ``view`` と ``pure`` でオーバーライドできます。 ``nonpayable`` は ``view`` と ``pure`` でオーバーライドでき、 ``view`` は ``pure`` でオーバーライドできます。 ``payable`` は例外で、他のミュータビリティに変更できません。
 
 .. The following example demonstrates changing mutability and visibility:
 
@@ -318,7 +318,7 @@ Function Overriding
 .. If you do not mark a function that overrides as ``virtual``, derived
 .. contracts can no longer change the behaviour of that function.
 
-オーバーライドする関数を ``virtual`` としてマークしていない場合、派生コントラクトはもはやその関数の動作を変更することはできません。
+オーバーライドする関数を ``virtual`` としてマークしていない場合、派生コントラクトはもはやその関数の動作を変更できません。
 
 .. .. note::
 
@@ -376,7 +376,7 @@ Function Overriding
 
 .. note::
 
-  パブリックステート変数は、外部関数をオーバーライドできますが、それ自体をオーバーライドすることはできません。
+  パブリックステート変数は、外部関数をオーバーライドできますが、それ自体をオーバーライドできません。
 
 .. index:: ! overriding;modifier
 

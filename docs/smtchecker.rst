@@ -497,7 +497,7 @@ External Calls and Reentrancy
 .. is already "locked", so it would not be possible to change the value of ``x``,
 .. regardless of what the unknown called code does.
 
-上の例では、ミューテックス・フラグを使用して再入を禁止したコントラクトを示しています。ソルバーは、 ``unknown.run()`` が呼び出されたとき、コントラクトはすでに「ロック」されているので、未知の呼び出されたコードが何をしようと、 ``x`` の値を変更することはできないだろうと推測できます。
+上の例では、ミューテックス・フラグを使用して再入を禁止したコントラクトを示しています。ソルバーは、 ``unknown.run()`` が呼び出されたとき、コントラクトはすでに「ロック」されているので、未知の呼び出されたコードが何をしようと、 ``x`` の値を変更できないだろうと推測できます。
 
 .. If we "forget" to use the ``mutex`` modifier on function ``set``, the
 .. SMTChecker is able to synthesize the behaviour of the externally called code so
@@ -1104,7 +1104,7 @@ Real World Assumptions
 .. Another similar assumption taken by the SMTChecker is that an address' balance
 .. can never overflow.
 
-SolidityやEVMでは表現できるが、実際には発生しないと思われるシナリオもあります。そのようなケースの1つが、プッシュ時にダイナミックストレージの配列の長さがオーバーフローすることです。 ``push`` 操作が長さ2^256 - 1の配列に適用された場合、その長さは静かにオーバーフローします。しかし、実際にはこのようなことは起こり得ません。なぜなら、配列をそこまで成長させるために必要な演算を実行するには、何十億年もかかるからです。SMTCheckerのもう一つの類似した仮定は、アドレスの残高がオーバーフローすることはないというものです。
+SolidityやEVMでは表現できますが、実際には発生しないと思われるシナリオもあります。そのようなケースの1つが、プッシュ時にダイナミックストレージの配列の長さがオーバーフローすることです。 ``push`` 操作が長さ2^256 - 1の配列に適用された場合、その長さは静かにオーバーフローします。しかし、実際にはこのようなことは起こり得ません。なぜなら、配列をそこまで成長させるために必要な演算を実行するには、何十億年もかかるからです。SMTCheckerのもう一つの類似した仮定は、アドレスの残高がオーバーフローすることはないというものです。
 
 .. A similar idea was presented in `EIP-1985 <https://eips.ethereum.org/EIPS/eip-1985>`_.
 .. 

@@ -170,7 +170,7 @@ Solidity 0.8.0からはデフォルトで有効になりますので、 ``pragma
 
 .. note::
 
-  Solidity 0.7.4までは、 ``pragma experimental ABIEncoderV2`` を使用してABI coder v2を選択できましたが、coder v1がデフォルトであるため、明示的に選択することはできませんでした。
+  Solidity 0.7.4までは、 ``pragma experimental ABIEncoderV2`` を使用してABI coder v2を選択できましたが、coder v1がデフォルトであるため、明示的に選択できませんでした。
 
 .. index:: ! pragma, experimental
 

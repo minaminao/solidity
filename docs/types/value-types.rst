@@ -281,7 +281,7 @@ Fixed Point Numbers
 
 .. warning::
 
-    固定小数点数はSolidityではまだ完全にはサポートされていません。宣言することはできますが、代入したり、代入解除したりすることはできません。
+    固定小数点数はSolidityではまだ完全にはサポートされていません。宣言できますが、代入したり、代入解除したりできません。
 
 .. ``fixed`` / ``ufixed``: Signed and unsigned fixed point number of various sizes. Keywords ``ufixedMxN`` and ``fixedMxN``, where ``M`` represents the number of bits taken by
 .. the type and ``N`` represents how many decimal points are available. ``M`` must be divisible by 8 and goes from 8 to 256 bits. ``N`` must be between 0 and 80, inclusive.
@@ -1140,7 +1140,7 @@ Function Types
 .. function type should not return anything, the whole ``returns (<return types>)``
 .. part has to be omitted.
 
-パラメータ型とは対照的に、リターン型は空にすることはできません。関数型が何も返さない場合は、 ``returns (<return types>)`` の部分をすべて省略しなければなりません。
+パラメータ型とは対照的に、リターン型は空にできません。関数型が何も返さない場合は、 ``returns (<return types>)`` の部分をすべて省略しなければなりません。
 
 .. By default, function types are internal, so the ``internal`` keyword can be
 .. omitted. Note that this only applies to function types. Visibility has
@@ -1182,7 +1182,7 @@ Function Types
 .. On the other hand, a ``non-payable`` function will reject Ether sent to it,
 .. so ``non-payable`` functions cannot be converted to ``payable`` functions.
 
-``payable`` と ``non-payable`` のルールは少しわかりにくいかもしれませんが、要するにある関数が ``payable`` であれば、ゼロのEtherの支払いも受け入れるということなので、 ``non-payable`` でもあるということです。一方、 ``non-payable`` 機能は送られてきたEtherを拒否しますので、 ``non-payable`` 機能を ``payable`` 機能に変換することはできません。
+``payable`` と ``non-payable`` のルールは少しわかりにくいかもしれませんが、要するにある関数が ``payable`` であれば、ゼロのEtherの支払いも受け入れるということなので、 ``non-payable`` でもあるということです。一方、 ``non-payable`` 機能は送られてきたEtherを拒否しますので、 ``non-payable`` 機能を ``payable`` 機能に変換できません。
 
 .. If a function type variable is not initialised, calling it results
 .. in a :ref:`Panic error<assert-and-require>`. The same happens if you call a function after using ``delete``

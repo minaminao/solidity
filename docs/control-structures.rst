@@ -27,7 +27,7 @@ Solidityは、 ``try`` / ``catch`` -statementの形での例外処理もサポ�
 .. Parentheses can *not* be omitted for conditionals, but curly braces can be omitted
 .. around single-statement bodies.
 
-条件式では括弧を省略することはできませんが、シングルステートメントのボディでは中括弧を省略できます。
+条件式では括弧を省略できませんが、シングルステートメントのボディでは中括弧を省略できます。
 
 .. Note that there is no type conversion from non-boolean to boolean types as
 .. there is in C and JavaScript, so ``if (1) { ... }`` is *not* valid
@@ -297,7 +297,7 @@ Creating Contracts via ``new``
 .. If the creation fails (due to out-of-stack, not enough balance or other problems),
 .. an exception is thrown.
 
-例に見られるように、 ``value`` オプションを使用して ``D`` のインスタンスを作成中にEtherを送信することは可能ですが、ガスの量を制限することはできません。作成に失敗した場合（スタック不足、バランス不足、その他の問題）、例外が発生します。
+例に見られるように、 ``value`` オプションを使用して ``D`` のインスタンスを作成中にEtherを送信することは可能ですが、ガスの量を制限できません。作成に失敗した場合（スタック不足、バランス不足、その他の問題）、例外が発生します。
 
 Salted contract creations / create2
 -----------------------------------
@@ -668,7 +668,7 @@ Solidity 0.8.0以降、すべての算術演算はデフォルトでオーバー
 
 .. note::
 
-    曖昧さを避けるため、 ``unchecked`` ブロック内で ``_;`` を使用することはできません。
+    曖昧さを避けるため、 ``unchecked`` ブロック内で ``_;`` を使用できません。
 
 .. The following operators will cause a failing assertion on overflow or underflow
 .. and will wrap without an error if used inside an unchecked block:
@@ -690,7 +690,7 @@ bb, cc, dd, ee, ff
 
 .. warning::
 
-    ``unchecked`` ブロックでゼロ除算やゼロによるモジュロのチェックを無効にすることはできません。
+    ``unchecked`` ブロックでゼロ除算やゼロによるモジュロのチェックを無効にできません。
 
 .. .. note::
 
@@ -843,7 +843,7 @@ Assert は、内部エラーのテストや不変性のチェックにのみ使�
 
 .. note::
 
-    現在、 ``require`` との組み合わせでカスタムエラーを使用することはできません。代わりに ``if (!condition) revert CustomError();`` をご利用ください。
+    現在、 ``require`` との組み合わせでカスタムエラーを使用できません。代わりに ``if (!condition) revert CustomError();`` をご利用ください。
 
 .. An ``Error(string)`` exception (or an exception without data) is generated
 .. by the compiler

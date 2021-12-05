@@ -134,7 +134,7 @@ Iterable Mappings
 .. ``IterableMapping`` library that the ``User`` contract then adds data too, and
 .. the ``sum`` function iterates over to sum all the values.
 
-マッピングを反復することはできません。つまり、キーを列挙することもできません。しかし、マッピングの上にデータ構造を実装し、その上で反復処理を行うことは可能です。例えば、以下のコードでは、 ``IterableMapping`` ライブラリを実装し、 ``User`` コントラクトがデータを追加し、 ``sum`` 関数がすべての値を合計するために反復処理を行います。
+マッピングを反復できません。つまり、キーを列挙することもできません。しかし、マッピングの上にデータ構造を実装し、その上で反復処理を行うことは可能です。例えば、以下のコードでは、 ``IterableMapping`` ライブラリを実装し、 ``User`` コントラクトがデータを追加し、 ``sum`` 関数がすべての値を合計するために反復処理を行います。
 
 .. code-block:: solidity
     :force:

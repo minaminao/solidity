@@ -128,7 +128,7 @@ Restricting Access
 .. by using encryption, but if your contract is supposed
 .. to read the data, so will everyone else.
 
-アクセスを制限することはコントラクトの一般的なパターンです。トランザクションの内容やコントラクトの状態を人間やコンピュータに読まれないように制限することはできないことに注意してください。暗号化することで多少難しくすることはできますが、あなたのコントラクトがデータを読めることになっていれば、他の人も読めてしまいます。
+アクセスを制限することはコントラクトの一般的なパターンです。トランザクションの内容やコントラクトの状態を人間やコンピュータに読まれないように制限できないことに注意してください。暗号化することで多少難しくできますが、あなたのコントラクトがデータを読めることになっていれば、他の人も読めてしまいます。
 
 .. You can restrict read access to your contract's state
 .. by **other contracts**. That is actually the default

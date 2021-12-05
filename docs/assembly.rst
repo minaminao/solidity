@@ -41,7 +41,7 @@ Solidityのインライン・アセンブリに使用される言語は :ref:`Yu
 .. Different inline assembly blocks share no namespace, i.e. it is not possible
 .. to call a Yul function or access a Yul variable defined in a different inline assembly block.
 
-異なるインラインアセンブリブロックは、名前空間を共有しません。つまり、異なるインラインアセンブリブロックで定義されたYul関数を呼び出したり、Yul変数にアクセスしたりすることはできません。
+異なるインラインアセンブリブロックは、名前空間を共有しません。つまり、異なるインラインアセンブリブロックで定義されたYul関数を呼び出したり、Yul変数にアクセスしたりできません。
 
 Example
 -------
@@ -201,7 +201,7 @@ Solidityの変数やその他の識別子は、その名前を使ってアクセ
 .. It is not possible to assign to the ``.slot`` or ``.offset`` part of a state variable,
 .. though.
 
-また、ローカルストレージの変数ポインタの ``.slot`` 部に割り当てることもできます。これら（構造体、配列、マッピング）の場合、 ``.offset`` 部は常にゼロです。ただし、ステート変数の ``.slot`` または ``.offset`` 部分に代入することはできません。
+また、ローカルストレージの変数ポインタの ``.slot`` 部に割り当てることもできます。これら（構造体、配列、マッピング）の場合、 ``.offset`` 部は常にゼロです。ただし、ステート変数の ``.slot`` または ``.offset`` 部分に代入できません。
 
 .. Local Solidity variables are available for assignments, for example:
 
@@ -238,13 +238,13 @@ Solidityの変数やその他の識別子は、その名前を使ってアクセ
 
 .. warning::
 
-    256ビット未満の型（ ``uint64`` 、 ``address`` 、 ``bytes16`` など）の変数にアクセスする場合、その型のエンコーディングに含まれないビットを仮定することはできません。特に、それらをゼロと仮定してはいけません。     安全のために、このことが重要な文脈で使用する前に、必ずデータを適切にクリアしてください。  ``uint32 x = f(); assembly { x := and(x, 0xffffffff) /* now use x */ }``  符号付きの型をクリーンにするには、 ``signextend``  オペコードを使用できます。      ``assembly { signextend(<num_bytes_of_x_minus_one>, x) }``
+    256ビット未満の型（ ``uint64`` 、 ``address`` 、 ``bytes16`` など）の変数にアクセスする場合、その型のエンコーディングに含まれないビットを仮定できません。特に、それらをゼロと仮定してはいけません。     安全のために、このことが重要な文脈で使用する前に、必ずデータを適切にクリアしてください。  ``uint32 x = f(); assembly { x := and(x, 0xffffffff) /* now use x */ }``  符号付きの型をクリーンにするには、 ``signextend``  オペコードを使用できます。      ``assembly { signextend(<num_bytes_of_x_minus_one>, x) }``
 
 .. Since Solidity 0.6.0 the name of a inline assembly variable may not
 .. shadow any declaration visible in the scope of the inline assembly block
 .. (including variable, contract and function declarations).
 
-Solidity 0.6.0以降、インラインアセンブリ変数の名前は、インラインアセンブリブロックのスコープ内で見える宣言（変数宣言、コントラクト宣言、関数宣言を含む）をシャドウイングすることはできません。
+Solidity 0.6.0以降、インラインアセンブリ変数の名前は、インラインアセンブリブロックのスコープ内で見える宣言（変数宣言、コントラクト宣言、関数宣言を含む）をシャドウイングできません。
 
 .. Since Solidity 0.7.0, variables and functions declared inside the
 .. inline assembly block may not contain ``.``, but using ``.`` is
@@ -288,7 +288,7 @@ EVMアセンブリとは対照的に、Solidityには、 ``uint24`` などの256
 .. There is no built-in mechanism to release or free allocated memory.
 .. Here is an assembly snippet you can use for allocating memory that follows the process outlined above
 
-Solidityは次のような方法でメモリを管理しています。メモリの位置 ``0x40`` に「フリーメモリポインタ」があります。メモリを確保したい場合は、このポインタが指す位置から始まるメモリを使用し、更新します。このメモリが以前に使用されていないという保証はないので、その内容が0バイトであると仮定することはできません。割り当てられたメモリを解放するメカニズムは組み込まれていません。以下は、上記のプロセスに沿ってメモリを割り当てるために使用できるアセンブリスニペットです。
+Solidityは次のような方法でメモリを管理しています。メモリの位置 ``0x40`` に「フリーメモリポインタ」があります。メモリを確保したい場合は、このポインタが指す位置から始まるメモリを使用し、更新します。このメモリが以前に使用されていないという保証はないので、その内容が0バイトであると仮定できません。割り当てられたメモリを解放するメカニズムは組み込まれていません。以下は、上記のプロセスに沿ってメモリを割り当てるために使用できるアセンブリスニペットです。
 
 .. code-block:: yul
 

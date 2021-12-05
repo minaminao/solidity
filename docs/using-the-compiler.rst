@@ -860,7 +860,7 @@ How it Works
 .. errors are collected and can be logged by passing ``--verbose``. No source
 .. upgrades available at this point.
 
-アップグレード処理自体は2つのフェーズで構成されています。最初のフェーズでは、ソースファイルが解析され、そのレベルではソースコードをアップグレードすることはできないため、エラーが収集され、 ``--verbose`` を渡すことでログに残すことができます。この時点では、ソースのアップグレードはできません。
+アップグレード処理自体は2つのフェーズで構成されています。最初のフェーズでは、ソースファイルが解析され、そのレベルではソースコードをアップグレードできないため、エラーが収集され、 ``--verbose`` を渡すことでログに残すことができます。この時点では、ソースのアップグレードはできません。
 
 .. In the second phase, all sources are compiled and all activated upgrade analysis
 .. modules are run alongside compilation. By default, all available modules are

@@ -159,7 +159,7 @@ Explicitness Requirements
   is only used on ``msg.sender`` instead of stored addresses and ``msg.sender``
   is an ``address payable``.
 
-*  ``address`` タイプは ``address`` と ``address payable`` に分割され、 ``address payable`` のみが ``transfer`` 機能を提供しています。 ``address payable`` を直接 ``address`` に変換することはできますが、その逆はできません。 ``address`` から ``address payable`` への変換は、 ``uint160`` による変換で可能である。 ``c`` がコントラクトの場合、 ``address(c)`` は、 ``c`` に支払い可能なフォールバック機能がある場合に限り、 ``address payable`` になる。 :ref:`withdraw pattern<withdrawal_pattern>` を使用している場合、 ``transfer`` はストアド・アドレスではなく ``msg.sender`` でのみ使用され、 ``msg.sender`` は ``address payable`` になるので、コードを変更する必要はほとんどありません。
+*  ``address`` タイプは ``address`` と ``address payable`` に分割され、 ``address payable`` のみが ``transfer`` 機能を提供しています。 ``address payable`` を直接 ``address`` に変換できますが、その逆はできません。 ``address`` から ``address payable`` への変換は、 ``uint160`` による変換で可能です。 ``c`` がコントラクトの場合、 ``address(c)`` は、 ``c`` に支払い可能なフォールバック機能がある場合に限り、 ``address payable`` になる。 :ref:`withdraw pattern<withdrawal_pattern>` を使用している場合、 ``transfer`` はストアド・アドレスではなく ``msg.sender`` でのみ使用され、 ``msg.sender`` は ``address payable`` になるので、コードを変更する必要はほとんどありません。
 
 .. * Conversions between ``bytesX`` and ``uintY`` of different size are now
   disallowed due to ``bytesX`` padding on the right and ``uintY`` padding on
@@ -377,7 +377,7 @@ Syntax
 .. * Literals cannot anymore be used with ``abi.encodePacked`` without prior
 ..   conversion to an explicit type.
 
-* リテラルは、事前に明示的な型に変換することなく、 ``abi.encodePacked`` で使用することはできなくなりました。
+* リテラルは、事前に明示的な型に変換することなく、 ``abi.encodePacked`` で使用できなくなりました。
 
 .. * Empty return statements for functions with one or more return values are now
 ..   disallowed.

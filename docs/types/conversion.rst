@@ -194,7 +194,7 @@ Fixed-Size Byte Arrays
 .. type. As an exception both decimal and hexadecimal literals which have a value of zero can be
 .. converted to any fixed-size bytes type:
 
-10進数リテラルを固定サイズのバイト配列に暗黙的に変換することはできません。16進数リテラルは変換できますが、それは16進数の桁数がバイト型のサイズにぴったり合う場合に限られます。例外として、0の値を持つ10進数リテラルと16進数リテラルは、任意の固定サイズのバイト型に変換できます。
+10進数リテラルを固定サイズのバイト配列に暗黙的に変換できません。16進数リテラルは変換できますが、それは16進数の桁数がバイト型のサイズにぴったり合う場合に限られます。例外として、0の値を持つ10進数リテラルと16進数リテラルは、任意の固定サイズのバイト型に変換できます。
 
 .. code-block:: solidity
 
@@ -226,7 +226,7 @@ Addresses
 .. As described in :ref:`address_literals`, hex literals of the correct size that pass the checksum
 .. test are of ``address`` type. No other literals can be implicitly converted to the ``address`` type.
 
-:ref:`address_literals` で説明したように、チェックサムテストに合格した正しいサイズの16進数リテラルは ``address`` 型となります。他のリテラルは暗黙的に ``address`` 型に変換することはできません。
+:ref:`address_literals` で説明したように、チェックサムテストに合格した正しいサイズの16進数リテラルは ``address`` 型となります。他のリテラルは暗黙的に ``address`` 型に変換できません。
 
 .. Explicit conversions from ``bytes20`` or any integer type to ``address`` result in ``address payable``.
 

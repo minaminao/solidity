@@ -51,13 +51,13 @@ Explicitness Requirements
 ..   The reason behind this is to prevent storage collisions of gigantic
 ..   storage arrays.
 
-* アレイの ``length`` へのメンバーアクセスは、ストレージアレイであっても常に読み取り専用になりました。ストレージアレイの長さに新しい値を割り当ててサイズを変更することはできなくなりました。代わりに ``push()`` 、 ``push(value)`` 、 ``pop()`` を使用するか、完全なアレイを割り当てると、当然ながら既存のコンテンツは上書きされます。この理由は、巨大なストレージアレイのストレージ衝突を防ぐためです。
+* アレイの ``length`` へのメンバーアクセスは、ストレージアレイであっても常に読み取り専用になりました。ストレージアレイの長さに新しい値を割り当ててサイズを変更できなくなりました。代わりに ``push()`` 、 ``push(value)`` 、 ``pop()`` を使用するか、完全なアレイを割り当てると、当然ながら既存のコンテンツは上書きされます。この理由は、巨大なストレージアレイのストレージ衝突を防ぐためです。
 
 .. * The new keyword ``abstract`` can be used to mark contracts as abstract. It has to be used
 ..   if a contract does not implement all its functions. Abstract contracts cannot be created using the ``new`` operator,
 ..   and it is not possible to generate bytecode for them during compilation.
 
-* 新しいキーワード ``abstract`` は、コントラクトを抽象的にマークするために使用できます。これはコントラクトがそのすべての機能を実装していない場合に使用しなければなりません。抽象コントラクトは ``new`` 演算子を使って作成することはできませんし、コンパイル時にコントラクト用のバイトコードを生成することもできません。
+* 新しいキーワード ``abstract`` は、コントラクトを抽象的にマークするために使用できます。これはコントラクトがそのすべての機能を実装していない場合に使用しなければなりません。抽象コントラクトは ``new`` 演算子を使って作成できませんし、コンパイル時にコントラクト用のバイトコードを生成することもできません。
 
 .. * Libraries have to implement all their functions, not only the internal ones.
 
