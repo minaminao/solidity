@@ -78,109 +78,109 @@ Global Variables
 ..   the provided data. The types are given in parentheses as second argument.
 ..   Example: ``(uint a, uint[2] memory b, bytes memory c) = abi.decode(data, (uint, uint[2], bytes))``
 
-- ``abi.decode(bytes memory encodedData, (...)) returns (...)`` です。 :ref:`ABI <ABI>` -与えられたデータをデコードします。型は第2引数として括弧内に与えられる。   例 ``(uint a, uint[2] memory b, bytes memory c) = abi.decode(data, (uint, uint[2], bytes))``
+- ``abi.decode(bytes memory encodedData, (...)) returns (...)``: 与えられたデータを :ref:`ABI <ABI>` デコードします。型は第2引数として括弧内に与えられます。   例 ``(uint a, uint[2] memory b, bytes memory c) = abi.decode(data, (uint, uint[2], bytes))``
 
 .. - ``abi.encode(...) returns (bytes memory)``: :ref:`ABI <ABI>`-encodes the given arguments
 
-- ``abi.encode(...) returns (bytes memory)`` です。与えられた引数を :ref:`ABI <ABI>` でエンコードする
+- ``abi.encode(...) returns (bytes memory)``: 与えられた引数を :ref:`ABI <ABI>` でエンコードします。
 
 .. - ``abi.encodePacked(...) returns (bytes memory)``: Performs :ref:`packed encoding <abi_packed_mode>` of
 ..   the given arguments. Note that this encoding can be ambiguous!
 
-- ``abi.encodePacked(...) returns (bytes memory)`` を実行します。与えられた引数の :ref:`packed encoding <abi_packed_mode>` を実行します。このエンコーディングは曖昧になる可能性があることに注意してください。
+- ``abi.encodePacked(...) returns (bytes memory)``: 与えられた引数の :ref:`packed encoding <abi_packed_mode>` を実行します。このエンコーディングは曖昧になる可能性があることに注意してください。
 
 .. - ``abi.encodeWithSelector(bytes4 selector, ...) returns (bytes memory)``: :ref:`ABI <ABI>`-encodes
 ..   the given arguments starting from the second and prepends the given four-byte selector
 
-- ``abi.encodeWithSelector(bytes4 selector, ...) returns (bytes memory)`` です。与えられた引数を2番目から順に :ref:`ABI <ABI>` エンコードし、与えられた4バイトのセレクタを前置する
+- ``abi.encodeWithSelector(bytes4 selector, ...) returns (bytes memory)``: 与えられた引数を2番目から順に :ref:`ABI <ABI>` エンコードし、与えられた4バイトのセレクタを前置する
 
 .. - ``abi.encodeWithSignature(string memory signature, ...) returns (bytes memory)``: Equivalent
 ..   to ``abi.encodeWithSelector(bytes4(keccak256(bytes(signature)), ...)```
 
-- ``abi.encodeWithSignature(string memory signature, ...) returns (bytes memory)`` :  ``abi.encodeWithSelector(bytes4(keccak256(bytes(signature)), ...)`` と同等
+- ``abi.encodeWithSignature(string memory signature, ...) returns (bytes memory)``: ``abi.encodeWithSelector(bytes4(keccak256(bytes(signature)), ...)`` と同等です。
 
 .. - ``bytes.concat(...) returns (bytes memory)``: :ref:`Concatenates variable number of
 ..   arguments to one byte array<bytes-concat>`
 
-- ``bytes.concat(...) returns (bytes memory)`` です。 :ref:`Concatenates variable number of   arguments to one byte array<bytes-concat>`
+- ``bytes.concat(...) returns (bytes memory)``: :ref:`Concatenates variable number of   arguments to one byte array<bytes-concat>`
 
 .. - ``block.basefee`` (``uint``): current block's base fee (`EIP-3198 <https://eips.ethereum.org/EIPS/eip-3198>`_ and `EIP-1559 <https://eips.ethereum.org/EIPS/eip-1559>`_)
 
-- ``block.basefee`` （ ``uint`` ）：現在のブロックの基本料金（ `EIP-3198 <https://eips.ethereum.org/EIPS/eip-3198>`_ 、 `EIP-1559 <https://eips.ethereum.org/EIPS/eip-1559>`_ ）
+- ``block.basefee`` (``uint``): 現在のブロックの基本料金（ `EIP-3198 <https://eips.ethereum.org/EIPS/eip-3198>`_ 、 `EIP-1559 <https://eips.ethereum.org/EIPS/eip-1559>`_ ）。
 
 .. - ``block.chainid`` (``uint``): current chain id
 
-- ``block.chainid`` （ ``uint`` ）：現在のチェーンID
+- ``block.chainid`` (``uint``): 現在のチェーンID。
 
 .. - ``block.coinbase`` (``address payable``): current block miner's address
 
-- ``block.coinbase`` （ ``address payable`` ）：現在のブロックマイナーのアドレス
+- ``block.coinbase`` (``address payable``): 現在のブロックマイナーのアドレス。
 
 .. - ``block.difficulty`` (``uint``): current block difficulty
 
-- ``block.difficulty`` （ ``uint`` ）：現在のブロックの難易度
+- ``block.difficulty`` (``uint``): 現在のブロックの難易度
 
 .. - ``block.gaslimit`` (``uint``): current block gaslimit
 
-- ``block.gaslimit`` （ ``uint`` ）：カレントブロックのガスリミット
+- ``block.gaslimit`` (``uint``): カレントブロックのガスリミット
 
 .. - ``block.number`` (``uint``): current block number
 
-- ``block.number`` （ ``uint`` ）：現在のブロック番号
+- ``block.number`` (``uint``): 現在のブロック番号
 
 .. - ``block.timestamp`` (``uint``): current block timestamp
 
-- ``block.timestamp`` （ ``uint`` ）：現在のブロックのタイムスタンプ
+- ``block.timestamp`` (``uint``): 現在のブロックのタイムスタンプ
 
 .. - ``gasleft() returns (uint256)``: remaining gas
 
-- ``gasleft() returns (uint256)`` ：残りのガス
+- ``gasleft() returns (uint256)``: 残りのガス
 
 .. - ``msg.data`` (``bytes``): complete calldata
 
-- ``msg.data`` （ ``bytes`` ）：完全なカルダータ
+- ``msg.data`` (``bytes``): 完全なカルダータ
 
 .. - ``msg.sender`` (``address``): sender of the message (current call)
 
-- ``msg.sender`` （ ``address`` ）：メッセージの送信者（現在の通話相手）
+- ``msg.sender`` (``address``): メッセージの送信者（現在の通話相手）
 
 .. - ``msg.value`` (``uint``): number of wei sent with the message
 
-- ``msg.value`` （ ``uint`` ）：メッセージとともに送信されるweiの数
+- ``msg.value`` (``uint``): メッセージとともに送信されるweiの数
 
 .. - ``tx.gasprice`` (``uint``): gas price of the transaction
 
-- ``tx.gasprice`` （ ``uint`` ）：トランザクション時のガス価格
+- ``tx.gasprice`` (``uint``): トランザクション時のガス価格
 
 .. - ``tx.origin`` (``address``): sender of the transaction (full call chain)
 
-- ``tx.origin`` （ ``address`` ）：トランザクションの送信者（フルコールチェーン）
+- ``tx.origin`` (``address``): トランザクションの送信者（フルコールチェーン）
 
 .. - ``assert(bool condition)``: abort execution and revert state changes if condition is ``false`` (use for internal error)
 
-- ``assert(bool condition)`` ：条件が ``false`` の場合、実行を中止し、状態変化を戻す（内部エラーに使用）
+- ``assert(bool condition)``: 条件が ``false`` の場合、実行を中止し、状態変化を戻す（内部エラーに使用）
 
 .. - ``require(bool condition)``: abort execution and revert state changes if condition is ``false`` (use
 ..   for malformed input or error in external component)
 
-- ``require(bool condition)`` ：条件が ``false`` の場合、実行を中止し、状態の変化を元に戻す（不正な入力や外部コンポーネントのエラーに使用する）
+- ``require(bool condition)``: 条件が ``false`` の場合、実行を中止し、状態の変化を元に戻す（不正な入力や外部コンポーネントのエラーに使用する）
 
 .. - ``require(bool condition, string memory message)``: abort execution and revert state changes if
 ..   condition is ``false`` (use for malformed input or error in external component). Also provide error message.
 
-- ``require(bool condition, string memory message)`` ：条件が ``false`` の場合、実行を中止し、状態の変化を戻す（不正な入力や外部コンポーネントのエラーに使用）。また、エラーメッセージを表示します。
+- ``require(bool condition, string memory message)``: 条件が ``false`` の場合、実行を中止し、状態の変化を戻す（不正な入力や外部コンポーネントのエラーに使用）。また、エラーメッセージを表示します。
 
 .. - ``revert()``: abort execution and revert state changes
 
-- ``revert()`` ：実行を中止し、状態の変化を戻す
+- ``revert()``: 実行を中止し、状態の変化を戻す
 
 .. - ``revert(string memory message)``: abort execution and revert state changes providing an explanatory string
 
-- ``revert(string memory message)`` : 実行を中止し、説明文字列を提供して状態変化を元に戻す
+- ``revert(string memory message)``: 実行を中止し、説明文字列を提供して状態変化を元に戻す
 
 .. - ``blockhash(uint blockNumber) returns (bytes32)``: hash of the given block
 
-- ``blockhash(uint blockNumber) returns (bytes32)`` ：与えられたブロックのハッシュ
+- ``blockhash(uint blockNumber) returns (bytes32)``: 与えられたブロックのハッシュ
 
 .. - only works for 256 most recent blocks
 
@@ -188,67 +188,67 @@ Global Variables
 
 .. - ``keccak256(bytes memory) returns (bytes32)``: compute the Keccak-256 hash of the input
 
-- ``keccak256(bytes memory) returns (bytes32)`` : 入力のKeccak-256ハッシュを計算する
+- ``keccak256(bytes memory) returns (bytes32)``: 入力のKeccak-256ハッシュを計算する
 
 .. - ``sha256(bytes memory) returns (bytes32)``: compute the SHA-256 hash of the input
 
-- ``sha256(bytes memory) returns (bytes32)`` : 入力のSHA-256ハッシュを計算する
+- ``sha256(bytes memory) returns (bytes32)``: 入力のSHA-256ハッシュを計算する
 
 .. - ``ripemd160(bytes memory) returns (bytes20)``: compute the RIPEMD-160 hash of the input
 
-- ``ripemd160(bytes memory) returns (bytes20)`` ：入力のRIPEMD-160ハッシュを計算する。
+- ``ripemd160(bytes memory) returns (bytes20)``: 入力のRIPEMD-160ハッシュを計算する。
 
 .. - ``ecrecover(bytes32 hash, uint8 v, bytes32 r, bytes32 s) returns (address)``: recover address associated with
 ..   the public key from elliptic curve signature, return zero on error
 
-- ``ecrecover(bytes32 hash, uint8 v, bytes32 r, bytes32 s) returns (address)`` ：楕円曲線署名から公開鍵に関連したアドレスを回復する、エラー時は0を返す
+- ``ecrecover(bytes32 hash, uint8 v, bytes32 r, bytes32 s) returns (address)``: 楕円曲線署名から公開鍵に関連したアドレスを回復する、エラー時は0を返す
 
 .. - ``addmod(uint x, uint y, uint k) returns (uint)``: compute ``(x + y) % k`` where the addition is performed with
 ..   arbitrary precision and does not wrap around at ``2**256``. Assert that ``k != 0`` starting from version 0.5.0.
 
-- ``addmod(uint x, uint y, uint k) returns (uint)`` ：任意の精度で加算が行われ、 ``2**256`` で折り返されない ``(x + y) % k`` を計算する。 ``k != 0`` がバージョン0.5.0から始まることを主張します。
+- ``addmod(uint x, uint y, uint k) returns (uint)``: 任意の精度で加算が行われ、 ``2**256`` で折り返されない ``(x + y) % k`` を計算する。 ``k != 0`` がバージョン0.5.0から始まることを主張します。
 
 .. - ``mulmod(uint x, uint y, uint k) returns (uint)``: compute ``(x * y) % k`` where the multiplication is performed
 ..   with arbitrary precision and does not wrap around at ``2**256``. Assert that ``k != 0`` starting from version 0.5.0.
 
-- ``mulmod(uint x, uint y, uint k) returns (uint)`` ：任意の精度で乗算が行われ、 ``2**256`` で折り返されない ``(x * y) % k`` を計算する。 ``k != 0`` がバージョン0.5.0から始まることを主張する。
+- ``mulmod(uint x, uint y, uint k) returns (uint)``: 任意の精度で乗算が行われ、 ``2**256`` で折り返されない ``(x * y) % k`` を計算する。 ``k != 0`` がバージョン0.5.0から始まることを主張する。
 
 .. - ``this`` (current contract's type): the current contract, explicitly convertible to ``address`` or ``address payable``
 
-- ``this`` （現在のコントラクトの種類）：現在のコントラクトで、 ``address`` または ``address payable`` に明示的に変換できるもの
+- ``this`` （現在のコントラクトの種類）: 現在のコントラクトで、 ``address`` または ``address payable`` に明示的に変換できるもの
 
 .. - ``super``: the contract one level higher in the inheritance hierarchy
 
-- ``super`` ：継承階層の1つ上の階層のコントラクト
+- ``super``: 継承階層の1つ上の階層のコントラクト
 
 .. - ``selfdestruct(address payable recipient)``: destroy the current contract, sending its funds to the given address
 
-- ``selfdestruct(address payable recipient)`` ：現在のコントラクトを破棄し、その資金を指定されたアドレスに送る
+- ``selfdestruct(address payable recipient)``: 現在のコントラクトを破棄し、その資金を指定されたアドレスに送る
 
 .. - ``<address>.balance`` (``uint256``): balance of the :ref:`address` in Wei
 
-- ``<address>.balance`` （ ``uint256`` ）：魏の :ref:`address` のバランス
+- ``<address>.balance`` (``uint256``): 魏の :ref:`address` のバランス
 
 .. - ``<address>.code`` (``bytes memory``): code at the :ref:`address` (can be empty)
 
-- ``<address>.code`` （ ``bytes memory`` ）： :ref:`address` でのコード（空でも可）
+- ``<address>.code`` (``bytes memory``):  :ref:`address` でのコード（空でも可）
 
 .. - ``<address>.codehash`` (``bytes32``): the codehash of the :ref:`address`
 
-- ``<address>.codehash`` （ ``bytes32`` ）： :ref:`address` のコードハッシュ
+- ``<address>.codehash`` (``bytes32``):  :ref:`address` のコードハッシュ
 
 .. - ``<address payable>.send(uint256 amount) returns (bool)``: send given amount of Wei to :ref:`address`,
 ..   returns ``false`` on failure
 
-- ``<address payable>.send(uint256 amount) returns (bool)`` ：与えられた量のWeiを :ref:`address` に送り、失敗したら ``false`` を返す
+- ``<address payable>.send(uint256 amount) returns (bool)``: 与えられた量のWeiを :ref:`address` に送り、失敗したら ``false`` を返す
 
 .. - ``<address payable>.transfer(uint256 amount)``: send given amount of Wei to :ref:`address`, throws on failure
 
-- ``<address payable>.transfer(uint256 amount)`` ：与えられた量のWeiを :ref:`address` に送り、失敗したら投げる
+- ``<address payable>.transfer(uint256 amount)``: 与えられた量のWeiを :ref:`address` に送り、失敗したら投げる
 
 .. - ``type(C).name`` (``string``): the name of the contract
 
-- ``type(C).name`` （ ``string`` ）： コントラクトの名称
+- ``type(C).name`` (``string``):  コントラクトの名称
 
 .. - ``type(C).creationCode`` (``bytes memory``): creation bytecode of the given contract, see :ref:`Type Information<meta-type>`.
 
@@ -260,15 +260,15 @@ Global Variables
 
 .. - ``type(I).interfaceId`` (``bytes4``): value containing the EIP-165 interface identifier of the given interface, see :ref:`Type Information<meta-type>`.
 
-- ``type(I).interfaceId`` （ ``bytes4`` ）：指定されたインターフェースのEIP-165インターフェース識別子を含む値（ :ref:`Type Information<meta-type>` 参照
+- ``type(I).interfaceId`` (``bytes4``): 指定されたインターフェースのEIP-165インターフェース識別子を含む値（ :ref:`Type Information<meta-type>` 参照
 
 .. - ``type(T).min`` (``T``): the minimum value representable by the integer type ``T``, see :ref:`Type Information<meta-type>`.
 
-- ``type(T).min`` （ ``T`` ）：整数型 ``T`` で表現可能な最小値で、 :ref:`Type Information<meta-type>` を参照。
+- ``type(T).min`` (``T``): 整数型 ``T`` で表現可能な最小値で、 :ref:`Type Information<meta-type>` を参照。
 
 .. - ``type(T).max`` (``T``): the maximum value representable by the integer type ``T``, see :ref:`Type Information<meta-type>`.
 
-- ``type(T).max`` （ ``T`` ）：整数型 ``T`` で表現可能な最大値で、 :ref:`Type Information<meta-type>` を参照。
+- ``type(T).max`` (``T``): 整数型 ``T`` で表現可能な最大値で、 :ref:`Type Information<meta-type>` を参照。
 
 .. .. note::
 
@@ -323,7 +323,7 @@ Global Variables
 
 .. note::
 
-    In version 0.5.0, the following aliases were removed:  ``suicide``  as alias for  ``selfdestruct`` ,      ``msg.gas``  as alias for  ``gasleft`` ,  ``block.blockhash``  as alias for  ``blockhash``  and      ``sha3``  as alias for  ``keccak256`` . 
+    バージョン0.5.0では、以下のエイリアスが削除されました。 ``suicide`` は ``selfdestruct`` のエイリアス、 ``msg.gas`` は ``gasleft`` のエイリアス、 ``block.blockhash`` は ``blockhash`` のエイリアス、 ``sha3`` は ``keccak256`` のエイリアスである。
     
 .. note::
 
@@ -343,15 +343,15 @@ Function Visibility Specifiers
 
 .. - ``public``: visible externally and internally (creates a :ref:`getter function<getter-functions>` for storage/state variables)
 
-- ``public`` ：外部にも内部にも見える（ストレージ/状態変数の :ref:`getter function<getter-functions>` を作成する）
+- ``public``: 外部にも内部にも見える（ストレージ/状態変数の :ref:`getter function<getter-functions>` を作成する）
 
 .. - ``private``: only visible in the current contract
 
-- ``private`` ：現在のコントラクトでのみ表示されます
+- ``private``: 現在のコントラクトでのみ表示されます
 
 .. - ``external``: only visible externally (only for functions)
 
-- ``external`` ：外部にしか見えない（機能のみ）
+- ``external``: 外部にしか見えない（機能のみ）
 
 .. - i.e. can only be message-called (via ``this.func``)
 
@@ -359,7 +359,7 @@ Function Visibility Specifiers
 
 .. - ``internal``: only visible internally
 
-- ``internal`` ：内部でのみ表示
+- ``internal``: 内部でのみ表示
 
 .. index:: modifiers, pure, view, payable, constant, anonymous, indexed
 
@@ -402,7 +402,7 @@ Modifiers
 .. - ``override``: States that this function, modifier or public state variable changes
 ..   the behaviour of a function or modifier in a base contract.
 
-- ``override`` ：この関数、モディファイア、パブリックステート変数が、ベースコントラクト内の関数やモディファイアの動作を変更することを示す。
+- ``override``: この関数、モディファイア、パブリックステート変数が、ベースコントラクト内の関数やモディファイアの動作を変更することを示す。
 
 Reserved Keywords
 =================
