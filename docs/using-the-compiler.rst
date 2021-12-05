@@ -790,7 +790,7 @@ Error Types
 .. 13. ``Warning``: A warning, which didn't stop the compilation, but should be addressed if possible.
 .. 1
 
-13. ``Warning`` ：警告であり、コンパイルを止めることはできなかったが、可能であれば対処すべきである。1
+13. ``Warning`` ：警告であり、コンパイルを止めることはできなかったが、可能であれば対処すべきです。1
 
 .. 14. ``Info``: Information that the compiler thinks the user might find useful, but is not dangerous and does not necessarily need to be addressed.
 

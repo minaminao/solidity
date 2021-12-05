@@ -54,7 +54,7 @@ Yulのデザインは、いくつかの目標を達成しようとしていま�
 .. ``7 y x add mul`` because in the first form, it is much easier to see which
 .. operand is used for which opcode.
 
-1つ目と2つ目の目標を達成するために、Yulは ``for`` ループ、 ``if`` 文、 ``switch`` 文、関数呼び出しといった高レベルの構成要素を提供しています。アセンブリプログラムの制御フローを適切に表現するためには、これらで十分なはずである。したがって、 ``SWAP`` 、 ``DUP`` 、 ``JUMPDEST`` 、 ``JUMP`` 、 ``JUMPI`` の明示的なステートメントは用意されていません。なぜなら、最初の2つはデータフローを難読化し、最後の2つは制御フローを難読化するからです。さらに、 ``mul(add(x, y), 7)`` 形式の関数文は ``7 y x add mul`` のような純粋なオペコード文よりも好まれます。なぜなら、第1の形式では、どのオペランドがどのオペコードに使用されているかがはるかにわかりやすいからです。
+1つ目と2つ目の目標を達成するために、Yulは ``for`` ループ、 ``if`` 文、 ``switch`` 文、関数呼び出しといった高レベルの構成要素を提供しています。アセンブリプログラムの制御フローを適切に表現するためには、これらで十分なはずです。したがって、 ``SWAP`` 、 ``DUP`` 、 ``JUMPDEST`` 、 ``JUMP`` 、 ``JUMPI`` の明示的なステートメントは用意されていません。なぜなら、最初の2つはデータフローを難読化し、最後の2つは制御フローを難読化するからです。さらに、 ``mul(add(x, y), 7)`` 形式の関数文は ``7 y x add mul`` のような純粋なオペコード文よりも好まれます。なぜなら、第1の形式では、どのオペランドがどのオペコードに使用されているかがはるかにわかりやすいからです。
 
 .. Even though it was designed for stack machines, Yul does not expose the complexity of the stack itself.
 .. The programmer or auditor should not have to worry about the stack.

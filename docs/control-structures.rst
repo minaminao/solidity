@@ -941,7 +941,7 @@ Assert は、内部エラーのテストや不変性のチェックにのみ使�
 .. safest action is to revert all changes and make the whole transaction
 .. (or at least call) without effect.
 
-内部的には、Solidityは元に戻す操作（命令 ``0xfd`` ）を行います。これにより、EVMは状態に加えられたすべての変更を元に戻します。元に戻す理由は、期待した効果が発生しなかったために、実行を継続する安全な方法がない場合です。トランザクションのアトミック性を維持したいので、最も安全なアクションはすべての変更を元に戻し、トランザクション全体（または少なくともコール）を効果なしにすることである。
+内部的には、Solidityは元に戻す操作（命令 ``0xfd`` ）を行います。これにより、EVMは状態に加えられたすべての変更を元に戻します。元に戻す理由は、期待した効果が発生しなかったために、実行を継続する安全な方法がない場合です。トランザクションのアトミック性を維持したいので、最も安全なアクションはすべての変更を元に戻し、トランザクション全体（または少なくともコール）を効果なしにすることです。
 
 .. In both cases, the caller can react on such failures using ``try``/``catch``, but
 .. the changes in the caller will always be reverted.

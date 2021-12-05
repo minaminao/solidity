@@ -323,7 +323,7 @@ Global Variables
 
 .. note::
 
-    バージョン0.5.0では、以下のエイリアスが削除されました。 ``suicide`` は ``selfdestruct`` のエイリアス、 ``msg.gas`` は ``gasleft`` のエイリアス、 ``block.blockhash`` は ``blockhash`` のエイリアス、 ``sha3`` は ``keccak256`` のエイリアスである。
+    バージョン0.5.0では、以下のエイリアスが削除されました: ``suicide`` (``selfdestruct`` のエイリアス)、 ``msg.gas`` (``gasleft`` のエイリアス)、 ``block.blockhash`` ( ``blockhash`` のエイリアス)、 ``sha3`` (``keccak256`` のエイリアス)。
     
 .. note::
 
@@ -384,7 +384,7 @@ Modifiers
 
 .. - ``immutable`` for state variables: Allows exactly one assignment at construction time and is constant afterwards. Is stored in code.
 
-- 状態変数の ``immutable`` 。構築時に正確に1つの割り当てを可能にし、その後も一定である。コードに格納される。
+- 状態変数の ``immutable`` 。構築時に正確に1つの割り当てを可能にし、その後も一定です。コードに格納される。
 
 .. - ``anonymous`` for events: Does not store event signature as topic.
 

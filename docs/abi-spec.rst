@@ -77,7 +77,7 @@ Types
 .. - ``address``: equivalent to ``uint160``, except for the assumed interpretation and language typing.
 ..   For computing the function selector, ``address`` is used.
 
-- ``address`` ：想定される解釈と言語の型付けを除き、 ``uint160`` と同等である。   機能セレクタの計算には、 ``address`` を使用します。
+- ``address`` ：想定される解釈と言語の型付けを除き、 ``uint160`` と同等です。   機能セレクタの計算には、 ``address`` を使用します。
 
 .. - ``uint``, ``int``: synonyms for ``uint256``, ``int256`` respectively. For computing the function
 ..   selector, ``uint256`` and ``int256`` have to be used.
@@ -293,7 +293,7 @@ Formal Specification of the Encoding
 
     ``head(X(i)) = enc(len( head(X(1)) ... head(X(k)) tail(X(1)) ... tail(X(i-1)) ))``   ``tail(X(i)) = enc(X(i))``
 
-  なお、動的なケースでは、ヘッドパーツの長さはタイプにのみ依存し、値には依存しないため、 ``head(X(i))`` はよく定義されています。 ``head(X(i))`` の値は、 ``enc(X)`` の開始位置に対する ``tail(X(i))`` の開始位置のオフセットである。
+  なお、動的なケースでは、ヘッドパーツの長さはタイプにのみ依存し、値には依存しないため、 ``head(X(i))`` はよく定義されています。 ``head(X(i))`` の値は、 ``enc(X)`` の開始位置に対する ``tail(X(i))`` の開始位置のオフセットです。
 
 .. - ``T[k]`` for any ``T`` and ``k``:
 
@@ -380,7 +380,7 @@ Formal Specification of the Encoding
 
 .. Note that for any ``X``, ``len(enc(X))`` is a multiple of 32.
 
-なお、任意の ``X`` に対して、 ``len(enc(X))`` は32の倍数である。
+なお、任意の ``X`` に対して、 ``len(enc(X))`` は32の倍数です。
 
 Function Selector and Argument Encoding
 =======================================

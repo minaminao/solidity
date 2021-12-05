@@ -37,7 +37,7 @@ Changes to the Syntax
 ..   that it changes during transaction processing, whereas ``block.timestamp`` correctly
 ..   reflects the fact that it is just a property of the block.
 
-* グローバル変数 ``now`` は非推奨であり、代わりに ``block.timestamp`` を使用すべきである。 ``now`` という単一の識別子は、グローバル変数としては一般的すぎて、トランザクション処理中に変化するような印象を与える可能性がありますが、 ``block.timestamp`` は単なるブロックのプロパティであるという事実を正しく反映しています。
+* グローバル変数 ``now`` は非推奨であり、代わりに ``block.timestamp`` を使用すべきです。 ``now`` という単一の識別子は、グローバル変数としては一般的すぎて、トランザクション処理中に変化するような印象を与える可能性がありますが、 ``block.timestamp`` は単なるブロックのプロパティであるという事実を正しく反映しています。
 
 .. * NatSpec comments on variables are only allowed for public state variables and not
 ..   for local or internal variables.

@@ -270,7 +270,7 @@ State Machine
 .. It is also common that some stages are automatically
 .. reached at a certain point in **time**.
 
-コントラクトはしばしばステートマシンとして動作します。つまり、異なる動作をする特定の **stages** を持っていたり、異なる関数を呼び出すことができるということです。関数の呼び出しはしばしばステージを終了し、コントラクトを次のステージに移行させる（特にコントラクトが **interaction** をモデルとしている場合）。また、いくつかのステージが **time** のある時点で自動的に到達することも一般的である。
+コントラクトはしばしばステートマシンとして動作します。つまり、異なる動作をする特定の **stages** を持っていたり、異なる関数を呼び出すことができるということです。関数の呼び出しはしばしばステージを終了し、コントラクトを次のステージに移行させる（特にコントラクトが **interaction** をモデルとしている場合）。また、いくつかのステージが **time** のある時点で自動的に到達することも一般的です。
 
 .. An example for this is a blind auction contract which
 .. starts in the stage "accepting blinded bids", then

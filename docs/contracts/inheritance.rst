@@ -597,7 +597,7 @@ Multiple Inheritance and Linearization
 .. requests to override ``X``, which is a contradiction that
 .. cannot be resolved.
 
-その理由は、 ``C`` は ``X`` に ``A`` のオーバーライドを要求している（ ``A, X`` をこの順番で指定することで）が、 ``A`` 自身は ``X`` のオーバーライドを要求しており、解決できない矛盾を抱えているからである。
+その理由は、 ``C`` は ``X`` に ``A`` のオーバーライドを要求している（ ``A, X`` をこの順番で指定することで）が、 ``A`` 自身は ``X`` のオーバーライドを要求しており、解決できない矛盾を抱えているからです。
 
 .. Due to the fact that you have to explicitly override a function
 .. that is inherited from multiple bases without a unique override,

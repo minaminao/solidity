@@ -268,7 +268,7 @@ Assert
 
 .. 3. The assertion is always true.
 
-3.アサーションは常に真である。
+3.アサーションは常に真です。
 
 .. .. note::
 
@@ -834,7 +834,7 @@ Abstraction and False Positives
 .. verification target is safe, it is indeed safe, that is, there are no false
 .. negatives (unless there is a bug in the SMTChecker).
 
-SMTCheckerは、抽象化を不完全かつ健全な方法で実装しています。バグが報告された場合、それは抽象化によってもたらされた誤検出である可能性があります（知識を消去したり、正確でない型を使用したため）。検証対象が安全であると判断された場合、それは確かに安全であり、つまり（SMTCheckerにバグがない限り）偽陰性は存在しないのである。
+SMTCheckerは、抽象化を不完全かつ健全な方法で実装しています。バグが報告された場合、それは抽象化によってもたらされた誤検出である可能性があります（知識を消去したり、正確でない型を使用したため）。検証対象が安全であると判断された場合、それは確かに安全であり、つまり（SMTCheckerにバグがない限り）偽陰性は存在しないのです。
 
 .. If a target cannot be proven you can try to help the solver by using the tuning
 .. options in the previous section.
@@ -1074,7 +1074,7 @@ Contract Balance
 .. The contract's balance may also increase without triggering any calls to the
 .. contract, if
 
-コントラクトは、デプロイメント・トランザクションにおいて  ``msg.value``  > 0 であれば、資金を送ってデプロイされるかもしれない。しかし、コントラクトのアドレスは、デプロイ前にすでに資金を持っている可能性があり、それはコントラクトによって保持される。そのため、SMTCheckerはEVMルールとの整合性を取るために、コンストラクタで ``address(this).balance >= msg.value`` を想定している。また、コントラクトの残高は、以下の場合、コントラクトへの呼び出しをトリガすることなく増加することがある。
+コントラクトは、デプロイメント・トランザクションにおいて  ``msg.value``  > 0 であれば、資金を送ってデプロイされるかもしれない。しかし、コントラクトのアドレスは、デプロイ前にすでに資金を持っている可能性があり、それはコントラクトによって保持される。そのため、SMTCheckerはEVMルールとの整合性を取るために、コンストラクタで ``address(this).balance >= msg.value`` を想定している。また、コントラクトの残高は、以下の場合、コントラクトへの呼び出しをトリガすることなく増加することがあります。
 
 .. - ``selfdestruct`` is executed by another contract with the analyzed contract
 ..   as the target of the remaining funds,
@@ -1104,7 +1104,7 @@ Real World Assumptions
 .. Another similar assumption taken by the SMTChecker is that an address' balance
 .. can never overflow.
 
-SolidityやEVMでは表現できるが、実際には発生しないと思われるシナリオもある。そのようなケースの1つが、プッシュ時にダイナミックストレージの配列の長さがオーバーフローすることです。 ``push`` 操作が長さ2^256 - 1の配列に適用された場合、その長さは静かにオーバーフローします。しかし、実際にはこのようなことは起こり得ません。なぜなら、配列をそこまで成長させるために必要な演算を実行するには、何十億年もかかるからです。SMTCheckerのもう一つの類似した仮定は、アドレスの残高がオーバーフローすることはないというものです。
+SolidityやEVMでは表現できるが、実際には発生しないと思われるシナリオもあります。そのようなケースの1つが、プッシュ時にダイナミックストレージの配列の長さがオーバーフローすることです。 ``push`` 操作が長さ2^256 - 1の配列に適用された場合、その長さは静かにオーバーフローします。しかし、実際にはこのようなことは起こり得ません。なぜなら、配列をそこまで成長させるために必要な演算を実行するには、何十億年もかかるからです。SMTCheckerのもう一つの類似した仮定は、アドレスの残高がオーバーフローすることはないというものです。
 
 .. A similar idea was presented in `EIP-1985 <https://eips.ethereum.org/EIPS/eip-1985>`_.
 .. 

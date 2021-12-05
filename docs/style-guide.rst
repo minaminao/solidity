@@ -1472,7 +1472,7 @@ Contract and Library Names
 
 .. and in ``Congress.sol``:
 
-と ``Congress.sol`` にある。
+と ``Congress.sol`` にあります。
 
 .. code-block:: solidity
 
@@ -1514,7 +1514,7 @@ Contract and Library Names
 
 .. and in ``Congress.sol``:
 
-と ``Congress.sol`` にある。
+と ``Congress.sol`` にあります。
 
 .. code-block:: solidity
 

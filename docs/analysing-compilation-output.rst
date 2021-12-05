@@ -9,7 +9,7 @@ Analysing the Compiler Output
 .. to use the flag ``--asm`` to analyse the assembly output. Even for large contracts, looking at a
 .. visual diff of the assembly before and after a change is often very enlightening.
 
-コンパイラが生成したアセンブリコードを見てみると便利なことが多い。生成されたバイナリ、すなわち ``solc --bin contract.sol`` の出力は、一般に読みにくい。フラグ ``--asm`` を使用して、アセンブリ出力を分析することをお勧めします。大規模なコントラクトであっても、変更前と変更後のアセンブリの視覚的なdiffを見ることは、しばしば非常に有益である。
+コンパイラが生成したアセンブリコードを見てみると便利なことが多い。生成されたバイナリ、すなわち ``solc --bin contract.sol`` の出力は、一般に読みにくい。フラグ ``--asm`` を使用して、アセンブリ出力を分析することをお勧めします。大規模なコントラクトであっても、変更前と変更後のアセンブリの視覚的なdiffを見ることは、しばしば非常に有益です。
 
 .. Consider the following contract (named, say ``contract.sol``):
 

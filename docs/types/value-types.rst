@@ -310,7 +310,7 @@ Fixed Point Numbers
 
 .. note::
 
-    浮動小数点（多くの言語では ``float`` と ``double`` 、正確にはIEEE754の数値）と固定小数点の主な違いは、整数部と小数部（小数点以下の部分）に使用するビット数が、前者では柔軟に設定できるのに対し、後者では厳密に定義されていることです。一般に、浮動小数点では、ほぼすべての空間を使って数値を表現するが、小数点の位置を決めるのは少数のビットである。
+    浮動小数点（多くの言語では ``float`` と ``double`` 、正確にはIEEE754の数値）と固定小数点の主な違いは、整数部と小数部（小数点以下の部分）に使用するビット数が、前者では柔軟に設定できるのに対し、後者では厳密に定義されていることです。一般に、浮動小数点では、ほぼすべての空間を使って数値を表現するが、小数点の位置を決めるのは少数のビットです。
 
 .. index:: address, balance, send, call, delegatecall, staticcall, transfer
 
@@ -1158,7 +1158,7 @@ Function Types
 .. their internal/external property is identical and the state mutability of ``A``
 .. is more restrictive than the state mutability of ``B``. In particular:
 
-関数型 ``A`` は、それらのパラメータ型が同一であり、戻り値の型が同一であり、それらの内部/外部プロパティが同一であり、 ``A`` の状態の変更可能性が ``B`` の状態の変更可能性よりも制限されている場合に限り、関数型 ``B`` に暗黙的に変換可能である。具体的には
+関数型 ``A`` は、それらのパラメータ型が同一であり、戻り値の型が同一であり、それらの内部/外部プロパティが同一であり、 ``A`` の状態の変更可能性が ``B`` の状態の変更可能性よりも制限されている場合に限り、関数型 ``B`` に暗黙的に変換可能です。具体的には
 
 .. - ``pure`` functions can be converted to ``view`` and ``non-payable`` functions
 

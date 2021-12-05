@@ -156,7 +156,7 @@ New Restrictions
 
   - ``address(uint)`` と ``uint(address)`` ：タイプ・カテゴリーと幅の両方を変換します。これをそれぞれ ``address(uint160(uint))`` と ``uint(uint160(address))`` に置き換える。
 
-  - ``payable(uint160)`` , ``payable(bytes20)`` , ``payable(integer-literal)`` ：タイプカテゴリと状態変異性の両方を変換する。これをそれぞれ ``payable(address(uint160))`` , ``payable(address(bytes20))`` , ``payable(address(integer-literal))`` に置き換える。なお、 ``payable(0)`` は有効であり、例外である。
+  - ``payable(uint160)`` , ``payable(bytes20)`` , ``payable(integer-literal)`` ：タイプカテゴリと状態変異性の両方を変換する。これをそれぞれ ``payable(address(uint160))`` , ``payable(address(bytes20))`` , ``payable(address(integer-literal))`` に置き換える。なお、 ``payable(0)`` は有効であり、例外です。
 
   - ``int80(bytes10)`` と ``bytes10(int80)`` ：タイプ・カテゴリーと記号の両方を変換します。これをそれぞれ ``int80(uint80(bytes10))`` と ``bytes10(uint80(int80)`` に置き換える。
 
@@ -228,9 +228,9 @@ New Restrictions
 
 * ``address`` 型への明示的な変換は、常に支払い不可能な ``address`` 型を返します。特に、以下の明示的な変換は、 ``address   payable`` 型ではなく ``address`` 型になります。
 
-  - ``address(u)`` ここで， ``u`` は ``uint160`` 型の変数である。 ``u`` を ``address payable`` 型に変換するには，2つの明示的な変換，すなわち ``payable(address(u))`` を用いればよい。
+  - ``address(u)`` ここで， ``u`` は ``uint160`` 型の変数です。 ``u`` を ``address payable`` 型に変換するには，2つの明示的な変換，すなわち ``payable(address(u))`` を用いればよい。
 
-  - ``address(b)`` ここで， ``b`` は ``bytes20`` 型の変数である。 ``b`` を ``address payable`` 型に変換するには，2つの明示的な変換，すなわち ``payable(address(b))`` を用いればよい。
+  - ``address(b)`` ここで， ``b`` は ``bytes20`` 型の変数です。 ``b`` を ``address payable`` 型に変換するには，2つの明示的な変換，すなわち ``payable(address(b))`` を用いればよい。
 
   - ``address(c)`` （ ``c`` はコントラクト）。以前は、この変換のリターンタイプは、コントラクトがEtherを受信できるかどうかに依存していました（受信関数または支払可能なフォールバック関数を持つことにより）。 ``payable(c)`` 変換は ``address     payable`` 型で，コントラクト ``c`` がEtherを受け取ることができる場合にのみ許可されます。一般的には，以下の明示的な変換を用いることで，常に ``c`` を ``address payable`` 型に変換できる。 ``payable(address(c))`` . ``address(this)`` は、 ``address(c)`` と同じカテゴリーに属し、同じルールが適用されることに注意してください。
 
