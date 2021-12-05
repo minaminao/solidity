@@ -83,6 +83,10 @@ VFSの初期コンテンツは、コンパイラの起動方法によって異�
 ..    When you compile a file using the command-line interface of the compiler, you provide one or
 ..    more paths to files containing Solidity code:
 
+#. **solc / command-line interface**
+
+   コンパイラのコマンドライン・インターフェースを使用してファイルをコンパイルする際に、Solidityコードを含むファイルへの1つまたは複数のパスを指定します。
+
    .. code-block:: bash
 
        solc contract.sol /usr/local/dapp-bin/token.sol
@@ -101,6 +105,10 @@ VFSの初期コンテンツは、コンパイラの起動方法によって異�
 ..    <https://github.com/ethereum/solc-js>`_ or the ``--standard-json`` command-line option)
 ..    you provide input in JSON format, containing, among other things, the content of all your source
 ..    files:
+
+#. **Standard JSON**
+
+   :ref:`Standard JSON <compiler-api>`  APIを使用する場合（ `JavaScript interface    <https://github.com/ethereum/solc-js>`_ または ``--standard-json`` コマンドライン・オプションを使用）、すべてのソース・ファイルのコンテンツなどを含むJSONフォーマットの入力を提供します。
 
    .. code-block:: json
 
@@ -123,12 +131,16 @@ VFSの初期コンテンツは、コンパイラの起動方法によって異�
    The ``sources`` dictionary becomes the initial content of the virtual filesystem and its keys
    are used as source unit names.
 
-   .. _initial-vfs-content-standard-json-with-import-callback:
+.. _initial-vfs-content-standard-json-with-import-callback:
 
 .. #. **Standard JSON (via import callback)**
 
 ..    With Standard JSON it is also possible to tell the compiler to use the import callback to obtain
 ..    the source code:
+
+#. **Standard JSON (via import callback)**
+
+   Standard JSONでは、ソースコードの取得にimportコールバックを使用するようにコンパイラに指示することも可能です。
 
    .. code-block:: json
 
@@ -158,6 +170,10 @@ VFSの初期コンテンツは、コンパイラの起動方法によって異�
 ..    On the command line it is also possible to provide the source by sending it to compiler's
 ..    standard input:
 
+#. **Standard input**
+
+   コマンドラインでは、コンパイラの標準入力にソースを送信することも可能です。
+
    .. code-block:: bash
 
        echo 'import "./util.sol"; contract C {}' | solc -
@@ -167,22 +183,6 @@ VFSの初期コンテンツは、コンパイラの起動方法によって異�
 
 .. Once the VFS is initialized, additional files can still be added to it only through the import
 .. callback.
-
-#. **solc / command-line interface**
-
-   コンパイラのコマンドライン・インターフェースを使用してファイルをコンパイルする際に、Solidityコードを含むファイルへの1つまたは複数のパスを指定します。
-
-#. **Standard JSON**
-
-   :ref:`Standard JSON <compiler-api>`  APIを使用する場合（ `JavaScript interface    <https://github.com/ethereum/solc-js>`_ または ``--standard-json`` コマンドライン・オプションを使用）、すべてのソース・ファイルのコンテンツなどを含むJSONフォーマットの入力を提供します。
-
-#. **Standard JSON (via import callback)**
-
-   Standard JSONでは、ソースコードの取得にimportコールバックを使用するようにコンパイラに指示することも可能です。
-
-#. **Standard input**
-
-   コマンドラインでは、コンパイラの標準入力にソースを送信することも可能です。
 
 VFSが初期化された後も、インポートコールバックによってのみファイルを追加できます。
 
