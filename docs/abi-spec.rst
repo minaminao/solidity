@@ -410,7 +410,7 @@ Examples
 
 .. Given the contract:
 
-契約を考えると
+コントラクト考えると:
 
 .. code-block:: solidity
     :force:
@@ -871,7 +871,7 @@ Errors
 .. As an example, let us consider the following contract whose ``transfer`` function always
 .. reverts with a custom error of "insufficient balance":
 
-例として、 ``transfer`` 機能が常に「残高不足」というカスタムエラーで復帰してしまう次の契約を考えてみましょう。
+例として、 ``transfer`` 機能が常に「残高不足」というカスタムエラーで復帰してしまう次のコントラクトを考えてみましょう。
 
 .. code-block:: solidity
 

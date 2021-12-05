@@ -362,7 +362,7 @@ out the separator and the comments that follow it.
 .. ``isoltest`` prints the expected result next to the obtained result, and also
 .. provides a way to edit, update or skip the current contract file, or quit the application.
 
-``isoltest`` は、期待される結果を得られた結果の横に表示し、また、現在の契約ファイルを編集、更新、スキップしたり、アプリケーションを終了する方法を提供します。
+``isoltest`` は、期待される結果を得られた結果の横に表示し、また、現在のコントラクトファイルを編集、更新、スキップしたり、アプリケーションを終了する方法を提供します。
 
 .. It offers several options for failing tests:
 
@@ -370,11 +370,11 @@ out the separator and the comments that follow it.
 
 .. - ``edit``: ``isoltest`` tries to open the contract in an editor so you can adjust it. It either uses the editor given on the command line (as ``isoltest --editor /path/to/editor``), in the environment variable ``EDITOR`` or just ``/usr/bin/editor`` (in that order).
 
-- ``edit`` です。 ``isoltest`` は、契約内容を調整できるように、エディタで契約内容を開こうとします。 ``isoltest --editor /path/to/editor`` のようにコマンドラインで指定されたエディタを使用するか、 ``EDITOR`` のように環境変数で指定されたエディタを使用するか、 ``/usr/bin/editor`` だけを使用するか（順不同）。
+- ``edit`` です。 ``isoltest`` は、コントラクト内容を調整できるように、エディタでコントラクト内容を開こうとします。 ``isoltest --editor /path/to/editor`` のようにコマンドラインで指定されたエディタを使用するか、 ``EDITOR`` のように環境変数で指定されたエディタを使用するか、 ``/usr/bin/editor`` だけを使用するか（順不同）。
 
 .. - ``update``: Updates the expectations for contract under test. This updates the annotations by removing unmet expectations and adding missing expectations. The test is then run again.
 
-- ``update`` ：テスト中の契約に対する期待値を更新。これは、満たされていない期待値を削除し、満たされていない期待値を追加することで、アノテーションを更新します。その後、テストが再度実行される。
+- ``update`` ：テスト中のコントラクトに対する期待値を更新。これは、満たされていない期待値を削除し、満たされていない期待値を追加することで、アノテーションを更新します。その後、テストが再度実行される。
 
 .. - ``skip``: Skips the execution of this particular test.
 
@@ -386,7 +386,7 @@ out the separator and the comments that follow it.
 
 .. All of these options apply to the current contract, expect ``quit`` which stops the entire testing process.
 
-これらのオプションはすべて現在の契約に適用されますが、 ``quit`` はテストプロセス全体を停止します。
+これらのオプションはすべて現在のコントラクトに適用されますが、 ``quit`` はテストプロセス全体を停止します。
 
 .. Automatically updating the test above changes it to
 

@@ -446,7 +446,7 @@ Members of Addresses
 
 .. Send is the low-level counterpart of ``transfer``. If the execution fails, the current contract will not stop with an exception, but ``send`` will return ``false``.
 
-Sendは、 ``transfer`` の低レベルのカウンターパートです。実行に失敗した場合、現在の契約は例外的に停止しませんが、 ``send`` は ``false`` を返します。
+Sendは、 ``transfer`` の低レベルのカウンターパートです。実行に失敗した場合、現在のコントラクトは例外的に停止しませんが、 ``send`` は ``false`` を返します。
 
 .. .. warning::
 
@@ -533,7 +533,7 @@ ABIに準拠していないコントラクトとのインターフェースや�
 
 .. In a similar way, the function ``delegatecall`` can be used: the difference is that only the code of the given address is used, all other aspects (storage, balance, ...) are taken from the current contract. The purpose of ``delegatecall`` is to use library code which is stored in another contract. The user has to ensure that the layout of storage in both contracts is suitable for delegatecall to be used.
 
-同様の方法で、機能 ``delegatecall`` を使用することができます。違いは、与えられたアドレスのコードのみが使用され、他のすべての側面（ストレージ、バランス、...）は、現在の契約から取得されます。 ``delegatecall`` の目的は、別の契約に保存されているライブラリ・コードを使用することです。ユーザーは、両方のコントラクトのストレージのレイアウトが、delegatecallを使用するのに適していることを確認しなければなりません。
+同様の方法で、機能 ``delegatecall`` を使用することができます。違いは、与えられたアドレスのコードのみが使用され、他のすべての側面（ストレージ、バランス、...）は、現在のコントラクトから取得されます。 ``delegatecall`` の目的は、別のコントラクトに保存されているライブラリ・コードを使用することです。ユーザーは、両方のコントラクトのストレージのレイアウトが、delegatecallを使用するのに適していることを確認しなければなりません。
 
 .. .. note::
 

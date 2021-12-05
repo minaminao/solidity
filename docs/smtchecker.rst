@@ -108,7 +108,7 @@ SMTCheckerを有効にするには、デフォルトではエンジンなしと�
 
 .. note::
 
-    検証対象に対して警告が出ないということは、SMTCheckerや基盤となるソルバーにバグがないことを前提とした、議論の余地のない正しさの数学的証明を意味します。これらの問題は、一般的なケースで自動的に解決することは*非常に難しく*、時には*不可能*であることに留意してください。  したがって、いくつかの特性は解決できないかもしれませんし、大規模な契約では誤検出につながるかもしれません。すべての証明されたプロパティは重要な成果であると考えるべきです。上級者向けには、 :ref:`SMTChecker Tuning <smtchecker_options>` を参照して、より複雑なプロパティを証明するのに役立ついくつかのオプションを学んでください。
+    検証対象に対して警告が出ないということは、SMTCheckerや基盤となるソルバーにバグがないことを前提とした、議論の余地のない正しさの数学的証明を意味します。これらの問題は、一般的なケースで自動的に解決することは*非常に難しく*、時には*不可能*であることに留意してください。  したがって、いくつかの特性は解決できないかもしれませんし、大規模なコントラクトでは誤検出につながるかもしれません。すべての証明されたプロパティは重要な成果であると考えるべきです。上級者向けには、 :ref:`SMTChecker Tuning <smtchecker_options>` を参照して、より複雑なプロパティを証明するのに役立ついくつかのオプションを学んでください。
 
 ********
 Tutorial
@@ -543,7 +543,7 @@ SMTCheckerでは、ソルバーごとに選択されたハードコードされ�
 .. a timeout can be given in milliseconds via the CLI option ``--model-checker-timeout <time>`` or
 .. the JSON option ``settings.modelChecker.timeout=<time>``, where 0 means no timeout.
 
-このオプションを大まかに説明すると、1回のクエリにつき「数秒のタイムアウト」となります。もちろん、多くのプロパティは非常に複雑で、決定論が問題にならないような解決に多くの時間を必要とする。SMTCheckerがデフォルトの ``rlimit`` で契約プロパティを解決できない場合、CLIオプション ``--model-checker-timeout <time>`` またはJSONオプション ``settings.modelChecker.timeout=<time>`` を介して、ミリ秒単位でタイムアウトを与えることができる。
+このオプションを大まかに説明すると、1回のクエリにつき「数秒のタイムアウト」となります。もちろん、多くのプロパティは非常に複雑で、決定論が問題にならないような解決に多くの時間を必要とする。SMTCheckerがデフォルトの ``rlimit`` でコントラクトプロパティを解決できない場合、CLIオプション ``--model-checker-timeout <time>`` またはJSONオプション ``settings.modelChecker.timeout=<time>`` を介して、ミリ秒単位でタイムアウトを与えることができる。
 
 .. _smtchecker_targets:
 
@@ -608,7 +608,7 @@ SMTCheckerによって作成される検証ターゲットの種類は、CLIオ�
 .. There is no precise heuristic on how and when to split verification targets,
 .. but it can be useful especially when dealing with large contracts.
 
-検証対象をいつ、どのように分割するかについての正確なヒューリスティックはありませんが、特に大規模な契約を扱う場合には有効です。
+検証対象をいつ、どのように分割するかについての正確なヒューリスティックはありませんが、特に大規模なコントラクトを扱う場合には有効です。
 
 Unproved Targets
 ================
@@ -1079,7 +1079,7 @@ Contract Balance
 .. - ``selfdestruct`` is executed by another contract with the analyzed contract
 ..   as the target of the remaining funds,
 
-- ``selfdestruct`` は、分析された契約を残金の対象として、別の契約で実行されます。
+- ``selfdestruct`` は、分析されたコントラクトを残金の対象として、別のコントラクトで実行されます。
 
 .. - the contract is the coinbase (i.e., ``block.coinbase``) of some block.
 
@@ -1088,7 +1088,7 @@ Contract Balance
 .. To model this properly, the SMTChecker assumes that at every new transaction
 .. the contract's balance may grow by at least ``msg.value``.
 
-これを適切にモデル化するために、SMTCheckerは、新しい取引のたびに契約書の残高が少なくとも ``msg.value`` だけ増える可能性があると仮定しています。
+これを適切にモデル化するために、SMTCheckerは、新しい取引のたびに コントラクトの残高が少なくとも ``msg.value`` だけ増える可能性があると仮定しています。
 
 **********************
 Real World Assumptions

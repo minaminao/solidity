@@ -36,7 +36,7 @@ Remix
 .. on your computer. Choose a commandline compiler if you are working on a larger contract
 .. or if you require more compilation options.
 
-このページの他のオプションでは、お使いのコンピュータにコマンドラインのSolidityコンパイラソフトウェアをインストールする方法について説明しています。大規模な契約に取り組む場合や、より多くのコンパイル・オプションを必要とする場合は、コマンドライン・コンパイラを選択してください。
+このページの他のオプションでは、お使いのコンピュータにコマンドラインのSolidityコンパイラソフトウェアをインストールする方法について説明しています。大規模なコントラクトに取り組む場合や、より多くのコンパイル・オプションを必要とする場合は、コマンドライン・コンパイラを選択してください。
 
 .. _solcjs:
 

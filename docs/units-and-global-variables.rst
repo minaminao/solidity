@@ -554,7 +554,7 @@ Contract Related
 .. ``this`` (current contract's type)
 ..     the current contract, explicitly convertible to :ref:`address`
 
-``this`` （現在の契約のタイプ）現在の契約で、 :ref:`address` に明示的に変換可能なもの
+``this`` （現在のコントラクトのタイプ）現在のコントラクトで、 :ref:`address` に明示的に変換可能なもの
 
 .. ``selfdestruct(address payable recipient)``
 ..     Destroy the current contract, sending its funds to the given :ref:`address`
@@ -565,11 +565,11 @@ Contract Related
 
 ..     - the contract is only really destroyed at the end of the transaction and ``revert`` s might "undo" the destruction.
 
-``selfdestruct(address payable recipient)`` は現在の契約を破棄し、その資金を所定の :ref:`address` に送り、実行を終了する。      ``selfdestruct`` はEVMから引き継いだいくつかの特殊性を持っていることに注意してください。
+``selfdestruct(address payable recipient)`` は現在のコントラクトを破棄し、その資金を所定の :ref:`address` に送り、実行を終了する。      ``selfdestruct`` はEVMから引き継いだいくつかの特殊性を持っていることに注意してください。
 
     - 受信側コントラクトの受信機能が実行されない。
 
-    - 契約が実際に破壊されるのは取引終了時であり、 ``revert``  sはその破壊を「元に戻す」かもしれません。
+    - コントラクトが実際に破壊されるのは取引終了時であり、 ``revert``  sはその破壊を「元に戻す」かもしれません。
 
 .. Furthermore, all functions of the current contract are callable directly including the current function.
 
@@ -604,7 +604,7 @@ Type Information
 .. ``type(C).name``
 ..     The name of the contract.
 
-``type(C).name``  契約の名称です。
+``type(C).name``  コントラクトの名称です。
 
 .. ``type(C).creationCode``
 ..     Memory byte array that contains the creation bytecode of the contract.

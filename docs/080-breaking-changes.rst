@@ -68,7 +68,7 @@ Silent Changes of the Semantics
 .. * If a byte array in storage is accessed whose length is encoded incorrectly, a panic is caused.
 ..   A contract cannot get into this situation unless inline assembly is used to modify the raw representation of storage byte arrays.
 
-* ストレージのバイト配列の長さが正しくエンコードされていないものにアクセスすると、パニックが発生します。   コントラクトは、ストレージのバイト配列の生の表現を変更するためにインラインアセンブリを使用しない限り、このような状況に陥ることはありません。
+* ストレージのバイト配列の長さが正しくエンコードされていないものにアクセスすると、パニックが発生します。コントラクトは、ストレージのバイト配列の生の表現を変更するためにインラインアセンブリを使用しない限り、このような状況に陥ることはありません。
 
 .. * If constants are used in array length expressions, previous versions of Solidity would use arbitrary precision
 ..   in all branches of the evaluation tree. Now, if constant variables are used as intermediate expressions,

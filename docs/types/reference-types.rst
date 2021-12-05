@@ -720,7 +720,7 @@ Solidityでは、構造体の形で新しい型を定義する方法を提供し
 .. Struct types can be used inside mappings and arrays and they can themselves
 .. contain mappings and arrays.
 
-この契約書は、クラウドファンディングの契約書の機能をすべて提供するものではありませんが、構造体を理解するために必要な基本的な概念が含まれています。構造体はマッピングや配列の内部で使用することができ、構造体自身もマッピングや配列を含むことができます。
+この コントラクトは、クラウドファンディングの コントラクトの機能をすべて提供するものではありませんが、構造体を理解するために必要な基本的な概念が含まれています。構造体はマッピングや配列の内部で使用することができ、構造体自身もマッピングや配列を含むことができます。
 
 .. It is not possible for a struct to contain a member of its own type,
 .. although the struct itself can be the value type of a mapping member

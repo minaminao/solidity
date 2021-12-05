@@ -215,15 +215,15 @@ Global Variables
 
 .. - ``this`` (current contract's type): the current contract, explicitly convertible to ``address`` or ``address payable``
 
-- ``this`` （現在の契約の種類）：現在の契約で、 ``address`` または ``address payable`` に明示的に変換できるもの
+- ``this`` （現在のコントラクトの種類）：現在のコントラクトで、 ``address`` または ``address payable`` に明示的に変換できるもの
 
 .. - ``super``: the contract one level higher in the inheritance hierarchy
 
-- ``super`` ：継承階層の1つ上の階層の契約
+- ``super`` ：継承階層の1つ上の階層のコントラクト
 
 .. - ``selfdestruct(address payable recipient)``: destroy the current contract, sending its funds to the given address
 
-- ``selfdestruct(address payable recipient)`` ：現在の契約を破棄し、その資金を指定されたアドレスに送る
+- ``selfdestruct(address payable recipient)`` ：現在のコントラクトを破棄し、その資金を指定されたアドレスに送る
 
 .. - ``<address>.balance`` (``uint256``): balance of the :ref:`address` in Wei
 
@@ -248,7 +248,7 @@ Global Variables
 
 .. - ``type(C).name`` (``string``): the name of the contract
 
-- ``type(C).name`` （ ``string`` ）：契約書の名称
+- ``type(C).name`` （ ``string`` ）： コントラクトの名称
 
 .. - ``type(C).creationCode`` (``bytes memory``): creation bytecode of the given contract, see :ref:`Type Information<meta-type>`.
 
@@ -347,7 +347,7 @@ Function Visibility Specifiers
 
 .. - ``private``: only visible in the current contract
 
-- ``private`` ：現在の契約でのみ表示されます
+- ``private`` ：現在のコントラクトでのみ表示されます
 
 .. - ``external``: only visible externally (only for functions)
 
@@ -397,7 +397,7 @@ Modifiers
 .. - ``virtual`` for functions and modifiers: Allows the function's or modifier's
 ..   behaviour to be changed in derived contracts.
 
-- 関数やモディファイアの ``virtual`` です。関数や修飾子の動作を派生契約で変更できるようにする。
+- 関数やモディファイアの ``virtual`` です。関数や修飾子の動作を派生コントラクトで変更できるようにする。
 
 .. - ``override``: States that this function, modifier or public state variable changes
 ..   the behaviour of a function or modifier in a base contract.

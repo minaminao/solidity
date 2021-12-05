@@ -142,7 +142,7 @@ Library Linking
 
     生成されたバイトコード上でライブラリを手動でリンクすることは、コントラクトのメタデータが更新されないため、推奨されません。メタデータにはコンパイル時に指定されたライブラリのリストが含まれており、バイトコードにはメタデータのハッシュが含まれているため、リンクを実行するタイミングによって異なるバイナリが得られることになります。
 
-    契約書のコンパイル時にライブラリをリンクするようにコンパイラに依頼するには、 ``solc`` の ``--libraries`` オプションを使用するか、コンパイラへの標準JSONインターフェースを使用する場合は ``libraries`` キーを使用する必要があります。
+     コントラクトのコンパイル時にライブラリをリンクするようにコンパイラに依頼するには、 ``solc`` の ``--libraries`` オプションを使用するか、コンパイラへの標準JSONインターフェースを使用する場合は ``libraries`` キーを使用する必要があります。
 
 .. .. note::
 
@@ -820,7 +820,7 @@ solidity-upgrade
 
 .. note::
 
-    ``solidity-upgrade`` は作業の大部分を行いますが、契約書はさらに手動で調整する必要がある場合がほとんどです。ファイルにはバージョン管理システムを使用することをお勧めします。これにより、変更内容を確認し、最終的にはロールバックすることができます。
+    ``solidity-upgrade`` は作業の大部分を行いますが、 コントラクトはさらに手動で調整する必要がある場合がほとんどです。ファイルにはバージョン管理システムを使用することをお勧めします。これにより、変更内容を確認し、最終的にはロールバックすることができます。
 
 .. .. warning::
 
@@ -958,7 +958,7 @@ Example
 
 .. Assume that you have the following contract in ``Source.sol``:
 
-``Source.sol`` で次のような契約をしているとします。
+``Source.sol`` で次のようなコントラクトをしているとします。
 
 .. code-block:: Solidity
 
@@ -999,7 +999,7 @@ Required Changes
 .. ``constructor-visibility``, ``now`` and ``dotsyntax``. Please read the documentation on
 .. :ref:`available modules <upgrade-modules>` for further details.
 
-上記の契約は、0.7.0からコンパイルできなくなります。契約書を現在のSolidityのバージョンに合わせるためには、以下のアップグレードモジュールを実行する必要があります。 ``constructor-visibility`` 、 ``now`` 、 ``dotsyntax`` です。詳しくは、 :ref:`available modules <upgrade-modules>` のドキュメントをご覧ください。
+上記のコントラクトは、0.7.0からコンパイルできなくなります。 コントラクトを現在のSolidityのバージョンに合わせるためには、以下のアップグレードモジュールを実行する必要があります。 ``constructor-visibility`` 、 ``now`` 、 ``dotsyntax`` です。詳しくは、 :ref:`available modules <upgrade-modules>` のドキュメントをご覧ください。
 
 Running the Upgrade
 ^^^^^^^^^^^^^^^^^^^

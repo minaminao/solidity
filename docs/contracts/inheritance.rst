@@ -410,7 +410,7 @@ Modifier Overriding
 .. In case of multiple inheritance, all direct base contracts must be specified
 .. explicitly:
 
-多重継承の場合は、すべての直接のベース契約を明示的に指定する必要があります。
+多重継承の場合は、すべての直接のベースコントラクトを明示的に指定する必要があります。
 
 .. code-block:: solidity
 
@@ -510,7 +510,7 @@ Arguments for Base Constructors
 .. linearization rules explained below. If the base constructors have arguments,
 .. derived contracts need to specify all of them. This can be done in two ways:
 
-すべての基本契約のコンストラクタは、以下に説明する線形化規則に従って呼び出されます。基本契約のコンストラクタに引数がある場合、派生契約はそのすべてを指定する必要があります。これは2つの方法で行うことができます。
+すべての基本コントラクトのコンストラクタは、以下に説明する線形化規則に従って呼び出されます。基本コントラクトのコンストラクタに引数がある場合、派生コントラクトはそのすべてを指定する必要があります。これは2つの方法で行うことができます。
 
 .. code-block:: solidity
 
@@ -548,7 +548,7 @@ Arguments for Base Constructors
 .. If a derived contract does not specify the arguments to all of its base
 .. contracts' constructors, it will be abstract.
 
-派生契約がそのベース契約のコンストラクタのすべてに引数を指定していない場合、それは抽象的なものとなります。
+派生コントラクトがそのベースコントラクトのコンストラクタのすべてに引数を指定していない場合、それは抽象的なものとなります。
 
 .. index:: ! inheritance;multiple, ! linearization, ! C3 linearization
 

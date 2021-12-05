@@ -189,7 +189,7 @@ Sending and Receiving Ether
 ..   into the sending contract or other state changes you might not have thought of.
 ..   So it allows for great flexibility for honest users but also for malicious actors.
 
-- ``addr.call{value: x}("")`` を使用して、より多くのガスを受信契約に転送する方法があります。これは基本的に ``addr.transfer(x)`` と同じですが、残りのガスをすべて転送し、受信側がより高価なアクションを実行できるようにします（また、自動的にエラーを伝播するのではなく、失敗コードを返します）。これには、送信側の契約にコールバックすることや、あなたが考えもしなかったような他の状態変化が含まれるかもしれません。   そのため、誠実なユーザーだけでなく、悪意のあるアクターにも大きな柔軟性を与えることができます。
+- ``addr.call{value: x}("")`` を使用して、より多くのガスを受信コントラクトに転送する方法があります。これは基本的に ``addr.transfer(x)`` と同じですが、残りのガスをすべて転送し、受信側がより高価なアクションを実行できるようにします（また、自動的にエラーを伝播するのではなく、失敗コードを返します）。これには、送信側のコントラクトにコールバックすることや、あなたが考えもしなかったような他の状態変化が含まれるかもしれません。   そのため、誠実なユーザーだけでなく、悪意のあるアクターにも大きな柔軟性を与えることができます。
 
 .. - Use the most precise units to represent the wei amount as possible, as you lose
 ..   any that is rounded due to a lack of precision.
@@ -227,7 +227,7 @@ Sending and Receiving Ether
 
   3.呼び出し側は呼び出しの深さを完全にコントロールしているため、強制的に転送を失敗させることができます。この可能性を考慮して ``send`` を使用するか、その戻り値を常に確認するようにしてください。さらに言えば、受取人が代わりにEtherを引き出せるようなパターンでコントラクトを書いてください。
 
-  4.Etherの送信は、受信者の契約の実行に割り当てられた量以上のガスが必要となるため（ :ref:`require <assert-and-require>` 、 :ref:`assert <assert-and-require>` 、 :ref:`revert <assert-and-require>` を使用して明示的に、または操作が高すぎるため）、「ガス切れ」（OOG）となって失敗することもあります。   ``transfer`` または ``send`` を戻り値のチェックとともに使用すると、受信者が送信側の契約の進行をブロックする手段となる可能性があります。ここでも、 :ref:`"withdraw"      pattern instead of a "send" pattern <withdrawal_pattern>` を使用するのがベストです。
+  4.Etherの送信は、受信者のコントラクトの実行に割り当てられた量以上のガスが必要となるため（ :ref:`require <assert-and-require>` 、 :ref:`assert <assert-and-require>` 、 :ref:`revert <assert-and-require>` を使用して明示的に、または操作が高すぎるため）、「ガス切れ」（OOG）となって失敗することもあります。   ``transfer`` または ``send`` を戻り値のチェックとともに使用すると、受信者が送信側のコントラクトの進行をブロックする手段となる可能性があります。ここでも、 :ref:`"withdraw"      pattern instead of a "send" pattern <withdrawal_pattern>` を使用するのがベストです。
 
 Call Stack Depth
 ================
@@ -285,7 +285,7 @@ tx.origin
 
 .. Never use tx.origin for authorization. Let's say you have a wallet contract like this:
 
-認証に tx.origin を使用しないでください。以下のようなウォレット契約があるとします。
+認証に tx.origin を使用しないでください。以下のようなウォレットコントラクトがあるとします。
 
 .. code-block:: solidity
 
@@ -553,7 +553,7 @@ Include a Fail-Safe Mode
 .. control to a fixed and trusted third party or just converts the contract into
 .. a simple "give me back my money" contract.
 
-セルフチェックに失敗すると、契約は自動的にある種の「フェイルセーフ」モードに切り替わります。例えば、ほとんどの機能を無効にしたり、固定された信頼できる第三者にコントロールを委ねたり、あるいは単に「お金を返してください」という契約に変更したりします。
+セルフチェックに失敗すると、コントラクトは自動的にある種の「フェイルセーフ」モードに切り替わります。例えば、ほとんどの機能を無効にしたり、固定された信頼できる第三者にコントロールを委ねたり、あるいは単に「お金を返してください」というコントラクトに変更したりします。
 
 Ask for Peer Review
 ===================

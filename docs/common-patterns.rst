@@ -24,12 +24,12 @@ Withdrawal from Contracts
 .. contract in order to become the "richest", inspired by
 .. `King of the Ether <https://www.kingoftheether.com/>`_.
 
-`King of the Ether <https://www.kingoftheether.com/>`_ をヒントに、「一番のお金持ち」になるために一番多くのお金を送ることを目的とした契約において、実際に行われている出金パターンの例を以下に示します。
+`King of the Ether <https://www.kingoftheether.com/>`_ をヒントに、「一番のお金持ち」になるために一番多くのお金を送ることを目的としたコントラクトにおいて、実際に行われている出金パターンの例を以下に示します。
 
 .. In the following contract, if you are no longer the richest,
 .. you receive the funds of the person who is now the richest.
 
-次の契約では、自分が一番お金持ちでなくなった場合、今一番お金持ちになった人の資金を受け取ります。
+次のコントラクトでは、自分が一番お金持ちでなくなった場合、今一番お金持ちになった人の資金を受け取ります。
 
 .. code-block:: solidity
 
@@ -277,7 +277,7 @@ State Machine
 .. transitions to "revealing bids" which is ended by
 .. "determine auction outcome".
 
-例えば、ブラインドオークションの契約では、「ブラインド入札を受け付ける」という段階から始まり、「入札を公開する」に移行し、「オークションの結果を決定する」で終了します。
+例えば、ブラインドオークションのコントラクトでは、「ブラインド入札を受け付ける」という段階から始まり、「入札を公開する」に移行し、「オークションの結果を決定する」で終了します。
 
 .. index:: function;modifier
 

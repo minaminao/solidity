@@ -41,7 +41,7 @@ AliceとBobは署名を使って取引を承認しますが、これはEthereum�
 ..     4. Bob claims his payment by presenting the signed message to the smart contract, it verifies the
 ..        authenticity of the message and then releases the funds.
 
-契約内容は以下のようになっています。
+コントラクト内容は以下のようになっています。
 
     1.アリスは ``ReceiverPays`` コントラクトを展開し、行われるであろう支払いをカバーするのに十分なEtherを取り付けます。
 
@@ -91,7 +91,7 @@ What to Sign
 
 ..     3. Protection against replay attacks.
 
-支払いを履行する契約の場合、署名されたメッセージには以下が含まれていなければなりません。
+支払いを履行するコントラクトの場合、署名されたメッセージには以下が含まれていなければなりません。
 
     1.受信者の住所です。
 
@@ -422,7 +422,7 @@ Channel Expiration
 .. at the time of contract deployment. Once that time is reached, Alice can call
 .. ``claimTimeout`` to recover her funds. You can see the ``claimTimeout`` function in the full contract.
 
-ボブはいつでも支払いチャネルを閉じることができますが、それができなかった場合、アリスはエスクローされた資金を回収する方法が必要です。契約の展開時に*有効期限*が設定されました。その時間に達すると、アリスは ``claimTimeout`` を呼び出して資金を回収することができます。 ``claimTimeout`` 機能は契約書全文で見ることができます。
+ボブはいつでも支払いチャネルを閉じることができますが、それができなかった場合、アリスはエスクローされた資金を回収する方法が必要です。コントラクトの展開時に*有効期限*が設定されました。その時間に達すると、アリスは ``claimTimeout`` を呼び出して資金を回収することができます。 ``claimTimeout`` 機能は コントラクト全文で見ることができます。
 
 .. After this function is called, Bob can no longer receive any Ether,
 .. so it is important that Bob closes the channel before the expiration is reached.

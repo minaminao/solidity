@@ -16,7 +16,7 @@ Voting
 .. is **automatic and completely transparent** at the
 .. same time.
 
-次のコントラクトは非常に複雑ですが、Solidityの機能の多くを紹介しています。これは、投票契約を実装しています。もちろん、電子投票の主な問題点は、いかにして正しい人に投票権を割り当てるか、いかにして操作を防ぐかです。ここですべての問題を解決するわけではありませんが、少なくとも、委任投票がどのように行われるかを示し、開票作業が同時に **automatic and completely transparent** で行われるようにします。
+次のコントラクトは非常に複雑ですが、Solidityの機能の多くを紹介しています。これは、投票コントラクトを実装しています。もちろん、電子投票の主な問題点は、いかにして正しい人に投票権を割り当てるか、いかにして操作を防ぐかです。ここですべての問題を解決するわけではありませんが、少なくとも、委任投票がどのように行われるかを示し、開票作業が同時に **automatic and completely transparent** で行われるようにします。
 
 .. The idea is to create one contract per ballot,
 .. providing a short name for each option.
@@ -24,7 +24,7 @@ Voting
 .. chairperson will give the right to vote to each
 .. address individually.
 
-アイデアとしては、1つの投票用紙に1つの契約書を作成し、それぞれの選択肢に短い名前をつけます。そして、議長を務める契約書の作成者が、各アドレスに個別に投票権を与えます。
+アイデアとしては、1つの投票用紙に1つの コントラクトを作成し、それぞれの選択肢に短い名前をつけます。そして、議長を務める コントラクトの作成者が、各アドレスに個別に投票権を与えます。
 
 .. The persons behind the addresses can then choose
 .. to either vote themselves or to delegate their

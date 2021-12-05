@@ -23,13 +23,13 @@ List of Known Bugs
 .. Contract source verification tools and also other tools interacting with
 .. contracts should consult this list according to the following criteria:
 
-契約ソース検証ツール、および契約と相互作用するその他のツールは、以下の基準に従ってこのリストを参照する必要があります。
+コントラクトソース検証ツール、およびコントラクトと相互作用するその他のツールは、以下の基準に従ってこのリストを参照する必要があります。
 
 .. - It is mildly suspicious if a contract was compiled with a nightly
 ..   compiler version instead of a released version. This list does not keep
 ..   track of unreleased or nightly versions.
 
-- 契約書がリリースされたバージョンではなく、ナイトリーコンパイラのバージョンでコンパイルされた場合は、軽く疑わしいです。このリストでは、リリースされていないバージョンやnightlyバージョンの記録は取っていません。
+- コントラクトがリリースされたバージョンではなく、ナイトリーコンパイラのバージョンでコンパイルされた場合は、軽く疑わしいです。このリストでは、リリースされていないバージョンやnightlyバージョンの記録は取っていません。
 
 .. - It is also mildly suspicious if a contract was compiled with a version that was
 ..   not the most recent at the time the contract was created. For contracts
@@ -42,7 +42,7 @@ List of Known Bugs
 ..   contains a known bug and the contract was created at a time where a newer
 ..   compiler version containing a fix was already released.
 
-- 既知のバグを含むコンパイラを使用して契約書を作成し、修正プログラムを含む新しいバージョンのコンパイラがすでにリリースされている時期に契約書が作成された場合、非常に疑わしいです。
+- 既知のバグを含むコンパイラを使用してコントラクトを作成し、修正プログラムを含む新しいバージョンのコンパイラがすでにリリースされている時期にコントラクトが作成された場合、非常に疑わしいです。
 
 .. The JSON file of known bugs below is an array of objects, one for each bug,
 .. with the following keys:

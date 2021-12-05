@@ -120,7 +120,7 @@ solidity sourceのトップレベル宣言を2行の空行で囲む。
 
 .. Blank lines may be omitted between groups of related one-liners (such as stub functions for an abstract contract)
 
-関連するワンライナーのグループの間では、空白行を省略することができます（抽象的な契約のスタブ関数など）。
+関連するワンライナーのグループの間では、空白行を省略することができます（抽象的なコントラクトのスタブ関数など）。
 
 .. Yes:
 
@@ -1303,7 +1303,7 @@ Order of Layout
 
 .. 5. Contracts
 
-5.契約内容
+5.コントラクト内容
 
 .. Inside each contract, library or interface, use the following order:
 
@@ -1429,7 +1429,7 @@ Contract and Library Names
 
 .. * Contracts and libraries should be named using the CapWords style. Examples: ``SimpleToken``, ``SmartBank``, ``CertificateHashRepository``, ``Player``, ``Congress``, ``Owned``.
 
-* 契約書やライブラリの名前は、CapWordsスタイルを使用してください。例aa, ab, ac, ad, ae, af.
+*  コントラクトやライブラリの名前は、CapWordsスタイルを使用してください。例aa, ab, ac, ad, ae, af.
 
 .. * Contract and library names should also match their filenames.
 
@@ -1616,7 +1616,7 @@ Solidityのコントラクトには、NatSpecコメントを含めることが�
 .. For example, the contract from :ref:`a simple smart contract <simple-smart-contract>` with the comments
 .. added looks like the one below:
 
-例えば、 :ref:`a simple smart contract <simple-smart-contract>` の契約書にコメントを加えたものは、以下のようになります。
+例えば、 :ref:`a simple smart contract <simple-smart-contract>` の コントラクトにコメントを加えたものは、以下のようになります。
 
 .. code-block:: solidity
 

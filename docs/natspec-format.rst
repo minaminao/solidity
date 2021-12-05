@@ -222,7 +222,7 @@ NatSpecを持たない関数は、そのベースとなる関数のドキュメ�
 
 .. * When there is an explicit ``@inheritdoc`` tag which specifies which contract should be used to inherit.
 
-* どの契約を継承するかを指定する明示的な ``@inheritdoc`` タグがある場合。
+* どのコントラクトを継承するかを指定する明示的な ``@inheritdoc`` タグがある場合。
 
 .. _header-output:
 

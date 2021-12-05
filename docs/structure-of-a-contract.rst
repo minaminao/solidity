@@ -15,7 +15,7 @@ Solidityのコントラクトは、オブジェクト指向言語のクラスに
 
 .. There are also special kinds of contracts called :ref:`libraries<libraries>` and :ref:`interfaces<interfaces>`.
 
-また、 :ref:`libraries<libraries>` や :ref:`interfaces<interfaces>` と呼ばれる特別な種類の契約もあります。
+また、 :ref:`libraries<libraries>` や :ref:`interfaces<interfaces>` と呼ばれる特別な種類のコントラクトもあります。
 
 .. The section about :ref:`contracts<contracts>` contains more details than this section,
 .. which serves to provide a quick overview.
@@ -80,7 +80,7 @@ Functions
 .. towards other contracts. :ref:`Functions<functions>` accept :ref:`parameters and return variables<function-parameters-return-variables>` to pass parameters
 .. and values between them.
 
-:ref:`function-calls` は内部または外部で起こり、他の契約に対する :ref:`visibility<visibility-and-getters>` のレベルが異なる。 :ref:`Functions<functions>` は、それらの間でパラメータと値を渡すために :ref:`parameters and return variables<function-parameters-return-variables>` を受け入れる。
+:ref:`function-calls` は内部または外部で起こり、他のコントラクトに対する :ref:`visibility<visibility-and-getters>` のレベルが異なる。 :ref:`Functions<functions>` は、それらの間でパラメータと値を渡すために :ref:`parameters and return variables<function-parameters-return-variables>` を受け入れる。
 
 .. _structure-function-modifiers:
 
@@ -186,7 +186,7 @@ Errors
 
 .. See :ref:`errors` in the contracts section for more information.
 
-詳しくは、契約編の :ref:`errors` をご覧ください。
+詳しくは、コントラクト編の :ref:`errors` をご覧ください。
 
 .. _structure-struct-types:
 

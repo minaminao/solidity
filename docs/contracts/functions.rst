@@ -454,7 +454,7 @@ Receive Ether Function
 
 .. - Creating a contract
 
-- 契約書の作成
+-  コントラクトの作成
 
 .. - Calling an external function which consumes a large amount of gas
 
@@ -501,7 +501,7 @@ Receive Ether Function
 
 .. Below you can see an example of a Sink contract that uses function ``receive``.
 
-下の図は、ファンクション ``receive`` を使用したSink契約の例です。
+下の図は、ファンクション ``receive`` を使用したSinkコントラクトの例です。
 
 .. code-block:: solidity
 
