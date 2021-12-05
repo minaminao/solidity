@@ -1088,7 +1088,7 @@ Contract Balance
 .. To model this properly, the SMTChecker assumes that at every new transaction
 .. the contract's balance may grow by at least ``msg.value``.
 
-これを適切にモデル化するために、SMTCheckerは、新しい取引のたびに コントラクトの残高が少なくとも ``msg.value`` だけ増える可能性があると仮定しています。
+これを適切にモデル化するために、SMTCheckerは、新しいトランザクションのたびに コントラクトの残高が少なくとも ``msg.value`` だけ増える可能性があると仮定しています。
 
 **********************
 Real World Assumptions

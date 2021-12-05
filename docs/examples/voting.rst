@@ -198,4 +198,4 @@ Possible Improvements
 .. to vote to all participants. Can you think of a better way?
 .. 
 
-現在、すべての参加者に投票権を割り当てるためには、多くの取引が必要です。何か良い方法はありませんか？
+現在、すべての参加者に投票権を割り当てるためには、多くのトランザクションが必要です。何か良い方法はありませんか？

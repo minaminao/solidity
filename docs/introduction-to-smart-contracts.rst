@@ -229,7 +229,7 @@ Subcurrency Example
 .. arguments ``from``, ``to`` and ``amount``, which makes it possible to track
 .. transactions.
 
-``event Sent(address from, address to, uint amount);`` という行は、 :ref:`"event" <events>` を宣言しており、このイベントは関数 ``send`` の最終行で発せられます。ウェブアプリケーションなどのEthereumクライアントは、ブロックチェーン上で発せられるこれらのイベントを、それほどコストをかけずにリッスンすることができます。イベントが発せられると同時に、リスナーは引数の ``from``, ``to``, ``amount`` を受け取るため、取引の追跡が可能になります。
+``event Sent(address from, address to, uint amount);`` という行は、 :ref:`"event" <events>` を宣言しており、このイベントは関数 ``send`` の最終行で発せられます。ウェブアプリケーションなどのEthereumクライアントは、ブロックチェーン上で発せられるこれらのイベントを、それほどコストをかけずにリッスンすることができます。イベントが発せられると同時に、リスナーは引数の ``from``, ``to``, ``amount`` を受け取るため、トランザクションの追跡が可能になります。
 
 .. To listen for this event, you could use the following
 .. JavaScript code, which uses `web3.js <https://github.com/ethereum/web3.js/>`_ to create the ``Coin`` contract object,
@@ -315,7 +315,7 @@ revert 文は ``require`` 関数と同様にすべての変更を無条件に中
     .. but you have to inspect the coin contract address and not the addresses of the
     .. coin owners.
 
-    このコントラクトを使ってあるアドレスにコインを送っても、ブロックチェーン・エクスプローラーでそのアドレスを見ても何もわかりません。なぜなら、コインを送ったという記録と変更された残高は、この特定のコインコントラクトのデータストレージにのみ保存されているからです。イベントを使えば、新しいコインの取引や残高を追跡する「ブロックチェーンエクスプローラー」を作ることができますが、コインの所有者のアドレスではなく、コインコントラクトのアドレスを検査する必要があります。
+    このコントラクトを使ってあるアドレスにコインを送っても、ブロックチェーン・エクスプローラーでそのアドレスを見ても何もわかりません。なぜなら、コインを送ったという記録と変更された残高は、この特定のコインコントラクトのデータストレージにのみ保存されているからです。イベントを使えば、新しいコインのトランザクションや残高を追跡する「ブロックチェーンエクスプローラー」を作ることができますが、コインの所有者のアドレスではなく、コインコントラクトのアドレスを検査する必要があります。
 
 .. _blockchain-basics:
 
@@ -348,7 +348,7 @@ Transactions
 .. two values at the same time) is either not done at all or completely applied. Furthermore,
 .. while your transaction is being applied to the database, no other transaction can alter it.
 
-ブロックチェーンとは、グローバルに共有された取引用のデータベースです。つまり、ネットワークに参加するだけで、誰もがデータベースのエントリーを読むことができるのです。データベース内の何かを変更したい場合は、いわゆるトランザクションを作成し、他のすべての人に受け入れられなければなりません。トランザクションという言葉は、あなたが行いたい変更（2つの値を同時に変更したいと仮定）が、まったく行われないか、完全に適用されるかのどちらかであることを意味しています。さらに、あなたのトランザクションがデータベースに適用されている間は、他のトランザクションはそれを変更することができません。
+ブロックチェーンとは、グローバルに共有されたトランザクション用のデータベースです。つまり、ネットワークに参加するだけで、誰もがデータベースのエントリーを読むことができるのです。データベース内の何かを変更したい場合は、いわゆるトランザクションを作成し、他のすべての人に受け入れられなければなりません。トランザクションという言葉は、あなたが行いたい変更（2つの値を同時に変更したいと仮定）が、まったく行われないか、完全に適用されるかのどちらかであることを意味しています。さらに、あなたのトランザクションがデータベースに適用されている間は、他のトランザクションはそれを変更することができません。
 
 .. As an example, imagine a table that lists the balances of all accounts in an
 .. electronic currency. If a transfer from one account to another is requested,
@@ -384,7 +384,7 @@ Blocks
 .. If two transactions contradict each other, the one that ends up being second will
 .. be rejected and not become part of the block.
 
-これに対する抽象的な答えは、「気にする必要はない」というものです。世界的に認められた取引の順序が選択され、対立を解決してくれます。トランザクションは「ブロック」と呼ばれるものにまとめられ、実行されて参加しているすべてのノードに分配されることになります。2つのトランザクションが互いに矛盾する場合、2番目になった方が拒否され、ブロックの一部にはなりません。
+これに対する抽象的な答えは、「気にする必要はない」というものです。世界的に認められたトランザクションの順序が選択され、対立を解決してくれます。トランザクションは「ブロック」と呼ばれるものにまとめられ、実行されて参加しているすべてのノードに分配されることになります。2つのトランザクションが互いに矛盾する場合、2番目になった方が拒否され、ブロックの一部にはなりません。
 
 .. These blocks form a linear sequence in time and that is where the word "blockchain"
 .. derives from. Blocks are added to the chain in rather regular intervals - for
@@ -398,7 +398,7 @@ Blocks
 .. are reverted and even removed from the blockchain, but the longer you wait, the less
 .. likely it will be.
 
-「オーダー・セレクション・メカニズム」（これを「マイニング」と呼びます）の一環として、ブロックが時々戻されることがありますが、それはチェーンの「先端」に限ったことです。特定のブロックの上にブロックが追加されればされるほど、そのブロックが元に戻される可能性は低くなります。つまり、あなたの取引が元に戻され、さらにはブロックチェーンから削除されることもあるかもしれませんが、待てば待つほど、その可能性は低くなります。
+「オーダー・セレクション・メカニズム」（これを「マイニング」と呼びます）の一環として、ブロックが時々戻されることがありますが、それはチェーンの「先端」に限ったことです。特定のブロックの上にブロックが追加されればされるほど、そのブロックが元に戻される可能性は低くなります。つまり、あなたのトランザクションが元に戻され、さらにはブロックチェーンから削除されることもあるかもしれませんが、待てば待つほど、その可能性は低くなります。
 
 .. note::
     .. Transactions are not guaranteed to be included in the next block or any specific future block,
@@ -466,7 +466,7 @@ Ethereumには、同じアドレス空間を共有する2種類のアカウン�
 .. Ether (in "Wei" to be exact, ``1 ether`` is ``10**18 wei``) which can be modified by sending transactions that
 .. include Ether.
 
-さらに、すべてのアカウントはEther（正確には「Wei」で、 ``1 ether`` は ``10**18 wei`` ）で **残高** を持っており、Etherを含む取引を送信することで変更することができます。
+さらに、すべてのアカウントはEther（正確には「Wei」で、 ``1 ether`` は ``10**18 wei`` ）で **残高** を持っており、Etherを含むトランザクションを送信することで変更することができます。
 
 .. index:: ! transaction
 
@@ -497,7 +497,7 @@ Transactions
 .. send the actual code of the contract, but in fact code that
 .. returns that code when executed.
 
-対象となる口座が設定されていない（取引に受取人がいない、または受取人が「null」に設定されている）場合、その取引は **新しいコントラクト** を作成します。すでに述べたように、そのコントラクトのアドレスはゼロのアドレスではなく、送信者とその送信したトランザクション数から得られるアドレス（「nonce」）です。このようなコントラクト作成トランザクションのペイロードは、EVMバイトコードとみなされ、実行される。この実行の出力データは、コントラクトのコードとして永続的に保存されます。つまり、コントラクトを作成するためには、コントラクトの実際のコードを送信するのではなく、実際には、実行されるとそのコードを返すコードを送信することになります。
+対象となる口座が設定されていない（トランザクションに受取人がいない、または受取人が「null」に設定されている）場合、そのトランザクションは **新しいコントラクト** を作成します。すでに述べたように、そのコントラクトのアドレスはゼロのアドレスではなく、送信者とその送信したトランザクション数から得られるアドレス（「nonce」）です。このようなコントラクト作成トランザクションのペイロードは、EVMバイトコードとみなされ、実行される。この実行の出力データは、コントラクトのコードとして永続的に保存されます。つまり、コントラクトを作成するためには、コントラクトの実際のコードを送信するのではなく、実際には、実行されるとそのコードを返すコードを送信することになります。
 
 .. note::
   .. While a contract is being created, its code is still empty.
@@ -524,7 +524,7 @@ Gas
 . .has to pay ``gas_price * gas`` up front from the sending account.
 . .If some gas is left after the execution, it is refunded to the creator in the same way.
 
-**gas price** は、取引の作成者が設定する値で、作成者は送信側の口座から ``gas_price * gas`` を前払いする必要があります。実行後にガスが残っていた場合は、同様の方法で作成者に返金されます。
+**gas price** は、トランザクションの作成者が設定する値で、作成者は送信側の口座から ``gas_price * gas`` を前払いする必要があります。実行後にガスが残っていた場合は、同様の方法で作成者に返金されます。
 
 .. If the gas is used up at any point (i.e. it would be negative),
 .. an out-of-gas exception is triggered, which reverts all modifications

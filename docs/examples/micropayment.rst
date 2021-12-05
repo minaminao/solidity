@@ -8,7 +8,7 @@ Micropayment Channel
 .. without transaction fees. For the example, we need to understand how to
 .. sign and verify signatures, and setup the payment channel.
 
-このセクションでは、ペイメントチャネルの実装例を構築する方法を学びます。これは、暗号化された署名を使用して、同一の当事者間で繰り返されるEtherの送金を、安全かつ瞬時に、取引手数料なしで行うものです。この例では、署名と検証の方法を理解し、ペイメントチャネルを設定する必要があります。
+このセクションでは、ペイメントチャネルの実装例を構築する方法を学びます。これは、暗号化された署名を使用して、同一の当事者間で繰り返されるEtherの送金を、安全かつ瞬時に、トランザクション手数料なしで行うものです。この例では、署名と検証の方法を理解し、ペイメントチャネルを設定する必要があります。
 
 Creating and verifying signatures
 =================================
@@ -27,7 +27,7 @@ Creating and verifying signatures
 .. Alice will build a simple smart contract that lets her transmit Ether, but instead of calling a function herself
 .. to initiate a payment, she will let Bob do that, and therefore pay the transaction fee.
 
-AliceとBobは署名を使って取引を承認しますが、これはEthereumのスマートコントラクトで可能です。AliceはEtherを送信できるシンプルなスマートコントラクトを構築しますが、支払いを開始するために自分で関数を呼び出すのではなく、Bobにそれをさせ、その結果、取引手数料を支払うことになります。
+AliceとBobは署名を使ってトランザクションを承認しますが、これはEthereumのスマートコントラクトで可能です。AliceはEtherを送信できるシンプルなスマートコントラクトを構築しますが、支払いを開始するために自分で関数を呼び出すのではなく、Bobにそれをさせ、その結果、トランザクション手数料を支払うことになります。
 
 .. The contract will work as follows:
 
@@ -264,7 +264,7 @@ Writing a Simple Payment Channel
 .. channel. Payment channels use cryptographic signatures to make
 .. repeated transfers of Ether securely, instantaneously, and without transaction fees.
 
-アリスは今、シンプルだが完全なペイメントチャネルの実装を構築しています。ペイメントチャネルは、暗号化された署名を使用して、安全に、瞬時に、取引手数料なしで、Etherの反復転送を行います。
+アリスは今、シンプルだが完全なペイメントチャネルの実装を構築しています。ペイメントチャネルは、暗号化された署名を使用して、安全に、瞬時に、トランザクション手数料なしで、Etherの反復転送を行います。
 
 What is a Payment Channel?
 --------------------------
@@ -280,7 +280,7 @@ What is a Payment Channel?
 
 ..     3. Bob "closes" the payment channel, withdrawing his portion of the Ether and sending the remainder back to the sender.
 
-ペイメントチャンネルでは、参加者は取引を使わずにEtherの送金を繰り返し行うことができます。つまり、取引に伴う遅延や手数料を回避することができます。ここでは、2人の当事者（AliceとBob）の間の単純な一方向性の支払いチャネルを調べてみます。それには3つのステップがあります。
+ペイメントチャンネルでは、参加者はトランザクションを使わずにEtherの送金を繰り返し行うことができます。つまり、トランザクションに伴う遅延や手数料を回避することができます。ここでは、2人の当事者（AliceとBob）の間の単純な一方向性の支払いチャネルを調べてみます。それには3つのステップがあります。
 
     1.アリスはスマートコントラクトにEtherで資金を供給します。これにより、支払いチャネルを「オープン」します。
 
@@ -309,7 +309,7 @@ What is a Payment Channel?
 .. recurring payment, such as paying an employee an hourly wage, the payment channel
 .. may be kept open for several months or years.
 
-スマートコントラクトはEtherをエスクローし、有効な署名付きメッセージを尊重するので、Bobは資金を受け取ることが保証されています。また、スマートコントラクトはタイムアウトを強制しているため、受信者がチャネルを閉じることを拒否した場合でも、アリスは最終的に資金を回収できることが保証されています。支払いチャネルの参加者は、そのチャネルをどのくらいの期間開いておくかを決めることができます。例えば、インターネットカフェにネットワーク接続料を支払うような短時間の取引の場合、決済チャネルは限られた時間しか開いていないかもしれません。一方、従業員に時給を支払うような定期的な支払いの場合は、数ヶ月または数年にわたって決済チャネルを開いておくことができます。
+スマートコントラクトはEtherをエスクローし、有効な署名付きメッセージを尊重するので、Bobは資金を受け取ることが保証されています。また、スマートコントラクトはタイムアウトを強制しているため、受信者がチャネルを閉じることを拒否した場合でも、アリスは最終的に資金を回収できることが保証されています。支払いチャネルの参加者は、そのチャネルをどのくらいの期間開いておくかを決めることができます。例えば、インターネットカフェにネットワーク接続料を支払うような短時間のトランザクションの場合、決済チャネルは限られた時間しか開いていないかもしれません。一方、従業員に時給を支払うような定期的な支払いの場合は、数ヶ月または数年にわたって決済チャネルを開いておくことができます。
 
 Opening the Payment Channel
 ---------------------------

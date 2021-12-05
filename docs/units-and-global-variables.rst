@@ -160,7 +160,7 @@ Block and Transaction Properties
 
 .. - ``tx.gasprice`` (``uint``): gas price of the transaction
 
--  ``tx.gasprice`` （ ``uint`` ）：取引のガス価格
+-  ``tx.gasprice`` （ ``uint`` ）：トランザクションのガス価格
 
 .. - ``tx.origin`` (``address``): sender of the transaction (full call chain)
 
@@ -569,7 +569,7 @@ Contract Related
 
     - 受信側コントラクトの受信機能が実行されない。
 
-    - コントラクトが実際に破壊されるのは取引終了時であり、 ``revert``  sはその破壊を「元に戻す」かもしれません。
+    - コントラクトが実際に破壊されるのはトランザクション終了時であり、 ``revert``  sはその破壊を「元に戻す」かもしれません。
 
 .. Furthermore, all functions of the current contract are callable directly including the current function.
 
