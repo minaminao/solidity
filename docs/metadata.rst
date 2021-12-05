@@ -12,7 +12,7 @@ Contract Metadata
 .. documentation to more safely interact with the contract and verify its source
 .. code.
 
-Solidity コンパイラは、コンパイルされたコントラクトに関する情報を含む JSON ファイル（コントラクト メタデータ）を自動的に生成します。このファイルを使用して、コンパイラのバージョン、使用されたソース、ABI、NatSpecドキュメントを照会し、コントラクトをより安全に操作し、そのソースコードを検証することができます。
+Solidity コンパイラは、コンパイルされたコントラクトに関する情報を含む JSON ファイル（コントラクト メタデータ）を自動的に生成します。このファイルを使用して、コンパイラのバージョン、使用されたソース、ABI、NatSpecドキュメントを照会し、コントラクトをより安全に操作し、そのソースコードを検証できます。
 
 .. The compiler appends by default the IPFS hash of the metadata file to the end
 .. of the bytecode (for details, see below) of each contract, so that you can
@@ -21,7 +21,7 @@ Solidity コンパイラは、コンパイルされたコントラクトに関�
 .. not appending the metadata hash to the bytecode.  These can be configured via
 .. the :ref:`Standard JSON Interface<compiler-api>`.
 
-コンパイラはデフォルトで、メタデータ・ファイルのIPFSハッシュを各コントラクトのバイトコードの最後に付加します（詳細は以下を参照）。これにより、中央のデータ・プロバイダに頼ることなく、認証された方法でファイルを取得することができます。その他の利用可能なオプションは、Swarmハッシュと、バイトコードにメタデータ・ハッシュを付加しないことです。  これらは :ref:`Standard JSON Interface<compiler-api>` で設定できます。
+コンパイラはデフォルトで、メタデータ・ファイルのIPFSハッシュを各コントラクトのバイトコードの最後に付加します（詳細は以下を参照）。これにより、中央のデータ・プロバイダに頼ることなく、認証された方法でファイルを取得できます。その他の利用可能なオプションは、Swarmハッシュと、バイトコードにメタデータ・ハッシュを付加しないことです。  これらは :ref:`Standard JSON Interface<compiler-api>` で設定できます。
 
 .. You have to publish the metadata file to IPFS, Swarm, or another service so
 .. that others can access it. You create the file by using the ``solc --metadata``
@@ -223,13 +223,13 @@ Usage for Automatic Interface Generation and NatSpec
 .. The component can then use the ABI to automatically generate a rudimentary
 .. user interface for the contract.
 
-このコンポーネントは、ABIを使ってコントラクトの初歩的なユーザーインターフェースを自動的に生成することができます。
+このコンポーネントは、ABIを使ってコントラクトの初歩的なユーザーインターフェースを自動的に生成できます。
 
 .. Furthermore, the wallet can use the NatSpec user documentation to display a confirmation message to the user
 .. whenever they interact with the contract, together with requesting
 .. authorization for the transaction signature.
 
-さらに、ウォレットはNatSpecユーザードキュメントを使用して、ユーザーがコントラクトと対話する際には必ず確認メッセージを表示し、併せてトランザクション署名の承認を要求することができます。
+さらに、ウォレットはNatSpecユーザードキュメントを使用して、ユーザーがコントラクトと対話する際には必ず確認メッセージを表示し、併せてトランザクション署名の承認を要求できます。
 
 .. For additional information, read :doc:`Ethereum Natural Language Specification (NatSpec) format <natspec-format>`.
 
@@ -247,7 +247,7 @@ Usage for Source Code Verification
 .. Excess data corresponds to the constructor input data, which should be decoded
 .. according to the interface and presented to the user.
 
-コンパイルを確認するために，IPFS/Swarmからメタデータファイルのリンクを介してソースを取得することができます．その入力に対して、正しいバージョンのコンパイラ（「公式」コンパイラの一部であることが確認されている）が、指定された設定で起動される。結果のバイトコードは、作成トランザクションのデータまたは ``CREATE``  opcodeデータと比較される。メタデータのハッシュはバイトコードの一部であるため、これによりメタデータが自動的に検証されます。余ったデータはコンストラクタの入力データに対応しており、インターフェイスに従ってデコードし、ユーザーに提示する必要があります。
+コンパイルを確認するために，IPFS/Swarmからメタデータファイルのリンクを介してソースを取得できます．その入力に対して、正しいバージョンのコンパイラ（「公式」コンパイラの一部であることが確認されている）が、指定された設定で起動される。結果のバイトコードは、作成トランザクションのデータまたは ``CREATE``  opcodeデータと比較される。メタデータのハッシュはバイトコードの一部であるため、これによりメタデータが自動的に検証されます。余ったデータはコンストラクタの入力データに対応しており、インターフェイスに従ってデコードし、ユーザーに提示する必要があります。
 
 .. In the repository `sourcify <https://github.com/ethereum/sourcify>`_
 .. (`npm package <https://www.npmjs.com/package/source-verify>`_) you can see

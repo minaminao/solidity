@@ -78,7 +78,7 @@ Solidityのロゴは、 `Creative Commons Attribution 4.0 International License 
 
 .. - **Share** — Copy and redistribute the material in any medium or format.
 
-- **Share**  - 媒体や形式を問わず、コピーして再配布することができます。
+- **Share**  - 媒体や形式を問わず、コピーして再配布できます。
 
 .. - **Adapt** — Remix, transform, and build upon the material for any
 ..   purpose, even commercially.
@@ -94,7 +94,7 @@ Solidityのロゴは、 `Creative Commons Attribution 4.0 International License 
 ..   reasonable manner, but not in any way that suggests the the Solidity
 ..   core team endorses you or your use.
 
-- **Attribution**  - 適切なクレジットを表示し、ライセンスへのリンクを提供し、変更があった場合はそれを示さなければなりません。妥当な方法でそうすることができますが、Solidityコアチームがあなたやあなたの使用を支持していることを示唆するような方法ではありません。
+- **Attribution**  - 適切なクレジットを表示し、ライセンスへのリンクを提供し、変更があった場合はそれを示さなければなりません。妥当な方法でそうできますが、Solidityコアチームがあなたやあなたの使用を支持していることを示唆するような方法ではありません。
 
 .. When using the Solidity logo, please respect the Solidity logo guidelines.
 

@@ -19,7 +19,7 @@ Yul（以前はJULIAやIULIAとも呼ばれていました）は、さまざま�
 .. that uses Yul as an intermediate language. Yul is a good target for
 .. high-level optimisation stages that can benefit all target platforms equally.
 
-EVM1.0、EVM1.5、Ewasmのサポートが予定されており、3つのプラットフォームの共通項として使えるように設計されています。YulはすでにスタンドアローンモードやSolidity内の「インラインアセンブリ」で使用することができ、中間言語としてYulを使用するSolidityコンパイラの実験的な実装もあります。Yulは、すべてのターゲットプラットフォームに等しく恩恵を与えることができるハイレベルな最適化ステージの良いターゲットです。
+EVM1.0、EVM1.5、Ewasmのサポートが予定されており、3つのプラットフォームの共通項として使えるように設計されています。YulはすでにスタンドアローンモードやSolidity内の「インラインアセンブリ」で使用でき、中間言語としてYulを使用するSolidityコンパイラの実験的な実装もあります。Yulは、すべてのターゲットプラットフォームに等しく恩恵を与えることができるハイレベルな最適化ステージの良いターゲットです。
 
 Motivation and High-level Description
 =====================================
@@ -74,7 +74,7 @@ Yulのデザインは、いくつかの目標を達成しようとしていま�
 .. (usually the integer word of the target machine) that can always
 .. be omitted to help readability.
 
-値と参照のような概念の混乱を避けるために、Yulは静的に型付けされています。同時に、デフォルトの型（通常はターゲットマシンの整数ワード）があり、読みやすさのために常に省略することができます。
+値と参照のような概念の混乱を避けるために、Yulは静的に型付けされています。同時に、デフォルトの型（通常はターゲットマシンの整数ワード）があり、読みやすさのために常に省略できます。
 
 .. To keep the language simple and flexible, Yul does not have
 .. any built-in operations, functions or types in its pure form.
@@ -82,7 +82,7 @@ Yulのデザインは、いくつかの目標を達成しようとしていま�
 .. which allows specializing Yul to the requirements of different
 .. target platforms and feature sets.
 
-言語をシンプルかつ柔軟に保つために、Yulは純粋な形では組み込みの操作や関数、型を持っていません。これらは、Yulの方言を指定する際に、そのセマンティクスとともに追加されます。これにより、さまざまなターゲット・プラットフォームや機能セットの要件に合わせて、Yulを特殊化することができます。
+言語をシンプルかつ柔軟に保つために、Yulは純粋な形では組み込みの操作や関数、型を持っていません。これらは、Yulの方言を指定する際に、そのセマンティクスとともに追加されます。これにより、さまざまなターゲット・プラットフォームや機能セットの要件に合わせて、Yulを特殊化できます。
 
 .. Currently, there is only one specified dialect of Yul. This dialect uses
 .. the EVM opcodes as builtin functions
@@ -98,7 +98,7 @@ Simple Example
 .. It can be compiled using ``solc --strict-assembly``. The builtin functions
 .. ``mul`` and ``div`` compute product and division, respectively.
 
-以下のサンプルプログラムはEVM方言で書かれており、指数計算を行います。 ``solc --strict-assembly`` を使ってコンパイルすることができます。組み込み関数 ``mul`` と ``div`` は、それぞれ積と除算を計算します。
+以下のサンプルプログラムはEVM方言で書かれており、指数計算を行います。 ``solc --strict-assembly`` を使ってコンパイルできます。組み込み関数 ``mul`` と ``div`` は、それぞれ積と除算を計算します。
 
 .. code-block:: yul
 
@@ -149,7 +149,7 @@ Stand-Alone Usage
 .. to code as data to deploy contracts. This Yul mode is available for the commandline compiler
 .. (use ``--strict-assembly``) and for the :ref:`standard-json interface <compiler-api>`:
 
-Yulは、Solidityコンパイラを使用して、EVM方言でスタンドアローンの形で使用することができます。これは :ref:`Yul object notation <yul-object>` を使用するので、コードをデータとして参照してコントラクトを展開することが可能です。このYulモードは、コマンドライン・コンパイラ（ ``--strict-assembly`` を使用）と :ref:`standard-json interface <compiler-api>` で使用できます。
+Yulは、Solidityコンパイラを使用して、EVM方言でスタンドアローンの形で使用できます。これは :ref:`Yul object notation <yul-object>` を使用するので、コードをデータとして参照してコントラクトを展開することが可能です。このYulモードは、コマンドライン・コンパイラ（ ``--strict-assembly`` を使用）と :ref:`standard-json interface <compiler-api>` で使用できます。
 
 .. code-block:: json
 
@@ -195,7 +195,7 @@ YulはSolidityと同じようにコメント、リテラル、識別子を解析
 .. delimited block. Most tools support specifying just a code block
 .. where an object is expected.
 
-Yulは、コード、データ、サブオブジェクトからなる「オブジェクト」を指定することができます。その詳細については下記の :ref:`Yul Objects <yul-object>` をご覧ください。このセクションでは、そのようなオブジェクトのコード部分についてのみ説明します。このコード部分は、常に中括弧で区切られたブロックで構成されています。ほとんどのツールは、オブジェクトが期待されるコードブロックだけの指定をサポートしています。
+Yulは、コード、データ、サブオブジェクトからなる「オブジェクト」を指定できます。その詳細については下記の :ref:`Yul Objects <yul-object>` をご覧ください。このセクションでは、そのようなオブジェクトのコード部分についてのみ説明します。このコード部分は、常に中括弧で区切られたブロックで構成されています。ほとんどのツールは、オブジェクトが期待されるコードブロックだけの指定をサポートしています。
 
 .. Inside a code block, the following elements can be used
 .. (see the later sections for more details):
@@ -330,7 +330,7 @@ Function Calls
 .. inside an expression again. If it returns multiple values,
 .. they have to be assigned to local variables.
 
-組み込み関数もユーザー定義関数（下記参照）も、前の例で示したのと同じ方法で呼び出すことができます。関数が単一の値を返す場合は、再び式の中で直接使用することができます。複数の値を返す場合は、ローカル変数に代入する必要があります。
+組み込み関数もユーザー定義関数（下記参照）も、前の例で示したのと同じ方法で呼び出すことができます。関数が単一の値を返す場合は、再び式の中で直接使用できます。複数の値を返す場合は、ローカル変数に代入する必要があります。
 
 .. code-block:: yul
 
@@ -345,7 +345,7 @@ Function Calls
 .. opcodes. In the case of the first line in the example, this
 .. is ``PUSH1 3 PUSH1 0x80 MLOAD ADD PUSH1 0x80 MSTORE``.
 
-EVMの組み込み関数では、関数式をオペコードのストリームに直接変換することができます。式を右から左に読むだけでオペコードが得られます。例題の1行目の場合、これは ``PUSH1 3 PUSH1 0x80 MLOAD ADD PUSH1 0x80 MSTORE`` です。
+EVMの組み込み関数では、関数式をオペコードのストリームに直接変換できます。式を右から左に読むだけでオペコードが得られます。例題の1行目の場合、これは ``PUSH1 3 PUSH1 0x80 MLOAD ADD PUSH1 0x80 MSTORE`` です。
 
 .. For calls to user-defined functions, the arguments are also
 .. put on the stack from right to left and this is the order
@@ -367,7 +367,7 @@ Variable Declarations
 .. is reached. You can provide an initial value for the variable.
 .. If you do not provide a value, the variable will be initialized to zero.
 
-``let`` キーワードを使って変数を宣言することができます。変数は、それが定義された ``{...}`` ブロックの中でのみ表示されます。EVMへのコンパイル時には、変数のために予約された新しいスタックスロットが作成され、ブロックの終わりに達すると自動的に削除されます。変数の初期値を指定することができます。値を指定しない場合は、変数はゼロに初期化されます。
+``let`` キーワードを使って変数を宣言できます。変数は、それが定義された ``{...}`` ブロックの中でのみ表示されます。EVMへのコンパイル時には、変数のために予約された新しいスタックスロットが作成され、ブロックの終わりに達すると自動的に削除されます。変数の初期値を指定できます。値を指定しない場合は、変数はゼロに初期化されます。
 
 .. Since variables are stored on the stack, they do not directly
 .. influence memory or storage, but they can be used as pointers
@@ -375,7 +375,7 @@ Variable Declarations
 .. ``mstore``, ``mload``, ``sstore`` and ``sload``.
 .. Future dialects might introduce specific types for such pointers.
 
-変数はスタック上に格納されるため、メモリやストレージに直接影響を与えることはありませんが、組み込み関数 ``mstore`` 、 ``mload`` 、 ``sstore`` 、 ``sload`` でメモリやストレージの位置へのポインタとして使用することができます。将来の方言では、このようなポインターのための特定の型が導入されるかもしれません。
+変数はスタック上に格納されるため、メモリやストレージに直接影響を与えることはありませんが、組み込み関数 ``mstore`` 、 ``mload`` 、 ``sstore`` 、 ``sload`` でメモリやストレージの位置へのポインタとして使用できます。将来の方言では、このようなポインターのための特定の型が導入されるかもしれません。
 
 .. When a variable is referenced, its current value is copied.
 .. For the EVM, this translates to a ``DUP`` instruction.
@@ -399,7 +399,7 @@ Variable Declarations
 .. variables in one statement when you assign from a function call
 .. that returns multiple values.
 
-宣言した変数の型がデフォルトの型と異なる場合は、コロンの後にその旨を記述します。また、複数の値を返す関数呼び出しから代入する場合、1つのステートメントで複数の変数を宣言することができます。
+宣言した変数の型がデフォルトの型と異なる場合は、コロンの後にその旨を記述します。また、複数の値を返す関数呼び出しから代入する場合、1つのステートメントで複数の変数を宣言できます。
 
 .. code-block:: yul
 
@@ -428,7 +428,7 @@ Assignments
 .. The same variable may not occur multiple times on the left-hand side of
 .. an assignment, e.g. ``x, x := f()`` is invalid.
 
-変数は、その定義後に ``:=`` 演算子を使って代入することができます。複数の変数を同時に割り当てることも可能です。そのためには、値の数と型が一致している必要があります。複数のリターンパラメーターを持つ関数から返される値を代入する場合は、複数の変数を用意する必要があります。代入の左辺に同じ変数を複数回使用することはできません（例： ``x, x := f()`` は無効）。
+変数は、その定義後に ``:=`` 演算子を使って代入できます。複数の変数を同時に割り当てることも可能です。そのためには、値の数と型が一致している必要があります。複数のリターンパラメーターを持つ関数から返される値を代入する場合は、複数の変数を用意する必要があります。代入の左辺に同じ変数を複数回使用することはできません（例： ``x, x := f()`` は無効）。
 
 .. code-block:: yul
 
@@ -752,7 +752,7 @@ Yulでは、スコープはブロックに関連付けられており（例外�
 .. declaration.
 .. Functions can be referenced already before their declaration (if they are visible).
 
-特に、変数は自分の変数宣言の右側では参照できません。関数は、その宣言の前にすでに参照することができます（関数が表示されている場合）。
+特に、変数は自分の変数宣言の右側では参照できません。関数は、その宣言の前にすでに参照できます（関数が表示されている場合）。
 
 .. As an exception to the general scoping rule, the scope of the "init" part of the for-loop
 .. (the first block) extends across all other parts of the for loop.
@@ -932,7 +932,7 @@ EVM Dialect
 .. is ``u256``, the 256-bit native type of the Ethereum Virtual Machine.
 .. Since it is the default type of this dialect, it can be omitted.
 
-Yulのデフォルトの方言は、現在選択されているEVMのバージョンのEVMの方言です。この方言で使用できるタイプは、Ethereum Virtual Machineの256ビットのネイティブタイプである ``u256`` のみです。これはこの方言のデフォルトタイプなので、省略することができます。
+Yulのデフォルトの方言は、現在選択されているEVMのバージョンのEVMの方言です。この方言で使用できるタイプは、Ethereum Virtual Machineの256ビットのネイティブタイプである ``u256`` のみです。これはこの方言のデフォルトタイプなので、省略できます。
 
 .. The following table lists all builtin functions
 .. (depending on the EVM version) and provides a short description of the
@@ -1227,7 +1227,7 @@ memoryguard
 .. optimization steps, for example the stack limit evader, which attempts to move
 .. stack variables that would otherwise be unreachable to memory.
 
-``memoryguard`` コールの存在は、すべてのメモリアクセスがこの制限に従っていることを示すので、オプティマイザは追加の最適化ステップを実行することができます。例えば、スタックリミットイベーダーは、他の方法では到達できないスタック変数をメモリに移動させようとします。
+``memoryguard`` コールの存在は、すべてのメモリアクセスがこの制限に従っていることを示すので、オプティマイザは追加の最適化ステップを実行できます。例えば、スタックリミットイベーダーは、他の方法では到達できないスタック変数をメモリに移動させようとします。
 
 .. The Yul optimizer promises to only use the memory range ``[size, ptr)`` for its purposes.
 .. If the optimizer does not need to reserve any memory, it holds that ``ptr == size``.
@@ -1249,7 +1249,7 @@ verbatim
 .. that are not known to the Yul compiler. It also allows you to create
 .. bytecode sequences that will not be modified by the optimizer.
 
-``verbatim...`` 組み込み関数のセットでは、Yulコンパイラーが知らないオペコードのバイトコードを作成することができます。また、オプティマイザーによって変更されないバイトコード・シーケンスを作成することもできます。
+``verbatim...`` 組み込み関数のセットでは、Yulコンパイラーが知らないオペコードのバイトコードを作成できます。また、オプティマイザーによって変更されないバイトコード・シーケンスを作成することもできます。
 
 .. The functions are ``verbatim_<n>i_<m>o("<data>", ...)``, where
 
@@ -1301,7 +1301,7 @@ verbatim
 .. the stack layout, which means that e.g. using ``verbatim`` to modify
 .. the stack height can lead to undefined behaviour.
 
-``verbatim`` は、任意のオペコードや、Solidityコンパイラにとって未知のオペコードを生成するために使用することができるため、オプティマイザと ``verbatim`` を併用する際には注意が必要です。オプティマイザーがオフになっていても、コード・ジェネレーターはスタック・レイアウトを決定しなければなりません。つまり、 ``verbatim`` を使ってスタックの高さを変更すると、未定義の動作になる可能性があります。
+``verbatim`` は、任意のオペコードや、Solidityコンパイラにとって未知のオペコードを生成するために使用できるため、オプティマイザと ``verbatim`` を併用する際には注意が必要です。オプティマイザーがオフになっていても、コード・ジェネレーターはスタック・レイアウトを決定しなければなりません。つまり、 ``verbatim`` を使ってスタックの高さを変更すると、未定義の動作になる可能性があります。
 
 .. The following is a non-exhaustive list of restrictions on
 .. verbatim bytecode that are not checked by
@@ -1329,7 +1329,7 @@ verbatim
 ..   surrounding bytecode. All required parameters have to be
 ..   passed in as stack variables.
 
-- Verbatimのバイトコードは、周囲のバイトコードを想定することができません。必要なパラメータはすべてスタック変数として渡さなければなりません。
+- Verbatimのバイトコードは、周囲のバイトコードを想定できません。必要なパラメータはすべてスタック変数として渡さなければなりません。
 
 .. The optimizer does not analyze verbatim bytecode and always
 .. assumes that it modifies all aspects of state and thus can only
@@ -1525,7 +1525,7 @@ Optimization Step Sequence
 .. By default the Yul optimizer applies its predefined sequence of optimization steps to the generated assembly.
 .. You can override this sequence and supply your own using the ``--yul-optimizations`` option:
 
-デフォルトでは、Yulオプティマイザーは、生成されたアセンブリに対して、定義済みの最適化ステップのシーケンスを適用します。 ``--yul-optimizations`` オプションを使用すると、このシーケンスをオーバーライドして、独自のシーケンスを提供することができます。
+デフォルトでは、Yulオプティマイザーは、生成されたアセンブリに対して、定義済みの最適化ステップのシーケンスを適用します。 ``--yul-optimizations`` オプションを使用すると、このシーケンスをオーバーライドして、独自のシーケンスを提供できます。
 
 .. code-block:: sh
 

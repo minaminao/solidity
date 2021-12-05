@@ -18,7 +18,7 @@ List of Known Bugs
 .. <https://github.com/ethereum/solidity/blob/develop/docs/bugs_by_version.json>`_,
 .. which can be used to check which bugs affect a specific version of the compiler.
 
-また、 `bugs_by_version.json <https://github.com/ethereum/solidity/blob/develop/docs/bugs_by_version.json>`_ というファイルがあり、特定のバージョンのコンパイラーに影響を与えるバグを確認することができます。
+また、 `bugs_by_version.json <https://github.com/ethereum/solidity/blob/develop/docs/bugs_by_version.json>`_ というファイルがあり、特定のバージョンのコンパイラーに影響を与えるバグを確認できます。
 
 .. Contract source verification tools and also other tools interacting with
 .. contracts should consult this list according to the following criteria:

@@ -55,7 +55,7 @@ Team Calls
 .. If you have issues or pull requests to discuss, or are interested in hearing what
 .. the team and contributors are working on, you can join our public team calls:
 
-議論したい課題やプルリクエストがある場合や、チームやコントリビューターが取り組んでいることを聞きたい場合は、公開のチームコールに参加することができます。
+議論したい課題やプルリクエストがある場合や、チームやコントリビューターが取り組んでいることを聞きたい場合は、公開のチームコールに参加できます。
 
 .. - Mondays at 3pm CET/CEST.
 
@@ -117,7 +117,7 @@ Workflow for Pull Requests
 .. and instead, ``git rebase`` your branch. This will help us review your change
 .. more easily.
 
-フォーク後に ``develop`` からの変更を取り込む必要がある場合 (たとえば、潜在的なマージ・コンフリクトを解決するため)、 ``git merge`` の使用を避け、代わりに ``git rebase`` でブランチを作成してください。そうすることで、あなたの変更をより簡単に確認することができます。
+フォーク後に ``develop`` からの変更を取り込む必要がある場合 (たとえば、潜在的なマージ・コンフリクトを解決するため)、 ``git merge`` の使用を避け、代わりに ``git rebase`` でブランチを作成してください。そうすることで、あなたの変更をより簡単に確認できます。
 
 .. Additionally, if you are writing a new feature, please ensure you add appropriate
 .. test cases under ``test/`` (see below).
@@ -157,7 +157,7 @@ Prerequisites
 .. `libz3 <https://github.com/Z3Prover/z3>`_, and
 .. `libhera <https://github.com/ewasm/hera>`_).
 
-すべてのコンパイラテストを実行するために、いくつかの依存関係（ `evmone <https://github.com/ethereum/evmone/releases>`_ 、 `libz3 <https://github.com/Z3Prover/z3>`_ 、 `libhera <https://github.com/ewasm/hera>`_ ）をオプションでインストールすることができます。
+すべてのコンパイラテストを実行するために、いくつかの依存関係（ `evmone <https://github.com/ethereum/evmone/releases>`_ 、 `libz3 <https://github.com/Z3Prover/z3>`_ 、 `libhera <https://github.com/ewasm/hera>`_ ）をオプションでインストールできます。
 
 .. On macOS some of the testing scripts expect GNU coreutils to be installed.
 .. This can be easiest accomplished using Homebrew: ``brew install coreutils``.
@@ -195,7 +195,7 @@ Solidityには様々なタイプのテストがあり、そのほとんどが `B
 .. If you do not have it installed, you can skip these tests by passing the ``--no-semantic-tests``
 .. flag to ``scripts/soltest.sh``.
 
-``evmone`` は主にセマンティックテストとガステストを実行するために必要です。インストールされていない場合は、 ``scripts/soltest.sh`` に ``--no-semantic-tests`` フラグを渡すことで、これらのテストをスキップすることができます。
+``evmone`` は主にセマンティックテストとガステストを実行するために必要です。インストールされていない場合は、 ``scripts/soltest.sh`` に ``--no-semantic-tests`` フラグを渡すことで、これらのテストをスキップできます。
 
 .. Running Ewasm tests is disabled by default and can be explicitly enabled
 .. via ``./scripts/soltest.sh --ewasm`` and requires `hera <https://github.com/ewasm/hera>`_
@@ -203,7 +203,7 @@ Solidityには様々なタイプのテストがあり、そのほとんどが `B
 .. The mechanism for locating the ``hera`` library is the same as for ``evmone``, except that the
 .. variable for specifying an explicit location is called ``ETH_HERA``.
 
-Ewasmテストの実行は、デフォルトでは無効になっており、 ``./scripts/soltest.sh --ewasm`` を介して明示的に有効にすることができ、 ``soltest`` で `hera <https://github.com/ewasm/hera>`_ を見つけることが必要です。 ``hera`` ライブラリを探す仕組みは、明示的に場所を指定するための変数が ``ETH_HERA`` と呼ばれていることを除けば、 ``evmone`` と同じです。
+Ewasmテストの実行は、デフォルトでは無効になっており、 ``./scripts/soltest.sh --ewasm`` を介して明示的に有効にでき、 ``soltest`` で `hera <https://github.com/ewasm/hera>`_ を見つけることが必要です。 ``hera`` ライブラリを探す仕組みは、明示的に場所を指定するための変数が ``ETH_HERA`` と呼ばれていることを除けば、 ``evmone`` と同じです。
 
 .. The ``evmone`` and ``hera`` libraries should both end with the file name
 .. extension ``.so`` on Linux, ``.dll`` on Windows systems and ``.dylib`` on macOS.
@@ -232,7 +232,7 @@ SMTテストを実行するためには、 ``libz3`` ライブラリがインス
 
 .. For quicker results you can run a subset of, or specific tests.
 
-より迅速な結果を得るために、一部のテストや特定のテストを実行することができます。
+より迅速な結果を得るために、一部のテストや特定のテストを実行できます。
 
 .. To run a subset of tests, you can use filters:
 .. ``./scripts/soltest.sh -t TestSuite/TestName``,
@@ -332,7 +332,7 @@ out the separator and the comments that follow it.
 .. The ``isoltest`` tool is used for these tests and you can find it under ``./build/test/tools/``. It is an interactive tool which allows
 .. editing of failing contracts using your preferred text editor. Let's try to break this test by removing the second declaration of ``variable``:
 
-これらのテストには ``isoltest`` ツールが使用されており、「 ``./build/test/tools/`` 」で見つけることができます。これは対話型のツールで、好みのテキストエディタを使って失敗したコントラクトを編集することができます。 ``variable`` の2番目の宣言を削除することで、このテストを破ってみましょう。
+これらのテストには ``isoltest`` ツールが使用されており、「 ``./build/test/tools/`` 」で見つけることができます。これは対話型のツールで、好みのテキストエディタを使って失敗したコントラクトを編集できます。 ``variable`` の2番目の宣言を削除することで、このテストを破ってみましょう。
 
 .. code-block:: solidity
 
@@ -494,7 +494,7 @@ Running the Fuzzer via AFL
 .. to find errors. You can either copy some files from the syntax tests or extract test files
 .. from the documentation or the other tests:
 
-次に、いくつかのサンプルソースファイルが必要です。これにより、ファザーがエラーを見つけるのが非常に簡単になります。構文テストからいくつかのファイルをコピーするか、ドキュメントや他のテストからテストファイルを抽出することができます。
+次に、いくつかのサンプルソースファイルが必要です。これにより、ファザーがエラーを見つけるのが非常に簡単になります。構文テストからいくつかのファイルをコピーするか、ドキュメントや他のテストからテストファイルを抽出できます。
 
 .. code-block:: bash
 
@@ -511,7 +511,7 @@ Running the Fuzzer via AFL
 .. There is also a tool called ``afl-cmin`` that can trim input files
 .. that result in similar behaviour of the binary.
 
-AFLのドキュメントでは、コーパス（最初の入力ファイル）はあまり大きくしない方が良いとされています。ファイル自体の大きさは1kB以下で、1つの機能に対して入力ファイルは多くても1つなので、少ない数から始めた方が良いでしょう。また、 ``afl-cmin`` というツールがあり、バイナリの挙動が似ている入力ファイルをトリミングすることができます。
+AFLのドキュメントでは、コーパス（最初の入力ファイル）はあまり大きくしない方が良いとされています。ファイル自体の大きさは1kB以下で、1つの機能に対して入力ファイルは多くても1つなので、少ない数から始めた方が良いでしょう。また、 ``afl-cmin`` というツールがあり、バイナリの挙動が似ている入力ファイルをトリミングできます。
 
 .. Now run the fuzzer (the ``-m`` extends the size of memory to 60 MB):
 
@@ -525,7 +525,7 @@ AFLのドキュメントでは、コーパス（最初の入力ファイル）�
 .. Often it finds many similar source files that produce the same error. You can
 .. use the tool ``scripts/uniqueErrors.sh`` to filter out the unique errors.
 
-ファザーは、 ``/tmp/fuzzer_reports`` の失敗につながるソースファイルを作成します。多くの場合、同じエラーを発生させる多くの類似したソース・ファイルを見つけます。ツール ``scripts/uniqueErrors.sh`` を使って、固有のエラーをフィルタリングすることができます。
+ファザーは、 ``/tmp/fuzzer_reports`` の失敗につながるソースファイルを作成します。多くの場合、同じエラーを発生させる多くの類似したソース・ファイルを見つけます。ツール ``scripts/uniqueErrors.sh`` を使って、固有のエラーをフィルタリングできます。
 
 Whiskers
 ========
@@ -674,7 +674,7 @@ Active and Passive Voice
 
 例えば、以下はSolidityの側面を指定しているため、受動態になっています。
 
-  関数は ``pure`` を宣言することができ、その場合は状態を読み取ったり変更したりしないことが約束されます。
+  関数は ``pure`` を宣言でき、その場合は状態を読み取ったり変更したりしないことが約束されます。
 
 .. For example, the below is in active voice as it discusses an application of Solidity:
 
@@ -683,7 +683,7 @@ Active and Passive Voice
 
 例えば、以下はSolidityのアプリケーションについて説明しているので、アクティブボイスになっています。
 
-  コンパイラを起動する際に、パスの最初の要素を検出する方法や、パスのプレフィックスの再配置を指定することができます。
+  コンパイラを起動する際に、パスの最初の要素を検出する方法や、パスのプレフィックスの再配置を指定できます。
 
 Common Terms
 ------------
@@ -746,7 +746,7 @@ Solidityのフォーラムは、新しい言語機能やその実装のアイデ
 .. Issues in the design backlog need further specification and will either be discussed in a language design call or in a regular team call. You can
 .. see the upcoming changes for the next breaking release by changing from the default branch (`develop`) to the `breaking branch <https://github.com/ethereum/solidity/tree/breaking>`_.
 
-新機能の実装についてチームの状況を知りたい場合は、 `Solidity Github project <https://github.com/ethereum/solidity/projects/43>`_ で実装状況を確認することができます。デザインバックログに登録されている問題は、さらに詳細な仕様が必要なため、言語デザインコールまたは通常のチームコールで議論されます。デフォルトのブランチ（ `develop` ）から `breaking branch <https://github.com/ethereum/solidity/tree/breaking>`_ に変更することで、次のブレーキングリリースに向けた変更点を確認することができます。
+新機能の実装についてチームの状況を知りたい場合は、 `Solidity Github project <https://github.com/ethereum/solidity/projects/43>`_ で実装状況を確認できます。デザインバックログに登録されている問題は、さらに詳細な仕様が必要なため、言語デザインコールまたは通常のチームコールで議論されます。デフォルトのブランチ（ `develop` ）から `breaking branch <https://github.com/ethereum/solidity/tree/breaking>`_ に変更することで、次のブレーキングリリースに向けた変更点を確認できます。
 
 .. For ad-hoc cases and questions you can reach out to us via the `Solidity-dev Gitter channel <https://gitter.im/ethereum/solidity-dev>`_, a
 .. dedicated chatroom for conversations around the Solidity compiler and language development.

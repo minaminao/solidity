@@ -9,7 +9,7 @@ Solidity IR-based Codegen Changes
 .. Either directly from Solidity to EVM opcodes ("old codegen") or through
 .. an intermediate representation ("IR") in Yul ("new codegen" or "IR-based codegen").
 
-Solidityは、2つの異なる方法でEVMバイトコードを生成することができます。Solidityから直接EVMのオペコードを生成する方法（"old codegen"）と、Yulの中間表現（"IR"）を介して生成する方法（"new codegen "または "IR-based codegen"）です。
+Solidityは、2つの異なる方法でEVMバイトコードを生成できます。Solidityから直接EVMのオペコードを生成する方法（"old codegen"）と、Yulの中間表現（"IR"）を介して生成する方法（"new codegen "または "IR-based codegen"）です。
 
 .. The IR-based code generator was introduced with an aim to not only allow
 .. code generation to be more transparent and auditable but also
@@ -27,7 +27,7 @@ IRベースのコードジェネレーターを導入したのは、コード生
 .. or with the option ``{"viaIR": true}`` in standard-json and we
 .. encourage everyone to try it out!
 
-コマンドラインで ``--experimental-via-ir`` を使って有効にしたり、standard-jsonで ``{"viaIR": true}`` オプションを使って有効にすることができますので、ぜひ皆さんに試していただきたいと思います。
+コマンドラインで ``--experimental-via-ir`` を使って有効にしたり、standard-jsonで ``{"viaIR": true}`` オプションを使って有効にできますので、ぜひ皆さんに試していただきたいと思います。
 
 .. For several reasons, there are tiny semantic differences between the old
 .. and the IR-based code generator, mostly in areas where we would not

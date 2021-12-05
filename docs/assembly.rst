@@ -10,7 +10,7 @@ Inline Assembly
 .. to the one of the Ethereum virtual machine. This gives you more fine-grained control,
 .. which is especially useful when you are enhancing the language by writing libraries.
 
-イーサリアムの仮想マシンの言語に近い言語で、Solidityのステートメントとインラインアセンブリをインターリーブすることができます。これにより、より細かな制御が可能となり、特にライブラリを書いて言語を強化する場合に有効です。
+イーサリアムの仮想マシンの言語に近い言語で、Solidityのステートメントとインラインアセンブリをインターリーブできます。これにより、より細かな制御が可能となり、特にライブラリを書いて言語を強化する場合に有効です。
 
 .. The language used for inline assembly in Solidity is called :ref:`Yul <yul>`
 .. and it is documented in its own section. This section will only cover
@@ -136,12 +136,12 @@ Access to External Variables, Functions and Libraries
 
 .. You can access Solidity variables and other identifiers by using their name.
 
-Solidityの変数やその他の識別子は、その名前を使ってアクセスすることができます。
+Solidityの変数やその他の識別子は、その名前を使ってアクセスできます。
 
 .. Local variables of value type are directly usable in inline assembly.
 .. They can both be read and assigned to.
 
-値型のローカル変数は、インラインアセンブリで直接使用することができます。読み込みと代入の両方が可能です。
+値型のローカル変数は、インラインアセンブリで直接使用できます。読み込みと代入の両方が可能です。
 
 .. Local variables that refer to memory evaluate to the address of the variable in memory not the value itself.
 .. Such variables can also be assigned to, but note that an assignment will only change the pointer and not the data

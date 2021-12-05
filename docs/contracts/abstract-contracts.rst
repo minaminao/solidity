@@ -9,7 +9,7 @@ Abstract Contracts
 .. Contracts need to be marked as abstract when at least one of their functions is not implemented.
 .. Contracts may be marked as abstract even though all functions are implemented.
 
-コントラクトは、その機能の少なくとも1つが実装されていない場合、抽象的であることを示す必要があります。すべての機能が実装されていても、コントラクトは抽象的であるとマークすることができます。
+コントラクトは、その機能の少なくとも1つが実装されていない場合、抽象的であることを示す必要があります。すべての機能が実装されていても、コントラクトは抽象的であるとマークできます。
 
 .. This can be done by using the ``abstract`` keyword as shown in the following example. Note that this contract needs to be
 .. defined as abstract, because the function ``utterance()`` was defined, but no implementation was

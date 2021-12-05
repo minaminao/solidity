@@ -8,7 +8,7 @@ Functions
 
 .. Functions can be defined inside and outside of contracts.
 
-機能は、コントラクトの内側にも外側にも定義することができます。
+機能は、コントラクトの内側にも外側にも定義できます。
 
 .. Functions outside of a contract, also called "free functions", always have implicit ``internal``
 .. :ref:`visibility<visibility-and-getters>`. Their code is included in all contracts
@@ -87,7 +87,7 @@ Function Parameters
 
 .. Function parameters can be used as any other local variable and they can also be assigned to.
 
-関数パラメータは、他のローカル変数と同様に使用することができ、また、それらを割り当てることもできます。
+関数パラメータは、他のローカル変数と同様に使用でき、また、それらを割り当てることもできます。
 
 .. .. note::
 
@@ -141,7 +141,7 @@ Return Variables
 .. are initialized with their :ref:`default value <default-value>` and have that
 .. value until they are (re-)assigned.
 
-リターン変数の名前は省略可能です。リターン変数は、他のローカル変数と同様に使用することができ、 :ref:`default value <default-value>` で初期化され、（再）割り当てされるまでその値を保持します。
+リターン変数の名前は省略可能です。リターン変数は、他のローカル変数と同様に使用でき、 :ref:`default value <default-value>` で初期化され、（再）割り当てされるまでその値を保持します。
 
 .. You can either explicitly assign to return variables and
 .. then leave the function as above,
@@ -149,7 +149,7 @@ Return Variables
 .. (either a single or :ref:`multiple ones<multi-return>`) directly with the ``return``
 .. statement:
 
-上記のように明示的にリターン変数に代入してから関数を残すか、 ``return`` 文でリターン値（シングルまたは :ref:`multiple ones<multi-return>` ）を直接指定することができます。
+上記のように明示的にリターン変数に代入してから関数を残すか、 ``return`` 文でリターン値（シングルまたは :ref:`multiple ones<multi-return>` ）を直接指定できます。
 
 .. code-block:: solidity
 
@@ -193,7 +193,7 @@ Returning Multiple Values
 .. The number of components must be the same as the number of return variables
 .. and their types have to match, potentially after an :ref:`implicit conversion <types-conversion-elementary-types>`.
 
-関数が複数の戻り値の型を持つ場合、ステートメント ``return (v0, v1, ..., vn)`` は複数の値を返すために使用することができます。構成要素の数は戻り値の変数の数と同じでなければならず、それらの型は一致しなければならず、潜在的には :ref:`implicit conversion <types-conversion-elementary-types>` の後になります。
+関数が複数の戻り値の型を持つ場合、ステートメント ``return (v0, v1, ..., vn)`` は複数の値を返すために使用できます。構成要素の数は戻り値の変数の数と同じでなければならず、それらの型は一致しなければならず、潜在的には :ref:`implicit conversion <types-conversion-elementary-types>` の後になります。
 
 .. _state-mutability:
 
@@ -209,7 +209,7 @@ View Functions
 
 .. Functions can be declared ``view`` in which case they promise not to modify the state.
 
-関数は ``view`` 宣言することができ、その場合は状態を変更しないことが約束されます。
+関数は ``view`` 宣言でき、その場合は状態を変更しないことが約束されます。
 
 .. .. note::
 
@@ -299,7 +299,7 @@ View Functions
 
 .. note::
 
-  バージョン0.5.0以前のコンパイラでは、 ``view`` 関数に ``STATICCALL`` オペコードを使用していませんでした。   これにより、無効な明示的型変換を使用して、 ``view`` 関数の状態を変更することができました。    ``view`` 関数に ``STATICCALL`` を使用することで、EVMのレベルで状態の変更を防ぐことができます。
+  バージョン0.5.0以前のコンパイラでは、 ``view`` 関数に ``STATICCALL`` オペコードを使用していませんでした。   これにより、無効な明示的型変換を使用して、 ``view`` 関数の状態を変更できました。    ``view`` 関数に ``STATICCALL`` を使用することで、EVMのレベルで状態の変更を防ぐことができます。
 
 .. index:: ! pure function, function;pure
 
@@ -313,7 +313,7 @@ Pure Functions
 .. only its inputs and ``msg.data``, but without any knowledge of the current blockchain state.
 .. This means that reading from ``immutable`` variables can be a non-pure operation.
 
-関数は ``pure`` を宣言することができ、その場合、状態を読み取ったり変更したりしないことが約束されます。特に、 ``pure`` 関数をコンパイル時に、入力と ``msg.data`` のみを与えて評価することが可能でなければなりませんが、現在のブロックチェーンの状態については一切知りません。これは、 ``immutable`` 変数からの読み取りが非純粋な操作である可能性があることを意味する。
+関数は ``pure`` を宣言でき、その場合、状態を読み取ったり変更したりしないことが約束されます。特に、 ``pure`` 関数をコンパイル時に、入力と ``msg.data`` のみを与えて評価することが可能でなければなりませんが、現在のブロックチェーンの状態については一切知りません。これは、 ``immutable`` 変数からの読み取りが非純粋な操作である可能性があることを意味する。
 
 .. .. note::
 
@@ -395,7 +395,7 @@ Pure Functions
 
 .. note::
 
-  バージョン0.5.0以前のコンパイラでは、 ``pure`` 関数に ``STATICCALL`` オペコードを使用していませんでした。   これにより、無効な明示的型変換を使用して、 ``pure`` 関数の状態を変更することができました。    ``pure`` 関数に ``STATICCALL`` を使用することで、EVMのレベルで状態の変更を防ぐことができます。
+  バージョン0.5.0以前のコンパイラでは、 ``pure`` 関数に ``STATICCALL`` オペコードを使用していませんでした。   これにより、無効な明示的型変換を使用して、 ``pure`` 関数の状態を変更できました。    ``pure`` 関数に ``STATICCALL`` を使用することで、EVMのレベルで状態の変更を防ぐことができます。
 
 .. .. note::
 
@@ -407,7 +407,7 @@ Pure Functions
 
 .. note::
 
-  バージョン0.4.17以前では、コンパイラは ``pure`` が状態を読んでいないことを強制していませんでした。   これはコンパイル時の型チェックで、コントラクトの型の間で無効な明示的変換を行うことで回避することができます。コンパイラはコントラクトの型が状態を変更する操作を行わないことを検証できますが、実行時に呼び出されるコントラクトが実際にその型であることをチェックすることはできないからです。
+  バージョン0.4.17以前では、コンパイラは ``pure`` が状態を読んでいないことを強制していませんでした。   これはコンパイル時の型チェックで、コントラクトの型の間で無効な明示的変換を行うことで回避できます。コンパイラはコントラクトの型が状態を変更する操作を行わないことを検証できますが、実行時に呼び出されるコントラクトが実際にその型であることをチェックすることはできないからです。
 
 .. _special-functions:
 
@@ -495,7 +495,7 @@ Receive Ether Function
 
     Etherを受け取る機能を持たないコントラクトは、*coinbaseトランザクション*（別名：*minerブロックリワード*）の受信者として、または ``selfdestruct`` の宛先としてEtherを受け取ることができます。
 
-    コントラクトは、そのようなEther転送に反応することができず、したがって、それらを拒否することもできません。これはEVMの設計上の選択であり、Solidityはこれを回避することはできません。
+    コントラクトは、そのようなEther転送に反応できず、したがって、それらを拒否することもできません。これはEVMの設計上の選択であり、Solidityはこれを回避することはできません。
 
     また、 ``address(this).balance`` は、コントラクトに実装されている手動の会計処理（受信イーサ機能でカウンタを更新するなど）の合計よりも高くなる可能性があることを意味しています。
 
@@ -556,7 +556,7 @@ Fallback Function
 .. Like any function, the fallback function can execute complex
 .. operations as long as there is enough gas passed on to it.
 
-他の関数と同様に、フォールバック関数も、十分な量のガスが渡されている限り、複雑な処理を実行することができます。
+他の関数と同様に、フォールバック関数も、十分な量のガスが渡されている限り、複雑な処理を実行できます。
 
 .. .. warning::
 
@@ -582,7 +582,7 @@ Fallback Function
 
 .. note::
 
-    入力データをデコードしたい場合は、最初の4バイトで関数セレクタをチェックし、 ``abi.decode`` と配列スライス構文を併用することで、ABIエンコードされたデータをデコードすることができます。      ``(c, d) = abi.decode(_input[4:], (uint256, uint256));``  この方法は最後の手段としてのみ使用し、代わりに適切な関数を使用すべきであることに注意してください。
+    入力データをデコードしたい場合は、最初の4バイトで関数セレクタをチェックし、 ``abi.decode`` と配列スライス構文を併用することで、ABIエンコードされたデータをデコードできます。      ``(c, d) = abi.decode(_input[4:], (uint256, uint256));``  この方法は最後の手段としてのみ使用し、代わりに適切な関数を使用すべきであることに注意してください。
 
 .. code-block:: solidity
 

@@ -114,7 +114,7 @@ What to Sign
 .. new contract does not know the nonces used in the previous
 .. deployment, so the attacker can use the old messages again.
 
-別のタイプのリプレイ攻撃は、所有者が ``ReceiverPays`` スマートコントラクトを展開し、いくつかの支払いを行った後、コントラクトを破棄した場合に発生します。しかし、新しいコントラクトは前回の展開で使用された非暗号を知らないため、攻撃者は古いメッセージを再び使用することができます。
+別のタイプのリプレイ攻撃は、所有者が ``ReceiverPays`` スマートコントラクトを展開し、いくつかの支払いを行った後、コントラクトを破棄した場合に発生します。しかし、新しいコントラクトは前回の展開で使用された非暗号を知らないため、攻撃者は古いメッセージを再び使用できます。
 
 .. Alice can protect against this attack by including the
 .. contract's address in the message, and only messages containing
@@ -163,7 +163,7 @@ Recovering the Message Signer in Solidity
 .. accepts a message along with the ``r``, ``s`` and ``v`` parameters
 .. and returns the address that was used to sign the message.
 
-一般的に、ECDSA署名は ``r`` と ``s`` という2つのパラメータで構成されています。Ethereumの署名には、 ``v`` という3つ目のパラメータが含まれており、どのアカウントの秘密鍵がメッセージの署名に使われたか、トランザクションの送信者を確認するために使用することができます。Solidityには、メッセージと ``r`` 、 ``s`` 、 ``v`` の各パラメータを受け取り、メッセージの署名に使用されたアドレスを返す組み込み関数 :ref:`ecrecover <mathematical-and-cryptographic-functions>` があります。
+一般的に、ECDSA署名は ``r`` と ``s`` という2つのパラメータで構成されています。Ethereumの署名には、 ``v`` という3つ目のパラメータが含まれており、どのアカウントの秘密鍵がメッセージの署名に使われたか、トランザクションの送信者を確認するために使用できます。Solidityには、メッセージと ``r`` 、 ``s`` 、 ``v`` の各パラメータを受け取り、メッセージの署名に使用されたアドレスを返す組み込み関数 :ref:`ecrecover <mathematical-and-cryptographic-functions>` があります。
 
 Extracting the Signature Parameters
 -----------------------------------
@@ -280,7 +280,7 @@ What is a Payment Channel?
 
 ..     3. Bob "closes" the payment channel, withdrawing his portion of the Ether and sending the remainder back to the sender.
 
-ペイメントチャンネルでは、参加者はトランザクションを使わずにEtherの送金を繰り返し行うことができます。つまり、トランザクションに伴う遅延や手数料を回避することができます。ここでは、2人の当事者（AliceとBob）の間の単純な一方向性の支払いチャネルを調べてみます。それには3つのステップがあります。
+ペイメントチャンネルでは、参加者はトランザクションを使わずにEtherの送金を繰り返し行うことができます。つまり、トランザクションに伴う遅延や手数料を回避できます。ここでは、2人の当事者（AliceとBob）の間の単純な一方向性の支払いチャネルを調べてみます。それには3つのステップがあります。
 
     1.アリスはスマートコントラクトにEtherで資金を供給します。これにより、支払いチャネルを「オープン」します。
 
@@ -297,7 +297,7 @@ What is a Payment Channel?
 
 .. note::
 
-  ステップ1とステップ3のみがEthereumのトランザクションを必要とし、ステップ2は送信者が暗号化されたメッセージをオフチェーン方式（例：電子メール）で受信者に送信することを意味します。つまり、2つのトランザクションだけで、任意の数の転送をサポートすることができます。
+  ステップ1とステップ3のみがEthereumのトランザクションを必要とし、ステップ2は送信者が暗号化されたメッセージをオフチェーン方式（例：電子メール）で受信者に送信することを意味します。つまり、2つのトランザクションだけで、任意の数の転送をサポートできます。
 
 .. Bob is guaranteed to receive his funds because the smart contract escrows the
 .. Ether and honours a valid signed message. The smart contract also enforces a
@@ -422,7 +422,7 @@ Channel Expiration
 .. at the time of contract deployment. Once that time is reached, Alice can call
 .. ``claimTimeout`` to recover her funds. You can see the ``claimTimeout`` function in the full contract.
 
-ボブはいつでも支払いチャネルを閉じることができますが、それができなかった場合、アリスはエスクローされた資金を回収する方法が必要です。コントラクトの展開時に*有効期限*が設定されました。その時間に達すると、アリスは ``claimTimeout`` を呼び出して資金を回収することができます。 ``claimTimeout`` 機能は コントラクト全文で見ることができます。
+ボブはいつでも支払いチャネルを閉じることができますが、それができなかった場合、アリスはエスクローされた資金を回収する方法が必要です。コントラクトの展開時に*有効期限*が設定されました。その時間に達すると、アリスは ``claimTimeout`` を呼び出して資金を回収できます。 ``claimTimeout`` 機能は コントラクト全文で見ることができます。
 
 .. After this function is called, Bob can no longer receive any Ether,
 .. so it is important that Bob closes the channel before the expiration is reached.

@@ -11,7 +11,7 @@ Structure of a Contract
 .. :ref:`structure-function-modifiers`, :ref:`structure-events`, :ref:`structure-errors`, :ref:`structure-struct-types` and :ref:`structure-enum-types`.
 .. Furthermore, contracts can inherit from other contracts.
 
-Solidityのコントラクトは、オブジェクト指向言語のクラスに似ています。各コントラクトは、 :ref:`structure-state-variables` 、 :ref:`structure-functions` 、 :ref:`structure-function-modifiers` 、 :ref:`structure-events` 、 :ref:`structure-errors` 、 :ref:`structure-struct-types` 、 :ref:`structure-enum-types` の宣言を含むことができます。さらに、コントラクトは他のコントラクトを継承することができます。
+Solidityのコントラクトは、オブジェクト指向言語のクラスに似ています。各コントラクトは、 :ref:`structure-state-variables` 、 :ref:`structure-functions` 、 :ref:`structure-function-modifiers` 、 :ref:`structure-events` 、 :ref:`structure-errors` 、 :ref:`structure-struct-types` 、 :ref:`structure-enum-types` の宣言を含むことができます。さらに、コントラクトは他のコントラクトを継承できます。
 
 .. There are also special kinds of contracts called :ref:`libraries<libraries>` and :ref:`interfaces<interfaces>`.
 
@@ -90,7 +90,7 @@ Function Modifiers
 .. Function modifiers can be used to amend the semantics of functions in a declarative way
 .. (see :ref:`modifiers` in the contracts section).
 
-関数修飾子を使うと、宣言的に関数のセマンティクスを変更することができます（コントラクトセクションの :ref:`modifiers` を参照）。
+関数修飾子を使うと、宣言的に関数のセマンティクスを変更できます（コントラクトセクションの :ref:`modifiers` を参照）。
 
 .. Overloading, that is, having the same modifier name with different parameters,
 .. is not possible.
@@ -99,7 +99,7 @@ Function Modifiers
 
 .. Like functions, modifiers can be :ref:`overridden <modifier-overriding>`.
 
-関数と同様、修飾子も :ref:`overridden <modifier-overriding>` にすることができます。
+関数と同様、修飾子も :ref:`overridden <modifier-overriding>` にできます。
 
 .. code-block:: solidity
 
@@ -161,7 +161,7 @@ Errors
 .. to encode additional data. You can use NatSpec to describe the error to
 .. the user.
 
-エラーでは、障害が発生したときの記述的な名前とデータを定義することができます。エラーは :ref:`revert statements <revert-statement>` で使用することができます。文字列による説明に比べて、エラーははるかに安価で、追加データをエンコードすることができます。NatSpecを使って、ユーザーにエラーを説明することができます。
+エラーでは、障害が発生したときの記述的な名前とデータを定義できます。エラーは :ref:`revert statements <revert-statement>` で使用できます。文字列による説明に比べて、エラーははるかに安価で、追加データをエンコードできます。NatSpecを使って、ユーザーにエラーを説明できます。
 
 .. code-block:: solidity
 

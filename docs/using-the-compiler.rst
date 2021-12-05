@@ -81,7 +81,7 @@ Base Path and Import Remapping
 .. ``--allow-paths /sample/path,/another/sample/path`` switch.
 .. Everything inside the path specified via ``--base-path`` is always allowed.
 
-セキュリティ上の理由から、コンパイラは :ref:`restrictions on what directories it can access <allowed-paths>` .コマンドラインで指定されたソースファイルのディレクトリと、リマッピングのターゲットパスは、ファイルリーダーからのアクセスが自動的に許可されますが、それ以外はデフォルトで拒否されます。 ``--allow-paths /sample/path,/another/sample/path``  スイッチで追加のパス（およびそのサブディレクトリ）を許可することができます。 ``--base-path``  で指定されたパスの中のものは常に許可されます。
+セキュリティ上の理由から、コンパイラは :ref:`restrictions on what directories it can access <allowed-paths>` .コマンドラインで指定されたソースファイルのディレクトリと、リマッピングのターゲットパスは、ファイルリーダーからのアクセスが自動的に許可されますが、それ以外はデフォルトで拒否されます。 ``--allow-paths /sample/path,/another/sample/path``  スイッチで追加のパス（およびそのサブディレクトリ）を許可できます。 ``--base-path``  で指定されたパスの中のものは常に許可されます。
 
 .. The above is only a simplification of how the compiler handles import paths.
 .. For a detailed explanation with examples and discussion of corner cases please refer to the section on
@@ -165,7 +165,7 @@ Setting the EVM Version to Target
 .. When you compile your contract code you can specify the Ethereum virtual machine
 .. version to compile for to avoid particular features or behaviours.
 
-コントラクトコードをコンパイルする際に、特定の機能や動作を避けるためにコンパイルするEthereum仮想マシンのバージョンを指定することができます。
+コントラクトコードをコンパイルする際に、特定の機能や動作を避けるためにコンパイルするEthereum仮想マシンのバージョンを指定できます。
 
 .. .. warning::
 
@@ -820,7 +820,7 @@ solidity-upgrade
 
 .. note::
 
-    ``solidity-upgrade`` は作業の大部分を行いますが、 コントラクトはさらに手動で調整する必要がある場合がほとんどです。ファイルにはバージョン管理システムを使用することをお勧めします。これにより、変更内容を確認し、最終的にはロールバックすることができます。
+    ``solidity-upgrade`` は作業の大部分を行いますが、 コントラクトはさらに手動で調整する必要がある場合がほとんどです。ファイルにはバージョン管理システムを使用することをお勧めします。これにより、変更内容を確認し、最終的にはロールバックできます。
 
 .. .. warning::
 
@@ -841,19 +841,19 @@ How it Works
 .. ``--allow-paths [directory]``. You can ignore missing files by passing
 .. ``--ignore-missing``.
 
-``solidity-upgrade [files]`` にはSolidityのソースファイルを渡すことができます。これらのファイルが、現在のソースファイルのディレクトリ外のファイルを参照する ``import`` ステートメントを使用する場合は、 ``--allow-paths [directory]`` を渡して、ファイルの読み込みとインポートが許可されているディレクトリを指定する必要があります。 ``--ignore-missing`` を渡すと、見つからないファイルを無視することができます。
+``solidity-upgrade [files]`` にはSolidityのソースファイルを渡すことができます。これらのファイルが、現在のソースファイルのディレクトリ外のファイルを参照する ``import`` ステートメントを使用する場合は、 ``--allow-paths [directory]`` を渡して、ファイルの読み込みとインポートが許可されているディレクトリを指定する必要があります。 ``--ignore-missing`` を渡すと、見つからないファイルを無視できます。
 
 .. ``solidity-upgrade`` is based on ``libsolidity`` and can parse, compile and
 .. analyse your source files, and might find applicable source upgrades in them.
 
-``solidity-upgrade`` は ``libsolidity`` をベースにしており、ソースファイルを解析、コンパイル、分析することができ、その中から該当するソースアップグレードを見つけることができるかもしれません。
+``solidity-upgrade`` は ``libsolidity`` をベースにしており、ソースファイルを解析、コンパイル、分析でき、その中から該当するソースアップグレードを見つけることができるかもしれません。
 
 .. Source upgrades are considered to be small textual changes to your source code.
 .. They are applied to an in-memory representation of the source files
 .. given. The corresponding source file is updated by default, but you can pass
 .. ``--dry-run`` to simulate to whole upgrade process without writing to any file.
 
-ソースアップグレードとは、ソースコードに小さな文字の変更を加えることと考えられます。ソースアップグレードは、与えられたソースファイルのメモリ内表現に適用されます。デフォルトでは、対応するソースファイルが更新されますが、 ``--dry-run``  を渡すことで、ファイルに書き込まずにアップグレード処理全体をシミュレートすることができます。
+ソースアップグレードとは、ソースコードに小さな文字の変更を加えることと考えられます。ソースアップグレードは、与えられたソースファイルのメモリ内表現に適用されます。デフォルトでは、対応するソースファイルが更新されますが、 ``--dry-run``  を渡すことで、ファイルに書き込まずにアップグレード処理全体をシミュレートできます。
 
 .. The upgrade process itself has two phases. In the first phase source files are
 .. parsed, and since it is not possible to upgrade source code on that level,
@@ -879,7 +879,7 @@ How it Works
 .. If no errors occur, your contracts are up to date and can be compiled with
 .. the latest version of the compiler.
 
-その結果、ソースのアップグレードによって修正される可能性のあるコンパイルエラーが発生することがあります。エラーが発生しなければ、ソース・アップグレードは報告されていないので、これで終了です。エラーが発生し、あるアップグレード・モジュールがソース・アップグレードを報告した場合は、最初に報告されたものが適用され、与えられたすべてのソース・ファイルに対して再びコンパイルが行われます。ソース・アップグレードが報告されている限り、前のステップが繰り返されます。それでもエラーが発生した場合は、 ``--verbose``  を渡すことでエラーをログに記録できます。エラーが発生しなければ、コントラクトは最新の状態になっており、最新バージョンのコンパイラでコンパイルすることができます。
+その結果、ソースのアップグレードによって修正される可能性のあるコンパイルエラーが発生することがあります。エラーが発生しなければ、ソース・アップグレードは報告されていないので、これで終了です。エラーが発生し、あるアップグレード・モジュールがソース・アップグレードを報告した場合は、最初に報告されたものが適用され、与えられたすべてのソース・ファイルに対して再びコンパイルが行われます。ソース・アップグレードが報告されている限り、前のステップが繰り返されます。それでもエラーが発生した場合は、 ``--verbose``  を渡すことでエラーをログに記録できます。エラーが発生しなければ、コントラクトは最新の状態になっており、最新バージョンのコンパイラでコンパイルできます。
 
 .. _upgrade-modules:
 

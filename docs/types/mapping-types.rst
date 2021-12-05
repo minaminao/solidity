@@ -34,7 +34,7 @@ Mapping Types
 .. of contract functions that are publicly visible.
 .. These restrictions are also true for arrays and structs that contain mappings.
 
-マッピングのデータ位置は ``storage`` のみであるため、ステート変数、関数内のストレージ参照型、ライブラリ関数のパラメータとして使用することができます。これらは、一般に公開されているコントラクト関数のパラメータやリターンパラメータとしては使用できません。これらの制限は、マッピングを含む配列や構造体にも当てはまります。
+マッピングのデータ位置は ``storage`` のみであるため、ステート変数、関数内のストレージ参照型、ライブラリ関数のパラメータとして使用できます。これらは、一般に公開されているコントラクト関数のパラメータやリターンパラメータとしては使用できません。これらの制限は、マッピングを含む配列や構造体にも当てはまります。
 
 .. You can mark state variables of mapping type as ``public`` and Solidity creates a
 .. :ref:`getter <visibility-and-getters>` for you. The ``_KeyType`` becomes a parameter for the getter.

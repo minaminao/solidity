@@ -57,7 +57,7 @@ npm / Node.js
 .. `solc-js` can be used in JavaScript projects directly (such as Remix).
 .. Please refer to the solc-js repository for instructions.
 
-注：solc-jsプロジェクトは、Emscriptenを使用してC++  `solc` から派生しており、両者は同じコンパイラのソースコードを使用しています。 `solc-js` はJavaScriptプロジェクト（Remixなど）で直接使用することができます。使用方法はsolc-jsのリポジトリを参照してください。
+注：solc-jsプロジェクトは、Emscriptenを使用してC++  `solc` から派生しており、両者は同じコンパイラのソースコードを使用しています。 `solc-js` はJavaScriptプロジェクト（Remixなど）で直接使用できます。使用方法はsolc-jsのリポジトリを参照してください。
 
 .. code-block:: bash
 
@@ -222,7 +222,7 @@ macOS Packages
 .. If you need a specific version of Solidity you can install a
 .. Homebrew formula directly from Github.
 
-Solidityの特定のバージョンが必要な場合は、Githubから直接Homebrew式をインストールすることができます。
+Solidityの特定のバージョンが必要な場合は、Githubから直接Homebrew式をインストールできます。
 
 .. View
 .. `solidity.rb commits on Github <https://github.com/ethereum/homebrew-ethereum/commits/master/solidity.rb>`_.
@@ -265,7 +265,7 @@ Static Binaries
 .. - The content is mirrored to https://binaries.soliditylang.org where it can be easily downloaded over
 ..   HTTPS without any authentication, rate limiting or the need to use git.
 
-- コンテンツは https://binaries.soliditylang.org にミラーリングされ、認証やレート制限、git を使用する必要なく、HTTPS で簡単にダウンロードすることができます。
+- コンテンツは https://binaries.soliditylang.org にミラーリングされ、認証やレート制限、git を使用する必要なく、HTTPS で簡単にダウンロードできます。
 
 .. - Content is served with correct `Content-Type` headers and lenient CORS configuration so that it
 ..   can be directly loaded by tools running in the browser.
@@ -348,12 +348,12 @@ Static Binaries
 ..   on the command line using ``keccak256sum`` utility provided by `sha3sum`_ or `keccak256() function
 ..   from ethereumjs-util`_ in JavaScript.
 
-- keccak256ハッシュを ``0x300330ecd127756b824aa13e843cb1f43c473cb22eaf3750d5fb9c99279af8c3`` と比較することで、バイナリの完全性を確認することができます。  ハッシュは、 `sha3sum`_ が提供する ``keccak256sum`` ユーティリティーを使ってコマンドラインで計算するか、JavaScriptで `keccak256() function   from ethereumjs-util`_ を使って計算することができます。
+- keccak256ハッシュを ``0x300330ecd127756b824aa13e843cb1f43c473cb22eaf3750d5fb9c99279af8c3`` と比較することで、バイナリの完全性を確認できます。  ハッシュは、 `sha3sum`_ が提供する ``keccak256sum`` ユーティリティーを使ってコマンドラインで計算するか、JavaScriptで `keccak256() function   from ethereumjs-util`_ を使って計算できます。
 
 .. - You can also verify the integrity of the binary by comparing its sha256 hash to
 ..   ``0x2b55ed5fec4d9625b6c7b3ab1abd2b7fb7dd2a9c68543bf0323db2c7e2d55af2``.
 
-- また、sha256ハッシュを ``0x2b55ed5fec4d9625b6c7b3ab1abd2b7fb7dd2a9c68543bf0323db2c7e2d55af2`` と比較することで、バイナリの完全性を確認することができます。
+- また、sha256ハッシュを ``0x2b55ed5fec4d9625b6c7b3ab1abd2b7fb7dd2a9c68543bf0323db2c7e2d55af2`` と比較することで、バイナリの完全性を確認できます。
 
 .. .. warning::
 
@@ -478,7 +478,7 @@ Prerequisites - All Operating Systems
 
 .. note::
 
-    デフォルトのビルド構成では、特定のZ3バージョン（コードが最後に更新された時点での最新のもの）が必要です。Z3のリリース間に導入された変更により、わずかに異なる(ただし有効な)結果が返されることがよくあります。私たちのSMTテストはこれらの違いを考慮しておらず、書かれたバージョンとは異なるバージョンで失敗する可能性があります。これは、異なるバージョンを使用したビルドが欠陥であることを意味するものではありません。CMakeに ``-DSTRICT_Z3_VERSION=OFF`` オプションを渡しておけば、上の表にある要件を満たす任意のバージョンでビルドすることができます。     ただし、この場合、SMT テストをスキップするために  ``scripts/tests.sh``  に  ``--no-smt``  オプションを渡すことを忘れないでください。
+    デフォルトのビルド構成では、特定のZ3バージョン（コードが最後に更新された時点での最新のもの）が必要です。Z3のリリース間に導入された変更により、わずかに異なる(ただし有効な)結果が返されることがよくあります。私たちのSMTテストはこれらの違いを考慮しておらず、書かれたバージョンとは異なるバージョンで失敗する可能性があります。これは、異なるバージョンを使用したビルドが欠陥であることを意味するものではありません。CMakeに ``-DSTRICT_Z3_VERSION=OFF`` オプションを渡しておけば、上の表にある要件を満たす任意のバージョンでビルドできます。     ただし、この場合、SMT テストをスキップするために  ``scripts/tests.sh``  に  ``--no-smt``  オプションを渡すことを忘れないでください。
 
 Minimum Compiler Versions
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -545,7 +545,7 @@ SolidityのWindowsビルドには、以下の依存関係をインストール�
 .. If you already have one IDE and only need the compiler and libraries,
 .. you could install Visual Studio 2019 Build Tools.
 
-すでに1つのIDEを持っていて、コンパイラとライブラリだけが必要な場合は、Visual Studio 2019 Build Toolsをインストールすることができます。
+すでに1つのIDEを持っていて、コンパイラとライブラリだけが必要な場合は、Visual Studio 2019 Build Toolsをインストールできます。
 
 .. Visual Studio 2019 provides both IDE and necessary compiler and libraries.
 .. So if you have not got an IDE and prefer to develop Solidity, Visual Studio 2019
@@ -720,7 +720,7 @@ they are found in the system. Each solver can be disabled by a `cmake` option.
 
 .. Inside the build folder you can disable them, since they are enabled by default:
 
-ビルドフォルダ内では、デフォルトで有効になっているので、無効にすることができます。
+ビルドフォルダ内では、デフォルトで有効になっているので、無効にできます。
 
 .. code-block:: bash
 

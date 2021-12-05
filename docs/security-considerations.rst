@@ -23,7 +23,7 @@ Solidityでは、スマートコントラクトを使ってトークンや、も
 .. to take too much care, but if you manage your bank account using that web service,
 .. you should be more careful.
 
-スマートコントラクトを、一般に公開されていて（つまり悪意のあるアクターにも公開されていて）、おそらくオープンソースでさえあるウェブサービスと比較することができます。そのウェブサービスに食料品のリストを保存するだけであれば、それほど注意を払う必要はないかもしれませんが、そのウェブサービスを使って銀行口座を管理する場合には、より注意を払う必要があります。
+スマートコントラクトを、一般に公開されていて（つまり悪意のあるアクターにも公開されていて）、おそらくオープンソースでさえあるウェブサービスと比較できます。そのウェブサービスに食料品のリストを保存するだけであれば、それほど注意を払う必要はないかもしれませんが、そのウェブサービスを使って銀行口座を管理する場合には、より注意を払う必要があります。
 
 .. This section will list some pitfalls and general security recommendations but
 .. can, of course, never be complete.  Also, keep in mind that even if your smart
@@ -98,7 +98,7 @@ Re-Entrancy
 .. following contract will allow an attacker to refund multiple times
 .. as it uses ``call`` which forwards all remaining gas by default:
 
-この問題は、 ``send`` の一部としての限定されたガスのため、ここではそれほど深刻ではありませんが、それでも弱点を露呈しています。Etherの転送には常にコードの実行が含まれるため、受信者は ``withdraw`` にコールバックするコントラクトになる可能性があります。これにより、複数回の払い戻しが可能となり、基本的にはコントラクト内のすべてのEtherを回収することができます。特に、以下のコントラクトは、デフォルトで残りのガスをすべて転送する ``call`` を使用しているため、攻撃者は複数回返金することができます。
+この問題は、 ``send`` の一部としての限定されたガスのため、ここではそれほど深刻ではありませんが、それでも弱点を露呈しています。Etherの転送には常にコードの実行が含まれるため、受信者は ``withdraw`` にコールバックするコントラクトになる可能性があります。これにより、複数回の払い戻しが可能となり、基本的にはコントラクト内のすべてのEtherを回収できます。特に、以下のコントラクトは、デフォルトで残りのガスをすべて転送する ``call`` を使用しているため、攻撃者は複数回返金できます。
 
 .. code-block:: solidity
 
@@ -120,7 +120,7 @@ Re-Entrancy
 .. To avoid re-entrancy, you can use the Checks-Effects-Interactions pattern as
 .. outlined further below:
 
-リエントランシーを避けるために、以下のようなChecks-Effects-Interactionsパターンを使用することができます。
+リエントランシーを避けるために、以下のようなChecks-Effects-Interactionsパターンを使用できます。
 
 .. code-block:: solidity
 
@@ -165,7 +165,7 @@ Sending and Receiving Ether
 ..   to move Ether without creating a message call. One way is to simply "mine to"
 ..   the contract address and the second way is using ``selfdestruct(x)``.
 
-- コントラクトも「外部アカウント」も、誰かがEtherを送ってくるのを防ぐことは今のところできません。   コントラクトは、通常の送金に反応して拒否することができますが、メッセージコールを作成せずにEtherを移動する方法があります。ひとつはコントラクトのアドレスに単純に「マイニング」する方法で、もうひとつは ``selfdestruct(x)`` を使う方法です。
+- コントラクトも「外部アカウント」も、誰かがEtherを送ってくるのを防ぐことは今のところできません。   コントラクトは、通常の送金に反応して拒否できますが、メッセージコールを作成せずにEtherを移動する方法があります。ひとつはコントラクトのアドレスに単純に「マイニング」する方法で、もうひとつは ``selfdestruct(x)`` を使う方法です。
 
 .. - If a contract receives Ether (without a function being called),
 ..   either the :ref:`receive Ether <receive-ether-function>`
@@ -221,7 +221,7 @@ Sending and Receiving Ether
 
 - ``address.transfer`` を使ってEtherを送信する場合、注意すべき点があります。
 
-  1.受信者がコントラクトの場合、その受信機能またはフォールバック機能を実行させ、その結果、送信側のコントラクトをコールバックすることができます。
+  1.受信者がコントラクトの場合、その受信機能またはフォールバック機能を実行させ、その結果、送信側のコントラクトをコールバックできます。
 
   2.コールデプスが102以上になると、イーサの送信に失敗することがある
 
@@ -237,7 +237,7 @@ Call Stack Depth
 .. Malicious actors might be able to force the call stack to a high value
 .. before they interact with your contract. Note that, since `Tangerine Whistle <https://eips.ethereum.org/EIPS/eip-608>`_ hardfork, the `63/64 rule <https://eips.ethereum.org/EIPS/eip-150>`_ makes call stack depth attack impractical. Also note that the call stack and the expression stack are unrelated, even though both have a size limit of 1024 stack slots.
 
-外部関数の呼び出しは、コールスタックの最大サイズ制限である1024を超えるため、いつでも失敗する可能性があります。このような状況では、Solidityは例外を投げます。悪意のあるアクターは、コントラクトと対話する前にコールスタックを強制的に高い値にすることができるかもしれません。 `Tangerine Whistle <https://eips.ethereum.org/EIPS/eip-608>`_ のハードフォーク以来、 `63/64 rule <https://eips.ethereum.org/EIPS/eip-150>`_ はコールスタックの深さの攻撃を実用的ではないものにしていることに注意してください。また、コールスタックとエクスプレッションスタックは、どちらも1024のスタックスロットというサイズ制限がありますが、無関係であることに注意してください。
+外部関数の呼び出しは、コールスタックの最大サイズ制限である1024を超えるため、いつでも失敗する可能性があります。このような状況では、Solidityは例外を投げます。悪意のあるアクターは、コントラクトと対話する前にコールスタックを強制的に高い値にできるかもしれません。 `Tangerine Whistle <https://eips.ethereum.org/EIPS/eip-608>`_ のハードフォーク以来、 `63/64 rule <https://eips.ethereum.org/EIPS/eip-150>`_ はコールスタックの深さの攻撃を実用的ではないものにしていることに注意してください。また、コールスタックとエクスプレッションスタックは、どちらも1024のスタックスロットというサイズ制限がありますが、無関係であることに注意してください。
 
 .. Note that ``.send()`` does **not** throw an exception if the call stack is
 .. depleted but rather returns ``false`` in that case. The low-level functions
@@ -255,7 +255,7 @@ Authorized Proxies
 .. any permissions (not even for itself). If needed, you can accomplish that
 .. using a second proxy:
 
-コントラクトがプロキシとして動作できる場合、つまり、ユーザーが提供したデータで任意のコントラクトを呼び出すことができる場合、ユーザーは基本的にプロキシのコントラクトのアイデンティティを仮定することができます。他の保護手段があったとしても、プロキシが(自分自身のためでさえも)いかなる許可も持たないようにコントラクトシステムを構築することが最善です。必要であれば、第二のプロキシを使ってそれを達成することができます。
+コントラクトがプロキシとして動作できる場合、つまり、ユーザーが提供したデータで任意のコントラクトを呼び出すことができる場合、ユーザーは基本的にプロキシのコントラクトのアイデンティティを仮定できます。他の保護手段があったとしても、プロキシが(自分自身のためでさえも)いかなる許可も持たないようにコントラクトシステムを構築することが最善です。必要であれば、第二のプロキシを使ってそれを達成できます。
 
 .. code-block:: solidity
 
@@ -363,7 +363,7 @@ Solidityには、これらのオーバーフローを処理する2つのモー�
 .. using ``unchecked { ... }``, causing the overflow to be silently ignored. The above code would return
 .. ``0`` if wrapped in ``unchecked { ... }``.
 
-デフォルトのチェックモードでは、オーバーフローを検出し、アサーションの失敗を引き起こします。 ``unchecked { ... }`` を使ってこのチェックを無効にすることで、オーバーフローを静かに無視することができます。上記のコードは、 ``unchecked { ... }``  でラップすると  ``0``  を返します。
+デフォルトのチェックモードでは、オーバーフローを検出し、アサーションの失敗を引き起こします。 ``unchecked { ... }`` を使ってこのチェックを無効にすることで、オーバーフローを静かに無視できます。上記のコードは、 ``unchecked { ... }``  でラップすると  ``0``  を返します。
 
 .. Even in checked mode, do not assume you are protected from overflow bugs.
 .. In this mode, overflows will always revert. If it is not possible to avoid the
@@ -441,7 +441,7 @@ Solidityのタイプ ``mapping`` （ :ref:`mapping-types` 参照）は、スト�
 .. `iterable mapping <https://github.com/ethereum/dapp-bin/blob/master/library/iterable_mapping.sol>`_,
 .. allowing you to traverse the keys and delete their values in the appropriate ``mapping``.
 
-``mapping`` の情報を削除する必要がある場合は、 `iterable mapping <https://github.com/ethereum/dapp-bin/blob/master/library/iterable_mapping.sol>`_ と同様のライブラリを使用することを検討し、適切な ``mapping`` でキーをトラバースしてその値を削除することができます。
+``mapping`` の情報を削除する必要がある場合は、 `iterable mapping <https://github.com/ethereum/dapp-bin/blob/master/library/iterable_mapping.sol>`_ と同様のライブラリを使用することを検討し、適切な ``mapping`` でキーをトラバースしてその値を削除できます。
 
 Minor Details
 =============
@@ -538,7 +538,7 @@ Include a Fail-Safe Mode
 .. it might be a good idea, especially for new code, to include some kind
 .. of fail-safe mechanism:
 
-システムを完全に非中央集権化することで、仲介者を排除することができますが、特に新しいコードには、何らかのフェイルセーフ・メカニズムを組み込むことが良いかもしれません。
+システムを完全に非中央集権化することで、仲介者を排除できますが、特に新しいコードには、何らかのフェイルセーフ・メカニズムを組み込むことが良いかもしれません。
 
 .. You can add a function in your smart contract that performs some
 .. self-checks like "Has any Ether leaked?",
@@ -546,7 +546,7 @@ Include a Fail-Safe Mode
 .. Keep in mind that you cannot use too much gas for that, so help through off-chain
 .. computations might be needed there.
 
-スマートコントラクトの中に、「Etherが漏れていないか」「トークンの合計がコントラクトの残高と同じか」などの自己チェックを行う関数を追加することができます。そのためには、あまり多くのガスを使うことはできないので、オフチェーンの計算による助けが必要になるかもしれないことを覚えておいてください。
+スマートコントラクトの中に、「Etherが漏れていないか」「トークンの合計がコントラクトの残高と同じか」などの自己チェックを行う関数を追加できます。そのためには、あまり多くのガスを使うことはできないので、オフチェーンの計算による助けが必要になるかもしれないことを覚えておいてください。
 
 .. If the self-check fails, the contract automatically switches into some kind
 .. of "failsafe" mode, which, for example, disables most of the features, hands over

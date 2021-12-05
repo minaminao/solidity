@@ -15,7 +15,7 @@ Reference Types
 .. are stored, where the lifetime is limited to the lifetime of a contract)
 .. or ``calldata`` (special data location that contains the function arguments).
 
-参照型の値は、複数の異なる名前で変更することができます。値型の変数が使われるたびに独立したコピーを得ることができる値型とは対照的です。そのため、参照型は値型よりも慎重に扱う必要があります。現在、参照型は構造体、配列、マッピングで構成されています。参照型を使用する場合は、その型が格納されているデータ領域を常に明示的に提供する必要があります。 ``memory`` （ライフタイムが外部の関数呼び出しに限定される）、 ``storage`` （状態変数が格納されている場所で、ライフタイムがコントラクトのライフタイムに限定される）、 ``calldata`` （関数の引数が格納されている特別なデータの場所）のいずれかになります。
+参照型の値は、複数の異なる名前で変更できます。値型の変数が使われるたびに独立したコピーを得ることができる値型とは対照的です。そのため、参照型は値型よりも慎重に扱う必要があります。現在、参照型は構造体、配列、マッピングで構成されています。参照型を使用する場合は、その型が格納されているデータ領域を常に明示的に提供する必要があります。 ``memory`` （ライフタイムが外部の関数呼び出しに限定される）、 ``storage`` （状態変数が格納されている場所で、ライフタイムがコントラクトのライフタイムに限定される）、 ``calldata`` （関数の引数が格納されている特別なデータの場所）のいずれかになります。
 
 .. An assignment or type conversion that changes the data location will always incur an automatic copy operation,
 .. while assignments inside the same data location only copy in some cases for storage types.
@@ -64,7 +64,7 @@ Data location
 
 .. note::
 
-    バージョン0.5.0までは、データの位置を省略することができ、変数の種類や関数の種類などに応じて異なる位置をデフォルトとしていましたが、現在ではすべての複合型でデータの位置を明示的に指定しなければなりません。
+    バージョン0.5.0までは、データの位置を省略でき、変数の種類や関数の種類などに応じて異なる位置をデフォルトとしていましたが、現在ではすべての複合型でデータの位置を明示的に指定しなければなりません。
 
 .. _data-location-assignment:
 
@@ -186,7 +186,7 @@ Arrays
 .. to append a new element at the end of the array, where ``.push()`` appends a zero-initialized element and returns
 .. a reference to it.
 
-配列の終端を超えてアクセスすると、アサーションが失敗します。メソッド ``.push()`` と ``.push(value)`` は、配列の最後に新しい要素を追加するために使用することができ、 ``.push()`` はゼロ初期化された要素を追加し、その要素への参照を返します。
+配列の終端を超えてアクセスすると、アサーションが失敗します。メソッド ``.push()`` と ``.push(value)`` は、配列の最後に新しい要素を追加するために使用でき、 ``.push()`` はゼロ初期化された要素を追加し、その要素への参照を返します。
 
 .. index:: ! string, ! bytes
 
@@ -208,7 +208,7 @@ Arrays
 .. ``keccak256(abi.encodePacked(s1)) == keccak256(abi.encodePacked(s2))`` and
 .. concatenate two strings using ``bytes.concat(bytes(s1), bytes(s2))``.
 
-Solidityには文字列操作機能はありませんが、サードパーティ製の文字列ライブラリがあります。また、 ``keccak256(abi.encodePacked(s1)) == keccak256(abi.encodePacked(s2))`` を使って2つの文字列をそのkeccak256-hashで比較したり、 ``bytes.concat(bytes(s1), bytes(s2))`` を使って2つの文字列を連結することができます。
+Solidityには文字列操作機能はありませんが、サードパーティ製の文字列ライブラリがあります。また、 ``keccak256(abi.encodePacked(s1)) == keccak256(abi.encodePacked(s2))`` を使って2つの文字列をそのkeccak256-hashで比較したり、 ``bytes.concat(bytes(s1), bytes(s2))`` を使って2つの文字列を連結できます。
 
 .. You should use ``bytes`` over ``bytes1[]`` because it is cheaper,
 .. since ``bytes1[]`` adds 31 padding bytes between the elements. As a general rule,
@@ -240,7 +240,7 @@ Solidityには文字列操作機能はありませんが、サードパーティ
 .. The function returns a single ``bytes memory`` array that contains the contents of the arguments without padding.
 .. If you want to use string parameters or other types, you need to convert them to ``bytes`` or ``bytes1``/.../``bytes32`` first.
 
-``bytes.concat`` を使って可変数の ``bytes`` や ``bytes1 ... bytes32`` を連結することができます。この関数は、パディングされていない引数の内容を含む単一の ``bytes memory`` 配列を返します。文字列のパラメータや他の型を使いたい場合は、まず ``bytes`` や ``bytes1`` /.../ ``bytes32`` に変換する必要があります。
+``bytes.concat`` を使って可変数の ``bytes`` や ``bytes1 ... bytes32`` を連結できます。この関数は、パディングされていない引数の内容を含む単一の ``bytes memory`` 配列を返します。文字列のパラメータや他の型を使いたい場合は、まず ``bytes`` や ``bytes1`` /.../ ``bytes32`` に変換する必要があります。
 
 .. code-block:: solidity
 
@@ -344,7 +344,7 @@ Array Literals
 .. is ``uint8`` while the type of the second is ``int8`` and they cannot be implicitly
 .. converted to each other. To make it work, you can use ``[int8(1), -1]``, for example.
 
-配列リテラル ``[1, -1]`` が無効なのは、最初の式の型が ``uint8`` であるのに対し、2番目の式の型が ``int8`` であり、両者を暗黙的に変換することができないからです。これを動作させるには、例えば ``[int8(1), -1]`` を使用します。
+配列リテラル ``[1, -1]`` が無効なのは、最初の式の型が ``uint8`` であるのに対し、2番目の式の型が ``int8`` であり、両者を暗黙的に変換できないからです。これを動作させるには、例えば ``[int8(1), -1]`` を使用します。
 
 .. Since fixed-size memory arrays of different type cannot be converted into each other
 .. (even if the base types can), you always have to specify a common base type explicitly
@@ -434,7 +434,7 @@ Array Members
 ..      function called ``pop`` that you can use to remove an element from the
 ..      end of the array. This also implicitly calls :ref:`delete<delete>` on the removed element.
 
-**length** : 配列には、要素数を表す ``length`` メンバがあります。     記憶配列の長さは、作成されると固定されます（ただし、動的、つまり実行時のパラメータに依存することがあります）。 **push()** ：動的記憶配列と ``bytes`` （ ``string`` ではありません）には、 ``push()`` というメンバ関数があり、配列の最後にゼロ初期化された要素を追加するのに使用できます。      この関数は、要素への参照を返すので、 ``x.push().t = 2`` や ``x.push() = b`` のように使用することができます。 **push(x)** ：動的記憶配列と ``bytes`` （ ``string`` ではない）には、 ``push(x)`` というメンバ関数があり、配列の最後に与えられた要素を追加するのに使用できます。      この関数は何も返しません。 **pop** ：動的記憶配列と  ``bytes`` （ ``string``  ではありません）には  ``pop``  というメンバ関数があり、配列の最後から要素を削除するのに使用できます。この関数は、削除された要素に対して  :ref:`delete<delete>`  を暗黙的に呼び出します。
+**length** : 配列には、要素数を表す ``length`` メンバがあります。     記憶配列の長さは、作成されると固定されます（ただし、動的、つまり実行時のパラメータに依存することがあります）。 **push()** ：動的記憶配列と ``bytes`` （ ``string`` ではありません）には、 ``push()`` というメンバ関数があり、配列の最後にゼロ初期化された要素を追加するのに使用できます。      この関数は、要素への参照を返すので、 ``x.push().t = 2`` や ``x.push() = b`` のように使用できます。 **push(x)** ：動的記憶配列と ``bytes`` （ ``string`` ではない）には、 ``push(x)`` というメンバ関数があり、配列の最後に与えられた要素を追加するのに使用できます。      この関数は何も返しません。 **pop** ：動的記憶配列と  ``bytes`` （ ``string``  ではありません）には  ``pop``  というメンバ関数があり、配列の最後から要素を削除するのに使用できます。この関数は、削除された要素に対して  :ref:`delete<delete>`  を暗黙的に呼び出します。
 
 .. .. note::
 
@@ -468,7 +468,7 @@ Array Members
 
 .. note::
 
-    Byzantium以前のEVMバージョンでは、関数呼び出しから返される動的配列にアクセスすることができませんでした。動的配列を返す関数を呼び出す場合は、必ずByzantiumモードに設定されたEVMを使用してください。
+    Byzantium以前のEVMバージョンでは、関数呼び出しから返される動的配列にアクセスできませんでした。動的配列を返す関数を呼び出す場合は、必ずByzantiumモードに設定されたEVMを使用してください。
 
 .. code-block:: solidity
 
@@ -720,7 +720,7 @@ Solidityでは、構造体の形で新しい型を定義する方法を提供し
 .. Struct types can be used inside mappings and arrays and they can themselves
 .. contain mappings and arrays.
 
-この コントラクトは、クラウドファンディングの コントラクトの機能をすべて提供するものではありませんが、構造体を理解するために必要な基本的な概念が含まれています。構造体はマッピングや配列の内部で使用することができ、構造体自身もマッピングや配列を含むことができます。
+この コントラクトは、クラウドファンディングの コントラクトの機能をすべて提供するものではありませんが、構造体を理解するために必要な基本的な概念が含まれています。構造体はマッピングや配列の内部で使用でき、構造体自身もマッピングや配列を含むことができます。
 
 .. It is not possible for a struct to contain a member of its own type,
 .. although the struct itself can be the value type of a mapping member

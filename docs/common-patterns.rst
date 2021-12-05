@@ -134,13 +134,13 @@ Restricting Access
 .. by **other contracts**. That is actually the default
 .. unless you declare your state variables ``public``.
 
-コントラクトの状態に対する読み取りアクセスを **other contracts** で制限することができます。これは、状態変数を ``public`` で宣言しない限り、実際にはデフォルトです。
+コントラクトの状態に対する読み取りアクセスを **other contracts** で制限できます。これは、状態変数を ``public`` で宣言しない限り、実際にはデフォルトです。
 
 .. Furthermore, you can restrict who can make modifications
 .. to your contract's state or call your contract's
 .. functions and this is what this section is about.
 
-さらに、コントラクトの状態を変更したり、コントラクトの関数を呼び出すことができる人を制限することができますが、これがこのセクションの目的です。
+さらに、コントラクトの状態を変更したり、コントラクトの関数を呼び出すことができる人を制限できますが、これがこのセクションの目的です。
 
 .. index:: function;modifier
 
@@ -335,7 +335,7 @@ Example
 
 .. note::
 
-    **Modifier May be Skipped** です。     これは、バージョン0.4.0以前のSolidityにのみ適用されます。     修飾子は、関数呼び出しを使用せず、単にコードを置き換えることで適用されるため、関数自体がreturnを使用している場合、transitionNext修飾子のコードをスキップすることができます。その場合は、それらの関数から手動でnextStageを呼び出すようにしてください。     バージョン0.4.0からは、モディファイアのコードは、関数が明示的にreturnしても実行されます。
+    **Modifier May be Skipped** です。     これは、バージョン0.4.0以前のSolidityにのみ適用されます。     修飾子は、関数呼び出しを使用せず、単にコードを置き換えることで適用されるため、関数自体がreturnを使用している場合、transitionNext修飾子のコードをスキップできます。その場合は、それらの関数から手動でnextStageを呼び出すようにしてください。     バージョン0.4.0からは、モディファイアのコードは、関数が明示的にreturnしても実行されます。
 
 .. code-block:: solidity
     :force:

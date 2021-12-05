@@ -146,7 +146,7 @@ Explicitness Requirements
   ``b`` is a contract of type ``B``, you can still convert ``b`` to type ``A`` using ``A(address(b))``.
   Note that you still need to watch out for matching payable fallback functions, as explained below.
 
-* 関連性のないコントラクトタイプ間の明示的な変換ができなくなりました。あるコントラクトタイプから、そのベースまたは祖先のタイプの1つへの変換のみが可能です。あるコントラクトが、変換したいコントラクトタイプを継承していないものの、互換性があると確信している場合、最初に ``address`` に変換することでこれを回避することができます。例： ``A`` と ``B`` がコントラクトタイプで、 ``B`` は ``A`` から継承されず、 ``b`` は ``B`` タイプのコントラクトである場合、 ``A(address(b))`` を使って ``b`` を ``A`` タイプに変換することができます。なお、以下に説明するように、マッチング・ペイバック・フォールバック関数にも注意する必要があります。
+* 関連性のないコントラクトタイプ間の明示的な変換ができなくなりました。あるコントラクトタイプから、そのベースまたは祖先のタイプの1つへの変換のみが可能です。あるコントラクトが、変換したいコントラクトタイプを継承していないものの、互換性があると確信している場合、最初に ``address`` に変換することでこれを回避できます。例： ``A`` と ``B`` がコントラクトタイプで、 ``B`` は ``A`` から継承されず、 ``b`` は ``B`` タイプのコントラクトである場合、 ``A(address(b))`` を使って ``b`` を ``A`` タイプに変換できます。なお、以下に説明するように、マッチング・ペイバック・フォールバック関数にも注意する必要があります。
 
 .. * The ``address`` type  was split into ``address`` and ``address payable``,
   where only ``address payable`` provides the ``transfer`` function.  An
@@ -254,7 +254,7 @@ Constructors
 .. * Specifying base constructor arguments multiple times in the same inheritance
   hierarchy is now disallowed.
 
-* ベースコンストラクタの引数を同じ継承階層で複数回指定することができなくなりました。
+* ベースコンストラクタの引数を同じ継承階層で複数回指定できなくなりました。
 
 .. * Calling a constructor with arguments but with wrong argument count is now
   disallowed.  If you only want to specify an inheritance relation without
@@ -364,7 +364,7 @@ Syntax
 
 .. * Using ``constant`` as function state mutability modifier is now disallowed.
 
-*  ``constant`` を関数状態の変異性修飾子として使用することができなくなりました。
+*  ``constant`` を関数状態の変異性修飾子として使用できなくなりました。
 
 .. * Boolean expressions cannot use arithmetic operations.
 
@@ -464,7 +464,7 @@ Interoperability With Older Contracts
 
 .. Given the interface defined above, you can now easily use the already deployed pre-0.5.0 contract:
 
-上記で定義されたインターフェースがあれば、すでにデプロイされたpre-0.5.0のコントラクトを簡単に使用することができます。
+上記で定義されたインターフェースがあれば、すでにデプロイされたpre-0.5.0のコントラクトを簡単に使用できます。
 
 .. code-block:: solidity
 

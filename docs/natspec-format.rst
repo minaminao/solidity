@@ -8,7 +8,7 @@ NatSpec Format
 .. documentation for functions, return variables and more. This special form is
 .. named the Ethereum Natural Language Specification Format (NatSpec).
 
-Solidityコントラクトでは、コメントの特別な形式を使用して、関数やリターン変数などのリッチなドキュメントを提供することができます。この特別な形式は、Ethereum Natural Language Specification Format (NatSpec)と名付けられています。
+Solidityコントラクトでは、コメントの特別な形式を使用して、関数やリターン変数などのリッチなドキュメントを提供できます。この特別な形式は、Ethereum Natural Language Specification Format (NatSpec)と名付けられています。
 
 .. .. note::
 
@@ -60,7 +60,7 @@ Documentation Example
 .. - For Solidity you may choose ``///`` for single or multi-line
 ..    comments, or ``/**`` and ending with ``*/``.
 
-- Solidityでは、1行または複数行のコメントに ``///`` を、または ``/**`` を選択し、最後に ``*/`` を選択することができます。
+- Solidityでは、1行または複数行のコメントに ``///`` を、または ``/**`` を選択し、最後に ``*/`` を選択できます。
 
 .. - For Vyper, use ``"""`` indented to the inner contents with bare
 ..    comments. See the `Vyper
@@ -163,7 +163,7 @@ Tag                                                                             
 .. Custom tags start with ``@custom:`` and must be followed by one or more lowercase letters or hyphens.
 .. It cannot start with a hyphen however. They can be used everywhere and are part of the developer documentation.
 
-カスタムタグは ``@custom:`` で始まり、その後に1つ以上の小文字またはハイフンを付ける必要があります。ただし、ハイフンで始まることはできません。カスタムタグは、あらゆる場所で使用することができ、開発者向けドキュメントの一部となっています。
+カスタムタグは ``@custom:`` で始まり、その後に1つ以上の小文字またはハイフンを付ける必要があります。ただし、ハイフンで始まることはできません。カスタムタグは、あらゆる場所で使用でき、開発者向けドキュメントの一部となっています。
 
 .. _header-dynamic:
 
@@ -239,7 +239,7 @@ Documentation Output
 .. If the above contract is saved as ``ex1.sol`` then you can generate the
 .. documentation using:
 
-上記のコントラクトが ``ex1.sol`` として保存されていれば、以下の方法でドキュメントを作成することができます。
+上記のコントラクトが ``ex1.sol`` として保存されていれば、以下の方法でドキュメントを作成できます。
 
 .. code::
 

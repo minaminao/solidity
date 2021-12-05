@@ -9,7 +9,7 @@ Events
 .. Solidity events give an abstraction on top of the EVM's logging functionality.
 .. Applications can subscribe and listen to these events through the RPC interface of an Ethereum client.
 
-Solidityのイベントは、EVMのロギング機能の上に抽象化を与えます。アプリケーションは、EthereumクライアントのRPCインターフェイスを介して、これらのイベントをサブスクライブし、リッスンすることができます。
+Solidityのイベントは、EVMのロギング機能の上に抽象化を与えます。アプリケーションは、EthereumクライアントのRPCインターフェイスを介して、これらのイベントをサブスクライブし、リッスンできます。
 
 .. Events are inheritable members of contracts. When you call them, they cause the
 .. arguments to be stored in the transaction's log - a special data structure
@@ -26,7 +26,7 @@ Solidityのイベントは、EVMのロギング機能の上に抽象化を与え
 .. that the log actually exists inside the blockchain. You have to supply block headers
 .. because the contract can only see the last 256 block hashes.
 
-ログのMerkle証明を要求することが可能なので、外部のエンティティがコントラクトにそのような証明を供給すれば、ログがブロックチェーン内に実際に存在することをチェックすることができます。コントラクトは直近の256個のブロックハッシュしか見ることができないため、ブロックヘッダを提供する必要があります。
+ログのMerkle証明を要求することが可能なので、外部のエンティティがコントラクトにそのような証明を供給すれば、ログがブロックチェーン内に実際に存在することをチェックできます。コントラクトは直近の256個のブロックハッシュしか見ることができないため、ブロックヘッダを提供する必要があります。
 
 .. You can add the attribute ``indexed`` to up to three parameters which adds them
 .. to a special data structure known as :ref:`"topics" <abi_events>` instead of
@@ -46,7 +46,7 @@ Solidityのイベントは、EVMのロギング機能の上に抽象化を与え
 .. blocks for certain events. You can also filter events by the address of the
 .. contract that emitted the event.
 
-トピックを使用すると、イベントを検索することができます。たとえば、一連のブロックを特定のイベントでフィルタリングする場合などです。また、イベントを発したコントラクトのアドレスでイベントをフィルタリングすることもできます。
+トピックを使用すると、イベントを検索できます。たとえば、一連のブロックを特定のイベントでフィルタリングする場合などです。また、イベントを発したコントラクトのアドレスでイベントをフィルタリングすることもできます。
 
 .. For example, the code below uses the web3.js ``subscribe("logs")``
 .. `method <https://web3js.readthedocs.io/en/1.0/web3-eth-subscribe.html#subscribe-logs>`_ to filter
@@ -78,7 +78,7 @@ Solidityのイベントは、EVMのロギング機能の上に抽象化を与え
 .. is that they are cheaper to deploy and call. It also allows you to declare
 .. four indexed arguments rather than three.
 
-``anonymous`` 指定子でイベントを宣言した場合を除き、イベントの署名のハッシュはトピックの一つです。つまり、特定の匿名イベントを名前でフィルタリングすることはできず、コントラクト・アドレスでしかフィルタリングできません。匿名イベントの利点は、デプロイや呼び出しが安く済むことです。また、インデックス付きの引数を3つではなく4つ宣言することができます。
+``anonymous`` 指定子でイベントを宣言した場合を除き、イベントの署名のハッシュはトピックの一つです。つまり、特定の匿名イベントを名前でフィルタリングすることはできず、コントラクト・アドレスでしかフィルタリングできません。匿名イベントの利点は、デプロイや呼び出しが安く済むことです。また、インデックス付きの引数を3つではなく4つ宣言できます。
 
 .. .. note::
 

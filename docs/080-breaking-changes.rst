@@ -40,7 +40,7 @@ Silent Changes of the Semantics
 
 * ABI coder v2はデフォルトで起動しています。
 
-  ``pragma abicoder v1;`` を使って古い動作を選択することができます。   プラグマ ``pragma experimental ABIEncoderV2;`` はまだ有効ですが、非推奨であり、効果はありません。   明示的にしたい場合は、代わりに ``pragma abicoder v2;`` を使用してください。
+  ``pragma abicoder v1;`` を使って古い動作を選択できます。   プラグマ ``pragma experimental ABIEncoderV2;`` はまだ有効ですが、非推奨であり、効果はありません。   明示的にしたい場合は、代わりに ``pragma abicoder v2;`` を使用してください。
 
   ABI coder v2は、v1よりも多くの型をサポートし、入力に対してより多くのサニティ・チェックを行うことに注意してください。   ABI coder v2では、一部の関数呼び出しがより高価になり、また、パラメータの型に適合しないデータが含まれている場合、ABI coder v1では復帰しなかったコントラクトコールが復帰することがあります。
 
@@ -63,7 +63,7 @@ Silent Changes of the Semantics
 
 * ゼロ除算や算術オーバーフローなどの失敗したアサーションやその他の内部チェックは、invalid opcodeではなくrevert opcodeを使用します。   より具体的には、状況に応じたエラーコードを持つ ``Panic(uint256)`` への関数呼び出しと等しいエラーデータを使用します。
 
-  これにより、エラー時のガスを節約することができますが、静的解析ツールでは、このような状況を、 ``require`` の失敗のような無効な入力に対するリバートと区別することができます。
+  これにより、エラー時のガスを節約できますが、静的解析ツールでは、このような状況を、 ``require`` の失敗のような無効な入力に対するリバートと区別できます。
 
 .. * If a byte array in storage is accessed whose length is encoded incorrectly, a panic is caused.
 ..   A contract cannot get into this situation unless inline assembly is used to modify the raw representation of storage byte arrays.
@@ -118,7 +118,7 @@ New Restrictions
 ..   payable``. They can be converted to ``address payable`` by using an explicit conversion, e.g.
 ..   ``payable(0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF)``.
 
-* :ref:`Address literals<address_literals>` は、 ``address   payable`` の代わりに ``address`` という型を持っています。これらは、 ``payable(0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF)`` のような明示的な変換を用いることで、 ``address payable`` に変換することができます。
+* :ref:`Address literals<address_literals>` は、 ``address   payable`` の代わりに ``address`` という型を持っています。これらは、 ``payable(0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF)`` のような明示的な変換を用いることで、 ``address payable`` に変換できます。
 
 .. * There are new restrictions on explicit type conversions. The conversion is only allowed when there
 ..   is at most one change in sign, width or type-category (``int``, ``address``, ``bytesNN``, etc.).
@@ -193,7 +193,7 @@ New Restrictions
 .. * Remove support for the ``\b``, ``\f``, and ``\v`` escape sequences in code.
 ..   They can still be inserted via hexadecimal escapes, e.g. ``\x08``, ``\x0c``, and ``\x0b``, respectively.
 
-* コード内の ``\b`` 、 ``\f`` 、 ``\v`` のエスケープシーケンスのサポートを削除しました。   これらは、それぞれ ``\x08`` 、 ``\x0c`` 、 ``\x0b`` などの16進数のエスケープで挿入することができます。
+* コード内の ``\b`` 、 ``\f`` 、 ``\v`` のエスケープシーケンスのサポートを削除しました。   これらは、それぞれ ``\x08`` 、 ``\x0c`` 、 ``\x0b`` などの16進数のエスケープで挿入できます。
 
 .. * The global variables ``tx.origin`` and ``msg.sender`` have the type ``address`` instead of
 ..   ``address payable``. One can convert them into ``address payable`` by using an explicit
@@ -232,7 +232,7 @@ New Restrictions
 
   - ``address(b)`` ここで， ``b`` は ``bytes20`` 型の変数である。 ``b`` を ``address payable`` 型に変換するには，2つの明示的な変換，すなわち ``payable(address(b))`` を用いればよい。
 
-  - ``address(c)`` （ ``c`` はコントラクト）。以前は、この変換のリターンタイプは、コントラクトがEtherを受信できるかどうかに依存していました（受信関数または支払可能なフォールバック関数を持つことにより）。 ``payable(c)`` 変換は ``address     payable`` 型で，コントラクト ``c`` がEtherを受け取ることができる場合にのみ許可されます。一般的には，以下の明示的な変換を用いることで，常に ``c`` を ``address payable`` 型に変換することができる。 ``payable(address(c))`` . ``address(this)`` は、 ``address(c)`` と同じカテゴリーに属し、同じルールが適用されることに注意してください。
+  - ``address(c)`` （ ``c`` はコントラクト）。以前は、この変換のリターンタイプは、コントラクトがEtherを受信できるかどうかに依存していました（受信関数または支払可能なフォールバック関数を持つことにより）。 ``payable(c)`` 変換は ``address     payable`` 型で，コントラクト ``c`` がEtherを受け取ることができる場合にのみ許可されます。一般的には，以下の明示的な変換を用いることで，常に ``c`` を ``address payable`` 型に変換できる。 ``payable(address(c))`` . ``address(this)`` は、 ``address(c)`` と同じカテゴリーに属し、同じルールが適用されることに注意してください。
 
 .. * The ``chainid`` builtin in inline assembly is now considered ``view`` instead of ``pure``.
 

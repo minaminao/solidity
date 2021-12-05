@@ -104,7 +104,7 @@ Version Pragma
 .. It is possible to specify more complex rules for the compiler version,
 .. these follow the same syntax used by `npm <https://docs.npmjs.com/cli/v6/using-npm/semver>`_.
 
-コンパイラー・バージョンには、より複雑なルールを指定することができますが、これらは `npm <https://docs.npmjs.com/cli/v6/using-npm/semver>`_ で使用されているのと同じ構文に従います。
+コンパイラー・バージョンには、より複雑なルールを指定できますが、これらは `npm <https://docs.npmjs.com/cli/v6/using-npm/semver>`_ で使用されているのと同じ構文に従います。
 
 .. .. note::
 
@@ -134,7 +134,10 @@ ABI Coder Pragma
 .. activated by default starting from Solidity 0.8.0, there is the option to select
 .. the old coder using ``pragma abicoder v1;``.
 
-新しい ABI コーダー (v2) は、任意にネストされた配列や構造体をエンコードおよびデコードすることができます。最適なコードを生成できない可能性があり、古いエンコーダほど多くのテストが行われていませんが、Solidity 0.6.0では非実験的なものとみなされています。しかし、Solidity 0.6.0では非実験的なものとされています。Solidity 0.8.0からはデフォルトで有効になりますので、 ``pragma abicoder v1;`` を使って古いコーダーを選択するオプションもあります。
+新しい ABI コーダー (v2) は、任意にネストされた配列や構造体をエンコードおよびデコードできます。
+最適なコードを生成できない可能性があり、古いエンコーダほど多くのテストが行われていませんが、Solidity 0.6.0の時点では非実験的なものと考えられています。
+ただし、 ``pragma abicoder v2;`` を使って明示的に有効にする必要があります。
+Solidity 0.8.0からはデフォルトで有効になりますので、 ``pragma abicoder v1;`` を使って古いコーダーを選択するという選択肢もあります。
 
 .. The set of types supported by the new encoder is a strict superset of
 .. the ones supported by the old one. Contracts that use it can interact with ones
@@ -144,7 +147,7 @@ ABI Coder Pragma
 .. and will issue an error. Simply enabling ``abicoder v2`` for your contract is
 .. enough to make the error go away.
 
-新しいエンコーダーがサポートするタイプのセットは、古いエンコーダーがサポートするタイプの厳密なスーパーセットです。このエンコーダーを使用するコントラクトは、制限なしに使用しないコントラクトと相互作用することができます。逆は、 ``abicoder v2`` ではないコントラクトが、新しいエンコーダでのみサポートされている型のデコードを必要とするような呼び出しを行わない限り可能です。コンパイラはこれを検知してエラーを出します。コントラクトで ``abicoder v2`` を有効にするだけで、このエラーは解消されます。
+新しいエンコーダーがサポートするタイプのセットは、古いエンコーダーがサポートするタイプの厳密なスーパーセットです。このエンコーダーを使用するコントラクトは、制限なしに使用しないコントラクトと相互作用できます。逆は、 ``abicoder v2`` ではないコントラクトが、新しいエンコーダでのみサポートされている型のデコードを必要とするような呼び出しを行わない限り可能です。コンパイラはこれを検知してエラーを出します。コントラクトで ``abicoder v2`` を有効にするだけで、このエラーは解消されます。
 
 .. .. note::
 
@@ -167,7 +170,7 @@ ABI Coder Pragma
 
 .. note::
 
-  Solidity 0.7.4までは、 ``pragma experimental ABIEncoderV2`` を使用してABI coder v2を選択することができましたが、coder v1がデフォルトであるため、明示的に選択することはできませんでした。
+  Solidity 0.7.4までは、 ``pragma experimental ABIEncoderV2`` を使用してABI coder v2を選択できましたが、coder v1がデフォルトであるため、明示的に選択することはできませんでした。
 
 .. index:: ! pragma, experimental
 
@@ -205,7 +208,7 @@ SMTChecker
 .. `smtCallback <https://github.com/ethereum/solc-js#example-usage-with-smtsolver-callback>`_ if you have an SMT solver
 .. installed locally and run solc-js via node (not via the browser).
 
-このコンポーネントは、Solidityコンパイラのビルド時に有効にする必要があるため、すべてのSolidityバイナリで利用できるわけではありません。 :ref:`build instructions<smt_solvers_build>` では、このオプションを有効にする方法を説明しています。ほとんどのバージョンのUbuntu PPAリリースでは有効になっていますが、Dockerイメージ、Windowsバイナリ、スタティックビルドのLinuxバイナリでは有効になっていません。SMTソルバーがローカルにインストールされていて、ブラウザではなくnode経由でsolc-jsを実行している場合、 `smtCallback <https://github.com/ethereum/solc-js#example-usage-with-smtsolver-callback>`_ 経由でsolc-jsを有効にすることができます。
+このコンポーネントは、Solidityコンパイラのビルド時に有効にする必要があるため、すべてのSolidityバイナリで利用できるわけではありません。 :ref:`build instructions<smt_solvers_build>` では、このオプションを有効にする方法を説明しています。ほとんどのバージョンのUbuntu PPAリリースでは有効になっていますが、Dockerイメージ、Windowsバイナリ、スタティックビルドのLinuxバイナリでは有効になっていません。SMTソルバーがローカルにインストールされていて、ブラウザではなくnode経由でsolc-jsを実行している場合、 `smtCallback <https://github.com/ethereum/solc-js#example-usage-with-smtsolver-callback>`_ 経由でsolc-jsを有効にできます。
 
 .. If you use ``pragma experimental SMTChecker;``, then you get additional
 .. :ref:`safety warnings<formal_verification>` which are obtained by querying an
@@ -280,7 +283,7 @@ Solidityは、JavaScript（ES6以降）と同様に、コードをモジュー�
 .. the code below creates new global symbols ``alias`` and ``symbol2`` which reference
 .. ``symbol1`` and ``symbol2`` from inside ``"filename"``, respectively.
 
-名前の衝突があった場合、インポート中にシンボルの名前を変更することができます。例えば、以下のコードでは、新しいグローバルシンボル ``alias`` と ``symbol2`` を作成し、それぞれ ``"filename"`` の内部から ``symbol1`` と ``symbol2`` を参照しています。
+名前の衝突があった場合、インポート中にシンボルの名前を変更できます。例えば、以下のコードでは、新しいグローバルシンボル ``alias`` と ``symbol2`` を作成し、それぞれ ``"filename"`` の内部から ``symbol1`` と ``symbol2`` を参照しています。
 
 .. code-block:: solidity
 
@@ -314,7 +317,7 @@ Import Paths
 .. lets you `import files from HTTP, IPFS and Swarm URLs or refer directly to packages in NPM registry
 .. <https://remix-ide.readthedocs.io/en/latest/import.html>`_.
 
-:ref:`Standard JSON <compiler-api>`  APIを使用すると、すべてのソース・ファイルの名前と内容を、コンパイラの入力の一部として直接提供することができます。この場合、ソース・ユニット名は本当に任意です。しかし、コンパイラが自動的にソース・コードを見つけてVFSにロードしたい場合は、ソース・ユニット名を :ref:`import callback <import-callback>` が見つけられるように構造化する必要があります。コマンドライン・コンパイラを使用する場合、デフォルトのインポート・コールバックはホスト・ファイルシステムからのソース・コードのロードのみをサポートしているため、ソース・ユニット名はパスでなければなりません。環境によっては、より汎用性の高いカスタムコールバックを提供しています。例えば、 `Remix IDE <https://remix.ethereum.org/>`_ では、 `import files from HTTP, IPFS and Swarm URLs or refer directly to packages in NPM registry <https://remix-ide.readthedocs.io/en/latest/import.html>`_ .
+:ref:`Standard JSON <compiler-api>`  APIを使用すると、すべてのソース・ファイルの名前と内容を、コンパイラの入力の一部として直接提供できます。この場合、ソース・ユニット名は本当に任意です。しかし、コンパイラが自動的にソース・コードを見つけてVFSにロードしたい場合は、ソース・ユニット名を :ref:`import callback <import-callback>` が見つけられるように構造化する必要があります。コマンドライン・コンパイラを使用する場合、デフォルトのインポート・コールバックはホスト・ファイルシステムからのソース・コードのロードのみをサポートしているため、ソース・ユニット名はパスでなければなりません。環境によっては、より汎用性の高いカスタムコールバックを提供しています。例えば、 `Remix IDE <https://remix.ethereum.org/>`_ では、 `import files from HTTP, IPFS and Swarm URLs or refer directly to packages in NPM registry <https://remix-ide.readthedocs.io/en/latest/import.html>`_ .
 
 .. For a complete description of the virtual filesystem and the path resolution logic used by the
 .. compiler see :ref:`Path Resolution <path-resolution>`.

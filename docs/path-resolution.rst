@@ -52,7 +52,7 @@ VFSには、コンパイラーが入力として受け取ったファイルの�
 .. lets you `import files from HTTP, IPFS and Swarm URLs or refer directly to packages in NPM registry
 .. <https://remix-ide.readthedocs.io/en/latest/import.html>`_.
 
-コマンドライン・コンパイラには、ソース・ユニット名をローカル・ファイルシステムのパスとして解釈する初歩的なコールバックである*Host Filesystem Loader*が用意されています。 `JavaScript interface <https://github.com/ethereum/solc-js>`_ はデフォルトでは提供していませんが、ユーザーが提供することもできます。このメカニズムを使用して、ローカル・ファイルシステム以外の場所からソース・コードを取得することができます（ブラウザでコンパイラを実行している場合など、アクセスできない場合もあります）。例えば、 `Remix IDE <https://remix.ethereum.org/>`_ は汎用性の高いコールバックを提供しており、これを利用して `import files from HTTP, IPFS and Swarm URLs or refer directly to packages in NPM registry <https://remix-ide.readthedocs.io/en/latest/import.html>`_ .
+コマンドライン・コンパイラには、ソース・ユニット名をローカル・ファイルシステムのパスとして解釈する初歩的なコールバックである*Host Filesystem Loader*が用意されています。 `JavaScript interface <https://github.com/ethereum/solc-js>`_ はデフォルトでは提供していませんが、ユーザーが提供することもできます。このメカニズムを使用して、ローカル・ファイルシステム以外の場所からソース・コードを取得できます（ブラウザでコンパイラを実行している場合など、アクセスできない場合もあります）。例えば、 `Remix IDE <https://remix.ethereum.org/>`_ は汎用性の高いコールバックを提供しており、これを利用して `import files from HTTP, IPFS and Swarm URLs or refer directly to packages in NPM registry <https://remix-ide.readthedocs.io/en/latest/import.html>`_ .
 
 .. .. note::
 
@@ -184,7 +184,7 @@ VFSの初期コンテンツは、コンパイラの起動方法によって異�
 
    コマンドラインでは、コンパイラの標準入力にソースを送信することも可能です。
 
-VFSが初期化された後も、インポートコールバックによってのみファイルを追加することができます。
+VFSが初期化された後も、インポートコールバックによってのみファイルを追加できます。
 
 .. index:: ! import; path
 
@@ -422,7 +422,7 @@ Base Path and Include Paths
 .. ``@openzeppelin/contracts/utils/Strings.sol``, you can use these options to tell the compiler that
 .. the library can be found in one of the npm package directories:
 
-ベースパスをプロジェクトのルートディレクトリに設定し、インクルードパスを使って、プロジェクトが依存するライブラリを含む追加の場所を指定することをお勧めします。これにより、プロジェクトのファイルシステム上の位置にかかわらず、これらのライブラリから統一的にインポートすることができます。例えば、npmを使用してパッケージをインストールし、コントラクトが ``@openzeppelin/contracts/utils/Strings.sol`` をインポートする場合、これらのオプションを使用して、npmパッケージ・ディレクトリのいずれかにライブラリが存在することをコンパイラに伝えることができます。
+ベースパスをプロジェクトのルートディレクトリに設定し、インクルードパスを使って、プロジェクトが依存するライブラリを含む追加の場所を指定することをお勧めします。これにより、プロジェクトのファイルシステム上の位置にかかわらず、これらのライブラリから統一的にインポートできます。例えば、npmを使用してパッケージをインストールし、コントラクトが ``@openzeppelin/contracts/utils/Strings.sol`` をインポートする場合、これらのオプションを使用して、npmパッケージ・ディレクトリのいずれかにライブラリが存在することをコンパイラに伝えることができます。
 
 .. code-block:: bash
 
@@ -616,7 +616,7 @@ Allowed Paths
 .. Additional directories can be whitelisted using the ``--allow-paths`` option.
 .. The option accepts a comma-separated list of paths:
 
-``--allow-paths`` オプションを使って、追加のディレクトリをホワイトリストに登録することができます。このオプションには、コンマで区切られたパスのリストを指定できます。
+``--allow-paths`` オプションを使って、追加のディレクトリをホワイトリストに登録できます。このオプションには、コンマで区切られたパスのリストを指定できます。
 
 .. code-block:: bash
 
@@ -705,14 +705,14 @@ Import Remapping
 .. For example you can set up a remapping so that any import from the virtual directory
 .. ``github.com/ethereum/dapp-bin/library/`` would be seen as an import from ``dapp-bin/library/`` instead.
 
-インポートリマッピングでは、インポートを仮想ファイルシステムの異なる場所にリダイレクトすることができます。このメカニズムは、インポートパスとソースユニット名の間の変換を変更することで機能します。例えば、仮想ディレクトリ ``github.com/ethereum/dapp-bin/library/`` からのインポートを、代わりに ``dapp-bin/library/`` からのインポートと見なすようなリマッピングを設定することができます。
+インポートリマッピングでは、インポートを仮想ファイルシステムの異なる場所にリダイレクトできます。このメカニズムは、インポートパスとソースユニット名の間の変換を変更することで機能します。例えば、仮想ディレクトリ ``github.com/ethereum/dapp-bin/library/`` からのインポートを、代わりに ``dapp-bin/library/`` からのインポートと見なすようなリマッピングを設定できます。
 
 .. You can limit the scope of a remapping by specifying a *context*.
 .. This allows creating remappings that apply only to imports located in a specific library or a specific file.
 .. Without a context a remapping is applied to every matching import in all the files in the virtual
 .. filesystem.
 
-コンテキスト*を指定することで、リマッピングの範囲を制限することができます。これにより、特定のライブラリまたは特定のファイルにあるインポートのみに適用されるリマッピングを作成することができます。コンテキストを指定しない場合、リマッピングは仮想ファイルシステム内のすべてのファイルにある、一致するすべてのインポートに適用されます。
+コンテキスト*を指定することで、リマッピングの範囲を制限できます。これにより、特定のライブラリまたは特定のファイルにあるインポートのみに適用されるリマッピングを作成できます。コンテキストを指定しない場合、リマッピングは仮想ファイルシステム内のすべてのファイルにある、一致するすべてのインポートに適用されます。
 
 .. Import remappings have the form of ``context:prefix=target``:
 
@@ -741,7 +741,7 @@ Import Remapping
 
 .. you can use the following in your source file:
 
-をソースファイルに記述することができます。
+をソースファイルに記述できます。
 
 .. code-block:: solidity
 
@@ -780,7 +780,7 @@ Import Remapping
 
     このため、リマッピングのターゲットにローカル情報が含まれないように注意する必要があります。     例えば、あなたのライブラリが ``/home/user/packages/mymath/math.sol`` にある場合、 ``@math/=/home/user/packages/mymath/`` のようなリマッピングを行うと、あなたのホームディレクトリがメタデータに含まれることになります。     このようなリマッピングを行った同じバイトコードを別のマシンで再現するためには、ローカルのディレクトリ構造の一部をVFSに、（Host Filesystem Loaderに依存している場合は）ホスト・ファイルシステムにも再現する必要があります。
 
-    ローカルのディレクトリ構造がメタデータに埋め込まれるのを避けるために、ライブラリを含むディレクトリを*include path*として指定することが推奨されます。     例えば、上記の例では、 ``--include-path /home/user/packages/`` を指定すると、 ``mymath/`` で始まるインポートを使用することができます。     リマッピングとは異なり、このオプションだけでは ``mymath`` を ``@math`` に見せることはできませんが、シンボリックリンクを作成したり、パッケージのサブディレクトリの名前を変更することで実現できます。
+    ローカルのディレクトリ構造がメタデータに埋め込まれるのを避けるために、ライブラリを含むディレクトリを*include path*として指定することが推奨されます。     例えば、上記の例では、 ``--include-path /home/user/packages/`` を指定すると、 ``mymath/`` で始まるインポートを使用できます。     リマッピングとは異なり、このオプションだけでは ``mymath`` を ``@math`` に見せることはできませんが、シンボリックリンクを作成したり、パッケージのサブディレクトリの名前を変更することで実現できます。
 
 .. As a more complex example, suppose you rely on a module that uses an old version of dapp-bin that
 .. you checked out to ``/project/dapp-bin_old``, then you can run:

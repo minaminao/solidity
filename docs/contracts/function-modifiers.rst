@@ -10,14 +10,14 @@ Function Modifiers
 .. For example,
 .. you can use a modifier to automatically check a condition prior to executing the function.
 
-修飾子は、宣言的な方法で関数の動作を変更するために使用できます。例えば、修飾子を使って、関数を実行する前に自動的に条件をチェックすることができます。
+修飾子は、宣言的な方法で関数の動作を変更するために使用できます。例えば、修飾子を使って、関数を実行する前に自動的に条件をチェックできます。
 
 .. Modifiers are
 .. inheritable properties of contracts and may be overridden by derived contracts, but only
 .. if they are marked ``virtual``. For details, please see
 .. :ref:`Modifier Overriding <modifier-overriding>`.
 
-修飾子はコントラクトの継承可能なプロパティであり、派生コントラクトでオーバーライドすることができるが、 ``virtual`` マークが付いている場合に限る。詳細は、 :ref:`Modifier Overriding <modifier-overriding>` を参照してください。
+修飾子はコントラクトの継承可能なプロパティであり、派生コントラクトでオーバーライドできるが、 ``virtual`` マークが付いている場合に限る。詳細は、 :ref:`Modifier Overriding <modifier-overriding>` を参照してください。
 
 .. code-block:: solidity
 
@@ -109,7 +109,7 @@ Function Modifiers
 .. contract or its base contracts. Modifiers can also be defined in libraries but their use is
 .. limited to functions of the same library.
 
-コントラクト ``C`` で定義されたモディファイア ``m`` にアクセスしたい場合は、 ``C.m`` を使って仮想ルックアップなしで参照することができます。現在のコントラクトまたはそのベースコントラクトで定義された修飾子のみを使用することができます。修飾子はライブラリで定義することもできますが、その使用は同じライブラリの機能に限られます。
+コントラクト ``C`` で定義されたモディファイア ``m`` にアクセスしたい場合は、 ``C.m`` を使って仮想ルックアップなしで参照できます。現在のコントラクトまたはそのベースコントラクトで定義された修飾子のみを使用できます。修飾子はライブラリで定義することもできますが、その使用は同じライブラリの機能に限られます。
 
 .. Multiple modifiers are applied to a function by specifying them in a
 .. whitespace-separated list and are evaluated in the order presented.
@@ -141,7 +141,7 @@ Function Modifiers
 .. variables are set to their :ref:`default values<default-value>` just as if the function had an empty
 .. body.
 
-``return;`` を持つ修飾子からの明示的なリターンは、関数が返す値に影響を与えません。しかし、修飾子は、関数本体を全く実行しないことを選択することができ、その場合、関数本体が空であった場合と同様に、戻り値の変数は :ref:`default values<default-value>` に設定されます。
+``return;`` を持つ修飾子からの明示的なリターンは、関数が返す値に影響を与えません。しかし、修飾子は、関数本体を全く実行しないことを選択でき、その場合、関数本体が空であった場合と同様に、戻り値の変数は :ref:`default values<default-value>` に設定されます。
 
 .. The ``_`` symbol can appear in the modifier multiple times. Each occurrence is replaced with
 .. the function body.

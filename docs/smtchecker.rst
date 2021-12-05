@@ -389,13 +389,13 @@ State Properties
 .. reader may want to prove that fact manually as well.  Hint: this invariant is
 .. inductive.
 
-関数 ``inv`` は、 ``x + y`` が偶数でなければならないというステートマシンの不変量を表しています。SMTCheckerは、ロボットにどんなに多くの命令を与えても、たとえ無限に与えても、不変量は*絶対に*失敗しないことを証明することができます。興味のある方は、手動でこの事実を証明することもできます。  ヒント：この不変量は帰納的なものです。
+関数 ``inv`` は、 ``x + y`` が偶数でなければならないというステートマシンの不変量を表しています。SMTCheckerは、ロボットにどんなに多くの命令を与えても、たとえ無限に与えても、不変量は*絶対に*失敗しないことを証明できます。興味のある方は、手動でこの事実を証明することもできます。  ヒント：この不変量は帰納的なものです。
 
 .. We can also trick the SMTChecker into giving us a path to a certain position we
 .. think might be reachable.  We can add the property that (2, 4) is *not*
 .. reachable, by adding the following function.
 
-また、SMTCheckerを騙して、到達可能と思われるある位置までのパスを教えてもらうこともできます。  次のような関数を追加することで、(2, 4)は*not* reachableであるという性質を追加することができます。
+また、SMTCheckerを騙して、到達可能と思われるある位置までのパスを教えてもらうこともできます。  次のような関数を追加することで、(2, 4)は*not* reachableであるという性質を追加できます。
 
 .. code-block:: Solidity
 
@@ -497,7 +497,7 @@ External Calls and Reentrancy
 .. is already "locked", so it would not be possible to change the value of ``x``,
 .. regardless of what the unknown called code does.
 
-上の例では、ミューテックス・フラグを使用して再入を禁止したコントラクトを示しています。ソルバーは、 ``unknown.run()`` が呼び出されたとき、コントラクトはすでに「ロック」されているので、未知の呼び出されたコードが何をしようと、 ``x`` の値を変更することはできないだろうと推測することができます。
+上の例では、ミューテックス・フラグを使用して再入を禁止したコントラクトを示しています。ソルバーは、 ``unknown.run()`` が呼び出されたとき、コントラクトはすでに「ロック」されているので、未知の呼び出されたコードが何をしようと、 ``x`` の値を変更することはできないだろうと推測できます。
 
 .. If we "forget" to use the ``mutex`` modifier on function ``set``, the
 .. SMTChecker is able to synthesize the behaviour of the externally called code so
@@ -634,7 +634,7 @@ Verified Contracts
 .. encoding and generated queries. Note that abstract contracts are by default
 .. not analyzed as the most derived by the SMTChecker.
 
-デフォルトでは、指定されたソース内のすべてのデプロイ可能なコントラクトが、デプロイされるものとして個別に分析されます。これは、コントラクトが多くの直接および間接的な継承親を持つ場合、最も派生したものだけがブロックチェーン上で直接アクセスされるにもかかわらず、それらすべてが単独で分析されることを意味します。これは、SMTCheckerとソルバーに不必要な負担をかけることになります。  このようなケースを支援するために、ユーザーはどのコントラクトをデプロイされたものとして分析すべきかを指定することができます。親コントラクトはもちろんまだ分析されますが、最も派生したコントラクトのコンテキストでのみ分析され、エンコーディングと生成されたクエリの複雑さが軽減されます。抽象的なコントラクトはデフォルトではSMTCheckerによって最も派生したものとして分析されないことに注意してください。
+デフォルトでは、指定されたソース内のすべてのデプロイ可能なコントラクトが、デプロイされるものとして個別に分析されます。これは、コントラクトが多くの直接および間接的な継承親を持つ場合、最も派生したものだけがブロックチェーン上で直接アクセスされるにもかかわらず、それらすべてが単独で分析されることを意味します。これは、SMTCheckerとソルバーに不必要な負担をかけることになります。  このようなケースを支援するために、ユーザーはどのコントラクトをデプロイされたものとして分析すべきかを指定できます。親コントラクトはもちろんまだ分析されますが、最も派生したコントラクトのコンテキストでのみ分析され、エンコーディングと生成されたクエリの複雑さが軽減されます。抽象的なコントラクトはデフォルトではSMTCheckerによって最も派生したものとして分析されないことに注意してください。
 
 .. The chosen contracts can be given via a comma-separated list (whitespace is not
 .. allowed) of <source>:<contract> pairs in the CLI:
@@ -659,7 +659,7 @@ Reported Inferred Inductive Invariants
 .. solver as part of the proof.
 .. Currently two types of invariants can be reported to the user:
 
-CHCエンジンで安全性が証明された性質については、SMTCheckerは証明の一部としてホーンソルバーによって推論された帰納的不変量を取得することができます。現在、2種類の不変量をユーザに報告することができます。
+CHCエンジンで安全性が証明された性質については、SMTCheckerは証明の一部としてホーンソルバーによって推論された帰納的不変量を取得できます。現在、2種類の不変量をユーザに報告できます。
 
 .. - Contract Invariants: these are properties over the contract's state variables
 ..   that are true before and after every possible transaction that the contract may ever run. For example, ``x >= y``, where ``x`` and ``y`` are a contract's state variables.
@@ -670,7 +670,7 @@ CHCエンジンで安全性が証明された性質については、SMTChecker�
 ..   in the presence of external calls to unknown code. These properties can express a relation
 ..   between the value of the state variables before and after the external call, where the external call is free to do anything, including making reentrant calls to the analyzed contract. Primed variables represent the state variables' values after said external call. Example: ``lock -> x = x'``.
 
-- 再帰性プロパティ：未知のコードへの外部呼び出しがある場合のコントラクトの動作を表します。これらのプロパティは、外部呼び出しの前と後の状態変数の値の間の関係を表現することができます。外部呼び出しは、分析されたコントラクトへのリエントラントな呼び出しを行うことを含め、何でも自由に行うことができます。プライム化された変数は、前記外部呼び出し後の状態変数の値を表します。例 ``lock -> x = x'`` です。
+- 再帰性プロパティ：未知のコードへの外部呼び出しがある場合のコントラクトの動作を表します。これらのプロパティは、外部呼び出しの前と後の状態変数の値の間の関係を表現できます。外部呼び出しは、分析されたコントラクトへのリエントラントな呼び出しを行うことを含め、何でも自由に行うことができます。プライム化された変数は、前記外部呼び出し後の状態変数の値を表します。例 ``lock -> x = x'`` です。
 
 .. The user can choose the type of invariants to be reported using the CLI option ``--model-checker-invariants "contract,reentrancy"`` or as an array in the field ``settings.modelChecker.invariants`` in the :ref:`JSON input<compiler-api>`.
 .. By default the SMTChecker does not report invariants.
@@ -704,7 +704,7 @@ Natspec Function Abstraction
 
 .. - Return a nondeterministic value, and either keep the state variables unchanged if the abstracted function is view/pure, or also set the state variables to nondeterministic values otherwise. This can be used via the annotation ``/// @custom:smtchecker abstract-function-nondet``.
 
-- 非決定論的な値を返し、抽象化された関数がview/pureであれば状態変数を変更せずに、そうでなければ状態変数を非決定論的な値に設定します。これは、アノテーション ``/// @custom:smtchecker abstract-function-nondet`` を介して使用することができます。
+- 非決定論的な値を返し、抽象化された関数がview/pureであれば状態変数を変更せずに、そうでなければ状態変数を非決定論的な値に設定します。これは、アノテーション ``/// @custom:smtchecker abstract-function-nondet`` を介して使用できます。
 
 .. - Act as an uninterpreted function. This means that the semantics of the function (given by the body) are ignored, and the only property this function has is that given the same input it guarantees the same output. This is currently under development and will be available via the annotation ``/// @custom:smtchecker abstract-function-uf``.
 
@@ -746,7 +746,7 @@ BMCエンジンは、関数を単独で解析します。つまり、各関数�
 .. The characteristics above make BMC prone to reporting false positives,
 .. but it is also lightweight and should be able to quickly find small local bugs.
 
-上記のような特性から、BMCは誤検出を報告する傾向がありますが、軽量であるため、小さなローカルバグを素早く発見することができるはずです。
+上記のような特性から、BMCは誤検出を報告する傾向がありますが、軽量であるため、小さなローカルバグを素早く発見できるはずです。
 
 Constrained Horn Clauses (CHC)
 ------------------------------
@@ -794,7 +794,7 @@ SMT and Horn solvers
 ..   This is currently the only way to use Eldarica, for example, since it does not have a C++ API.
 ..   This can be used by both BMC and CHC depending on which solvers are called.
 
-- ``smtlib2`` はSMT/Hornのクエリを `smtlib2 <http://smtlib.cs.uiowa.edu/>`_ 形式で出力します。   これをコンパイラの `callback mechanism <https://github.com/ethereum/solc-js>`_ と併用することで、システム内の任意のソルバーバイナリを採用して、クエリの結果をコンパイラに同期して返すことができます。   例えば、EldaricaはC++のAPIを持っていないので、これが現在のところ唯一の使用方法です。   これは、どのソルバーを呼び出すかによって、BMCとCHCの両方で使用することができます。
+- ``smtlib2`` はSMT/Hornのクエリを `smtlib2 <http://smtlib.cs.uiowa.edu/>`_ 形式で出力します。   これをコンパイラの `callback mechanism <https://github.com/ethereum/solc-js>`_ と併用することで、システム内の任意のソルバーバイナリを採用して、クエリの結果をコンパイラに同期して返すことができます。   例えば、EldaricaはC++のAPIを持っていないので、これが現在のところ唯一の使用方法です。   これは、どのソルバーを呼び出すかによって、BMCとCHCの両方で使用できます。
 
 .. - ``z3`` is available
 

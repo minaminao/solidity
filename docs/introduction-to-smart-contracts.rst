@@ -81,7 +81,7 @@ Solidityでいうコントラクトとは、Ethereumブロックチェーン上�
 .. so that only you can alter the number.
 
 このコントラクトは、（Ethereumが構築したインフラにより）世界中の誰もがアクセス可能な1つの番号を、あなたがこの番号を公開するのを防ぐ（実現可能な）方法なしに、誰もが保存できることを除けば、まだあまり意味がありません。
-誰もが ``set`` に別の値で再度callをし、あなたの番号を上書きすることができますが、その番号はブロックチェーンの履歴に保存されたままです。
+誰もが ``set`` に別の値で再度callをし、あなたの番号を上書きできますが、その番号はブロックチェーンの履歴に保存されたままです。
 後で、自分だけが番号を変更できるようにアクセス制限をかける方法を見てみましょう。
 
 .. warning::
@@ -107,7 +107,7 @@ Subcurrency Example
 .. registering with a username and password, all you need is an Ethereum keypair.
 
 以下のコントラクトは、最も単純な形態の暗号通貨を実装したものです。
-このコントラクトでは、作成者のみが新しいコインを作成することができます（異なる発行スキームが可能です）。
+このコントラクトでは、作成者のみが新しいコインを作成できます（異なる発行スキームが可能です）。
 誰もがユーザー名とパスワードを登録することなく、Ethereumのキーペアさえあればコインを送り合うことができます。
 
 .. code-block:: solidity
@@ -217,7 +217,7 @@ Subcurrency Example
 
 .. You can use this function to query the balance of a single account.
 
-この関数を使って、1つのアカウントの残高を照会することができます。
+この関数を使って、1つのアカウントの残高を照会できます。
 
 .. index:: event
 
@@ -229,7 +229,7 @@ Subcurrency Example
 .. arguments ``from``, ``to`` and ``amount``, which makes it possible to track
 .. transactions.
 
-``event Sent(address from, address to, uint amount);`` という行は、 :ref:`"event" <events>` を宣言しており、このイベントは関数 ``send`` の最終行で発せられます。ウェブアプリケーションなどのEthereumクライアントは、ブロックチェーン上で発せられるこれらのイベントを、それほどコストをかけずにリッスンすることができます。イベントが発せられると同時に、リスナーは引数の ``from``, ``to``, ``amount`` を受け取るため、トランザクションの追跡が可能になります。
+``event Sent(address from, address to, uint amount);`` という行は、 :ref:`"event" <events>` を宣言しており、このイベントは関数 ``send`` の最終行で発せられます。ウェブアプリケーションなどのEthereumクライアントは、ブロックチェーン上で発せられるこれらのイベントを、それほどコストをかけずにリッスンできます。イベントが発せられると同時に、リスナーは引数の ``from``, ``to``, ``amount`` を受け取るため、トランザクションの追跡が可能になります。
 
 .. To listen for this event, you could use the following
 .. JavaScript code, which uses `web3.js <https://github.com/ethereum/web3.js/>`_ to create the ``Coin`` contract object,
@@ -280,7 +280,7 @@ Subcurrency Example
 ``mint`` 関数は、新しく作成されたコインの量を別のアドレスに送信します。
 :ref:`require <assert-and-require>` 関数の呼び出しでは、条件を定義し、満たされない場合はすべての変更を元に戻します。
 この例では、 ``require(msg.sender == minter);`` により、コントラクトの作成者だけが ``mint`` を呼び出せるようになっています。
-一般的には、作成者は好きなだけトークンをミントすることができますが、ある時点で「オーバーフロー」と呼ばれる現象が発生します。
+一般的には、作成者は好きなだけトークンをミントできますが、ある時点で「オーバーフロー」と呼ばれる現象が発生します。
 デフォルトの :ref:`Checked arithmetic <unchecked>` のため、式 ``balances[receiver] += amount;`` がオーバーフローした場合、つまり、任意精度の算術演算で ``balances[receiver] + amount`` が ``uint`` の最大値（ ``2**256 - 1`` ）よりも大きくなった場合には、トランザクションは元に戻ってしまうことに注意してください。
 これは、関数 ``send`` の中の ``balances[receiver] += amount;`` という記述にも当てはまります。
 
@@ -292,9 +292,9 @@ Subcurrency Example
 .. (and eventually to the front-end application or block explorer) so that
 .. a failure can more easily be debugged or reacted upon.
 
-:ref:`Errors <errors>` を使うと、条件や操作が失敗したときに呼び出し側に詳しい情報を提供することができます。
+:ref:`Errors <errors>` を使うと、条件や操作が失敗したときに呼び出し側に詳しい情報を提供できます。
 エラーは :ref:`revert statement <revert-statement>` と一緒に使用されます。
-revert 文は ``require`` 関数と同様にすべての変更を無条件に中止、復帰させますが、エラーの名前や、呼び出し側（最終的にはフロントエンドアプリケーションやブロックエクスプローラ）に提供される追加データを提供することもできますので、失敗をより簡単にデバッグしたり、対応したりすることができます。
+revert 文は ``require`` 関数と同様にすべての変更を無条件に中止、復帰させますが、エラーの名前や、呼び出し側（最終的にはフロントエンドアプリケーションやブロックエクスプローラ）に提供される追加データを提供することもできますので、失敗をより簡単にデバッグしたり、対応したりできます。
 
 .. The ``send`` function can be used by anyone (who already
 .. has some of these coins) to send coins to anyone else. If the sender does not have
@@ -348,7 +348,7 @@ Transactions
 .. two values at the same time) is either not done at all or completely applied. Furthermore,
 .. while your transaction is being applied to the database, no other transaction can alter it.
 
-ブロックチェーンとは、グローバルに共有されたトランザクション用のデータベースです。つまり、ネットワークに参加するだけで、誰もがデータベースのエントリーを読むことができるのです。データベース内の何かを変更したい場合は、いわゆるトランザクションを作成し、他のすべての人に受け入れられなければなりません。トランザクションという言葉は、あなたが行いたい変更（2つの値を同時に変更したいと仮定）が、まったく行われないか、完全に適用されるかのどちらかであることを意味しています。さらに、あなたのトランザクションがデータベースに適用されている間は、他のトランザクションはそれを変更することができません。
+ブロックチェーンとは、グローバルに共有されたトランザクション用のデータベースです。つまり、ネットワークに参加するだけで、誰もがデータベースのエントリーを読むことができるのです。データベース内の何かを変更したい場合は、いわゆるトランザクションを作成し、他のすべての人に受け入れられなければなりません。トランザクションという言葉は、あなたが行いたい変更（2つの値を同時に変更したいと仮定）が、まったく行われないか、完全に適用されるかのどちらかであることを意味しています。さらに、あなたのトランザクションがデータベースに適用されている間は、他のトランザクションはそれを変更できません。
 
 .. As an example, imagine a table that lists the balances of all accounts in an
 .. electronic currency. If a transfer from one account to another is requested,
@@ -357,14 +357,14 @@ Transactions
 .. to whatever reason, adding the amount to the target account is not possible,
 .. the source account is also not modified.
 
-例として、ある電子通貨のすべての口座の残高を一覧にしたテーブルがあるとします。ある口座から別の口座への振り込みが要求された場合、データベースのトランザクションの性質上、ある口座から金額が差し引かれた場合、必ず別の口座に追加されます。何らかの理由で対象となる口座に金額を追加することができない場合は、元の口座も変更されません。
+例として、ある電子通貨のすべての口座の残高を一覧にしたテーブルがあるとします。ある口座から別の口座への振り込みが要求された場合、データベースのトランザクションの性質上、ある口座から金額が差し引かれた場合、必ず別の口座に追加されます。何らかの理由で対象となる口座に金額を追加できない場合は、元の口座も変更されません。
 
 .. Furthermore, a transaction is always cryptographically signed by the sender (creator).
 .. This makes it straightforward to guard access to specific modifications of the
 .. database. In the example of the electronic currency, a simple check ensures that
 .. only the person holding the keys to the account can transfer money from it.
 
-さらに、トランザクションは常に送信者（作成者）によって暗号化されています。これにより、データベースの特定の変更に対するアクセスを簡単に保護することができます。電子通貨の例では、簡単なチェックで、口座の鍵を持っている人だけがその口座からお金を送金できるようになっています。
+さらに、トランザクションは常に送信者（作成者）によって暗号化されています。これにより、データベースの特定の変更に対するアクセスを簡単に保護できます。電子通貨の例では、簡単なチェックで、口座の鍵を持っている人だけがその口座からお金を送金できるようになっています。
 
 .. index:: ! block
 
@@ -409,7 +409,7 @@ Blocks
 
     トランザクションが次のブロックや将来の特定のブロックに含まれることは保証されていません。
     なぜなら、トランザクションの提出者が決めるのではなく、そのトランザクションがどのブロックに含まれるかを決めるのはマイナーに任されているからです。
-    コントラクトの将来の呼び出しをスケジュールしたい場合は、 `alarm clock <https://www.ethereum-alarm-clock.com/>`_ または同様のオラクルサービスを使用することができます。
+    コントラクトの将来の呼び出しをスケジュールしたい場合は、 `alarm clock <https://www.ethereum-alarm-clock.com/>`_ または同様のオラクルサービスを使用できます。
 
 .. _the-ethereum-virtual-machine:
 
@@ -466,7 +466,7 @@ Ethereumには、同じアドレス空間を共有する2種類のアカウン�
 .. Ether (in "Wei" to be exact, ``1 ether`` is ``10**18 wei``) which can be modified by sending transactions that
 .. include Ether.
 
-さらに、すべてのアカウントはEther（正確には「Wei」で、 ``1 ether`` は ``10**18 wei`` ）で **残高** を持っており、Etherを含むトランザクションを送信することで変更することができます。
+さらに、すべてのアカウントはEther（正確には「Wei」で、 ``1 ether`` は ``10**18 wei`` ）で **残高** を持っており、Etherを含むトランザクションを送信することで変更できます。
 
 .. index:: ! transaction
 
@@ -616,7 +616,7 @@ Message Calls
 .. Ether, gas and return data. In fact, every transaction consists of
 .. a top-level message call which in turn can create further message calls.
 
-コントラクトは、メッセージコールによって、他のコントラクトを呼び出したり、コントラクト以外のアカウントにEtherを送信することができます。メッセージ・コールは、ソース、ターゲット、データ・ペイロード、Ether、ガス、およびリターン・データを持つという点で、トランザクションと似ています。実際、すべてのトランザクションは、トップレベルのメッセージ・コールで構成されており、そのメッセージ・コールがさらにメッセージ・コールを作成することができます。
+コントラクトは、メッセージコールによって、他のコントラクトを呼び出したり、コントラクト以外のアカウントにEtherを送信できます。メッセージ・コールは、ソース、ターゲット、データ・ペイロード、Ether、ガス、およびリターン・データを持つという点で、トランザクションと似ています。実際、すべてのトランザクションは、トップレベルのメッセージ・コールで構成されており、そのメッセージ・コールがさらにメッセージ・コールを作成できます。
 
 .. A contract can decide how much of its remaining **gas** should be sent
 .. with the inner message call and how much it wants to retain.
@@ -643,7 +643,7 @@ Message Calls
 .. depth limit of a little less than 1000 in practice.
 
 呼び出しの深さは1024までに **制限** されます。
-つまり、より複雑な操作を行う場合には、再帰的な呼び出しよりもループの方が望ましいということです。さらに、メッセージコールではガスの63/64番目だけを転送することができるため、実際には1000よりも少し少ない深さの制限が発生します。
+つまり、より複雑な操作を行う場合には、再帰的な呼び出しよりもループの方が望ましいということです。さらに、メッセージコールではガスの63/64番目だけを転送できるため、実際には1000よりも少し少ない深さの制限が発生します。
 
 .. index:: delegatecall, callcode, library
 
@@ -685,7 +685,7 @@ Logs
 .. secure way, so network peers that do not download the whole blockchain
 .. (so-called "light clients") can still find these logs.
 
-ブロックレベルまでマッピングされた特別なインデックス付きのデータ構造にデータを保存することが可能です。この**logs**と呼ばれる機能は、Solidityでは :ref:`events <events>` を実装するために使用されています。コントラクトはログデータが作成された後はアクセスできませんが、ブロックチェーンの外部から効率的にアクセスすることができます。ログデータの一部は `bloom filters <https://en.wikipedia.org/wiki/Bloom_filter>`_ に格納されているため、効率的かつ暗号的に安全な方法でこのデータを検索することが可能であり、ブロックチェーン全体をダウンロードしないネットワークピア（いわゆる「ライトクライアント」）でもこれらのログを見つけることができます。
+ブロックレベルまでマッピングされた特別なインデックス付きのデータ構造にデータを保存することが可能です。この**logs**と呼ばれる機能は、Solidityでは :ref:`events <events>` を実装するために使用されています。コントラクトはログデータが作成された後はアクセスできませんが、ブロックチェーンの外部から効率的にアクセスできます。ログデータの一部は `bloom filters <https://en.wikipedia.org/wiki/Bloom_filter>`_ に格納されているため、効率的かつ暗号的に安全な方法でこのデータを検索することが可能であり、ブロックチェーン全体をダウンロードしないネットワークピア（いわゆる「ライトクライアント」）でもこれらのログを見つけることができます。
 
 .. index:: contract creation
 
@@ -731,7 +731,7 @@ Deactivate and Self-destruct
 .. by changing some internal state which causes all functions to revert. This
 .. makes it impossible to use the contract, as it returns Ether immediately.
 
-コントラクトを無効にしたい場合は、代わりに、すべての機能を元に戻すような何らかの内部状態を変更することで**無効**にする必要があります。これにより、コントラクトはすぐにEtherを返してしまうため、使用することができなくなります。
+コントラクトを無効にしたい場合は、代わりに、すべての機能を元に戻すような何らかの内部状態を変更することで**無効**にする必要があります。これにより、コントラクトはすぐにEtherを返してしまうため、使用できなくなります。
 
 
 .. index:: ! precompiled contracts, ! precompiles, ! contract;precompiled

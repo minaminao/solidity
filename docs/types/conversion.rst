@@ -138,7 +138,7 @@ Explicit Conversions
 .. In case the array is longer than the target fixed bytes type, truncation at the end will happen.
 .. If the array is shorter than the target type, it will be padded with zeros at the end.
 
-``bytes`` 配列と ``bytes``  calldata sliceは、明示的に固定バイト型（ ``bytes1`` /.../ ``bytes32`` ）に変換することができます。配列が対象となる固定バイト型よりも長い場合は、末尾の切り捨てが行われます。配列が対象となる固定バイト型よりも短い場合は、末尾にゼロが詰められます。
+``bytes`` 配列と ``bytes``  calldata sliceは、明示的に固定バイト型（ ``bytes1`` /.../ ``bytes32`` ）に変換できます。配列が対象となる固定バイト型よりも長い場合は、末尾の切り捨てが行われます。配列が対象となる固定バイト型よりも短い場合は、末尾にゼロが詰められます。
 
 .. code-block:: solidity
 
@@ -184,7 +184,7 @@ Integer Types
 
 .. note::
 
-    バージョン0.8.0以前では、10進数や16進数のリテラルを明示的に整数型に変換することができました。0.8.0からは、このような明示的な変換は暗黙的な変換と同様に厳格になりました。
+    バージョン0.8.0以前では、10進数や16進数のリテラルを明示的に整数型に変換できました。0.8.0からは、このような明示的な変換は暗黙的な変換と同様に厳格になりました。
 
 Fixed-Size Byte Arrays
 ----------------------
@@ -209,7 +209,7 @@ Fixed-Size Byte Arrays
 .. String literals and hex string literals can be implicitly converted to fixed-size byte arrays,
 .. if their number of characters matches the size of the bytes type:
 
-文字列リテラルと16進文字列リテラルは、その文字数がバイト型のサイズと一致する場合、暗黙のうちに固定サイズのバイト配列に変換することができます。
+文字列リテラルと16進文字列リテラルは、その文字数がバイト型のサイズと一致する場合、暗黙のうちに固定サイズのバイト配列に変換できます。
 
 .. code-block:: solidity
 
@@ -235,4 +235,4 @@ Addresses
 .. An ``address a`` can be converted to ``address payable`` via ``payable(a)``.
 .. 
 
-``address a`` を ``payable(a)`` で ``address payable`` に変換することができます。
+``address a`` を ``payable(a)`` で ``address payable`` に変換できます。

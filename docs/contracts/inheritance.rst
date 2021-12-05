@@ -37,7 +37,7 @@ Solidityは、ポリモーフィズムを含む多重継承をサポートして
 .. only declare a state variable ``x``, if there is no visible state variable
 .. with the same name in any of its bases.
 
-状態変数のシャドウイングはエラーとみなされます。  派生コントラクトは、そのベースのいずれかに同名の可視ステート変数が存在しない場合にのみ、ステート変数 ``x`` を宣言することができます。
+状態変数のシャドウイングはエラーとみなされます。  派生コントラクトは、そのベースのいずれかに同名の可視ステート変数が存在しない場合にのみ、ステート変数 ``x`` を宣言できます。
 
 .. The general inheritance system is very similar to
 .. `Python's <https://docs.python.org/3/tutorial/classes.html#inheritance>`_,
@@ -226,7 +226,7 @@ Function Overriding
 .. ``nonpayable`` can be overridden by ``view`` and ``pure``. ``view`` can be overridden by ``pure``.
 .. ``payable`` is an exception and cannot be changed to any other mutability.
 
-ベース関数は、コントラクトを継承することでオーバーライドすることができ、 ``virtual`` としてマークされている場合は、その動作を変更することができます。オーバーライドされた関数は、関数ヘッダーで ``override`` キーワードを使用しなければなりません。オーバーライドされた関数は、オーバーライドされた関数の可視性を ``external`` から ``public`` に変更するだけです。変異可能性は、順序に従って、より厳密なものに変更することができます。 ``nonpayable`` は ``view`` と ``pure`` でオーバーライドできます。 ``nonpayable`` は ``view`` と ``pure`` でオーバーライドすることができ、 ``view`` は ``pure`` でオーバーライドすることができます。 ``payable`` は例外で、他のミュータビリティに変更することはできません。
+ベース関数は、コントラクトを継承することでオーバーライドでき、 ``virtual`` としてマークされている場合は、その動作を変更できます。オーバーライドされた関数は、関数ヘッダーで ``override`` キーワードを使用しなければなりません。オーバーライドされた関数は、オーバーライドされた関数の可視性を ``external`` から ``public`` に変更するだけです。変異可能性は、順序に従って、より厳密なものに変更できます。 ``nonpayable`` は ``view`` と ``pure`` でオーバーライドできます。 ``nonpayable`` は ``view`` と ``pure`` でオーバーライドでき、 ``view`` は ``pure`` でオーバーライドできます。 ``payable`` は例外で、他のミュータビリティに変更することはできません。
 
 .. The following example demonstrates changing mutability and visibility:
 
@@ -376,7 +376,7 @@ Function Overriding
 
 .. note::
 
-  パブリックステート変数は、外部関数をオーバーライドすることができますが、それ自体をオーバーライドすることはできません。
+  パブリックステート変数は、外部関数をオーバーライドできますが、それ自体をオーバーライドすることはできません。
 
 .. index:: ! overriding;modifier
 
@@ -443,7 +443,7 @@ Constructors
 .. which is executed upon contract creation, and where you can run contract
 .. initialisation code.
 
-コンストラクタは、 ``constructor`` キーワードで宣言されたオプションの関数で、コントラクトの作成時に実行され、コントラクトの初期化コードを実行することができます。
+コンストラクタは、 ``constructor`` キーワードで宣言されたオプションの関数で、コントラクトの作成時に実行され、コントラクトの初期化コードを実行できます。
 
 .. Before the constructor code is executed, state variables are initialised to
 .. their specified value if you initialise them inline, or their :ref:`default value<default-value>` if you do not.
@@ -487,7 +487,7 @@ Constructors
 .. the contract has to be marked :ref:`abstract <abstract-contract>`, because these parameters
 .. cannot be assigned valid values from outside but only through the constructors of derived contracts.
 
-コンストラクタで内部パラメータを使用することができます（たとえば、ストレージポインタなど）。この場合、コントラクトは :ref:`abstract <abstract-contract>` マークを付けなければなりません。なぜなら、これらのパラメータは外部から有効な値を割り当てることができず、派生コントラクトのコンストラクタを通してのみ有効だからです。
+コンストラクタで内部パラメータを使用できます（たとえば、ストレージポインタなど）。この場合、コントラクトは :ref:`abstract <abstract-contract>` マークを付けなければなりません。なぜなら、これらのパラメータは外部から有効な値を割り当てることができず、派生コントラクトのコンストラクタを通してのみ有効だからです。
 
 .. .. warning ::
 ..     Prior to version 0.4.22, constructors were defined as functions with the same name as the contract.
@@ -659,4 +659,4 @@ Inheriting Different Kinds of Members of the Same Name
 .. As an exception, a state variable getter can override an external function.
 .. 
 
-例外として、ステート変数のゲッターが外部関数をオーバーライドすることができます。
+例外として、ステート変数のゲッターが外部関数をオーバーライドできます。

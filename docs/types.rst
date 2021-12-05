@@ -15,7 +15,7 @@ Solidityは静的型付け言語です。つまり、各変数（ステートと
 .. In addition, types can interact with each other in expressions containing
 .. operators. For a quick reference of the various operators, see :ref:`order`.
 
-また、演算子を含む式では、型同士が相互に作用することができます。様々な演算子のクイックリファレンスについては、 :ref:`order` を参照してください。
+また、演算子を含む式では、型同士が相互に作用できます。様々な演算子のクイックリファレンスについては、 :ref:`order` を参照してください。
 
 .. The concept of "undefined" or "null" values does not exist in Solidity, but newly
 .. declared variables always have a :ref:`default value<default-value>` dependent

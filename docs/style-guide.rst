@@ -120,7 +120,7 @@ solidity sourceのトップレベル宣言を2行の空行で囲む。
 
 .. Blank lines may be omitted between groups of related one-liners (such as stub functions for an abstract contract)
 
-関連するワンライナーのグループの間では、空白行を省略することができます（抽象的なコントラクトのスタブ関数など）。
+関連するワンライナーのグループの間では、空白行を省略できます（抽象的なコントラクトのスタブ関数など）。
 
 .. Yes:
 
@@ -1255,7 +1255,7 @@ Other Recommendations
 ..   improved readability for complex statement. You should always use the same
 ..   amount of whitespace on either side of an operator:
 
-* 優先順位の高い演算子は、優先順位を示すために周囲の空白を除外することができます。  これは、複雑な文の可読性を高めるためのものです。演算子の両側には、常に同じ量の空白を使用する必要があります。
+* 優先順位の高い演算子は、優先順位を示すために周囲の空白を除外できます。  これは、複雑な文の可読性を高めるためのものです。演算子の両側には、常に同じ量の空白を使用する必要があります。
 
 .. Yes:
 

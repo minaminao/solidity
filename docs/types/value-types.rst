@@ -80,7 +80,7 @@ Integers
 .. For an integer type ``X``, you can use ``type(X).min`` and ``type(X).max`` to
 .. access the minimum and maximum value representable by the type.
 
-整数型の ``X`` の場合、 ``type(X).min`` と ``type(X).max`` を使って、その型で表現できる最小値と最大値にアクセスすることができます。
+整数型の ``X`` の場合、 ``type(X).min`` と ``type(X).max`` を使って、その型で表現できる最小値と最大値にアクセスできます。
 
 .. .. warning::
 
@@ -120,7 +120,7 @@ Shifts
 .. Shifts can be "simulated" using multiplication by powers of two in the following way. Note that the truncation
 .. to the type of the left operand is always performed at the end, but not mentioned explicitly.
 
-シフトは、以下の方法で2の累乗を使って「シミュレート」することができます。なお、左オペランドの型への切り捨ては常に最後に行われますが、明示的には言及されていません。
+シフトは、以下の方法で2の累乗を使って「シミュレート」できます。なお、左オペランドの型への切り捨ては常に最後に行われますが、明示的には言及されていません。
 
 .. - ``x << y`` is equivalent to the mathematical expression ``x * 2**y``.
 
@@ -161,7 +161,7 @@ Addition, Subtraction and Multiplication
 .. using the :ref:`unchecked block<unchecked>`, resulting in wrapping arithmetic. More details
 .. can be found in that section.
 
-デフォルトでは、すべての演算はアンダーフローまたはオーバーフローをチェックしますが、 :ref:`unchecked block<unchecked>` を使ってこれを無効にすることができ、結果としてラッピング演算が行われます。詳細はこのセクションを参照してください。
+デフォルトでは、すべての演算はアンダーフローまたはオーバーフローをチェックしますが、 :ref:`unchecked block<unchecked>` を使ってこれを無効にでき、結果としてラッピング演算が行われます。詳細はこのセクションを参照してください。
 
 .. The expression ``-x`` is equivalent to ``(T(0) - x)`` where
 .. ``T`` is the type of ``x``. It can only be applied to signed types.
@@ -240,7 +240,7 @@ Modulo
 
 .. note::
 
-  ゼロでのモジュロは :ref:`Panic error<assert-and-require>` を引き起こす。このチェックは ``unchecked { ... }`` で無効にすることができます。
+  ゼロでのモジュロは :ref:`Panic error<assert-and-require>` を引き起こす。このチェックは ``unchecked { ... }`` で無効にできます。
 
 Exponentiation
 ^^^^^^^^^^^^^^
@@ -399,7 +399,7 @@ Address
 
 .. note::
 
-    ``address`` と ``address payable`` の区別は、バージョン0.5.0から導入されました。     また、このバージョンから、コントラクトはアドレス・タイプから派生しませんが、receiveまたはpayableのフォールバック機能があれば、明示的に ``address`` または ``address payable`` に変換することができます。
+    ``address`` と ``address payable`` の区別は、バージョン0.5.0から導入されました。     また、このバージョンから、コントラクトはアドレス・タイプから派生しませんが、receiveまたはpayableのフォールバック機能があれば、明示的に ``address`` または ``address payable`` に変換できます。
 
 .. _members-of-addresses:
 
@@ -457,7 +457,7 @@ Sendは、 ``transfer`` の低レベルのカウンターパートです。実�
 
 .. warning::
 
-    ``send`` の使用にはいくつかの危険性があります。コールスタックの深さが1024の場合（これは常に呼び出し側で強制することができます）、転送は失敗し、また、受信者がガス欠になった場合も失敗します。したがって、安全なEther転送を行うためには、 ``send`` の戻り値を常にチェックするか、 ``transfer`` を使用するか、あるいはさらに良い方法として、受信者がお金を引き出すパターンを使用してください。
+    ``send`` の使用にはいくつかの危険性があります。コールスタックの深さが1024の場合（これは常に呼び出し側で強制できます）、転送は失敗し、また、受信者がガス欠になった場合も失敗します。したがって、安全なEther転送を行うためには、 ``send`` の戻り値を常にチェックするか、 ``transfer`` を使用するか、あるいはさらに良い方法として、受信者がお金を引き出すパターンを使用してください。
 
 .. * ``call``, ``delegatecall`` and ``staticcall``
 
@@ -517,7 +517,7 @@ ABIに準拠していないコントラクトとのインターフェースや�
 
 .. Similarly, the supplied Ether value can be controlled too:
 
-同様に、供給されるEtherの値も制御することができます。
+同様に、供給されるEtherの値も制御できます。
 
 .. code-block:: solidity
 
@@ -533,7 +533,7 @@ ABIに準拠していないコントラクトとのインターフェースや�
 
 .. In a similar way, the function ``delegatecall`` can be used: the difference is that only the code of the given address is used, all other aspects (storage, balance, ...) are taken from the current contract. The purpose of ``delegatecall`` is to use library code which is stored in another contract. The user has to ensure that the layout of storage in both contracts is suitable for delegatecall to be used.
 
-同様の方法で、機能 ``delegatecall`` を使用することができます。違いは、与えられたアドレスのコードのみが使用され、他のすべての側面（ストレージ、バランス、...）は、現在のコントラクトから取得されます。 ``delegatecall`` の目的は、別のコントラクトに保存されているライブラリ・コードを使用することです。ユーザーは、両方のコントラクトのストレージのレイアウトが、delegatecallを使用するのに適していることを確認しなければなりません。
+同様の方法で、機能 ``delegatecall`` を使用できます。違いは、与えられたアドレスのコードのみが使用され、他のすべての側面（ストレージ、バランス、...）は、現在のコントラクトから取得されます。 ``delegatecall`` の目的は、別のコントラクトに保存されているライブラリ・コードを使用することです。ユーザーは、両方のコントラクトのストレージのレイアウトが、delegatecallを使用するのに適していることを確認しなければなりません。
 
 .. .. note::
 
@@ -586,7 +586,7 @@ Contract Types
 .. You can implicitly convert contracts to contracts they inherit from.
 .. Contracts can be explicitly converted to and from the ``address`` type.
 
-すべての :ref:`contract<contracts>` はそれ自身のタイプを定義します。コントラクトを、それらが継承するコントラクトに暗黙的に変換することができる。コントラクトは、 ``address`` 型との間で明示的に変換することができます。
+すべての :ref:`contract<contracts>` はそれ自身のタイプを定義します。コントラクトを、それらが継承するコントラクトに暗黙的に変換できる。コントラクトは、 ``address`` 型との間で明示的に変換できます。
 
 .. Explicit conversion to and from the ``address payable`` type is only possible
 .. if the contract type has a receive or payable fallback function.  The conversion is still
@@ -901,7 +901,7 @@ String Literals and Types
 
 .. note::
 
-    バージョン0.8.0までは、さらに3つのエスケープシーケンスがありました。 ``\b`` 、 ``\f`` 、 ``\v`` です。     これらは他の言語ではよく使われていますが、実際にはほとんど必要ありません。     もし必要であれば、他のASCII文字と同じように16進数のエスケープ、すなわち ``\x08`` 、 ``\x0c`` 、 ``\x0b`` を使って挿入することができます。
+    バージョン0.8.0までは、さらに3つのエスケープシーケンスがありました。 ``\b`` 、 ``\f`` 、 ``\v`` です。     これらは他の言語ではよく使われていますが、実際にはほとんど必要ありません。     もし必要であれば、他のASCII文字と同じように16進数のエスケープ、すなわち ``\x08`` 、 ``\x0c`` 、 ``\x0b`` を使って挿入できます。
 
 .. The string in the following example has a length of ten bytes.
 .. It starts with a newline byte, followed by a double quote, a single
@@ -1033,7 +1033,7 @@ User Defined Value Types
 .. A user defined value type allows creating a zero cost abstraction over an elementary value type.
 .. This is similar to an alias, but with stricter type requirements.
 
-ユーザー定義の値型は、基本的な値型をゼロコストで抽象化して作成することができます。これは、エイリアスに似ていますが、型の要件がより厳しくなっています。
+ユーザー定義の値型は、基本的な値型をゼロコストで抽象化して作成できます。これは、エイリアスに似ていますが、型の要件がより厳しくなっています。
 
 .. A user defined value type is defined using ``type C is V``, where ``C`` is the name of the newly
 .. introduced type and ``V`` has to be a built-in value type (the "underlying type"). The function
@@ -1111,7 +1111,7 @@ Function Types
 .. can be used to pass functions to and return functions from function calls.
 .. Function types come in two flavours - *internal* and *external* functions:
 
-関数型は、関数の型です。関数型の変数は、関数から代入することができ、関数型のパラメータは、関数呼び出しに関数を渡したり、関数呼び出しから関数を返したりするのに使われます。関数型には、 *内部* 関数と *外部* 関数の2種類があります。
+関数型は、関数の型です。関数型の変数は、関数から代入でき、関数型のパラメータは、関数呼び出しに関数を渡したり、関数呼び出しから関数を返したりするのに使われます。関数型には、 *内部* 関数と *外部* 関数の2種類があります。
 
 .. Internal functions can only be called inside the current contract (more specifically,
 .. inside the current code unit, which also includes internal library functions
@@ -1125,7 +1125,7 @@ Function Types
 .. External functions consist of an address and a function signature and they can
 .. be passed via and returned from external function calls.
 
-外部関数は、アドレスと関数シグネチャで構成されており、外部関数呼び出しを介して渡したり、外部関数呼び出しから返したりすることができます。
+外部関数は、アドレスと関数シグネチャで構成されており、外部関数呼び出しを介して渡したり、外部関数呼び出しから返したりできます。
 
 .. Function types are notated as follows:
 
@@ -1212,7 +1212,7 @@ Function Types
 .. convention for their selectors <library-selectors>`.
 .. Functions declared in interfaces do not have definitions so pointing at them does not make sense either.
 
-内部型の関数は、どこで定義されているかに関わらず、内部関数型の変数に代入することができます。これには、コントラクトとライブラリの両方のプライベート関数、内部関数、パブリック関数のほか、フリー関数も含まれます。一方、外部関数型は、パブリック関数と外部コントラクト関数にのみ対応しています。ライブラリーは、 ``delegatecall`` とuse  :ref:`a different ABI convention for their selectors <library-selectors>` を必要とするため、除外されます。インターフェースで宣言された関数は定義を持たないので、それを指し示すことも意味がありません。
+内部型の関数は、どこで定義されているかに関わらず、内部関数型の変数に代入できます。これには、コントラクトとライブラリの両方のプライベート関数、内部関数、パブリック関数のほか、フリー関数も含まれます。一方、外部関数型は、パブリック関数と外部コントラクト関数にのみ対応しています。ライブラリーは、 ``delegatecall`` とuse  :ref:`a different ABI convention for their selectors <library-selectors>` を必要とするため、除外されます。インターフェースで宣言された関数は定義を持たないので、それを指し示すことも意味がありません。
 
 .. Members:
 

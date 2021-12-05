@@ -9,7 +9,7 @@ Ether Units
 
 .. A literal number can take a suffix of ``wei``, ``gwei`` or ``ether`` to specify a subdenomination of Ether, where Ether numbers without a postfix are assumed to be Wei.
 
-リテラル・ナンバーに ``wei`` 、 ``gwei`` 、 ``ether`` の接尾辞を付けて、Etherのサブデノミネーションを指定することができますが、接尾辞のないEtherナンバーはWeiとみなされます。
+リテラル・ナンバーに ``wei`` 、 ``gwei`` 、 ``ether`` の接尾辞を付けて、Etherのサブデノミネーションを指定できますが、接尾辞のないEtherナンバーはWeiとみなされます。
 
 .. code-block:: solidity
     :force:
@@ -39,7 +39,7 @@ Time Units
 .. after literal numbers can be used to specify units of time where seconds are the base
 .. unit and units are considered naively in the following way:
 
-リテラル数字の後に ``seconds`` 、 ``minutes`` 、 ``hours`` 、 ``days`` 、 ``weeks`` などのサフィックスをつけると、時間の単位を指定することができます。ここでは、秒を基本単位とし、単位は次のように素朴に考えます。
+リテラル数字の後に ``seconds`` 、 ``minutes`` 、 ``hours`` 、 ``days`` 、 ``weeks`` などのサフィックスをつけると、時間の単位を指定できます。ここでは、秒を基本単位とし、単位は次のように素朴に考えます。
 
 .. * ``1 == 1 seconds``
 
@@ -204,7 +204,7 @@ Block and Transaction Properties
 
     自分が何をしているか分かっていない限り、ランダム性の源として ``block.timestamp`` や ``blockhash`` に頼らないでください。
 
-    タイムスタンプもブロックハッシュも、ある程度はマイナーの影響を受ける可能性があります。     マイニングコミュニティの悪質な行為者は、例えば、選択したハッシュでカジノのペイアウト機能を実行し、お金を受け取れなかった場合は別のハッシュで再試行することができます。
+    タイムスタンプもブロックハッシュも、ある程度はマイナーの影響を受ける可能性があります。     マイニングコミュニティの悪質な行為者は、例えば、選択したハッシュでカジノのペイアウト機能を実行し、お金を受け取れなかった場合は別のハッシュで再試行できます。
 
     現在のブロックのタイムスタンプは、最後のブロックのタイムスタンプよりも厳密に大きくなければなりませんが、唯一の保証は、正規のチェーンで連続する2つのブロックのタイムスタンプの間のどこかになるということです。
 
@@ -278,7 +278,7 @@ ABI Encoding and Decoding Functions
 
 .. note::
 
-    これらのエンコーディング関数は、実際に外部関数を呼び出すことなく、外部関数呼び出しのためにデータを細工するために使用することができます。さらに、 ``keccak256(abi.encodePacked(a, b))`` は構造化されたデータのハッシュを計算する方法でもあります（ただし、異なる関数パラメータタイプを使って「ハッシュの衝突」を工作することが可能なので注意が必要です）。
+    これらのエンコーディング関数は、実際に外部関数を呼び出すことなく、外部関数呼び出しのためにデータを細工するために使用できます。さらに、 ``keccak256(abi.encodePacked(a, b))`` は構造化されたデータのハッシュを計算する方法でもあります（ただし、異なる関数パラメータタイプを使って「ハッシュの衝突」を工作することが可能なので注意が必要です）。
 
 .. See the documentation about the :ref:`ABI <ABI>` and the
 .. :ref:`tightly packed encoding <abi_packed_mode>` for details about the encoding.
@@ -489,7 +489,7 @@ Members of Address Types
 
 .. warning::
 
-    ``send`` の使用にはいくつかの危険があります。コールスタックの深さが1024の場合、転送は失敗し（これは常に呼び出し側で強制することができます）、受信者がガス欠になった場合も失敗します。そのため、安全なEther転送を行うためには、 ``send`` の戻り値を常にチェックし、 ``transfer`` を使用するか、あるいはそれ以上の方法をとる必要があります。     受信者がお金を引き出すパターンを使いましょう。
+    ``send`` の使用にはいくつかの危険があります。コールスタックの深さが1024の場合、転送は失敗し（これは常に呼び出し側で強制できます）、受信者がガス欠になった場合も失敗します。そのため、安全なEther転送を行うためには、 ``send`` の戻り値を常にチェックし、 ``transfer`` を使用するか、あるいはそれ以上の方法をとる必要があります。     受信者がお金を引き出すパターンを使いましょう。
 
 .. .. warning::
 
@@ -515,7 +515,7 @@ Members of Address Types
 
 .. note::
 
-   バージョン0.5.0以前のSolidityでは、 ``this.balance`` などのコントラクトインスタンスからアドレスメンバーにアクセスすることができました。    これは現在では禁止されており、アドレスへの明示的な変換を行う必要があります。 ``address(this).balance`` です。
+   バージョン0.5.0以前のSolidityでは、 ``this.balance`` などのコントラクトインスタンスからアドレスメンバーにアクセスできました。    これは現在では禁止されており、アドレスへの明示的な変換を行う必要があります。 ``address(this).balance`` です。
 
 .. .. note::
 
@@ -614,7 +614,7 @@ Type Information
 ..     derived contract. It causes the bytecode to be included in the bytecode
 ..     of the call site and thus circular references like that are not possible.
 
-``type(C).creationCode``  コントラクトの作成バイトコードを含むメモリバイト配列。     これはインラインアセンブリで使用することができ、特に ``create2``  opcodeを使用してカスタム作成ルーチンを構築することができます。     このプロパティは、コントラクト自体または派生コントラクトで **not** アクセスできます。これにより、バイトコードはコールサイトのバイトコードに含まれることになり、そのような循環参照はできません。
+``type(C).creationCode``  コントラクトの作成バイトコードを含むメモリバイト配列。     これはインラインアセンブリで使用でき、特に ``create2``  opcodeを使用してカスタム作成ルーチンを構築できます。     このプロパティは、コントラクト自体または派生コントラクトで **not** アクセスできます。これにより、バイトコードはコールサイトのバイトコードに含まれることになり、そのような循環参照はできません。
 
 .. ``type(C).runtimeCode``
 ..     Memory byte array that contains the runtime bytecode of the contract.

@@ -196,7 +196,7 @@ Analysing the Compiler Output
 .. generates the same bytecode. This can be easily done by taking a ``diff`` of the corresponding
 .. assembly output, after potentially stripping comments that reference the source locations.
 
-同様に、最適化されたアセンブリは、コマンドで得ることができます。 ``solc --optimize --asm contract.sol`` .しばしば、Solidityの2つの異なるソースが同じ最適化されたコードになるかどうかを確認することは興味深いことです。例えば、 ``(a * b) / c`` ,  ``a * b / c`` という式が同じバイトコードを生成するかどうかを確認することができます。これは、ソースの位置を参照するコメントを削除した後、対応するアセンブリ出力の ``diff`` を取ることで簡単に行うことができます。
+同様に、最適化されたアセンブリは、コマンドで得ることができます。 ``solc --optimize --asm contract.sol`` .しばしば、Solidityの2つの異なるソースが同じ最適化されたコードになるかどうかを確認することは興味深いことです。例えば、 ``(a * b) / c`` ,  ``a * b / c`` という式が同じバイトコードを生成するかどうかを確認できます。これは、ソースの位置を参照するコメントを削除した後、対応するアセンブリ出力の ``diff`` を取ることで簡単に行うことができます。
 
 .. .. note::
 

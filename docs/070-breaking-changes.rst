@@ -65,7 +65,7 @@ Changes to the Syntax
 ..   At the same time, public state variables are considered ``view`` and even ``pure``
 ..   if they are constants.
 
-* 状態の変更可能性継承の際に、関数の状態変更性を制限できるようになりました。デフォルトの状態変更可能性を持つ関数は、 ``pure`` および ``view`` 関数でオーバーライドすることができ、 ``view`` 関数は ``pure`` 関数でオーバーライドすることができます。同時に、パブリックな状態変数は ``view`` とみなされ、定数であれば ``pure`` ともみなされます。
+* 状態の変更可能性継承の際に、関数の状態変更性を制限できるようになりました。デフォルトの状態変更可能性を持つ関数は、 ``pure`` および ``view`` 関数でオーバーライドでき、 ``view`` 関数は ``pure`` 関数でオーバーライドできます。同時に、パブリックな状態変数は ``view`` とみなされ、定数であれば ``pure`` ともみなされます。
 
 
 Inline Assembly
@@ -137,7 +137,7 @@ Expressions
 ..   They are rarely used and do not make the actual amount readily visible. Instead, explicit
 ..   values like ``1e20`` or the very common ``gwei`` can be used.
 
-*  ``finney`` と ``szabo`` のデノミネーションは削除されています。これらはほとんど使用されず、実際の金額を容易に確認することができません。代わりに、 ``1e20`` や非常に一般的な ``gwei`` のような明確な値を使用することができます。
+*  ``finney`` と ``szabo`` のデノミネーションは削除されています。これらはほとんど使用されず、実際の金額を容易に確認できません。代わりに、 ``1e20`` や非常に一般的な ``gwei`` のような明確な値を使用できます。
 
 Declarations
 ------------

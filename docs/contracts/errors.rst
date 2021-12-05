@@ -47,7 +47,7 @@ Solidityのエラーは、操作が失敗した理由をユーザーに説明す
 .. The same error can be defined in multiple places as long as the scopes are distinct.
 .. Instances of errors can only be created using ``revert`` statements.
 
-エラーはオーバーロードやオーバーライドできませんが、継承されます。スコープが異なっている限り、同じエラーを複数の場所で定義することができます。エラーのインスタンスは、 ``revert`` ステートメントを使ってのみ作成できます。
+エラーはオーバーロードやオーバーライドできませんが、継承されます。スコープが異なっている限り、同じエラーを複数の場所で定義できます。エラーのインスタンスは、 ``revert`` ステートメントを使ってのみ作成できます。
 
 .. The error creates data that is then passed to the caller with the revert operation
 .. to either return to the off-chain component or catch it in a :ref:`try/catch statement <try-catch>`.
@@ -61,7 +61,7 @@ Solidityのエラーは、操作が失敗した理由をユーザーに説明す
 .. to further explain the reasons behind the error, which is not stored on chain.
 .. This makes this a very cheap and convenient error-reporting feature at the same time.
 
-パラメータを何も与えなければ、エラーは4バイトのデータだけで済み、上記のように :ref:`NatSpec <natspec>` を使ってエラーの理由をさらに説明することができますが、これはチェーンには保存されません。これにより、非常に安価で便利なエラー報告機能を同時に実現しています。
+パラメータを何も与えなければ、エラーは4バイトのデータだけで済み、上記のように :ref:`NatSpec <natspec>` を使ってエラーの理由をさらに説明できますが、これはチェーンには保存されません。これにより、非常に安価で便利なエラー報告機能を同時に実現しています。
 
 .. More specifically, an error instance is ABI-encoded in the same way as
 .. a function call to a function of the same name and types would be

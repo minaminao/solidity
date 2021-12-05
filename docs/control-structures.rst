@@ -22,12 +22,12 @@ Control Structures
 .. but only for :ref:`external function calls <external-function-calls>` and
 .. contract creation calls. Errors can be created using the :ref:`revert statement <revert-statement>`.
 
-Solidityは、 ``try`` / ``catch`` -statementの形での例外処理もサポートしていますが、 :ref:`external function calls <external-function-calls>` とコントラクト作成の呼び出しにのみ対応しています。エラーは :ref:`revert statement <revert-statement>` を使って作成することができます。
+Solidityは、 ``try`` / ``catch`` -statementの形での例外処理もサポートしていますが、 :ref:`external function calls <external-function-calls>` とコントラクト作成の呼び出しにのみ対応しています。エラーは :ref:`revert statement <revert-statement>` を使って作成できます。
 
 .. Parentheses can *not* be omitted for conditionals, but curly braces can be omitted
 .. around single-statement bodies.
 
-条件式では括弧を省略することはできませんが、シングルステートメントのボディでは中括弧を省略することができます。
+条件式では括弧を省略することはできませんが、シングルステートメントのボディでは中括弧を省略できます。
 
 .. Note that there is no type conversion from non-boolean to boolean types as
 .. there is in C and JavaScript, so ``if (1) { ... }`` is *not* valid
@@ -109,7 +109,7 @@ External Function Calls
 .. of opcodes can change in the future. Any Wei you send to the contract is added
 .. to the total balance of that contract:
 
-他のコントラクトの関数を呼び出す場合、特別オプション ``{value: 10, gas: 10000}`` で呼び出しとともに送られるウェイまたはガスの量を指定することができます。なお、ガスの値を明示的に指定することは推奨されません。オプコードのガスコストは将来的に変更される可能性があるからです。コントラクトに送ったWeiは、そのコントラクトの総残高に追加されます。
+他のコントラクトの関数を呼び出す場合、特別オプション ``{value: 10, gas: 10000}`` で呼び出しとともに送られるウェイまたはガスの量を指定できます。なお、ガスの値を明示的に指定することは推奨されません。オプコードのガスコストは将来的に変更される可能性があるからです。コントラクトに送ったWeiは、そのコントラクトの総残高に追加されます。
 
 .. code-block:: solidity
 
@@ -212,7 +212,7 @@ Named Calls and Anonymous Function Parameters
 .. example. The argument list has to coincide by name with the list of
 .. parameters from the function declaration, but can be in arbitrary order.
 
-関数呼び出しの引数は、次の例のように ``{ }`` で囲まれていれば、任意の順序で名前を与えることができます。引数リストは、関数宣言のパラメータリストと名前が一致していなければなりませんが、任意の順序にすることができます。
+関数呼び出しの引数は、次の例のように ``{ }`` で囲まれていれば、任意の順序で名前を与えることができます。引数リストは、関数宣言のパラメータリストと名前が一致していなければなりませんが、任意の順序にできます。
 
 .. code-block:: solidity
 
@@ -263,7 +263,7 @@ Creating Contracts via ``new``
 .. code of the contract being created has to be known when the creating contract
 .. is compiled so recursive creation-dependencies are not possible.
 
-コントラクトは、 ``new`` キーワードを使って他のコントラクトを作成することができます。作成されるコントラクトの完全なコードは、作成するコントラクトがコンパイルされるときに知られていなければならないので、再帰的な作成依存は不可能です。
+コントラクトは、 ``new`` キーワードを使って他のコントラクトを作成できます。作成されるコントラクトの完全なコードは、作成するコントラクトがコンパイルされるときに知られていなければならないので、再帰的な作成依存は不可能です。
 
 .. code-block:: solidity
 
@@ -325,7 +325,7 @@ Salted contract creations / create2
 .. also in case the creating
 .. contracts creates other contracts in the meantime.
 
-特に、カウンター（"nonce"）は使用されません。これにより、コントラクトをより柔軟に作成することができます。新しいコントラクトが作成される前に、そのアドレスを導き出すことができます。さらに、コントラクトを作成する人が、その間に他のコントラクトを作成した場合にも、このアドレスに依存することができます。
+特に、カウンター（"nonce"）は使用されません。これにより、コントラクトをより柔軟に作成できます。新しいコントラクトが作成される前に、そのアドレスを導き出すことができます。さらに、コントラクトを作成する人が、その間に他のコントラクトを作成した場合にも、このアドレスに依存できます。
 
 .. The main use-case here is contracts that act as judges for off-chain interactions,
 .. which only need to be created if there is a dispute.
@@ -375,7 +375,7 @@ Salted contract creations / create2
 
 .. warning::
 
-    塩漬けの作成に関しては、いくつかの特殊性があります。コントラクトは破壊された後、同じアドレスで再作成することができます。しかし、新しく作成されたコントラクトは、作成時のバイトコードが同じであっても、展開時のバイトコードが異なる可能性があります（そうしないとアドレスが変わってしまうため、これは必須条件です）。これは、コンストラクタが2つの作成の間に変更された可能性のある外部状態を照会し、それを格納する前にデプロイされたバイトコードに組み込むことができるという事実によるものです。
+    塩漬けの作成に関しては、いくつかの特殊性があります。コントラクトは破壊された後、同じアドレスで再作成できます。しかし、新しく作成されたコントラクトは、作成時のバイトコードが同じであっても、展開時のバイトコードが異なる可能性があります（そうしないとアドレスが変わってしまうため、これは必須条件です）。これは、コンストラクタが2つの作成の間に変更された可能性のある外部状態を照会し、それを格納する前にデプロイされたバイトコードに組み込むことができるという事実によるものです。
 
 Order of Evaluation of Expressions
 ==================================
@@ -404,7 +404,7 @@ Destructuring Assignments and Returning Multiple Values
 .. These can then either be assigned to newly declared variables
 .. or to pre-existing variables (or LValues in general).
 
-Solidityは内部的にタプル型を許可しています。つまり、潜在的に異なるタイプのオブジェクトのリストで、その数はコンパイル時に一定となります。これらのタプルは、同時に複数の値を返すために使用することができます。これらの値は、新たに宣言された変数や既存の変数（または一般的なLValues）に割り当てることができます。
+Solidityは内部的にタプル型を許可しています。つまり、潜在的に異なるタイプのオブジェクトのリストで、その数はコンパイル時に一定となります。これらのタプルは、同時に複数の値を返すために使用できます。これらの値は、新たに宣言された変数や既存の変数（または一般的なLValues）に割り当てることができます。
 
 .. Tuples are not proper types in Solidity, they can only be used to form syntactic
 .. groupings of expressions.
@@ -535,12 +535,12 @@ Solidityのスコーピングは、C99（および他の多くの言語）で広
 .. user-defined types, etc., are visible even before they were declared. This means you can
 .. use state variables before they are declared and call functions recursively.
 
-コードブロックの外で宣言された変数やその他のアイテム（例えば、関数、コントラクト、ユーザー定義型など）は、宣言される前から見ることができます。つまり、宣言される前の状態の変数を使用したり、関数を再帰的に呼び出したりすることができます。
+コードブロックの外で宣言された変数やその他のアイテム（例えば、関数、コントラクト、ユーザー定義型など）は、宣言される前から見ることができます。つまり、宣言される前の状態の変数を使用したり、関数を再帰的に呼び出したりできます。
 
 .. As a consequence, the following examples will compile without warnings, since
 .. the two variables have the same name but disjoint scopes.
 
-その結果、2つの変数は同じ名前ですが、スコープが異なっているため、以下の例では警告を出さずにコンパイルすることができます。
+その結果、2つの変数は同じ名前ですが、スコープが異なっているため、以下の例では警告を出さずにコンパイルできます。
 
 .. code-block:: solidity
 
@@ -630,7 +630,7 @@ Solidity 0.8.0以降、すべての算術演算はデフォルトでオーバー
 
 .. To obtain the previous behaviour, an ``unchecked`` block can be used:
 
-以前のような動作を得るためには、 ``unchecked`` ブロックを使用することができます。
+以前のような動作を得るためには、 ``unchecked`` ブロックを使用できます。
 
 .. code-block:: solidity
 
@@ -946,7 +946,7 @@ Assert は、内部エラーのテストや不変性のチェックにのみ使�
 .. In both cases, the caller can react on such failures using ``try``/``catch``, but
 .. the changes in the caller will always be reverted.
 
-どちらの場合も、呼び出し側はそのような失敗に対して ``try`` / ``catch`` を使って反応することができますが、呼び出し側の変更は必ず元に戻されます。
+どちらの場合も、呼び出し側はそのような失敗に対して ``try`` / ``catch`` を使って反応できますが、呼び出し側の変更は必ず元に戻されます。
 
 .. .. note::
 
@@ -965,7 +965,7 @@ Assert は、内部エラーのテストや不変性のチェックにのみ使�
 
 .. A direct revert can be triggered using the ``revert`` statement and the ``revert`` function.
 
-ダイレクトリバートは、 ``revert`` ステートメントと ``revert`` ファンクションを使ってトリガーすることができます。
+ダイレクトリバートは、 ``revert`` ステートメントと ``revert`` ファンクションを使ってトリガーできます。
 
 .. The ``revert`` statement takes a custom error as direct argument without parentheses:
 
@@ -989,14 +989,14 @@ backardsとの互換性を考慮して、括弧を使用して文字列を受け
 .. Using ``revert()`` causes a revert without any error data while ``revert("description")``
 .. will create an ``Error(string)`` error.
 
-エラーデータは呼び出し側に戻されるので、そこでキャッチすることができます。 ``revert()`` を使うとエラーデータなしで復帰しますが、 ``revert("description")`` を使うと ``Error(string)`` エラーが発生します。
+エラーデータは呼び出し側に戻されるので、そこでキャッチできます。 ``revert()`` を使うとエラーデータなしで復帰しますが、 ``revert("description")`` を使うと ``Error(string)`` エラーが発生します。
 
 .. Using a custom error instance will usually be much cheaper than a string description,
 .. because you can use the name of the error to describe it, which is encoded in only
 .. four bytes. A longer description can be supplied via NatSpec which does not incur
 .. any costs.
 
-カスタム エラー インスタンスを使用すると、通常、文字列による説明よりもはるかに安価になります。これは、わずか 4 バイトでエンコードされるエラーの名前を使用して説明できるからです。より長い記述はNatSpecを介して提供することができますが、これには一切のコストがかかりません。
+カスタム エラー インスタンスを使用すると、通常、文字列による説明よりもはるかに安価になります。これは、わずか 4 バイトでエンコードされるエラーの名前を使用して説明できるからです。より長い記述はNatSpecを介して提供できますが、これには一切のコストがかかりません。
 
 .. The following example shows how to use an error string and a custom error instance
 .. together with ``revert`` and the equivalent ``require``:
@@ -1078,7 +1078,7 @@ backardsとの互換性を考慮して、括弧を使用して文字列を受け
 
 .. A failure in an external call can be caught using a try/catch statement, as follows:
 
-外部呼び出しの失敗は、以下のようにtry/catch文を使ってキャッチすることができます。
+外部呼び出しの失敗は、以下のようにtry/catch文を使ってキャッチできます。
 
 .. code-block:: solidity
 
