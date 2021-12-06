@@ -493,7 +493,7 @@ Receive Ether Function
 
 .. warning::
 
-    Etherを受け取る関数を持たないコントラクトは、*coinbaseトランザクション*（別名：*minerブロックリワード*）の受信者として、または ``selfdestruct`` の宛先としてEtherを受け取ることができます。
+    Etherを受け取る関数を持たないコントラクトは、 *coinbaseトランザクション*（別名: *minerブロックリワード* ）の受信者として、または ``selfdestruct`` の宛先としてEtherを受け取ることができます。
 
     コントラクトは、そのようなEther転送に反応できず、したがって、それらを拒否することもできません。これはEVMの設計上の選択であり、Solidityはこれを回避できません。
 
@@ -501,7 +501,7 @@ Receive Ether Function
 
 .. Below you can see an example of a Sink contract that uses function ``receive``.
 
-下の図は、ファンクション ``receive`` を使用したSinkコントラクトの例です。
+下の図は、関数 ``receive`` を使用したSinkコントラクトの例です。
 
 .. code-block:: solidity
 
