@@ -458,7 +458,7 @@ Constructors
 .. It does not include the constructor code or internal functions that are
 .. only called from the constructor.
 
-コンストラクタの実行後、コントラクトの最終コードがブロックチェーンにデプロイされます。コードの展開には、コードの長さに応じた追加のガスがかかります。このコードには、パブリック・インターフェースの一部であるすべての関数と、そこから関数呼び出しによって到達可能なすべての関数が含まれます。コンストラクタのコードや、コンストラクタからしか呼び出されない内部関数は含まれません。
+コンストラクタの実行後、コントラクトの最終コードがブロックチェーンにデプロイされます。コードのデプロイには、コードの長さに応じた追加のガスがかかります。このコードには、パブリック・インターフェースの一部であるすべての関数と、そこから関数呼び出しによって到達可能なすべての関数が含まれます。コンストラクタのコードや、コンストラクタからしか呼び出されない内部関数は含まれません。
 
 .. If there is no
 .. constructor, the contract will assume the default constructor, which is
@@ -493,13 +493,15 @@ Constructors
 ..     Prior to version 0.4.22, constructors were defined as functions with the same name as the contract.
 ..     This syntax was deprecated and is not allowed anymore in version 0.5.0.
 
-... warning :: バージョン0.4.22より前のバージョンでは、コンストラクタはコントラクトと同じ名前の関数として定義されていました。     この構文は非推奨で、バージョン0.5.0ではもう認められていません。
+.. warning ::
+    バージョン0.4.22より前のバージョンでは、コンストラクタはコントラクトと同じ名前の関数として定義されていました。この構文は非推奨で、バージョン0.5.0ではもう認められていません。
 
 .. .. warning ::
 ..     Prior to version 0.7.0, you had to specify the visibility of constructors as either
 ..     ``internal`` or ``public``.
 
-... warning :: バージョン0.7.0より前のバージョンでは、コンストラクタの可視性を ``internal`` または ``public`` のいずれかに指定する必要がありました。
+.. warning ::
+    バージョン0.7.0より前のバージョンでは、コンストラクタの可視性を ``internal`` または ``public`` のいずれかに指定する必要がありました。
 
 .. index:: ! base;constructor
 

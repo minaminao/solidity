@@ -69,7 +69,7 @@ Integrated (Ethereum) Development Environments
 
     * コマンドラインからスマートコントラクトを構築、テスト、デプロイするための `Dapp <https://dapp.tools/>`_ ツール。
 
-    * 非中央集権的なアプリケーションを構築・展開するための `Embark <https://framework.embarklabs.io/>`_  Developerプラットフォーム。
+    * 非中央集権的なアプリケーションを構築・デプロイするための `Embark <https://framework.embarklabs.io/>`_  Developerプラットフォーム。
 
     * ローカルEthereumネットワーク、デバッグ機能、プラグインエコシステムを備えた `Hardhat <https://hardhat.org/>`_  Ethereum開発環境。
 

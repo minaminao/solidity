@@ -626,7 +626,7 @@ Type Information
 ..     The same restrictions as with ``.creationCode`` also apply for this
 ..     property.
 
-``type(C).runtimeCode``  コントラクトのランタイムバイトコードを含むメモリバイト配列。     これは、通常、 ``C`` のコンストラクタによって展開されるコードです。      ``C``  のコンストラクタがインライン アセンブリを使用している場合、これは実際にデプロイされるバイトコードとは異なる可能性があります。また、ライブラリはデプロイ時にランタイムのバイトコードを変更し、正規の呼び出しを防ぐことにも注意してください。     このプロパティにも、 ``.creationCode``  と同様の制限が適用されます。
+``type(C).runtimeCode``  コントラクトのランタイムバイトコードを含むメモリバイト配列。     これは、通常、 ``C`` のコンストラクタによってデプロイされるコードです。      ``C``  のコンストラクタがインライン アセンブリを使用している場合、これは実際にデプロイされるバイトコードとは異なる可能性があります。また、ライブラリはデプロイ時にランタイムのバイトコードを変更し、正規の呼び出しを防ぐことにも注意してください。     このプロパティにも、 ``.creationCode``  と同様の制限が適用されます。
 
 .. In addition to the properties above, the following properties are available
 .. for an interface type ``I``:

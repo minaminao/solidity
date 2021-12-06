@@ -43,7 +43,7 @@ AliceとBobは署名を使ってトランザクションを承認しますが、
 
 コントラクト内容は以下のようになっています。
 
-    1.アリスは ``ReceiverPays`` コントラクトを展開し、行われるであろう支払いをカバーするのに十分なEtherを取り付けます。
+    1.アリスは ``ReceiverPays`` コントラクトをデプロイし、行われるであろう支払いをカバーするのに十分なEtherを取り付けます。
 
     2.アリスは、自分の秘密鍵でメッセージを署名することで、支払いを承認します。
 
@@ -114,7 +114,7 @@ What to Sign
 .. new contract does not know the nonces used in the previous
 .. deployment, so the attacker can use the old messages again.
 
-別のタイプのリプレイ攻撃は、所有者が ``ReceiverPays`` スマートコントラクトを展開し、いくつかの支払いを行った後、コントラクトを破棄した場合に発生します。しかし、新しいコントラクトは前回の展開で使用された非暗号を知らないため、攻撃者は古いメッセージを再び使用できます。
+別のタイプのリプレイ攻撃は、所有者が ``ReceiverPays`` スマートコントラクトをデプロイし、いくつかの支払いを行った後、コントラクトを破棄した場合に発生します。しかし、新しいコントラクトは前回のデプロイで使用された非暗号を知らないため、攻撃者は古いメッセージを再び使用できます。
 
 .. Alice can protect against this attack by including the
 .. contract's address in the message, and only messages containing
@@ -319,7 +319,7 @@ Opening the Payment Channel
 .. maximum duration for the channel to exist. This is the function
 .. ``SimplePaymentChannel`` in the contract, at the end of this section.
 
-支払いチャネルを開くために、アリスはスマートコントラクトを展開し、エスクローされるイーサを添付し、意図する受取人とチャネルが存在する最大期間を指定します。これが、このセクションの最後にあるコントラクトの関数 ``SimplePaymentChannel`` です。
+支払いチャネルを開くために、アリスはスマートコントラクトをデプロイし、エスクローされるイーサを添付し、意図する受取人とチャネルが存在する最大期間を指定します。これが、このセクションの最後にあるコントラクトの関数 ``SimplePaymentChannel`` です。
 
 Making Payments
 ---------------
@@ -422,7 +422,7 @@ Channel Expiration
 .. at the time of contract deployment. Once that time is reached, Alice can call
 .. ``claimTimeout`` to recover her funds. You can see the ``claimTimeout`` function in the full contract.
 
-ボブはいつでも支払いチャネルを閉じることができますが、それができなかった場合、アリスはエスクローされた資金を回収する方法が必要です。コントラクトの展開時に*有効期限*が設定されました。その時間に達すると、アリスは ``claimTimeout`` を呼び出して資金を回収できます。 ``claimTimeout`` 関数は コントラクト全文で見ることができます。
+ボブはいつでも支払いチャネルを閉じることができますが、それができなかった場合、アリスはエスクローされた資金を回収する方法が必要です。コントラクトのデプロイ時に *有効期限* が設定されました。その時間に達すると、アリスは ``claimTimeout`` を呼び出して資金を回収できます。 ``claimTimeout`` 関数は コントラクト全文で見ることができます。
 
 .. After this function is called, Bob can no longer receive any Ether,
 .. so it is important that Bob closes the channel before the expiration is reached.

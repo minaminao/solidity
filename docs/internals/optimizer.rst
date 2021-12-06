@@ -47,7 +47,7 @@ Benefits of Optimizing Solidity Code
 .. function inlining is an operation that can cause much bigger code, but it is
 .. often done because it results in opportunities for more simplifications.
 
-全体的に、オプティマイザは複雑な式を単純化しようとします。これにより、コードサイズと実行コストの両方が削減されます。つまり、コントラクトの展開やコントラクトへの外部呼び出しに必要なガスを削減することができます。また、関数の特殊化やインライン化も行います。特に関数のインライン化は、コードサイズが大きくなる可能性がある操作ですが、より単純化できる機会が増えるため、よく行われます。
+全体的に、オプティマイザは複雑な式を単純化しようとします。これにより、コードサイズと実行コストの両方が削減されます。つまり、コントラクトのデプロイやコントラクトへの外部呼び出しに必要なガスを削減することができます。また、関数の特殊化やインライン化も行います。特に関数のインライン化は、コードサイズが大きくなる可能性がある操作ですが、より単純化できる機会が増えるため、よく行われます。
 
 Differences between Optimized and Non-Optimized Code
 ====================================================

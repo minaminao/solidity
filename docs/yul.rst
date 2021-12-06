@@ -149,7 +149,7 @@ Stand-Alone Usage
 .. to code as data to deploy contracts. This Yul mode is available for the commandline compiler
 .. (use ``--strict-assembly``) and for the :ref:`standard-json interface <compiler-api>`:
 
-Yulは、Solidityコンパイラを使用して、EVM方言でスタンドアローンの形で使用できます。これは :ref:`Yul object notation <yul-object>` を使用するので、コードをデータとして参照してコントラクトを展開することが可能です。このYulモードは、コマンドライン・コンパイラ（ ``--strict-assembly`` を使用）と :ref:`standard-json interface <compiler-api>` で使用できます。
+Yulは、Solidityコンパイラを使用して、EVM方言でスタンドアローンの形で使用できます。これは :ref:`Yul object notation <yul-object>` を使用するので、コードをデータとして参照してコントラクトをデプロイすることが可能です。このYulモードは、コマンドライン・コンパイラ（ ``--strict-assembly`` を使用）と :ref:`standard-json interface <compiler-api>` で使用できます。
 
 .. code-block:: json
 
