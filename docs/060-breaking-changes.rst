@@ -101,7 +101,7 @@ Semantic and Syntactic Changes
 ..   fallback function that is defined using the ``fallback`` keyword and a receive ether function
 ..   defined using the ``receive`` keyword.
 
-* 一般的に「フォールバック機能」と呼ばれる無名の機能は、 ``fallback`` キーワードで定義される新しいフォールバック機能と、 ``receive`` キーワードで定義される受信エーテル機能に分割されました。
+* 一般的に「フォールバック関数」と呼ばれる無名関数は、 ``fallback`` キーワードで定義される新しいフォールバック関数と、 ``receive`` キーワードで定義されるレシーブ・イーサ関数に分割されました。
 
 ..   * If present, the receive ether function is called whenever the call data is empty (whether
 ..     or not ether is received). This function is implicitly ``payable``.

@@ -950,7 +950,7 @@ JSON
 ..   blockchain state <pure-functions>`), ``view`` (:ref:`specified to not modify the blockchain
 ..   state <view-functions>`), ``nonpayable`` (function does not accept Ether
 
-- ``stateMutability`` ：以下のいずれかの値を持つ文字列。 ``pure`` （ :ref:`specified to not read   blockchain state <pure-functions>` ）、 ``view`` （ :ref:`specified to not modify the blockchain   state <view-functions>` ）、 ``nonpayable`` （機能はエーテルを受け付けません
+- ``stateMutability`` ：以下のいずれかの値を持つ文字列。 ``pure`` （ :ref:`specified to not read   blockchain state <pure-functions>` ）、 ``view`` （ :ref:`specified to not modify the blockchain   state <view-functions>` ）、 ``nonpayable`` （機能はイーサを受け付けません
 
 .. - the default) and ``payable`` (function accepts Ether).
 

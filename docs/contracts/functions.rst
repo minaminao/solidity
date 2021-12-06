@@ -247,7 +247,7 @@ View Functions
 
 .. #. Sending Ether via calls.
 
-#. コールでエーテルを送る。
+#. コールでイーサを送る。
 
 .. #. Calling any function not marked ``view`` or ``pure``.
 
@@ -462,7 +462,7 @@ Receive Ether Function
 
 .. - Sending Ether
 
-- エーテルの送信
+- イーサの送信
 
 .. .. warning::
 
