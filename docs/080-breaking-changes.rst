@@ -202,7 +202,7 @@ New Restrictions
 ..   This change was done since the compiler cannot determine whether or not these addresses
 ..   are payable or not, so it now requires an explicit conversion to make this requirement visible.
 
-* グローバル変数 ``tx.origin`` と ``msg.sender`` の型は、 ``address payable`` ではなく ``address`` です。これらを ``address payable`` に変換するには、明示的な変換、すなわち ``payable(tx.origin)`` または ``payable(msg.sender)`` を用いればよい。
+* グローバル変数 ``tx.origin`` と ``msg.sender`` の型は、 ``address payable`` ではなく ``address`` です。これらを ``address payable`` に変換するには、明示的な変換を、すなわち ``payable(tx.origin)`` または ``payable(msg.sender)`` を用いてください。
 
   この変更は、これらのアドレスが支払可能かどうかをコンパイラが判断できないため、この要件を可視化するために明示的な変換を必要とするようになりました。
 
@@ -228,9 +228,9 @@ New Restrictions
 
 * ``address`` 型への明示的な変換は、常に支払い不可能な ``address`` 型を返します。特に、以下の明示的な変換は、 ``address payable`` 型ではなく ``address`` 型になります。
 
-  - ``address(u)`` ここで、 ``u`` は ``uint160`` 型の変数です。 ``u`` を ``address payable`` 型に変換するには、2つの明示的な変換、すなわち ``payable(address(u))`` を用いればよい。
+  - ``address(u)`` ここで、 ``u`` は ``uint160`` 型の変数です。 ``u`` を ``address payable`` 型に変換するには、2つの明示的な変換、すなわち ``payable(address(u))`` を用いてください。
 
-  - ``address(b)`` ここで、 ``b`` は ``bytes20`` 型の変数です。 ``b`` を ``address payable`` 型に変換するには、2つの明示的な変換、すなわち ``payable(address(b))`` を用いればよい。
+  - ``address(b)`` ここで、 ``b`` は ``bytes20`` 型の変数です。 ``b`` を ``address payable`` 型に変換するには、2つの明示的な変換、すなわち ``payable(address(b))`` を用いてください。
 
   - ``address(c)`` （ ``c`` はコントラクト）。以前は、この変換のリターンタイプは、コントラクトがEtherを受信できるかどうかに依存していました（受信関数または支払可能なフォールバック関数を持つことにより）。 ``payable(c)`` 変換は ``address payable`` 型で、コントラクト ``c`` がEtherを受け取ることができる場合にのみ許可されます。一般的には、以下の明示的な変換を用いることで、常に ``c`` を ``address payable`` 型に変換できる。 ``payable(address(c))`` . ``address(this)`` は、 ``address(c)`` と同じカテゴリーに属し、同じルールが適用されることに注意してください。
 
