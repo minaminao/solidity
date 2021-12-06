@@ -125,7 +125,7 @@ Mappings and Dynamic Arrays
 .. The slot is ``keccak256(keccak256(p) + i) + floor(j / floor(256 / 24))`` and
 .. the element can be obtained from the slot data ``v`` using ``(v >> ((j % floor(256 / 24)) * 24)) & type(uint24).max``.
 
-配列データは ``keccak256(p)`` から始まり、静的なサイズの配列データと同じように配置されています。要素の長さが16バイト以下であれば、ストレージスロットを共有できる可能性があります。動的配列の動的配列は、このルールを再帰的に適用します． ``x`` の型が ``uint24[][]`` である要素 ``x[i][j]`` の位置は、次のように計算されます（ここでも、 ``x`` 自身がスロット ``p`` に格納されていると仮定します）．スロットは ``keccak256(keccak256(p) + i) + floor(j / floor(256 / 24))`` であり、要素は ``(v >> ((j % floor(256 / 24)) * 24)) & type(uint24).max`` を用いてスロットデータ ``v`` から得ることができる。
+配列データは ``keccak256(p)`` から始まり、静的なサイズの配列データと同じように配置されています。要素の長さが16バイト以下であれば、ストレージスロットを共有できる可能性があります。動的配列の動的配列は、このルールを再帰的に適用します。 ``x`` の型が ``uint24[][]`` である要素 ``x[i][j]`` の位置は、次のように計算されます（ここでも、 ``x`` 自身がスロット ``p`` に格納されていると仮定します）。スロットは ``keccak256(keccak256(p) + i) + floor(j / floor(256 / 24))`` であり、要素は ``(v >> ((j % floor(256 / 24)) * 24)) & type(uint24).max`` を用いてスロットデータ ``v`` から得ることができる。
 
 .. The value corresponding to a mapping key ``k`` is located at ``keccak256(h(k) . p)``
 .. where ``.`` is concatenation and ``h`` is a function that is applied to the key depending on its type:

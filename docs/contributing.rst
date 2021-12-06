@@ -382,7 +382,7 @@ out the separator and the comments that follow it.
 
 .. - ``quit``: Quits ``isoltest``.
 
-- ``quit`` ：やめる  ``isoltest`` ．
+- ``quit`` ：やめる  ``isoltest`` 。
 
 .. All of these options apply to the current contract, expect ``quit`` which stops the entire testing process.
 
