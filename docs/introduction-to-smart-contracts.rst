@@ -685,7 +685,7 @@ Logs
 .. secure way, so network peers that do not download the whole blockchain
 .. (so-called "light clients") can still find these logs.
 
-ブロックレベルまでマッピングされた特別なインデックス付きのデータ構造にデータを保存することが可能です。この**logs**と呼ばれる機能は、Solidityでは :ref:`events <events>` を実装するために使用されています。コントラクトはログデータが作成された後はアクセスできませんが、ブロックチェーンの外部から効率的にアクセスできます。ログデータの一部は `bloom filters <https://en.wikipedia.org/wiki/Bloom_filter>`_ に格納されているため、効率的かつ暗号的に安全な方法でこのデータを検索することが可能であり、ブロックチェーン全体をダウンロードしないネットワークピア（いわゆる「ライトクライアント」）でもこれらのログを見つけることができます。
+ブロックレベルまでマッピングされた特別なインデックス付きのデータ構造にデータを保存することが可能です。この **logs** と呼ばれる機能は、Solidityでは :ref:`events <events>` を実装するために使用されています。コントラクトはログデータが作成された後はアクセスできませんが、ブロックチェーンの外部から効率的にアクセスできます。ログデータの一部は `bloom filters <https://en.wikipedia.org/wiki/Bloom_filter>`_ に格納されているため、効率的かつ暗号的に安全な方法でこのデータを検索することが可能であり、ブロックチェーン全体をダウンロードしないネットワークピア（いわゆる「ライトクライアント」）でもこれらのログを見つけることができます。
 
 .. index:: contract creation
 

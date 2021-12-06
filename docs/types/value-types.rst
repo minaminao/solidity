@@ -1151,7 +1151,7 @@ Function Types
 
 .. Conversions:
 
-変換します。
+Conversions:
 
 .. A function type ``A`` is implicitly convertible to a function type ``B`` if and only if
 .. their parameter types are identical, their return types are identical,
@@ -1220,7 +1220,7 @@ Function Types
 
 .. External (or public) functions have the following members:
 
-外部（または公的）関数には、次のようなメンバーがいます。
+外部（またはパブリック）関数には、次のようなメンバーを持ちます。
 
 .. * ``.address`` returns the address of the contract of the function.
 
@@ -1228,7 +1228,7 @@ Function Types
 
 .. * ``.selector`` returns the :ref:`ABI function selector <abi_function_selector>`
 
-* ``.selector`` が :ref:`ABI function selector <abi_function_selector>` を返す
+* ``.selector`` が :ref:`ABI function selector <abi_function_selector>` を返します。
 
 .. .. note::
 
