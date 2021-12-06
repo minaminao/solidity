@@ -301,7 +301,7 @@ Static Binaries
 .. Each one contains a ``list.json`` file listing the available binaries. For example in
 .. ``emscripten-wasm32/list.json`` you will find the following information about version 0.7.4:
 
-``solc-bin`` リポジトリには，複数のトップレベルのディレクトリがあり，それぞれが1つのプラットフォームを表しています。それぞれのディレクトリには、利用可能なバイナリの一覧を示す ``list.json`` ファイルが含まれています。例えば、 ``emscripten-wasm32/list.json`` にはバージョン0.7.4についての以下の情報があります。
+``solc-bin`` リポジトリには、複数のトップレベルのディレクトリがあり、それぞれが1つのプラットフォームを表しています。それぞれのディレクトリには、利用可能なバイナリの一覧を示す ``list.json`` ファイルが含まれています。例えば、 ``emscripten-wasm32/list.json`` にはバージョン0.7.4についての以下の情報があります。
 
 .. code-block:: json
 

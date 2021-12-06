@@ -108,11 +108,11 @@ New Restrictions
 
   1.負のリテラルや ``type(uint160).max`` より大きいリテラルから ``address`` への明示的な変換は禁止されています。
 
-  2.リテラルと整数型 ``T`` の間の明示的な変換は，リテラルが ``type(T).min`` と ``type(T).max`` の間にある場合にのみ許される。特に、 ``uint(-1)`` の使用を ``type(uint).max`` に置き換えてください。
+  2.リテラルと整数型 ``T`` の間の明示的な変換は、リテラルが ``type(T).min`` と ``type(T).max`` の間にある場合にのみ許される。特に、 ``uint(-1)`` の使用を ``type(uint).max`` に置き換えてください。
 
   3.リテラルと列挙型の間の明示的な変換は、リテラルが列挙型の値を表すことができる場合にのみ許可されます。
 
-  4.リテラルと ``address`` 型の間の明示的な変換（例： ``address(literal)`` ）は， ``address payable`` の代わりに ``address`` 型を持つ。明示的な変換を使用することで、支払可能なアドレス・タイプを得ることができます、すなわち、 ``payable(literal)`` 。
+  4.リテラルと ``address`` 型の間の明示的な変換（例： ``address(literal)`` ）は、 ``address payable`` の代わりに ``address`` 型を持つ。明示的な変換を使用することで、支払可能なアドレス・タイプを得ることができます、すなわち、 ``payable(literal)`` 。
 
 .. * :ref:`Address literals<address_literals>` have the type ``address`` instead of ``address
 ..   payable``. They can be converted to ``address payable`` by using an explicit conversion, e.g.
@@ -152,7 +152,7 @@ New Restrictions
 
 * 明示的な型変換には新しい制限があります。変換は、符号、幅、または型カテゴリ（ ``int`` 、 ``address`` 、 ``bytesNN`` など）に最大1つの変更がある場合にのみ許可されます。   複数の変更を行うには、複数の変換を使用します。
 
-  ここで， ``T`` と ``S`` は型であり， ``x`` は ``S`` 型の任意の変数である，明示的な変換 ``T(x)`` を表すために ``T(S)`` という表記を使用してみましょう。このような許されない変換の例としては， ``uint16(int8)`` があります。 ``uint16(int8)`` は幅（8ビットから16ビット）と符号（符号付き整数から符号なし整数）の両方を変更するからです。変換を行うためには，中間型を経由しなければなりません。先ほどの例では， ``uint16(uint8(int8))`` または ``uint16(int16(int8))`` となります。この2つの変換方法では，例えば ``-1`` の場合，異なる結果が得られることに注意してください。以下は，この規則によって許されない変換の例です。
+  ここで、 ``T`` と ``S`` は型であり、 ``x`` は ``S`` 型の任意の変数である、明示的な変換 ``T(x)`` を表すために ``T(S)`` という表記を使用してみましょう。このような許されない変換の例としては、 ``uint16(int8)`` があります。 ``uint16(int8)`` は幅（8ビットから16ビット）と符号（符号付き整数から符号なし整数）の両方を変更するからです。変換を行うためには、中間型を経由しなければなりません。先ほどの例では、 ``uint16(uint8(int8))`` または ``uint16(int16(int8))`` となります。この2つの変換方法では、例えば ``-1`` の場合、異なる結果が得られることに注意してください。以下は、この規則によって許されない変換の例です。
 
   - ``address(uint)`` と ``uint(address)`` ：タイプ・カテゴリーと幅の両方を変換します。これをそれぞれ ``address(uint160(uint))`` と ``uint(uint160(address))`` に置き換える。
 
@@ -162,7 +162,7 @@ New Restrictions
 
   - ``Contract(uint)`` : type-categoryとwidthの両方を変換しています。これを ``Contract(address(uint160(uint)))`` に置き換える。
 
-  これらの変換は、曖昧さを避けるために認められませんでした。例えば， ``uint16 x =   uint16(int8(-1))`` という表現では， ``x`` の値は，符号と幅のどちらの変換が最初に適用されるかに依存する。
+  これらの変換は、曖昧さを避けるために認められませんでした。例えば、 ``uint16 x =   uint16(int8(-1))`` という表現では、 ``x`` の値は、符号と幅のどちらの変換が最初に適用されるかに依存する。
 
 .. * Function call options can only be given once, i.e. ``c.f{gas: 10000}{value: 1}()`` is invalid and has to be changed to ``c.f{gas: 10000, value: 1}()``.
 
@@ -202,7 +202,7 @@ New Restrictions
 ..   This change was done since the compiler cannot determine whether or not these addresses
 ..   are payable or not, so it now requires an explicit conversion to make this requirement visible.
 
-* グローバル変数 ``tx.origin`` と ``msg.sender`` の型は， ``address payable`` ではなく ``address`` です。これらを ``address payable`` に変換するには，明示的な変換，すなわち ``payable(tx.origin)`` または ``payable(msg.sender)`` を用いればよい。
+* グローバル変数 ``tx.origin`` と ``msg.sender`` の型は、 ``address payable`` ではなく ``address`` です。これらを ``address payable`` に変換するには、明示的な変換、すなわち ``payable(tx.origin)`` または ``payable(msg.sender)`` を用いればよい。
 
   この変更は、これらのアドレスが支払可能かどうかをコンパイラが判断できないため、この要件を可視化するために明示的な変換を必要とするようになりました。
 
@@ -228,11 +228,11 @@ New Restrictions
 
 * ``address`` 型への明示的な変換は、常に支払い不可能な ``address`` 型を返します。特に、以下の明示的な変換は、 ``address payable`` 型ではなく ``address`` 型になります。
 
-  - ``address(u)`` ここで， ``u`` は ``uint160`` 型の変数です。 ``u`` を ``address payable`` 型に変換するには，2つの明示的な変換，すなわち ``payable(address(u))`` を用いればよい。
+  - ``address(u)`` ここで、 ``u`` は ``uint160`` 型の変数です。 ``u`` を ``address payable`` 型に変換するには、2つの明示的な変換、すなわち ``payable(address(u))`` を用いればよい。
 
-  - ``address(b)`` ここで， ``b`` は ``bytes20`` 型の変数です。 ``b`` を ``address payable`` 型に変換するには，2つの明示的な変換，すなわち ``payable(address(b))`` を用いればよい。
+  - ``address(b)`` ここで、 ``b`` は ``bytes20`` 型の変数です。 ``b`` を ``address payable`` 型に変換するには、2つの明示的な変換、すなわち ``payable(address(b))`` を用いればよい。
 
-  - ``address(c)`` （ ``c`` はコントラクト）。以前は、この変換のリターンタイプは、コントラクトがEtherを受信できるかどうかに依存していました（受信関数または支払可能なフォールバック関数を持つことにより）。 ``payable(c)`` 変換は ``address payable`` 型で，コントラクト ``c`` がEtherを受け取ることができる場合にのみ許可されます。一般的には，以下の明示的な変換を用いることで，常に ``c`` を ``address payable`` 型に変換できる。 ``payable(address(c))`` . ``address(this)`` は、 ``address(c)`` と同じカテゴリーに属し、同じルールが適用されることに注意してください。
+  - ``address(c)`` （ ``c`` はコントラクト）。以前は、この変換のリターンタイプは、コントラクトがEtherを受信できるかどうかに依存していました（受信関数または支払可能なフォールバック関数を持つことにより）。 ``payable(c)`` 変換は ``address payable`` 型で、コントラクト ``c`` がEtherを受け取ることができる場合にのみ許可されます。一般的には、以下の明示的な変換を用いることで、常に ``c`` を ``address payable`` 型に変換できる。 ``payable(address(c))`` . ``address(this)`` は、 ``address(c)`` と同じカテゴリーに属し、同じルールが適用されることに注意してください。
 
 .. * The ``chainid`` builtin in inline assembly is now considered ``view`` instead of ``pure``.
 

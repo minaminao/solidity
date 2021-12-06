@@ -806,7 +806,7 @@ ASTの様々なノード上でオーバーロードされた評価関数Eを提�
 .. If the AST node is an expression, E returns the two state objects and
 .. as many values as the expression evaluates to.
 
-ASTノードがステートメントの場合，Eは2つの状態オブジェクトと ``break`` ， ``continue`` ， ``leave`` ステートメントで使用される「モード」を返します．ASTノードが式の場合，Eは2つの状態オブジェクトと式の評価値の数だけの値を返します．
+ASTノードがステートメントの場合、Eは2つの状態オブジェクトと ``break`` 、 ``continue`` 、 ``leave`` ステートメントで使用される「モード」を返します．ASTノードが式の場合、Eは2つの状態オブジェクトと式の評価値の数だけの値を返します．
 
 .. The exact nature of the global state is unspecified for this high level
 .. description. The local state ``L`` is a mapping of identifiers ``i`` to values ``v``,

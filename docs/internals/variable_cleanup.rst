@@ -29,7 +29,7 @@ Cleaning Up Variables
 .. the boolean values before they are used as the condition for
 .. ``JUMPI``.
 
-また、直後の演算に影響がない場合は、ビットのクリーニングは行いません。  例えば， ``JUMPI`` 命令では0以外の値は ``true`` とみなされるので， ``JUMPI`` の条件として使われる前のブーリアン値のクリーニングは行わない。
+また、直後の演算に影響がない場合は、ビットのクリーニングは行いません。  例えば、 ``JUMPI`` 命令では0以外の値は ``true`` とみなされるので、 ``JUMPI`` の条件として使われる前のブーリアン値のクリーニングは行わない。
 
 .. In addition to the design principle above, the Solidity compiler
 .. cleans input data when it is loaded onto the stack.

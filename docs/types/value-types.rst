@@ -387,7 +387,7 @@ Address
 
 .. warning::
 
-    より大きなバイトサイズを使用する型を  ``bytes32``  などの  ``address``  に変換した場合、 ``address``  は切り捨てられます。     変換の曖昧さを減らすために，バージョン0.4.24以降のコンパイラでは，変換時に切り捨てを明示するようになっています。     例えば，32バイトの値 ``0x111122223333444455556666777788889999AAAABBBBCCCCDDDDEEEEFFFFCCCC`` を考えてみましょう。
+    より大きなバイトサイズを使用する型を  ``bytes32``  などの  ``address``  に変換した場合、 ``address``  は切り捨てられます。     変換の曖昧さを減らすために、バージョン0.4.24以降のコンパイラでは、変換時に切り捨てを明示するようになっています。     例えば、32バイトの値 ``0x111122223333444455556666777788889999AAAABBBBCCCCDDDDEEEEFFFFCCCC`` を考えてみましょう。
 
     ``address(uint160(bytes20(b)))`` を使うと ``0x111122223333444455556666777788889999aAaa`` になり、 ``address(uint160(uint256(b)))`` を使うと ``0x777788889999AaAAbBbbCcccddDdeeeEfFFfCcCc`` になります。
 
@@ -769,7 +769,7 @@ Rational and Integer Literals
 .. This means that computations do not overflow and divisions do not truncate
 .. in number literal expressions.
 
-数リテラル式は、非リテラル型に変換されるまで（非リテラル式との併用や明示的な変換など）、任意の精度を保ちます。このため，数値リテラル式では，計算がオーバーフローしたり，除算が切り捨てられたりすることはありません。
+数リテラル式は、非リテラル型に変換されるまで（非リテラル式との併用や明示的な変換など）、任意の精度を保ちます。このため、数値リテラル式では、計算がオーバーフローしたり、除算が切り捨てられたりすることはありません。
 
 .. For example, ``(2**800 + 1) - 2**800`` results in the constant ``1`` (of type ``uint8``)
 .. although intermediate results would not even fit the machine word size. Furthermore, ``.5 * 8`` results

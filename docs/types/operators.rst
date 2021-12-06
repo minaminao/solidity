@@ -28,7 +28,7 @@ delete
 .. all other elements and the length of the array untouched. This especially means that it leaves
 .. a gap in the array. If you plan to remove items, a :ref:`mapping <mapping-types>` is probably a better choice.
 
-``delete a`` は、 ``a`` に型の初期値を割り当てます。つまり，整数の場合は ``a = 0`` と同じですが，配列にも使用でき，長さ0の動的配列や，すべての要素を初期値に設定した同じ長さの静的配列を割り当てます。 ``delete a[x]`` は、配列のインデックス ``x`` の項目を削除し、他のすべての要素と配列の長さはそのままにします。これは特に、配列にギャップを残すことを意味します。アイテムを削除する予定なら、 :ref:`mapping <mapping-types>` の方が良いでしょう。
+``delete a`` は、 ``a`` に型の初期値を割り当てます。つまり、整数の場合は ``a = 0`` と同じですが、配列にも使用でき、長さ0の動的配列や、すべての要素を初期値に設定した同じ長さの静的配列を割り当てます。 ``delete a[x]`` は、配列のインデックス ``x`` の項目を削除し、他のすべての要素と配列の長さはそのままにします。これは特に、配列にギャップを残すことを意味します。アイテムを削除する予定なら、 :ref:`mapping <mapping-types>` の方が良いでしょう。
 
 .. For structs, it assigns a struct with all members reset. In other words,
 .. the value of ``a`` after ``delete a`` is the same as if ``a`` would be declared

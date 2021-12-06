@@ -283,7 +283,7 @@ Assert
 .. properties and/or add restrictions on the array to see different results.
 .. For example, changing the code to
 
-すべてのプロパティの安全性が正しく証明されています。プロパティを変更したり，配列に制限を加えることで，異なる結果を得ることができます。例えば、コードを次のように変更すると
+すべてのプロパティの安全性が正しく証明されています。プロパティを変更したり、配列に制限を加えることで、異なる結果を得ることができます。例えば、コードを次のように変更すると
 
 .. code-block:: Solidity
 
@@ -340,7 +340,7 @@ State Properties
 .. and cannot move outside the grid. The robot's state machine can be represented by the smart contract
 .. below.
 
-例として、両軸の座標が(-2^128, 2^128 - 1)の範囲にある2Dグリッドを考えてみましょう。ここで、ロボットを(0, 0)の位置に置きます。ロボットは対角線上に1歩ずつしか移動できず，グリッドの外には出られません．このロボットのステートマシンは，以下のスマートコントラクトで表すことができます．
+例として、両軸の座標が(-2^128, 2^128 - 1)の範囲にある2Dグリッドを考えてみましょう。ここで、ロボットを(0, 0)の位置に置きます。ロボットは対角線上に1歩ずつしか移動できず、グリッドの外には出られません．このロボットのステートマシンは、以下のスマートコントラクトで表すことができます．
 
 .. code-block:: Solidity
 
@@ -435,7 +435,7 @@ State Properties
 .. other paths that could reach (2, 4). The choice of which path is shown
 .. might change depending on the used solver, its version, or just randomly.
 
-なお，上の経路は必ずしも決定論的ではなく，(2, 4)に到達する経路は他にもあるので注意が必要です．どの経路を表示するかは，使用するソルバーやそのバージョンによって変わるかもしれませんし，ランダムに表示されるかもしれません．
+なお、上の経路は必ずしも決定論的ではなく、(2, 4)に到達する経路は他にもあるので注意が必要です．どの経路を表示するかは、使用するソルバーやそのバージョンによって変わるかもしれませんし、ランダムに表示されるかもしれません．
 
 External Calls and Reentrancy
 =============================

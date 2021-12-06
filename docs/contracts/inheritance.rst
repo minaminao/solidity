@@ -570,7 +570,7 @@ Multiple Inheritance and Linearization
 .. in the order from "most base-like" to "most derived".
 .. Note that this order is the reverse of the one used in Python.
 
-多重継承が可能な言語は、いくつかの問題を抱えています。  ひとつは「 `Diamond Problem <https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem>`_ 」です。SolidityはPythonに似ていますが、ベースクラスの有向非環状グラフ（DAG）に特定の順序を強制するために「 `C3 Linearization <https://en.wikipedia.org/wiki/C3_linearization>`_ 」を使用しています。この結果、単調性という望ましい特性が得られますが、いくつかの継承グラフが使えなくなります。特に、 ``is`` 指令でのベースクラスの順序は重要で、「最もベースに近いもの」から「最も派生したもの」の順に直接ベースコントラクトをリストアップする必要があります。この順序は，Pythonで使われている順序とは逆であることに注意してください．
+多重継承が可能な言語は、いくつかの問題を抱えています。  ひとつは「 `Diamond Problem <https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem>`_ 」です。SolidityはPythonに似ていますが、ベースクラスの有向非環状グラフ（DAG）に特定の順序を強制するために「 `C3 Linearization <https://en.wikipedia.org/wiki/C3_linearization>`_ 」を使用しています。この結果、単調性という望ましい特性が得られますが、いくつかの継承グラフが使えなくなります。特に、 ``is`` 指令でのベースクラスの順序は重要で、「最もベースに近いもの」から「最も派生したもの」の順に直接ベースコントラクトをリストアップする必要があります。この順序は、Pythonで使われている順序とは逆であることに注意してください．
 
 .. Another simplifying way to explain this is that when a function is called that
 .. is defined multiple times in different contracts, the given bases

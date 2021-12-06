@@ -201,7 +201,7 @@ Design Criteria for the Encoding
 ..    previous version of the ABI, the number of reads scaled linearly with the total number of dynamic
 ..    parameters in the worst case.
 
-1.値にアクセスするために必要な読み取り回数は，最大でも引数配列構造内の値の深さ分であり，すなわち ``a_i[k][l][r]`` を取得するためには4回の読み取りが必要です。以前のバージョンのABIでは，最悪の場合，読み取り回数は動的パラメータの総数に比例していました．
+1.値にアクセスするために必要な読み取り回数は、最大でも引数配列構造内の値の深さ分であり、すなわち ``a_i[k][l][r]`` を取得するためには4回の読み取りが必要です。以前のバージョンのABIでは、最悪の場合、読み取り回数は動的パラメータの総数に比例していました．
 
 .. 2. The data of a variable or array element is not interleaved with other data and it is
 ..    relocatable, i.e. it only uses relative "addresses".
@@ -654,7 +654,7 @@ Use of Dynamic Types
 .. To calculate the offsets we can take a look at the encoded data of the first root array ``[[1, 2], [3]]``
 .. enumerating each line in the encoding:
 
-次に，それぞれの動的配列 ``[1, 2]`` と ``[3]`` に対するオフセット ``a`` と ``b`` を求める必要があります。このオフセットを計算するために，最初のルート配列 ``[[1, 2], [3]]`` のエンコードデータを見て，エンコードの各行を列挙します。
+次に、それぞれの動的配列 ``[1, 2]`` と ``[3]`` に対するオフセット ``a`` と ``b`` を求める必要があります。このオフセットを計算するために、最初のルート配列 ``[[1, 2], [3]]`` のエンコードデータを見て、エンコードの各行を列挙します。
 
 .. code-block:: none
 
@@ -738,7 +738,7 @@ Use of Dynamic Types
 .. Note that the encodings of the embedded elements of the root arrays are not dependent on each other
 .. and have the same encodings for a function with a signature ``g(string[],uint[][])``.
 
-なお，ルート配列の埋め込み要素の符号化は互いに依存しておらず，シグネチャ ``g(string[],uint[][])`` を持つ関数では同じ符号化になります．
+なお、ルート配列の埋め込み要素の符号化は互いに依存しておらず、シグネチャ ``g(string[],uint[][])`` を持つ関数では同じ符号化になります．
 
 .. Then we encode the length of the first root array:
 

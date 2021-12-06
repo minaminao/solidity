@@ -115,7 +115,7 @@ Mappings and Dynamic Arrays
 .. For mappings, the slot stays empty, but it is still needed to ensure that even if there are
 .. two mappings next to each other, their content ends up at different storage locations.
 
-マッピングや配列の格納場所が， :ref:`the storage layout rules <storage-inplace-encoding>` を適用した後にスロット ``p`` になったとします。動的配列の場合、このスロットには、配列の要素数が格納されます（バイト配列と文字列は例外で、 :ref:`below <bytes-and-string>` を参照してください）。マッピングの場合、このスロットは空のままですが、2つのマッピングが隣り合っていても、その内容が異なる保存場所になることを保証するために必要です。
+マッピングや配列の格納場所が、 :ref:`the storage layout rules <storage-inplace-encoding>` を適用した後にスロット ``p`` になったとします。動的配列の場合、このスロットには、配列の要素数が格納されます（バイト配列と文字列は例外で、 :ref:`below <bytes-and-string>` を参照してください）。マッピングの場合、このスロットは空のままですが、2つのマッピングが隣り合っていても、その内容が異なる保存場所になることを保証するために必要です。
 
 .. Array data is located starting at ``keccak256(p)`` and it is laid out in the same way as
 .. statically-sized array data would: One element after the other, potentially sharing
@@ -125,7 +125,7 @@ Mappings and Dynamic Arrays
 .. The slot is ``keccak256(keccak256(p) + i) + floor(j / floor(256 / 24))`` and
 .. the element can be obtained from the slot data ``v`` using ``(v >> ((j % floor(256 / 24)) * 24)) & type(uint24).max``.
 
-配列データは ``keccak256(p)`` から始まり、静的なサイズの配列データと同じように配置されています。要素の長さが16バイト以下であれば、ストレージスロットを共有できる可能性があります。動的配列の動的配列は，このルールを再帰的に適用します． ``x`` の型が ``uint24[][]`` である要素 ``x[i][j]`` の位置は，次のように計算されます（ここでも， ``x`` 自身がスロット ``p`` に格納されていると仮定します）．スロットは ``keccak256(keccak256(p) + i) + floor(j / floor(256 / 24))`` であり，要素は ``(v >> ((j % floor(256 / 24)) * 24)) & type(uint24).max`` を用いてスロットデータ ``v`` から得ることができる。
+配列データは ``keccak256(p)`` から始まり、静的なサイズの配列データと同じように配置されています。要素の長さが16バイト以下であれば、ストレージスロットを共有できる可能性があります。動的配列の動的配列は、このルールを再帰的に適用します． ``x`` の型が ``uint24[][]`` である要素 ``x[i][j]`` の位置は、次のように計算されます（ここでも、 ``x`` 自身がスロット ``p`` に格納されていると仮定します）．スロットは ``keccak256(keccak256(p) + i) + floor(j / floor(256 / 24))`` であり、要素は ``(v >> ((j % floor(256 / 24)) * 24)) & type(uint24).max`` を用いてスロットデータ ``v`` から得ることができる。
 
 .. The value corresponding to a mapping key ``k`` is located at ``keccak256(h(k) . p)``
 .. where ``.`` is concatenation and ``h`` is a function that is applied to the key depending on its type:

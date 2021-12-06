@@ -30,7 +30,7 @@ Implicit Conversions
 .. For more details about which implicit conversions are possible,
 .. please consult the sections about the types themselves.
 
-どのような暗黙の変換が可能であるかの詳細については，型自体に関するセクションを参照してください。
+どのような暗黙の変換が可能であるかの詳細については、型自体に関するセクションを参照してください。
 
 .. In the example below, ``y`` and ``z``, the operands of the addition,
 .. do not have the same type, but ``uint8`` can
@@ -57,7 +57,7 @@ Explicit Conversions
 .. features of the compiler, so be sure to test that the
 .. result is what you want and expect!
 
-コンパイラが暗黙的な変換を許可していないが，変換がうまくいくと確信している場合，明示的な型変換が可能な場合があります。この場合，予期しない動作をしたり，コンパイラのセキュリティ機能を迂回したりすることがありますので，結果が期待通りのものであることを必ずテストしてください。
+コンパイラが暗黙的な変換を許可していないが、変換がうまくいくと確信している場合、明示的な型変換が可能な場合があります。この場合、予期しない動作をしたり、コンパイラのセキュリティ機能を迂回したりすることがありますので、結果が期待通りのものであることを必ずテストしてください。
 
 .. Take the following example that converts a negative ``int`` to a ``uint``:
 
@@ -86,7 +86,7 @@ Explicit Conversions
 .. If an integer is explicitly converted to a larger type, it is padded on the left (i.e., at the higher order end).
 .. The result of the conversion will compare equal to the original integer:
 
-整数がより大きな型に明示的に変換された場合，その整数は左に（すなわち高次の端に）パディングされます。変換の結果は、元の整数と同じになります。
+整数がより大きな型に明示的に変換された場合、その整数は左に（すなわち高次の端に）パディングされます。変換の結果は、元の整数と同じになります。
 
 .. code-block:: solidity
 
@@ -98,7 +98,7 @@ Explicit Conversions
 .. sequences of individual bytes and converting to a smaller type will cut off the
 .. sequence:
 
-固定サイズのバイトタイプは，変換時の挙動が異なります。これらは個々のバイトのシーケンスと考えることができ、より小さなタイプに変換するとシーケンスが切断されます。
+固定サイズのバイトタイプは、変換時の挙動が異なります。これらは個々のバイトのシーケンスと考えることができ、より小さなタイプに変換するとシーケンスが切断されます。
 
 .. code-block:: solidity
 
@@ -109,7 +109,7 @@ Explicit Conversions
 .. the right. Accessing the byte at a fixed index will result in the same value before and
 .. after the conversion (if the index is still in range):
 
-固定サイズのバイト型が明示的に大きな型に変換された場合は、右にパディングされます。固定インデックスでバイトにアクセスすると，変換前と変換後で同じ値になります（インデックスがまだ範囲内にある場合）。
+固定サイズのバイト型が明示的に大きな型に変換された場合は、右にパディングされます。固定インデックスでバイトにアクセスすると、変換前と変換後で同じ値になります（インデックスがまだ範囲内にある場合）。
 
 .. code-block:: solidity
 
@@ -124,7 +124,7 @@ Explicit Conversions
 .. different size, you have to use intermediate conversions that make the desired truncation and padding
 .. rules explicit:
 
-整数と固定サイズのバイト配列は，切り捨てやパディングの際に異なる動作をするので， 整数と固定サイズのバイト配列の間の明示的な変換は，両者が同じサイズである場合に のみ許されます。異なるサイズの整数と固定サイズのバイト配列の間で変換したい場合は，必要な切り捨てとパディングの規則を明示する中間変換を使用しなければなりません。
+整数と固定サイズのバイト配列は、切り捨てやパディングの際に異なる動作をするので、 整数と固定サイズのバイト配列の間の明示的な変換は、両者が同じサイズである場合に のみ許されます。異なるサイズの整数と固定サイズのバイト配列の間で変換したい場合は、必要な切り捨てとパディングの規則を明示する中間変換を使用しなければなりません。
 
 .. code-block:: solidity
 

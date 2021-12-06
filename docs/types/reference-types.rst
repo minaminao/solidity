@@ -270,7 +270,7 @@ Allocating Memory Arrays
 .. You either have to calculate the required size in advance
 .. or create a new memory array and copy every element.
 
-動的な長さを持つメモリアレイは、 ``new`` 演算子を使って作成できます。ストレージアレイとは対照的に，メモリアレイのサイズを変更できません（例えば， ``.push`` メンバ関数は使用できません）。必要なサイズを事前に計算するか、新しいメモリ配列を作成してすべての要素をコピーする必要があります。
+動的な長さを持つメモリアレイは、 ``new`` 演算子を使って作成できます。ストレージアレイとは対照的に、メモリアレイのサイズを変更できません（例えば、 ``.push`` メンバ関数は使用できません）。必要なサイズを事前に計算するか、新しいメモリ配列を作成してすべての要素をコピーする必要があります。
 
 .. As all variables in Solidity, the elements of newly allocated arrays are always initialized
 .. with the :ref:`default value<default-value>`.

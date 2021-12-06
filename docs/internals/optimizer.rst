@@ -106,7 +106,7 @@ Opcode-Based Optimizer Module
 .. a recursive process, we can also apply the latter rule if the second factor
 .. is a more complex expression which we know always evaluates to one.
 
-さらに、オペコードベースのオプティマイザーでは、「CommonSubexpressionEliminator」というコンポーネントを使用しています。このコンポーネントは、他のタスクと同様に、（すべての入力に対して）常に等しい式を見つけ、それらを式クラスに結合します。このコンポーネントは，（あらゆる入力に対して）常に等しい式を検出し，それらを式クラスに結合します．そのようなマッチが見つからない場合は、 ``constant + constant = sum_of_constants`` や ``X * 1 = X`` のようなルールに従って式を単純化します。これは再帰的なプロセスであるため、第2因子が常に1と評価されることがわかっているより複雑な式の場合、後者のルールを適用することもできます。
+さらに、オペコードベースのオプティマイザーでは、「CommonSubexpressionEliminator」というコンポーネントを使用しています。このコンポーネントは、他のタスクと同様に、（すべての入力に対して）常に等しい式を見つけ、それらを式クラスに結合します。このコンポーネントは、（あらゆる入力に対して）常に等しい式を検出し、それらを式クラスに結合します．そのようなマッチが見つからない場合は、 ``constant + constant = sum_of_constants`` や ``X * 1 = X`` のようなルールに従って式を単純化します。これは再帰的なプロセスであるため、第2因子が常に1と評価されることがわかっているより複雑な式の場合、後者のルールを適用することもできます。
 
 .. Certain optimizer steps symbolically track the storage and memory locations. For example, this
 .. information is used to compute Keccak-256 hashes that can be evaluated during compile time. Consider
@@ -932,7 +932,7 @@ Redundant Assign Eliminatorは、 ``a`` の値が使用されていないため�
 .. "unused", "undecided" and "used" which signifies whether the assigned
 .. value will be used later by a reference to the variable.
 
-ASTは、情報収集の段階と実際の削除の段階の2回にわたって走査されます。情報収集の段階では，代入文から「unused」「undecided」「used」の3つの状態へのマッピングを保持しています．これは，代入された値が後でその変数への参照によって使われるかどうかを示すものです．
+ASTは、情報収集の段階と実際の削除の段階の2回にわたって走査されます。情報収集の段階では、代入文から「unused」「undecided」「used」の3つの状態へのマッピングを保持しています．これは、代入された値が後でその変数への参照によって使われるかどうかを示すものです．
 
 .. When an assignment is visited, it is added to the mapping in the "undecided" state
 .. (see remark about for loops below) and every other assignment to the same variable
@@ -1066,7 +1066,7 @@ DataflowAnalyzer
 .. all stored values of all variables ``b`` are cleared whenever ``a`` is part
 .. of the currently stored expression for ``b``.
 
-Dataflow Analyzerは、それ自体はオプティマイザではありませんが、他のコンポーネントのツールとして使用されます。ASTをトラバースしながら、各変数の現在の値を追跡します（その値が移動可能な式である限り）。各変数に現在割り当てられている式の一部である変数を記録します。変数 ``a`` に代入されるたびに， ``a`` の現在の格納値が更新され， ``a`` が ``b`` の現在格納されている式の一部であるときは，すべての変数 ``b`` のすべての格納値がクリアされる．
+Dataflow Analyzerは、それ自体はオプティマイザではありませんが、他のコンポーネントのツールとして使用されます。ASTをトラバースしながら、各変数の現在の値を追跡します（その値が移動可能な式である限り）。各変数に現在割り当てられている式の一部である変数を記録します。変数 ``a`` に代入されるたびに、 ``a`` の現在の格納値が更新され、 ``a`` が ``b`` の現在格納されている式の一部であるときは、すべての変数 ``b`` のすべての格納値がクリアされる．
 
 .. At control-flow joins, knowledge about variables is cleared if they have or would be assigned
 .. in any of the control-flow paths. For instance, upon entering a
@@ -1687,7 +1687,7 @@ ExpressionJoiner
 .. if moving the value of a variable to its place of use would change the order
 .. of any function call or opcode execution, the transformation is not performed.
 
-これは、式分割器とは逆の動作です。正確に1つの参照を持つ変数宣言のシーケンスを複雑な式に変えます。この段階では，関数の呼び出しとオペコードの実行の順序が完全に保持されます．オペコードの可換性に関する情報は利用しません。変数の値を使用する場所に移動することで、関数呼び出しやオペコードの実行順序が変わる場合は、変換を行いません。
+これは、式分割器とは逆の動作です。正確に1つの参照を持つ変数宣言のシーケンスを複雑な式に変えます。この段階では、関数の呼び出しとオペコードの実行の順序が完全に保持されます．オペコードの可換性に関する情報は利用しません。変数の値を使用する場所に移動することで、関数呼び出しやオペコードの実行順序が変わる場合は、変換を行いません。
 
 .. Note that the component will not move the assigned value of a variable assignment
 .. or a variable that is referenced more than once.

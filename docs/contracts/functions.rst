@@ -113,7 +113,7 @@ Return Variables
 .. Function return variables are declared with the same syntax after the
 .. ``returns`` keyword.
 
-関数の戻り値変数は， ``returns`` キーワードの後に同じ構文で宣言されます。
+関数の戻り値変数は、 ``returns`` キーワードの後に同じ構文で宣言されます。
 
 .. For example, suppose you want to return two results: the sum and the product of
 .. two integers passed as function parameters, then you use something like:

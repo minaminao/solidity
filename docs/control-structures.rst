@@ -386,7 +386,7 @@ Order of Evaluation of Expressions
 .. guaranteed that statements are executed in order and short-circuiting for
 .. boolean expressions is done.
 
-式の評価順序は指定されていません（より正式には、式ツリーのあるノードの子が評価される順序は指定されていませんが、もちろんそのノード自身よりも先に評価されます）。文が順番に実行されることが保証されているだけであり，ブーリアン式の短絡は行われます．
+式の評価順序は指定されていません（より正式には、式ツリーのあるノードの子が評価される順序は指定されていませんが、もちろんそのノード自身よりも先に評価されます）。文が順番に実行されることが保証されているだけであり、ブーリアン式の短絡は行われます．
 
 .. index:: ! assignment
 

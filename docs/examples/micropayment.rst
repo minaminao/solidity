@@ -533,7 +533,7 @@ The full contract
 
 .. note::
 
-  関数 ``splitSignature`` は、すべてのセキュリティチェックを使用していません。実際の実装では，openzepplinの `version  <https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/cryptography/ECDSA.sol>`_ のように，より厳密にテストされたライブラリを使用する必要があります。
+  関数 ``splitSignature`` は、すべてのセキュリティチェックを使用していません。実際の実装では、openzepplinの `version  <https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/cryptography/ECDSA.sol>`_ のように、より厳密にテストされたライブラリを使用する必要があります。
 
 Verifying Payments
 ------------------
