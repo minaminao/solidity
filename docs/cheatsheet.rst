@@ -279,7 +279,7 @@ Global Variables
 
 .. note::
 
-    コントラクトが、ブロックに含まれるトランザクションのコンテキストではなく、オフチェーンで評価される場合、 ``block.*`` と ``tx.*`` が特定のブロックやトランザクションの値を参照していると仮定してはならない。これらの値は、コントラクトを実行するEVMの実装によって提供され、任意のものとなりうる。
+    コントラクトが、ブロックに含まれるトランザクションのコンテキストではなく、オフチェーンで評価される場合、 ``block.*`` と ``tx.*`` が特定のブロックやトランザクションの値を参照していると仮定してはなりません。これらの値は、コントラクトを実行するEVMの実装によって提供され、任意のものとなりえます。
 
 .. .. note::
 
@@ -368,36 +368,36 @@ Modifiers
 
 .. - ``pure`` for functions: Disallows modification or access of state.
 
-- 関数の ``pure`` 。状態の変更やアクセスを禁止する。
+- 関数の ``pure``: 状態の変更やアクセスを禁止する。
 
 .. - ``view`` for functions: Disallows modification of state.
 
-- 関数の ``view`` 。状態の変更を不可とする。
+- 関数の ``view``: 状態の変更を不可とする。
 
 .. - ``payable`` for functions: Allows them to receive Ether together with a call.
 
-- 関数の ``payable`` です。コールと同時にイーサを受信できるようにする。
+- 関数の ``payable``: コールと同時にイーサを受信できるようにする。
 
 .. - ``constant`` for state variables: Disallows assignment (except initialisation), does not occupy storage slot.
 
-- 状態変数用の ``constant`` 。初期化を除き、代入を禁止し、ストレージスロットを占有しない。
+- 状態変数の ``constant``: 初期化を除き、代入を禁止し、ストレージスロットを占有しない。
 
 .. - ``immutable`` for state variables: Allows exactly one assignment at construction time and is constant afterwards. Is stored in code.
 
-- 状態変数の ``immutable`` 。構築時に正確に1つの割り当てを可能にし、その後も一定です。コードに格納される。
+- 状態変数の ``immutable``: 構築時に正確に1つの割り当てを可能にし、その後も一定です。コードに格納される。
 
 .. - ``anonymous`` for events: Does not store event signature as topic.
 
-- イベント用の ``anonymous`` です。イベントの署名をトピックとして保存しない。
+- イベントの ``anonymous``: イベントの署名をトピックとして保存しない。
 
 .. - ``indexed`` for event parameters: Stores the parameter as topic.
 
-- イベントパラメータの ``indexed`` です。パラメータをトピックとして保存します。
+- イベントパラメータの ``indexed``: パラメータをトピックとして保存します。
 
 .. - ``virtual`` for functions and modifiers: Allows the function's or modifier's
 ..   behaviour to be changed in derived contracts.
 
-- 関数やモディファイアの ``virtual`` です。関数や修飾子の動作を派生コントラクトで変更できるようにする。
+- 関数やモディファイアの ``virtual``: 関数や修飾子の動作を派生コントラクトで変更できるようにする。
 
 .. - ``override``: States that this function, modifier or public state variable changes
 ..   the behaviour of a function or modifier in a base contract.
@@ -418,4 +418,8 @@ Reserved Keywords
 .. ``var``.
 .. 
 
-aa, ab, ac, ad, ae, af, ag, ah, ai, aj, ak, al, am, an, ao, ap, aq, ar, as, at, au, av, aw, ax, ay, az, ba, bb, bc, bd, be.
+``after``, ``alias``, ``apply``, ``auto``, ``byte``, ``case``, ``copyof``, ``default``,
+``define``, ``final``, ``implements``, ``in``, ``inline``, ``let``, ``macro``, ``match``,
+``mutable``, ``null``, ``of``, ``partial``, ``promise``, ``reference``, ``relocatable``,
+``sealed``, ``sizeof``, ``static``, ``supports``, ``switch``, ``typedef``, ``typeof``,
+``var``.
