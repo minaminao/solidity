@@ -208,7 +208,7 @@ Arrays
 .. ``keccak256(abi.encodePacked(s1)) == keccak256(abi.encodePacked(s2))`` and
 .. concatenate two strings using ``bytes.concat(bytes(s1), bytes(s2))``.
 
-Solidityには文字列操作機能はありませんが、サードパーティ製の文字列ライブラリがあります。また、 ``keccak256(abi.encodePacked(s1)) == keccak256(abi.encodePacked(s2))`` を使って2つの文字列をそのkeccak256-hashで比較したり、 ``bytes.concat(bytes(s1), bytes(s2))`` を使って2つの文字列を連結できます。
+Solidityには文字列操作関数はありませんが、サードパーティ製の文字列ライブラリがあります。また、 ``keccak256(abi.encodePacked(s1)) == keccak256(abi.encodePacked(s2))`` を使って2つの文字列をそのkeccak256-hashで比較したり、 ``bytes.concat(bytes(s1), bytes(s2))`` を使って2つの文字列を連結できます。
 
 .. You should use ``bytes`` over ``bytes1[]`` because it is cheaper,
 .. since ``bytes1[]`` adds 31 padding bytes between the elements. As a general rule,

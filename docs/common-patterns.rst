@@ -107,7 +107,7 @@ Withdrawal from Contracts
 .. "poisoned" contract, it will fail and thus also ``becomeRichest``
 .. will fail, with the contract being stuck forever.
 
-この例では、攻撃者は、失敗する受信機能やフォールバック機能を持つコントラクトのアドレスを ``richest`` にすることで、コントラクトを使用不能な状態に陥れることができることに注意してください（例えば、 ``revert()`` を使用したり、転送された2300ガスの俸給を超えて消費したりすることなど）。そうすれば、「毒された」コントラクトに資金を届けるために ``transfer`` が呼び出されるたびに、それは失敗し、したがって ``becomeRichest`` も失敗して、コントラクトは永遠に動けなくなります。
+この例では、攻撃者は、失敗する受信関数やフォールバック関数を持つコントラクトのアドレスを ``richest`` にすることで、コントラクトを使用不能な状態に陥れることができることに注意してください（例えば、 ``revert()`` を使用したり、転送された2300ガスの俸給を超えて消費したりすることなど）。そうすれば、「毒された」コントラクトに資金を届けるために ``transfer`` が呼び出されるたびに、それは失敗し、したがって ``becomeRichest`` も失敗して、コントラクトは永遠に動けなくなります。
 
 .. In contrast, if you use the "withdraw" pattern from the first example,
 .. the attacker can only cause his or her own withdraw to fail and not the
@@ -318,7 +318,7 @@ Example
 .. to automatically go to the next stage when the
 .. function finishes.
 
-最後に、修飾子 ``transitionNext`` を使うと、機能が終了したときに自動的に次のステージに進むことができます。
+最後に、修飾子 ``transitionNext`` を使うと、関数が終了したときに自動的に次のステージに進むことができます。
 
 .. .. note::
 

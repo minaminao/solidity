@@ -67,7 +67,7 @@ Semantic Only Changes
 .. * Forward all available gas with external function calls starting from
   Tangerine Whistle.
 
-* Tangerine Whistleから始まる外部機能呼び出しで、利用可能なすべてのガスを転送します。
+* Tangerine Whistleから始まる外部関数呼び出しで、利用可能なすべてのガスを転送します。
 
 Semantic and Syntactic Changes
 ==============================
@@ -159,7 +159,7 @@ Explicitness Requirements
   is only used on ``msg.sender`` instead of stored addresses and ``msg.sender``
   is an ``address payable``.
 
-*  ``address`` タイプは ``address`` と ``address payable`` に分割され、 ``address payable`` のみが ``transfer`` 機能を提供しています。 ``address payable`` を直接 ``address`` に変換できますが、その逆はできません。 ``address`` から ``address payable`` への変換は、 ``uint160`` による変換で可能です。 ``c`` がコントラクトの場合、 ``address(c)`` は、 ``c`` に支払い可能なフォールバック機能がある場合に限り、 ``address payable`` になる。 :ref:`withdraw pattern<withdrawal_pattern>` を使用している場合、 ``transfer`` はストアド・アドレスではなく ``msg.sender`` でのみ使用され、 ``msg.sender`` は ``address payable`` になるので、コードを変更する必要はほとんどありません。
+*  ``address`` タイプは ``address`` と ``address payable`` に分割され、 ``address payable`` のみが ``transfer`` 関数を提供しています。 ``address payable`` を直接 ``address`` に変換できますが、その逆はできません。 ``address`` から ``address payable`` への変換は、 ``uint160`` による変換で可能です。 ``c`` がコントラクトの場合、 ``address(c)`` は、 ``c`` に支払い可能なフォールバック関数がある場合に限り、 ``address payable`` になる。 :ref:`withdraw pattern<withdrawal_pattern>` を使用している場合、 ``transfer`` はストアド・アドレスではなく ``msg.sender`` でのみ使用され、 ``msg.sender`` は ``address payable`` になるので、コードを変更する必要はほとんどありません。
 
 .. * Conversions between ``bytesX`` and ``uintY`` of different size are now
   disallowed due to ``bytesX`` padding on the right and ``uintY`` padding on
@@ -487,7 +487,7 @@ Interoperability With Older Contracts
 .. supplying the address of the pre-0.5.0 library during linking (see :ref:`commandline-compiler` for how to use the
 .. commandline compiler for linking):
 
-同様に、0.5.0以前のライブラリも、実装せずにライブラリの機能を定義し、リンク時に0.5.0以前のライブラリのアドレスを指定することで使用できます（リンク時のコマンドラインコンパイラの使用方法については :ref:`commandline-compiler` をご参照ください）。
+同様に、0.5.0以前のライブラリも、実装せずにライブラリの関数を定義し、リンク時に0.5.0以前のライブラリのアドレスを指定することで使用できます（リンク時のコマンドラインコンパイラの使用方法については :ref:`commandline-compiler` をご参照ください）。
 
 .. code-block:: solidity
 

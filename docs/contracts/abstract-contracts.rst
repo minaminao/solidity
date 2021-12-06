@@ -9,7 +9,7 @@ Abstract Contracts
 .. Contracts need to be marked as abstract when at least one of their functions is not implemented.
 .. Contracts may be marked as abstract even though all functions are implemented.
 
-コントラクトは、その機能の少なくとも1つが実装されていない場合、抽象的であることを示す必要があります。すべての機能が実装されていても、コントラクトは抽象的であるとマークできます。
+コントラクトは、その関数の少なくとも1つが実装されていない場合、抽象的であることを示す必要があります。すべての関数が実装されていても、コントラクトは抽象的であるとマークできます。
 
 .. This can be done by using the ``abstract`` keyword as shown in the following example. Note that this contract needs to be
 .. defined as abstract, because the function ``utterance()`` was defined, but no implementation was
@@ -29,7 +29,7 @@ Abstract Contracts
 .. Such abstract contracts can not be instantiated directly. This is also true, if an abstract contract itself does implement
 .. all defined functions. The usage of an abstract contract as a base class is shown in the following example:
 
-このような抽象コントラクトは、直接インスタンス化できません。これは、抽象コントラクト自体がすべての定義された機能を実装している場合にも当てはまります。ベースクラスとしての抽象コントラクトの使い方を以下の例で示します。
+このような抽象コントラクトは、直接インスタンス化できません。これは、抽象コントラクト自体がすべての定義された関数を実装している場合にも当てはまります。ベースクラスとしての抽象コントラクトの使い方を以下の例で示します。
 
 .. code-block:: solidity
 

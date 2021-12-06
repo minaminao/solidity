@@ -152,7 +152,7 @@ Block and Transaction Properties
 
 .. - ``msg.sig`` (``bytes4``): first four bytes of the calldata (i.e. function identifier)
 
--  ``msg.sig`` （ ``bytes4`` ）：コールデータの最初の4バイト（＝機能識別子）
+-  ``msg.sig`` （ ``bytes4`` ）：コールデータの最初の4バイト（＝関数識別子）
 
 .. - ``msg.value`` (``uint``): number of wei sent with the message
 
@@ -204,7 +204,7 @@ Block and Transaction Properties
 
     自分が何をしているか分かっていない限り、ランダム性の源として ``block.timestamp`` や ``blockhash`` に頼らないでください。
 
-    タイムスタンプもブロックハッシュも、ある程度はマイナーの影響を受ける可能性があります。     マイニングコミュニティの悪質な行為者は、例えば、選択したハッシュでカジノのペイアウト機能を実行し、お金を受け取れなかった場合は別のハッシュで再試行できます。
+    タイムスタンプもブロックハッシュも、ある程度はマイナーの影響を受ける可能性があります。     マイニングコミュニティの悪質な行為者は、例えば、選択したハッシュでカジノのペイアウト関数を実行し、お金を受け取れなかった場合は別のハッシュで再試行できます。
 
     現在のブロックのタイムスタンプは、最後のブロックのタイムスタンプよりも厳密に大きくなければなりませんが、唯一の保証は、正規のチェーンで連続する2つのブロックのタイムスタンプの間のどこかになるということです。
 
@@ -302,7 +302,7 @@ Error Handling
 .. See the dedicated section on :ref:`assert and require<assert-and-require>` for
 .. more details on error handling and when to use which function.
 
-エラー処理の詳細や、いつどの機能を使うかについては、 :ref:`assert and require<assert-and-require>` の専用セクションを参照してください。
+エラー処理の詳細や、いつどの関数を使うかについては、 :ref:`assert and require<assert-and-require>` の専用セクションを参照してください。
 
 .. ``assert(bool condition)``
 ..     causes a Panic error and thus state change reversion if the condition is not met - to be used for internal errors.
@@ -418,7 +418,7 @@ Mathematical and Cryptographic Functions
 
 .. note::
 
-    ``sha256`` 、 ``ripemd160`` 、 ``ecrecover`` を*プライベートブロックチェーン*で実行すると、Out-of-Gasに遭遇することがあります。これは、これらの機能が「プリコンパイルされたコントラクト」として実装されており、最初のメッセージを受信して初めて実際に存在するからです（ただし、コントラクトコードはハードコードされています）。存在しないコントラクトへのメッセージはより高価であるため、実行時にOut-of-Gasエラーが発生する可能性があります。この問題を回避するには、実際のコントラクトで使用する前に、まず各コントラクトにWei（例：1）を送信することです。これは、メインネットやテストネットでは問題になりません。
+    ``sha256`` 、 ``ripemd160`` 、 ``ecrecover`` を*プライベートブロックチェーン*で実行すると、Out-of-Gasに遭遇することがあります。これは、これらの関数が「プリコンパイルされたコントラクト」として実装されており、最初のメッセージを受信して初めて実際に存在するからです（ただし、コントラクトコードはハードコードされています）。存在しないコントラクトへのメッセージはより高価であるため、実行時にOut-of-Gasエラーが発生する可能性があります。この問題を回避するには、実際のコントラクトで使用する前に、まず各コントラクトにWei（例：1）を送信することです。これは、メインネットやテストネットでは問題になりません。
 
 .. index:: balance, codehash, send, transfer, call, callcode, delegatecall, staticcall
 
@@ -567,7 +567,7 @@ Contract Related
 
 ``selfdestruct(address payable recipient)`` は現在のコントラクトを破棄し、その資金を所定の :ref:`address` に送り、実行を終了する。      ``selfdestruct`` はEVMから引き継いだいくつかの特殊性を持っていることに注意してください。
 
-    - 受信側コントラクトの受信機能が実行されない。
+    - 受信側コントラクトの受信関数が実行されない。
 
     - コントラクトが実際に破壊されるのはトランザクション終了時であり、 ``revert``  sはその破壊を「元に戻す」かもしれません。
 
@@ -638,7 +638,7 @@ Type Information
 ..     interface identifier of the given interface ``I``. This identifier is defined as the ``XOR`` of all
 ..     function selectors defined within the interface itself - excluding all inherited functions.
 
-``type(I).interfaceId`` :  ``bytes4`` 値で、与えられたインターフェース ``I`` の `EIP-165 <https://eips.ethereum.org/EIPS/eip-165>`_ インターフェース識別子を含む。この識別子は、インターフェイス自身の中で定義されたすべての機能セレクタの ``XOR`` として定義され、すべての継承された機能は除外されます。
+``type(I).interfaceId`` :  ``bytes4`` 値で、与えられたインターフェース ``I`` の `EIP-165 <https://eips.ethereum.org/EIPS/eip-165>`_ インターフェース識別子を含む。この識別子は、インターフェイス自身の中で定義されたすべての関数セレクタの ``XOR`` として定義され、すべての継承された関数は除外されます。
 
 .. The following properties are available for an integer type ``T``:
 

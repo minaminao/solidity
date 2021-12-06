@@ -298,7 +298,7 @@ Global Variables
 
     自分が何をしているか分かっていない限り、ランダム性の源として ``block.timestamp`` や ``blockhash`` に頼ってはいけません。
 
-    タイムスタンプもブロックハッシュも、ある程度はマイナーの影響を受ける可能性があります。     マイニングコミュニティの悪質な行為者は、例えば、選択したハッシュでカジノのペイアウト機能を実行し、お金を受け取れなかった場合は別のハッシュで再試行できます。
+    タイムスタンプもブロックハッシュも、ある程度はマイナーの影響を受ける可能性があります。     マイニングコミュニティの悪質な行為者は、例えば、選択したハッシュでカジノのペイアウト関数を実行し、お金を受け取れなかった場合は別のハッシュで再試行できます。
 
     現在のブロックのタイムスタンプは、最後のブロックのタイムスタンプよりも厳密に大きくなければなりませんが、唯一の保証は、正規のチェーンで連続する2つのブロックのタイムスタンプの間のどこかになるということです。
 
@@ -351,7 +351,7 @@ Function Visibility Specifiers
 
 .. - ``external``: only visible externally (only for functions)
 
-- ``external``: 外部にしか見えない（機能のみ）
+- ``external``: 外部にしか見えない（関数のみ）
 
 .. - i.e. can only be message-called (via ``this.func``)
 
@@ -368,15 +368,15 @@ Modifiers
 
 .. - ``pure`` for functions: Disallows modification or access of state.
 
-- 機能の ``pure`` 。状態の変更やアクセスを禁止する。
+- 関数の ``pure`` 。状態の変更やアクセスを禁止する。
 
 .. - ``view`` for functions: Disallows modification of state.
 
-- 機能の ``view`` 。状態の変更を不可とする。
+- 関数の ``view`` 。状態の変更を不可とする。
 
 .. - ``payable`` for functions: Allows them to receive Ether together with a call.
 
-- 機能の ``payable`` です。通話と同時にイーサを受信できるようにする。
+- 関数の ``payable`` です。通話と同時にイーサを受信できるようにする。
 
 .. - ``constant`` for state variables: Disallows assignment (except initialisation), does not occupy storage slot.
 

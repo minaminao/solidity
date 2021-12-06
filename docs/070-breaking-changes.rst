@@ -123,7 +123,7 @@ Functions and Events
 ..   Previously, the effect was inherited. Now, you have to repeat the ``using``
 ..   statement in all derived contracts that make use of the feature.
 
-*  ``using A for B`` は、記載されているコントラクトにのみ影響を与えます。以前は、この効果は継承されていました。現在では、この機能を利用するすべての派生コントラクトで ``using`` 文を繰り返さなければなりません。
+*  ``using A for B`` は、記載されているコントラクトにのみ影響を与えます。以前は、この効果は継承されていました。現在では、この関数を利用するすべての派生コントラクトで ``using`` 文を繰り返さなければなりません。
 
 Expressions
 -----------

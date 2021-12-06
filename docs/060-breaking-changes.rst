@@ -57,11 +57,11 @@ Explicitness Requirements
 ..   if a contract does not implement all its functions. Abstract contracts cannot be created using the ``new`` operator,
 ..   and it is not possible to generate bytecode for them during compilation.
 
-* 新しいキーワード ``abstract`` は、コントラクトを抽象的にマークするために使用できます。これはコントラクトがそのすべての機能を実装していない場合に使用しなければなりません。抽象コントラクトは ``new`` 演算子を使って作成できませんし、コンパイル時にコントラクト用のバイトコードを生成することもできません。
+* 新しいキーワード ``abstract`` は、コントラクトを抽象的にマークするために使用できます。これはコントラクトがそのすべての関数を実装していない場合に使用しなければなりません。抽象コントラクトは ``new`` 演算子を使って作成できませんし、コンパイル時にコントラクト用のバイトコードを生成することもできません。
 
 .. * Libraries have to implement all their functions, not only the internal ones.
 
-* ライブラリーは、内部だけでなく、すべての機能を実装しなければなりません。
+* ライブラリーは、内部だけでなく、すべての関数を実装しなければなりません。
 
 .. * The names of variables declared in inline assembly may no longer end in ``_slot`` or ``_offset``.
 
@@ -209,13 +209,13 @@ How to update your code
 
 .. * Change ``address(f)`` to ``f.address`` for ``f`` being of external function type.
 
-*  ``f`` が外部機能タイプのため、 ``address(f)`` を ``f.address`` に変更。
+*  ``f`` が外部関数タイプのため、 ``address(f)`` を ``f.address`` に変更。
 
 .. * Replace ``function () external [payable] { ... }`` by either ``receive() external payable { ... }``,
 ..   ``fallback() external [payable] { ... }`` or both. Prefer
 ..   using a ``receive`` function only, whenever possible.
 
-*  ``function () external [payable] { ... }`` を ``receive() external payable { ... }`` 、 ``fallback() external [payable] { ... }`` のいずれか、または両方で置き換える。可能な限り、 ``receive`` 機能のみを使用してください。
+*  ``function () external [payable] { ... }`` を ``receive() external payable { ... }`` 、 ``fallback() external [payable] { ... }`` のいずれか、または両方で置き換える。可能な限り、 ``receive`` 関数のみを使用してください。
 
 .. * Change ``uint length = array.push(value)`` to ``array.push(value);``. The new length can be
 ..   accessed via ``array.length``.

@@ -77,7 +77,7 @@ Types
 .. - ``address``: equivalent to ``uint160``, except for the assumed interpretation and language typing.
 ..   For computing the function selector, ``address`` is used.
 
-- ``address`` ：想定される解釈と言語の型付けを除き、 ``uint160`` と同等です。   機能セレクタの計算には、 ``address`` を使用します。
+- ``address`` ：想定される解釈と言語の型付けを除き、 ``uint160`` と同等です。   関数セレクタの計算には、 ``address`` を使用します。
 
 .. - ``uint``, ``int``: synonyms for ``uint256``, ``int256`` respectively. For computing the function
 ..   selector, ``uint256`` and ``int256`` have to be used.
@@ -108,7 +108,7 @@ Types
 
 .. - ``function``: an address (20 bytes) followed by a function selector (4 bytes). Encoded identical to ``bytes24``.
 
-- ``function`` ：アドレス（20バイト）の後に機能セレクター（4バイト）が続く。 ``bytes24`` と同じようにエンコードされます。
+- ``function`` ：アドレス（20バイト）の後に関数セレクター（4バイト）が続く。 ``bytes24`` と同じようにエンコードされます。
 
 .. The following (fixed-size) array type exists:
 
@@ -871,7 +871,7 @@ Errors
 .. As an example, let us consider the following contract whose ``transfer`` function always
 .. reverts with a custom error of "insufficient balance":
 
-例として、 ``transfer`` 機能が常に「残高不足」というカスタムエラーで復帰してしまう次のコントラクトを考えてみましょう。
+例として、 ``transfer`` 関数が常に「残高不足」というカスタムエラーで復帰してしまう次のコントラクトを考えてみましょう。
 
 .. code-block:: solidity
 
@@ -924,7 +924,7 @@ JSON
 
 .. - ``name``: the name of the function;
 
-- ``name`` ：機能の名前。
+- ``name`` ：関数の名前。
 
 .. - ``inputs``: an array of objects, each of which contains:
 
@@ -950,11 +950,11 @@ JSON
 ..   blockchain state <pure-functions>`), ``view`` (:ref:`specified to not modify the blockchain
 ..   state <view-functions>`), ``nonpayable`` (function does not accept Ether
 
-- ``stateMutability`` ：以下のいずれかの値を持つ文字列。 ``pure`` （ :ref:`specified to not read   blockchain state <pure-functions>` ）、 ``view`` （ :ref:`specified to not modify the blockchain   state <view-functions>` ）、 ``nonpayable`` （機能はイーサを受け付けません
+- ``stateMutability`` ：以下のいずれかの値を持つ文字列。 ``pure`` （ :ref:`specified to not read   blockchain state <pure-functions>` ）、 ``view`` （ :ref:`specified to not modify the blockchain   state <view-functions>` ）、 ``nonpayable`` （関数はイーサを受け付けません
 
 .. - the default) and ``payable`` (function accepts Ether).
 
-- デフォルト）と ``payable`` （機能はEtherを受け入れる）があります。
+- デフォルト）と ``payable`` （関数はEtherを受け入れる）があります。
 
 .. Constructor and fallback function never have ``name`` or ``outputs``. Fallback function doesn't have ``inputs`` either.
 
@@ -966,7 +966,7 @@ JSON
 
 .. note::
 
-    支払い不可能な機能に0ではないEtherを送ると、トランザクションが元に戻ります。
+    支払い不可能な関数に0ではないEtherを送ると、トランザクションが元に戻ります。
 
 .. .. note::
 
@@ -1288,7 +1288,7 @@ Solidityは、 ``abi.encodePacked()`` を通して、非標準のパックモー
 .. Since packed encoding is not used when calling functions, there is no special support
 .. for prepending a function selector. Since the encoding is ambiguous, there is no decoding function.
 
-関数を呼び出すときにはpackedエンコーディングは使われないので、関数セレクタの前に付ける特別なサポートはありません。また、エンコーディングが曖昧なため、デコード機能もありません。
+関数を呼び出すときにはpackedエンコーディングは使われないので、関数セレクタの前に付ける特別なサポートはありません。また、エンコーディングが曖昧なため、デコード関数もありません。
 
 .. .. warning::
 

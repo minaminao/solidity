@@ -580,7 +580,7 @@ FunctionGrouper
 
 .. The benefit of this stage is that we always know where the list of function begins.
 
-この段階の利点は、機能のリストがどこから始まるかを常に把握できることです。
+この段階の利点は、関数のリストがどこから始まるかを常に把握できることです。
 
 .. _for-loop-condition-into-body:
 
@@ -1578,7 +1578,7 @@ EquivalentFunctionCombiner
 
 .. The actual removal of the function is performed by the Unused Pruner.
 
-実際に機能を取り除くのは、「未使用のプルーナー」が行います。
+実際に関数を取り除くのは、「未使用のプルーナー」が行います。
 
 Function Inlining
 -----------------
@@ -1788,7 +1788,7 @@ Ethereum Virtual Machineのコード生成を難しくしている問題の1つ�
 .. is called with a special request to aggressively eliminate specific
 .. variables sorted by the cost of their values.
 
-このような問題を起こした機能ごとに、Rematerialiserに特別な依頼をして、値のコスト順にソートされた特定の変数を積極的に排除してもらいます。
+このような問題を起こした関数ごとに、Rematerialiserに特別な依頼をして、値のコスト順にソートされた特定の変数を積極的に排除してもらいます。
 
 .. On failure, this procedure is repeated multiple times.
 

@@ -129,7 +129,7 @@ External Function Calls
 .. You need to use the modifier ``payable`` with the ``info`` function because
 .. otherwise, the ``value`` option would not be available.
 
-``info`` 機能に修飾子 ``payable`` を使用する必要があります。そうしないと、 ``value`` オプションは使用できません。
+``info`` 関数に修飾子 ``payable`` を使用する必要があります。そうしないと、 ``value`` オプションは使用できません。
 
 .. .. warning::
 

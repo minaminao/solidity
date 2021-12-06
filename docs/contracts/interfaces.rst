@@ -9,7 +9,7 @@ Interfaces
 .. Interfaces are similar to abstract contracts, but they cannot have any functions implemented.
 .. There are further restrictions:
 
-インターフェイスは、抽象的なコントラクトと似ていますが、いかなる機能も実装できません。さらに制限があります。
+インターフェイスは、抽象的なコントラクトと似ていますが、いかなる関数も実装できません。さらに制限があります。
 
 .. - They cannot inherit from other contracts, but they can inherit from other interfaces.
 
@@ -17,7 +17,7 @@ Interfaces
 
 .. - All declared functions must be external.
 
-- 宣言された機能はすべて外付けでなければなりません。
+- 宣言された関数はすべて外付けでなければなりません。
 
 .. - They cannot declare a constructor.
 

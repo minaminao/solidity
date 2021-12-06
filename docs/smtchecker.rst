@@ -708,7 +708,7 @@ Natspec Function Abstraction
 
 .. - Act as an uninterpreted function. This means that the semantics of the function (given by the body) are ignored, and the only property this function has is that given the same input it guarantees the same output. This is currently under development and will be available via the annotation ``/// @custom:smtchecker abstract-function-uf``.
 
-- 解釈されない関数として動作します。これは、（ボディで与えられた）関数のセマンティクスが無視され、この関数が持つ唯一の特性は、同じ入力が与えられれば同じ出力が保証されるということです。この機能は現在開発中で、アノテーション ``/// @custom:smtchecker abstract-function-uf`` から利用できるようになる予定です。
+- 解釈されない関数として動作します。これは、（ボディで与えられた）関数のセマンティクスが無視され、この関数が持つ唯一の特性は、同じ入力が与えられれば同じ出力が保証されるということです。この関数は現在開発中で、アノテーション ``/// @custom:smtchecker abstract-function-uf`` から利用できるようになる予定です。
 
 .. _smtchecker_engines:
 

@@ -32,7 +32,7 @@ Using For
 .. outside of the contract in which it is used. The directive
 .. may only be used inside a contract, not inside any of its functions.
 
-``using A for B;``  ディレクティブは、すべての機能を含む現在のコントラクトの中でのみ有効であり、使用されているコントラクトの外では何の影響も受けません。 ``using A for B;``  ディレクティブは、コントラクトの内部でのみ使用でき、コントラクトのどの機能の中でも使用できません。
+``using A for B;``  ディレクティブは、すべての関数を含む現在のコントラクトの中でのみ有効であり、使用されているコントラクトの外では何の影響も受けません。 ``using A for B;``  ディレクティブは、コントラクトの内部でのみ使用でき、コントラクトのどの関数の中でも使用できません。
 
 .. Let us rewrite the set example from the
 .. :ref:`libraries` in this way:

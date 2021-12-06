@@ -218,7 +218,7 @@ NatSpecを持たない関数は、そのベースとなる関数のドキュメ�
 
 .. * When there is more than one base function.
 
-* 複数の基底機能がある場合
+* 複数の基底関数がある場合
 
 .. * When there is an explicit ``@inheritdoc`` tag which specifies which contract should be used to inherit.
 

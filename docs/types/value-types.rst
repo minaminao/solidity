@@ -399,7 +399,7 @@ Address
 
 .. note::
 
-    ``address`` と ``address payable`` の区別は、バージョン0.5.0から導入されました。     また、このバージョンから、コントラクトはアドレス・タイプから派生しませんが、receiveまたはpayableのフォールバック機能があれば、明示的に ``address`` または ``address payable`` に変換できます。
+    ``address`` と ``address payable`` の区別は、バージョン0.5.0から導入されました。     また、このバージョンから、コントラクトはアドレス・タイプから派生しませんが、receiveまたはpayableのフォールバック関数があれば、明示的に ``address`` または ``address payable`` に変換できます。
 
 .. _members-of-addresses:
 
@@ -417,7 +417,7 @@ Members of Addresses
 .. It is possible to query the balance of an address using the property ``balance``
 .. and to send Ether (in units of wei) to a payable address using the ``transfer`` function:
 
-プロパティ「 ``balance`` 」を使ってアドレスの残高を照会したり、「 ``transfer`` 」機能を使って支払先のアドレスにイーサ（wei単位）を送信したりすることが可能です。
+プロパティ「 ``balance`` 」を使ってアドレスの残高を照会したり、「 ``transfer`` 」関数を使って支払先のアドレスにイーサ（wei単位）を送信したりすることが可能です。
 
 .. code-block:: solidity
     :force:
@@ -430,7 +430,7 @@ Members of Addresses
 .. or if the Ether transfer is rejected by the receiving account. The ``transfer`` function
 .. reverts on failure.
 
-``transfer`` 機能は、現在のコントラクトの残高が十分でない場合や、Ether転送が受信アカウントで拒否された場合に失敗します。 ``transfer`` 機能は失敗すると元に戻ります。
+``transfer`` 関数は、現在のコントラクトの残高が十分でない場合や、Ether転送が受信アカウントで拒否された場合に失敗します。 ``transfer`` 関数は失敗すると元に戻ります。
 
 .. .. note::
 
@@ -533,7 +533,7 @@ ABIに準拠していないコントラクトとのインターフェースや�
 
 .. In a similar way, the function ``delegatecall`` can be used: the difference is that only the code of the given address is used, all other aspects (storage, balance, ...) are taken from the current contract. The purpose of ``delegatecall`` is to use library code which is stored in another contract. The user has to ensure that the layout of storage in both contracts is suitable for delegatecall to be used.
 
-同様の方法で、機能 ``delegatecall`` を使用できます。違いは、与えられたアドレスのコードのみが使用され、他のすべての側面（ストレージ、バランス、...）は、現在のコントラクトから取得されます。 ``delegatecall`` の目的は、別のコントラクトに保存されているライブラリ・コードを使用することです。ユーザーは、両方のコントラクトのストレージのレイアウトが、delegatecallを使用するのに適していることを確認しなければなりません。
+同様の方法で、関数 ``delegatecall`` を使用できます。違いは、与えられたアドレスのコードのみが使用され、他のすべての側面（ストレージ、バランス、...）は、現在のコントラクトから取得されます。 ``delegatecall`` の目的は、別のコントラクトに保存されているライブラリ・コードを使用することです。ユーザーは、両方のコントラクトのストレージのレイアウトが、delegatecallを使用するのに適していることを確認しなければなりません。
 
 .. .. note::
 
@@ -541,7 +541,7 @@ ABIに準拠していないコントラクトとのインターフェースや�
 
 .. note::
 
-    ホームステッド以前のバージョンでは、 ``callcode`` という限定されたバリアントのみが利用可能で、オリジナルの ``msg.sender`` と ``msg.value`` の値にアクセスできませんでした。この機能はバージョン0.5.0で削除されました。
+    ホームステッド以前のバージョンでは、 ``callcode`` という限定されたバリアントのみが利用可能で、オリジナルの ``msg.sender`` と ``msg.value`` の値にアクセスできませんでした。この関数はバージョン0.5.0で削除されました。
 
 .. Since byzantium ``staticcall`` can be used as well. This is basically the same as ``call``, but will revert if the called function modifies the state in any way.
 
@@ -596,7 +596,7 @@ Contract Types
 .. You can find more information in the section about
 .. the :ref:`address type<address>`.
 
-``address payable`` タイプとの間の明示的な変換は、コントラクトタイプにreceiveまたはpayableのフォールバック機能がある場合にのみ可能です。  変換は ``address(x)`` を使用して行われます。コントラクトタイプにreceiveまたはpayment fallback機能がない場合、 ``address payable`` への変換は ``payable(address(x))`` を使用して行うことができます。詳細は、「 :ref:`address type<address>` 」の項を参照してください。
+``address payable`` タイプとの間の明示的な変換は、コントラクトタイプにreceiveまたはpayableのフォールバック関数がある場合にのみ可能です。  変換は ``address(x)`` を使用して行われます。コントラクトタイプにreceiveまたはpayment fallback関数がない場合、 ``address payable`` への変換は ``payable(address(x))`` を使用して行うことができます。詳細は、「 :ref:`address type<address>` 」の項を参照してください。
 
 .. .. note::
 
@@ -1129,7 +1129,7 @@ Function Types
 
 .. Function types are notated as follows:
 
-機能タイプは以下のように表記されています。
+関数タイプは以下のように表記されています。
 
 .. code-block:: solidity
     :force:
@@ -1162,15 +1162,15 @@ Function Types
 
 .. - ``pure`` functions can be converted to ``view`` and ``non-payable`` functions
 
--  ``pure`` 機能を ``view`` 、 ``non-payable`` 機能に変換可能
+-  ``pure`` 関数を ``view`` 、 ``non-payable`` 関数に変換可能
 
 .. - ``view`` functions can be converted to ``non-payable`` functions
 
--  ``view`` 機能から ``non-payable`` 機能への変換が可能
+-  ``view`` 関数から ``non-payable`` 関数への変換が可能
 
 .. - ``payable`` functions can be converted to ``non-payable`` functions
 
--  ``payable`` 機能から ``non-payable`` 機能への変換が可能
+-  ``payable`` 関数から ``non-payable`` 関数への変換が可能
 
 .. No other conversions between function types are possible.
 
@@ -1182,7 +1182,7 @@ Function Types
 .. On the other hand, a ``non-payable`` function will reject Ether sent to it,
 .. so ``non-payable`` functions cannot be converted to ``payable`` functions.
 
-``payable`` と ``non-payable`` のルールは少しわかりにくいかもしれませんが、要するにある関数が ``payable`` であれば、ゼロのEtherの支払いも受け入れるということなので、 ``non-payable`` でもあるということです。一方、 ``non-payable`` 機能は送られてきたEtherを拒否しますので、 ``non-payable`` 機能を ``payable`` 機能に変換できません。
+``payable`` と ``non-payable`` のルールは少しわかりにくいかもしれませんが、要するにある関数が ``payable`` であれば、ゼロのEtherの支払いも受け入れるということなので、 ``non-payable`` でもあるということです。一方、 ``non-payable`` 関数は送られてきたEtherを拒否しますので、 ``non-payable`` 関数を ``payable`` 関数に変換できません。
 
 .. If a function type variable is not initialised, calling it results
 .. in a :ref:`Panic error<assert-and-require>`. The same happens if you call a function after using ``delete``
@@ -1220,7 +1220,7 @@ Function Types
 
 .. External (or public) functions have the following members:
 
-外部（または公的）機能には、次のようなメンバーがいます。
+外部（または公的）関数には、次のようなメンバーがいます。
 
 .. * ``.address`` returns the address of the contract of the function.
 
@@ -1377,4 +1377,4 @@ Function Types
 
 .. note::
 
-    ラムダ機能やインライン機能が予定されていますが、まだサポートされていません。
+    ラムダ関数やインライン関数が予定されていますが、まだサポートされていません。

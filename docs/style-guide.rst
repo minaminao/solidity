@@ -40,7 +40,7 @@ Introduction
 
 .. note::
 
-    スタイルガイドとは一貫性のことです。このスタイルガイドとの一貫性は重要です。プロジェクト内での一貫性はより重要です。一つのモジュールや機能の中での一貫性が最も重要です。
+    スタイルガイドとは一貫性のことです。このスタイルガイドとの一貫性は重要です。プロジェクト内での一貫性はより重要です。一つのモジュールや関数の中での一貫性が最も重要です。
 
     しかし、最も重要なことです。 **know when to be inconsistent**  -- 時には、スタイルガイドが適用できないこともあります。迷ったときは、自分のベストな判断で行動しましょう。他の例を見て、何がベストなのかを判断してください。そして、迷わず質問してください。
 
@@ -380,7 +380,7 @@ Order of Functions
 
 .. Functions should be grouped according to their visibility and ordered:
 
-機能は視認性に応じてグループ化し、順序立てて配置する。
+関数は視認性に応じてグループ化し、順序立てて配置する。
 
 .. - constructor
 
@@ -388,11 +388,11 @@ Order of Functions
 
 .. - receive function (if exists)
 
-- 受信機能（ある場合）
+- 受信関数（ある場合）
 
 .. - fallback function (if exists)
 
-- フォールバック機能（存在する場合）
+- フォールバック関数（存在する場合）
 
 .. - external
 
@@ -412,7 +412,7 @@ Order of Functions
 
 .. Within a grouping, place the ``view`` and ``pure`` functions last.
 
-グループ内では、 ``view`` と ``pure`` の機能を最後に配置します。
+グループ内では、 ``view`` と ``pure`` の関数を最後に配置します。
 
 .. Yes:
 
@@ -1323,7 +1323,7 @@ Order of Layout
 
 .. 4. Functions
 
-4.機能
+4.関数
 
 .. .. note::
 

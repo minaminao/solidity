@@ -15,7 +15,7 @@ Solidityは、2つの異なる方法でEVMバイトコードを生成できま�
 .. code generation to be more transparent and auditable but also
 .. to enable more powerful optimization passes that span across functions.
 
-IRベースのコードジェネレーターを導入したのは、コード生成の透明性や監査性を高めるだけでなく、機能をまたいだより強力な最適化パスを可能にすることを目的としています。
+IRベースのコードジェネレーターを導入したのは、コード生成の透明性や監査性を高めるだけでなく、関数をまたいだより強力な最適化パスを可能にすることを目的としています。
 
 .. Currently, the IR-based code generator is still marked experimental,
 .. but it supports all language features and has received a lot of testing,

@@ -109,7 +109,7 @@ Function Modifiers
 .. contract or its base contracts. Modifiers can also be defined in libraries but their use is
 .. limited to functions of the same library.
 
-コントラクト ``C`` で定義されたモディファイア ``m`` にアクセスしたい場合は、 ``C.m`` を使って仮想ルックアップなしで参照できます。現在のコントラクトまたはそのベースコントラクトで定義された修飾子のみを使用できます。修飾子はライブラリで定義することもできますが、その使用は同じライブラリの機能に限られます。
+コントラクト ``C`` で定義されたモディファイア ``m`` にアクセスしたい場合は、 ``C.m`` を使って仮想ルックアップなしで参照できます。現在のコントラクトまたはそのベースコントラクトで定義された修飾子のみを使用できます。修飾子はライブラリで定義することもできますが、その使用は同じライブラリの関数に限られます。
 
 .. Multiple modifiers are applied to a function by specifying them in a
 .. whitespace-separated list and are evaluated in the order presented.

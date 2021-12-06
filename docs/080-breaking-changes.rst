@@ -172,9 +172,9 @@ New Restrictions
 
 ..   These are low-level functions that were largely unused. Their behaviour can be accessed from inline assembly.
 
-* グローバル機能の ``log0`` 、 ``log1`` 、 ``log2`` 、 ``log3`` 、 ``log4`` が削除されました。
+* グローバル関数の ``log0`` 、 ``log1`` 、 ``log2`` 、 ``log3`` 、 ``log4`` が削除されました。
 
-  これらは、ほとんど使われていない低レベルの機能です。これらの動作はインラインアセンブリからアクセスできます。
+  これらは、ほとんど使われていない低レベルの関数です。これらの動作はインラインアセンブリからアクセスできます。
 
 .. * ``enum`` definitions cannot contain more than 256 members.
 

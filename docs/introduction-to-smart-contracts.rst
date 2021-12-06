@@ -731,7 +731,7 @@ Deactivate and Self-destruct
 .. by changing some internal state which causes all functions to revert. This
 .. makes it impossible to use the contract, as it returns Ether immediately.
 
-コントラクトを無効にしたい場合は、代わりに、すべての機能を元に戻すような何らかの内部状態を変更することで**無効**にする必要があります。これにより、コントラクトはすぐにEtherを返してしまうため、使用できなくなります。
+コントラクトを無効にしたい場合は、代わりに、すべての関数を元に戻すような何らかの内部状態を変更することで**無効**にする必要があります。これにより、コントラクトはすぐにEtherを返してしまうため、使用できなくなります。
 
 
 .. index:: ! precompiled contracts, ! precompiles, ! contract;precompiled

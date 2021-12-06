@@ -560,7 +560,7 @@ Visual Studio 2019は、IDEと必要なコンパイラとライブラリの両�
 
 .. * Visual Studio C++ core features
 
-* Visual Studio C++のコア機能
+* Visual Studio C++のコア関数
 
 .. * VC++ 2019 v141 toolset (x86,x64)
 

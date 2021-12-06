@@ -8,7 +8,7 @@ Functions
 
 .. Functions can be defined inside and outside of contracts.
 
-機能は、コントラクトの内側にも外側にも定義できます。
+関数は、コントラクトの内側にも外側にも定義できます。
 
 .. Functions outside of a contract, also called "free functions", always have implicit ``internal``
 .. :ref:`visibility<visibility-and-getters>`. Their code is included in all contracts
@@ -251,7 +251,7 @@ View Functions
 
 .. #. Calling any function not marked ``view`` or ``pure``.
 
-#. ``view`` または ``pure`` と表示されていない機能を呼び出すこと。
+#. ``view`` または ``pure`` と表示されていない関数を呼び出すこと。
 
 .. #. Using low-level calls.
 
@@ -342,7 +342,7 @@ Pure Functions
 
 .. #. Calling any function not marked ``pure``.
 
-#. ``pure`` マークの付いていない機能を呼び出すこと。
+#. ``pure`` マークの付いていない関数を呼び出すこと。
 
 .. #. Using inline assembly that contains certain opcodes.
 
@@ -362,7 +362,7 @@ Pure Functions
 .. Pure functions are able to use the ``revert()`` and ``require()`` functions to revert
 .. potential state changes when an :ref:`error occurs <assert-and-require>`.
 
-純粋な機能は、 :ref:`error occurs <assert-and-require>` が発生したときに、 ``revert()`` および ``require()`` 機能を使って潜在的な状態変化を戻すことができます。
+純粋な関数は、 :ref:`error occurs <assert-and-require>` が発生したときに、 ``revert()`` および ``require()`` 関数を使って潜在的な状態変化を戻すことができます。
 
 .. Reverting a state change is not considered a "state modification", as only changes to the
 .. state made previously in code that did not have the ``view`` or ``pure`` restriction
@@ -382,7 +382,7 @@ Pure Functions
 
 .. warning::
 
-  EVMのレベルで機能が状態を読み取るのを防ぐことはできず、状態に書き込むのを防ぐことしかできません（つまり、EVMのレベルで強制できるのは ``view`` だけで、 ``pure`` はできません）。
+  EVMのレベルで関数が状態を読み取るのを防ぐことはできず、状態に書き込むのを防ぐことしかできません（つまり、EVMのレベルで強制できるのは ``view`` だけで、 ``pure`` はできません）。
 
 .. .. note::
 
@@ -446,7 +446,7 @@ Receive Ether Function
 .. room to perform other operations except basic logging. The following operations
 .. will consume more gas than the 2300 gas stipend:
 
-最悪の場合、 ``receive`` 機能は2300のガスが使えることに頼るしかなく（ ``send`` や ``transfer`` を使用した場合など）、基本的なロギング以外の操作を行う余裕はありません。以下のような操作は、2300ガスの規定値よりも多くのガスを消費します。
+最悪の場合、 ``receive`` 関数は2300のガスが使えることに頼るしかなく（ ``send`` や ``transfer`` を使用した場合など）、基本的なロギング以外の操作を行う余裕はありません。以下のような操作は、2300ガスの規定値よりも多くのガスを消費します。
 
 .. - Writing to storage
 
@@ -493,11 +493,11 @@ Receive Ether Function
 
 .. warning::
 
-    Etherを受け取る機能を持たないコントラクトは、*coinbaseトランザクション*（別名：*minerブロックリワード*）の受信者として、または ``selfdestruct`` の宛先としてEtherを受け取ることができます。
+    Etherを受け取る関数を持たないコントラクトは、*coinbaseトランザクション*（別名：*minerブロックリワード*）の受信者として、または ``selfdestruct`` の宛先としてEtherを受け取ることができます。
 
     コントラクトは、そのようなEther転送に反応できず、したがって、それらを拒否することもできません。これはEVMの設計上の選択であり、Solidityはこれを回避できません。
 
-    また、 ``address(this).balance`` は、コントラクトに実装されている手動の会計処理（受信イーサ機能でカウンタを更新するなど）の合計よりも高くなる可能性があることを意味しています。
+    また、 ``address(this).balance`` は、コントラクトに実装されている手動の会計処理（受信イーサ関数でカウンタを更新するなど）の合計よりも高くなる可能性があることを意味しています。
 
 .. Below you can see an example of a Sink contract that uses function ``receive``.
 
@@ -551,7 +551,7 @@ Fallback Function
 .. available (see :ref:`receive Ether function <receive-ether-function>`
 .. for a brief description of the implications of this).
 
-最悪の場合、受信機能の代わりに支払い可能なフォールバック機能も使用されている場合、2300ガスが使用可能であることだけに頼ることができます（この意味については、 :ref:`receive Ether function <receive-ether-function>` を参照してください）。
+最悪の場合、受信関数の代わりに支払い可能なフォールバック関数も使用されている場合、2300ガスが使用可能であることだけに頼ることができます（この意味については、 :ref:`receive Ether function <receive-ether-function>` を参照してください）。
 
 .. Like any function, the fallback function can execute complex
 .. operations as long as there is enough gas passed on to it.

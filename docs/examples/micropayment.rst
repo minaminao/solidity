@@ -319,7 +319,7 @@ Opening the Payment Channel
 .. maximum duration for the channel to exist. This is the function
 .. ``SimplePaymentChannel`` in the contract, at the end of this section.
 
-支払いチャネルを開くために、アリスはスマートコントラクトを展開し、エスクローされるイーサを添付し、意図する受取人とチャネルが存在する最大期間を指定します。これが、このセクションの最後にあるコントラクトの機能 ``SimplePaymentChannel`` です。
+支払いチャネルを開くために、アリスはスマートコントラクトを展開し、エスクローされるイーサを添付し、意図する受取人とチャネルが存在する最大期間を指定します。これが、このセクションの最後にあるコントラクトの関数 ``SimplePaymentChannel`` です。
 
 Making Payments
 ---------------
@@ -422,7 +422,7 @@ Channel Expiration
 .. at the time of contract deployment. Once that time is reached, Alice can call
 .. ``claimTimeout`` to recover her funds. You can see the ``claimTimeout`` function in the full contract.
 
-ボブはいつでも支払いチャネルを閉じることができますが、それができなかった場合、アリスはエスクローされた資金を回収する方法が必要です。コントラクトの展開時に*有効期限*が設定されました。その時間に達すると、アリスは ``claimTimeout`` を呼び出して資金を回収できます。 ``claimTimeout`` 機能は コントラクト全文で見ることができます。
+ボブはいつでも支払いチャネルを閉じることができますが、それができなかった場合、アリスはエスクローされた資金を回収する方法が必要です。コントラクトの展開時に*有効期限*が設定されました。その時間に達すると、アリスは ``claimTimeout`` を呼び出して資金を回収できます。 ``claimTimeout`` 関数は コントラクト全文で見ることができます。
 
 .. After this function is called, Bob can no longer receive any Ether,
 .. so it is important that Bob closes the channel before the expiration is reached.

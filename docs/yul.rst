@@ -121,7 +121,7 @@ Simple Example
 .. instead of with recursion. Here, ``lt(a, b)`` computes whether ``a`` is less than ``b``.
 .. less-than comparison.
 
-また、同じ機能を再帰ではなく、forループを使って実装することも可能です。ここでは、 ``lt(a, b)`` は ``a`` が ``b`` より小さいかどうかを計算します。 小数点以下の比較。
+また、同じ関数を再帰ではなく、forループを使って実装することも可能です。ここでは、 ``lt(a, b)`` は ``a`` が ``b`` より小さいかどうかを計算します。 小数点以下の比較。
 
 .. code-block:: yul
 
@@ -1149,7 +1149,7 @@ Yulはローカル変数やコントロールフローを管理しているた�
 
 .. In some internal dialects, there are additional functions:
 
-内部の方言では、追加機能があるものもあります。
+内部の方言では、追加関数があるものもあります。
 
 datasize, dataoffset, datacopy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1253,7 +1253,7 @@ verbatim
 
 .. The functions are ``verbatim_<n>i_<m>o("<data>", ...)``, where
 
-その機能は ``verbatim_<n>i_<m>o("<data>", ...)`` で、ここでは
+その関数は ``verbatim_<n>i_<m>o("<data>", ...)`` で、ここでは
 
 .. - ``n`` is a decimal between 0 and 99 that specifies the number of input stack slots / variables
 
