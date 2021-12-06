@@ -118,7 +118,7 @@ New Restrictions
 ..   payable``. They can be converted to ``address payable`` by using an explicit conversion, e.g.
 ..   ``payable(0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF)``.
 
-* :ref:`Address literals<address_literals>` は、 ``address   payable`` の代わりに ``address`` という型を持っています。これらは、 ``payable(0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF)`` のような明示的な変換を用いることで、 ``address payable`` に変換できます。
+* :ref:`Address literals<address_literals>` は、 ``address payable`` の代わりに ``address`` という型を持っています。これらは、 ``payable(0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF)`` のような明示的な変換を用いることで、 ``address payable`` に変換できます。
 
 .. * There are new restrictions on explicit type conversions. The conversion is only allowed when there
 ..   is at most one change in sign, width or type-category (``int``, ``address``, ``bytesNN``, etc.).
@@ -180,7 +180,7 @@ New Restrictions
 
 ..   This will make it safe to assume that the underlying type in the ABI is always ``uint8``.
 
-* ``enum`` 定義は256人以上のメンバーを含むことはできません。
+* ``enum`` 定義は256個以上のメンバーを含むことはできません。
 
   これにより、ABIの基礎となる型が常に ``uint8`` であると仮定しても安全になります。
 
@@ -226,13 +226,13 @@ New Restrictions
 ..     conversion: ``payable(address(c))``. Note that ``address(this)`` falls under the same category
 ..     as ``address(c)`` and the same rules apply for it.
 
-* ``address`` 型への明示的な変換は、常に支払い不可能な ``address`` 型を返します。特に、以下の明示的な変換は、 ``address   payable`` 型ではなく ``address`` 型になります。
+* ``address`` 型への明示的な変換は、常に支払い不可能な ``address`` 型を返します。特に、以下の明示的な変換は、 ``address payable`` 型ではなく ``address`` 型になります。
 
   - ``address(u)`` ここで， ``u`` は ``uint160`` 型の変数です。 ``u`` を ``address payable`` 型に変換するには，2つの明示的な変換，すなわち ``payable(address(u))`` を用いればよい。
 
   - ``address(b)`` ここで， ``b`` は ``bytes20`` 型の変数です。 ``b`` を ``address payable`` 型に変換するには，2つの明示的な変換，すなわち ``payable(address(b))`` を用いればよい。
 
-  - ``address(c)`` （ ``c`` はコントラクト）。以前は、この変換のリターンタイプは、コントラクトがEtherを受信できるかどうかに依存していました（受信関数または支払可能なフォールバック関数を持つことにより）。 ``payable(c)`` 変換は ``address     payable`` 型で，コントラクト ``c`` がEtherを受け取ることができる場合にのみ許可されます。一般的には，以下の明示的な変換を用いることで，常に ``c`` を ``address payable`` 型に変換できる。 ``payable(address(c))`` . ``address(this)`` は、 ``address(c)`` と同じカテゴリーに属し、同じルールが適用されることに注意してください。
+  - ``address(c)`` （ ``c`` はコントラクト）。以前は、この変換のリターンタイプは、コントラクトがEtherを受信できるかどうかに依存していました（受信関数または支払可能なフォールバック関数を持つことにより）。 ``payable(c)`` 変換は ``address payable`` 型で，コントラクト ``c`` がEtherを受け取ることができる場合にのみ許可されます。一般的には，以下の明示的な変換を用いることで，常に ``c`` を ``address payable`` 型に変換できる。 ``payable(address(c))`` . ``address(this)`` は、 ``address(c)`` と同じカテゴリーに属し、同じルールが適用されることに注意してください。
 
 .. * The ``chainid`` builtin in inline assembly is now considered ``view`` instead of ``pure``.
 
@@ -253,7 +253,7 @@ Interface Changes
 .. * The "legacy AST" has been removed (``--ast-json`` on the commandline interface and ``legacyAST`` for standard JSON).
 ..   Use the "compact AST" (``--ast-compact--json`` resp. ``AST``) as replacement.
 
-* レガシーAST」が削除されました（コマンドライン・インターフェースでは ``--ast-json`` 、標準JSONでは ``legacyAST`` ）。   代わりに「コンパクトAST」( ``--ast-compact--json`` resp. ``AST`` )を使用してください。
+* 「レガシーAST」が削除されました（コマンドライン・インターフェースでは ``--ast-json`` 、標準JSONでは ``legacyAST`` ）。代わりに「コンパクトAST」( ``--ast-compact--json`` 、標準JSONでは ``AST`` )を使用してください。
 
 .. * The old error reporter (``--old-reporter``) has been removed.
 
@@ -264,27 +264,27 @@ How to update your code
 
 .. - If you rely on wrapping arithmetic, surround each operation with ``unchecked { ... }``.
 
-- 折り返し演算に頼っている場合は、各演算を ``unchecked { ... }`` で囲みます。
+- 折り返し演算に頼っている場合は、各演算を ``unchecked { ... }`` で囲む。
 
 .. - Optional: If you use SafeMath or a similar library, change ``x.add(y)`` to ``x + y``, ``x.mul(y)`` to ``x * y`` etc.
 
-- オプション：SafeMathまたは同様のライブラリを使用している場合は、 ``x.add(y)`` を ``x + y`` 、 ``x.mul(y)`` を ``x * y`` などに変更してください。
+- オプション: SafeMathまたは同様のライブラリを使用している場合は、 ``x.add(y)`` を ``x + y`` 、 ``x.mul(y)`` を ``x * y`` などに変更する。
 
 .. - Add ``pragma abicoder v1;`` if you want to stay with the old ABI coder.
 
-- 古いABIコーダーを使用したい場合は、 ``pragma abicoder v1;`` を追加してください。
+- 古いABIコーダーを使用したい場合は、 ``pragma abicoder v1;`` を追加する。
 
 .. - Optionally remove ``pragma experimental ABIEncoderV2`` or ``pragma abicoder v2`` since it is redundant.
 
-- 冗長なので、オプションで ``pragma experimental ABIEncoderV2`` または ``pragma abicoder v2`` を削除します。
+- 冗長なので、オプションで ``pragma experimental ABIEncoderV2`` または ``pragma abicoder v2`` を削除する。
 
 .. - Change ``byte`` to ``bytes1``.
 
-- ``byte`` を ``bytes1`` に変更。
+- ``byte`` を ``bytes1`` に変更する。
 
 .. - Add intermediate explicit type conversions if required.
 
-- 必要に応じて、中間の明示的な型変換を追加します。
+- 必要に応じて、中間の明示的な型変換を追加する。
 
 .. - Combine ``c.f{gas: 10000}{value: 1}()`` to ``c.f{gas: 10000, value: 1}()``.
 
@@ -296,12 +296,12 @@ How to update your code
 
 .. - Change ``x**y**z`` to ``(x**y)**z``.
 
-- ``x**y**z`` を ``(x**y)**z`` に変更。
+- ``x**y**z`` を ``(x**y)**z`` に変更する。
 
 .. - Use inline assembly as a replacement for ``log0``, ..., ``log4``.
 
-- ``log0`` 、...、 ``log4`` の代わりにインラインアセンブリを使用します。
+- ``log0`` 、...、 ``log4`` の代わりにインラインアセンブリを使用する。
 
 .. - Negate unsigned integers by subtracting them from the maximum value of the type and adding 1 (e.g. ``type(uint256).max
 
-- 符号なし整数を、その型の最大値から引いて1を加えて否定する（例： ``type(uint256).max - x + 1``、ただし `x` はゼロではないことを確認する
+- 符号なし整数を、その型の最大値から引いて1を加えて否定する（例： ``type(uint256).max - x + 1``、ただし `x` はゼロではないことを確認する。
