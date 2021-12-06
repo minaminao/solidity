@@ -75,7 +75,7 @@ Constant
 .. ``keccak256``, ``sha256``, ``ripemd160``, ``ecrecover``, ``addmod`` and ``mulmod``
 .. are allowed (even though, with the exception of ``keccak256``, they do call external contracts).
 
-``constant`` 変数については、コンパイル時に値が定数である必要があり、変数が宣言された場所で代入されなければなりません。ストレージ、ブロックチェーンデータ（例： ``block.timestamp`` 、 ``address(this).balance`` 、 ``block.number`` ）、実行データ（ ``msg.value`` 、 ``gasleft()`` ）にアクセスしたり、外部コントラクトを呼び出したりする式はすべて不許可です。メモリの割り当てに副作用を及ぼす可能性のある式は許可されますが、他のメモリオブジェクトに副作用を及ぼす可能性のある式は許可されません。組み込み関数の ``keccak256`` 、 ``sha256`` 、 ``ripemd160`` 、 ``ecrecover`` 、 ``addmod`` 、 ``mulmod`` は許可されています（ ``keccak256`` を除いて外部コントラクトを呼び出していますが）。
+``constant`` 変数については、コンパイル時に値が定数である必要があり、変数が宣言された場所で代入されなければなりません。ストレージ、ブロックチェーンデータ（例:  ``block.timestamp`` 、 ``address(this).balance`` 、 ``block.number`` ）、実行データ（ ``msg.value`` 、 ``gasleft()`` ）にアクセスしたり、外部コントラクトを呼び出したりする式はすべて不許可です。メモリの割り当てに副作用を及ぼす可能性のある式は許可されますが、他のメモリオブジェクトに副作用を及ぼす可能性のある式は許可されません。組み込み関数の ``keccak256`` 、 ``sha256`` 、 ``ripemd160`` 、 ``ecrecover`` 、 ``addmod`` 、 ``mulmod`` は許可されています（ ``keccak256`` を除いて外部コントラクトを呼び出していますが）。
 
 .. The reason behind allowing side-effects on the memory allocator is that it
 .. should be possible to construct complex objects like e.g. lookup-tables.

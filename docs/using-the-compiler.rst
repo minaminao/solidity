@@ -737,35 +737,35 @@ Error Types
 
 .. 1. ``JSONError``: JSON input doesn't conform to the required format, e.g. input is not a JSON object, the language is not supported, etc.
 
-1. ``JSONError`` ：JSON入力が要求されたフォーマットに適合していない。例：入力がJSONオブジェクトでない、言語がサポートされていない、など。
+1. ``JSONError`` : JSON入力が要求されたフォーマットに適合していない。例: 入力がJSONオブジェクトでない、言語がサポートされていない、など。
 
 .. 2. ``IOError``: IO and import processing errors, such as unresolvable URL or hash mismatch in supplied sources.
 
-2. ``IOError`` ：解決できないURLや提供されたソースのハッシュの不一致など、IOおよびインポート処理のエラー。
+2. ``IOError`` : 解決できないURLや提供されたソースのハッシュの不一致など、IOおよびインポート処理のエラー。
 
 .. 3. ``ParserError``: Source code doesn't conform to the language rules.
 
-3. ``ParserError`` ：ソースコードが言語ルールに準拠していない。
+3. ``ParserError`` : ソースコードが言語ルールに準拠していない。
 
 .. 4. ``DocstringParsingError``: The NatSpec tags in the comment block cannot be parsed.
 
-4. ``DocstringParsingError`` ：コメントブロック内のNatSpecタグが解析できない。
+4. ``DocstringParsingError`` : コメントブロック内のNatSpecタグが解析できない。
 
 .. 5. ``SyntaxError``: Syntactical error, such as ``continue`` is used outside of a ``for`` loop.
 
-5. ``SyntaxError`` ： ``for`` ループの外で ``continue`` が使われているなど、構文上のエラー。
+5. ``SyntaxError`` :  ``for`` ループの外で ``continue`` が使われているなど、構文上のエラー。
 
 .. 6. ``DeclarationError``: Invalid, unresolvable or clashing identifier names. e.g. ``Identifier not found``
 
-6. ``DeclarationError`` ：無効な、解決不可能な、または衝突した識別子名 例： ``Identifier not found``
+6. ``DeclarationError`` : 無効な、解決不可能な、または衝突した識別子名 例:  ``Identifier not found``
 
 .. 7. ``TypeError``: Error within the type system, such as invalid type conversions, invalid assignments, etc.
 
-7. ``TypeError`` ：無効な型変換、無効な代入など、型システム内のエラー。
+7. ``TypeError`` : 無効な型変換、無効な代入など、型システム内のエラー。
 
 .. 8. ``UnimplementedFeatureError``: Feature is not supported by the compiler, but is expected to be supported in future versions.
 
-8. ``UnimplementedFeatureError`` ：この機能はコンパイラではサポートされていませんが、将来のバージョンではサポートされる予定です。
+8. ``UnimplementedFeatureError`` : この機能はコンパイラではサポートされていませんが、将来のバージョンではサポートされる予定です。
 
 .. 9. ``InternalCompilerError``: Internal bug triggered in the compiler - this should be reported as an issue.
 .. 1
@@ -775,26 +775,26 @@ Error Types
 .. 10. ``Exception``: Unknown failure during compilation - this should be reported as an issue.
 .. 1
 
-10. ``Exception`` ：コンパイル時に不明な障害が発生しました - これは問題として報告する必要があります。1
+10. ``Exception`` : コンパイル時に不明な障害が発生しました - これは問題として報告する必要があります。1
 
 .. 11. ``CompilerError``: Invalid use of the compiler stack - this should be reported as an issue.
 .. 1
 
-11. ``CompilerError`` ：コンパイラー・スタックの無効な使用 - これは問題として報告する必要があります。1
+11. ``CompilerError`` : コンパイラー・スタックの無効な使用 - これは問題として報告する必要があります。1
 
 .. 12. ``FatalError``: Fatal error not processed correctly - this should be reported as an issue.
 .. 1
 
-12. ``FatalError`` ：致命的なエラーが正しく処理されていない - これは問題として報告する必要があります。1
+12. ``FatalError`` : 致命的なエラーが正しく処理されていない - これは問題として報告する必要があります。1
 
 .. 13. ``Warning``: A warning, which didn't stop the compilation, but should be addressed if possible.
 .. 1
 
-13. ``Warning`` ：警告であり、コンパイルを止めることはできなかったが、可能であれば対処すべきです。1
+13. ``Warning`` : 警告であり、コンパイルを止めることはできなかったが、可能であれば対処すべきです。1
 
 .. 14. ``Info``: Information that the compiler thinks the user might find useful, but is not dangerous and does not necessarily need to be addressed.
 
-14. ``Info`` ：ユーザーが役に立つかもしれないが、危険ではなく、必ずしも対処する必要がないとコンパイラが考えている情報。
+14. ``Info`` : ユーザーが役に立つかもしれないが、危険ではなく、必ずしも対処する必要がないとコンパイラが考えている情報。
 
 .. _compiler-tools:
 

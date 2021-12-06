@@ -136,7 +136,7 @@ Explicitness Requirements
   ``c.transfer(...)`` to ``address(c).transfer(...)``,
   and ``c.balance`` to ``address(c).balance``.
 
-* 名前空間を分離するために、コントラクト・タイプには ``address`` メンバーが含まれなくなりました。そのため、 ``address`` メンバを使用する前に、コントラクト・タイプの値を明示的にアドレスに変換する必要があります。例： ``c`` がコントラクトの場合、 ``c.transfer(...)`` を ``address(c).transfer(...)`` に、 ``c.balance`` を ``address(c).balance`` に変更します。
+* 名前空間を分離するために、コントラクト・タイプには ``address`` メンバーが含まれなくなりました。そのため、 ``address`` メンバを使用する前に、コントラクト・タイプの値を明示的にアドレスに変換する必要があります。例:  ``c`` がコントラクトの場合、 ``c.transfer(...)`` を ``address(c).transfer(...)`` に、 ``c.balance`` を ``address(c).balance`` に変更します。
 
 .. * Explicit conversions between unrelated contract types are now disallowed. You can only
   convert from a contract type to one of its base or ancestor types. If you are sure that
@@ -146,7 +146,7 @@ Explicitness Requirements
   ``b`` is a contract of type ``B``, you can still convert ``b`` to type ``A`` using ``A(address(b))``.
   Note that you still need to watch out for matching payable fallback functions, as explained below.
 
-* 関連性のないコントラクトタイプ間の明示的な変換ができなくなりました。あるコントラクトタイプから、そのベースまたは祖先のタイプの1つへの変換のみが可能です。あるコントラクトが、変換したいコントラクトタイプを継承していないものの、互換性があると確信している場合、最初に ``address`` に変換することでこれを回避できます。例： ``A`` と ``B`` がコントラクトタイプで、 ``B`` は ``A`` から継承されず、 ``b`` は ``B`` タイプのコントラクトである場合、 ``A(address(b))`` を使って ``b`` を ``A`` タイプに変換できます。なお、以下に説明するように、マッチング・ペイバック・フォールバック関数にも注意する必要があります。
+* 関連性のないコントラクトタイプ間の明示的な変換ができなくなりました。あるコントラクトタイプから、そのベースまたは祖先のタイプの1つへの変換のみが可能です。あるコントラクトが、変換したいコントラクトタイプを継承していないものの、互換性があると確信している場合、最初に ``address`` に変換することでこれを回避できます。例:  ``A`` と ``B`` がコントラクトタイプで、 ``B`` は ``A`` から継承されず、 ``b`` は ``B`` タイプのコントラクトである場合、 ``A(address(b))`` を使って ``b`` を ``A`` タイプに変換できます。なお、以下に説明するように、マッチング・ペイバック・フォールバック関数にも注意する必要があります。
 
 .. * The ``address`` type  was split into ``address`` and ``address payable``,
   where only ``address payable`` provides the ``transfer`` function.  An
@@ -311,7 +311,7 @@ Literals and Suffixes
 .. * Combining hex numbers with unit denominations (e.g. ``0x1e wei``) is now
   disallowed.
 
-* 16進数と単位表記（例： ``0x1e wei`` ）の組み合わせができなくなりました。
+* 16進数と単位表記（例:  ``0x1e wei`` ）の組み合わせができなくなりました。
 
 .. * The prefix ``0X`` for hex numbers is disallowed, only ``0x`` is possible.
 

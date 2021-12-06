@@ -142,7 +142,7 @@ Global Variables
 
 .. - ``msg.sender`` (``address``): sender of the message (current call)
 
-- ``msg.sender`` (``address``): メッセージの送信者（現在の通話相手）
+- ``msg.sender`` (``address``): メッセージの送信者（現在のコール）
 
 .. - ``msg.value`` (``uint``): number of wei sent with the message
 
@@ -376,7 +376,7 @@ Modifiers
 
 .. - ``payable`` for functions: Allows them to receive Ether together with a call.
 
-- 関数の ``payable`` です。通話と同時にイーサを受信できるようにする。
+- 関数の ``payable`` です。コールと同時にイーサを受信できるようにする。
 
 .. - ``constant`` for state variables: Disallows assignment (except initialisation), does not occupy storage slot.
 

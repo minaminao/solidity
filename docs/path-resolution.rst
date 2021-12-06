@@ -347,11 +347,11 @@ Relative Imports
 
 .. 1. Everything past the last slash is removed (i.e. ``a/b//c.sol`` becomes ``a/b//``).
 
-1.最後のスラッシュから先はすべて削除されます（例： ``a/b//c.sol`` が ``a/b//`` になります）。
+1.最後のスラッシュから先はすべて削除されます（例:  ``a/b//c.sol`` が ``a/b//`` になります）。
 
 .. 2. All trailing slashes are removed (i.e. ``a/b//`` becomes ``a/b``).
 
-2.後続のスラッシュはすべて削除されます（例： ``a/b//`` が ``a/b`` になります）。
+2.後続のスラッシュはすべて削除されます（例:  ``a/b//`` が ``a/b`` になります）。
 
 .. The normalization rules are the same as for UNIX paths, namely:
 

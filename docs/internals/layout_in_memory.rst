@@ -11,15 +11,15 @@ Solidityは4つの32バイトスロットを確保しており、特定のバイ
 
 .. - ``0x00`` - ``0x3f`` (64 bytes): scratch space for hashing methods
 
-- ``0x00`` - ``0x3f`` （64バイト）：ハッシュ化のためのスクラッチ領域
+- ``0x00`` - ``0x3f`` （64バイト）: ハッシュ化のためのスクラッチ領域
 
 .. - ``0x40`` - ``0x5f`` (32 bytes): currently allocated memory size (aka. free memory pointer)
 
-- ``0x40`` - ``0x5f`` （32バイト）：現在割り当てられているメモリサイズ（別名：空きメモリポインタ）
+- ``0x40`` - ``0x5f`` （32バイト）: 現在割り当てられているメモリサイズ（別名: 空きメモリポインタ）
 
 .. - ``0x60`` - ``0x7f`` (32 bytes): zero slot
 
-- ``0x60`` - ``0x7f`` （32バイト）：ゼロスロット
+- ``0x60`` - ``0x7f`` （32バイト）: ゼロスロット
 
 
 .. Scratch space can be used between statements (i.e. within inline assembly). The zero slot

@@ -439,7 +439,7 @@ Receive Ether Function
 .. contract cannot receive Ether through regular transactions and throws an
 .. exception.
 
-受信関数は、空のcalldataを持つコントラクトへの呼び出しで実行されます。これは、プレーンなEther転送（例： ``.send()`` または ``.transfer()`` 経由）で実行される関数です。このような関数が存在せず、payable  :ref:`fallback function <fallback-function>` が存在する場合は、プレーンなEther転送時にフォールバック関数が呼び出されます。受信 Ether も支払可能なフォールバック関数も存在しない場合、コントラクトは通常のトランザクションで Ether を受信できず、例外が発生します。
+受信関数は、空のcalldataを持つコントラクトへの呼び出しで実行されます。これは、プレーンなEther転送（例:  ``.send()`` または ``.transfer()`` 経由）で実行される関数です。このような関数が存在せず、payable  :ref:`fallback function <fallback-function>` が存在する場合は、プレーンなEther転送時にフォールバック関数が呼び出されます。受信 Ether も支払可能なフォールバック関数も存在しない場合、コントラクトは通常のトランザクションで Ether を受信できず、例外が発生します。
 
 .. In the worst case, the ``receive`` function can only rely on 2300 gas being
 .. available (for example when ``send`` or ``transfer`` is used), leaving little

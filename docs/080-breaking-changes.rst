@@ -112,7 +112,7 @@ New Restrictions
 
   3.リテラルと列挙型の間の明示的な変換は、リテラルが列挙型の値を表すことができる場合にのみ許可されます。
 
-  4.リテラルと ``address`` 型の間の明示的な変換（例： ``address(literal)`` ）は、 ``address payable`` の代わりに ``address`` 型を持つ。明示的な変換を使用することで、支払可能なアドレス・タイプを得ることができます、すなわち、 ``payable(literal)`` 。
+  4.リテラルと ``address`` 型の間の明示的な変換（例:  ``address(literal)`` ）は、 ``address payable`` の代わりに ``address`` 型を持つ。明示的な変換を使用することで、支払可能なアドレス・タイプを得ることができます、すなわち、 ``payable(literal)`` 。
 
 .. * :ref:`Address literals<address_literals>` have the type ``address`` instead of ``address
 ..   payable``. They can be converted to ``address payable`` by using an explicit conversion, e.g.
@@ -154,11 +154,11 @@ New Restrictions
 
   ここで、 ``T`` と ``S`` は型であり、 ``x`` は ``S`` 型の任意の変数である、明示的な変換 ``T(x)`` を表すために ``T(S)`` という表記を使用してみましょう。このような許されない変換の例としては、 ``uint16(int8)`` があります。 ``uint16(int8)`` は幅（8ビットから16ビット）と符号（符号付き整数から符号なし整数）の両方を変更するからです。変換を行うためには、中間型を経由しなければなりません。先ほどの例では、 ``uint16(uint8(int8))`` または ``uint16(int16(int8))`` となります。この2つの変換方法では、例えば ``-1`` の場合、異なる結果が得られることに注意してください。以下は、この規則によって許されない変換の例です。
 
-  - ``address(uint)`` と ``uint(address)`` ：タイプ・カテゴリーと幅の両方を変換します。これをそれぞれ ``address(uint160(uint))`` と ``uint(uint160(address))`` に置き換える。
+  - ``address(uint)`` と ``uint(address)`` : タイプ・カテゴリーと幅の両方を変換します。これをそれぞれ ``address(uint160(uint))`` と ``uint(uint160(address))`` に置き換える。
 
-  - ``payable(uint160)`` , ``payable(bytes20)`` , ``payable(integer-literal)`` ：タイプカテゴリと状態変異性の両方を変換する。これをそれぞれ ``payable(address(uint160))`` , ``payable(address(bytes20))`` , ``payable(address(integer-literal))`` に置き換える。なお、 ``payable(0)`` は有効であり、例外です。
+  - ``payable(uint160)`` , ``payable(bytes20)`` , ``payable(integer-literal)`` : タイプカテゴリと状態変異性の両方を変換する。これをそれぞれ ``payable(address(uint160))`` , ``payable(address(bytes20))`` , ``payable(address(integer-literal))`` に置き換える。なお、 ``payable(0)`` は有効であり、例外です。
 
-  - ``int80(bytes10)`` と ``bytes10(int80)`` ：タイプ・カテゴリーと記号の両方を変換します。これをそれぞれ ``int80(uint80(bytes10))`` と ``bytes10(uint80(int80)`` に置き換える。
+  - ``int80(bytes10)`` と ``bytes10(int80)`` : タイプ・カテゴリーと記号の両方を変換します。これをそれぞれ ``int80(uint80(bytes10))`` と ``bytes10(uint80(int80)`` に置き換える。
 
   - ``Contract(uint)`` : type-categoryとwidthの両方を変換しています。これを ``Contract(address(uint160(uint)))`` に置き換える。
 
@@ -304,4 +304,4 @@ How to update your code
 
 .. - Negate unsigned integers by subtracting them from the maximum value of the type and adding 1 (e.g. ``type(uint256).max
 
-- 符号なし整数を、その型の最大値から引いて1を加えて否定する（例： ``type(uint256).max - x + 1``、ただし `x` はゼロではないことを確認する。
+- 符号なし整数を、その型の最大値から引いて1を加えて否定する（例:  ``type(uint256).max - x + 1``、ただし `x` はゼロではないことを確認する。

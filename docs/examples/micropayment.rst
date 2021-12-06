@@ -297,7 +297,7 @@ What is a Payment Channel?
 
 .. note::
 
-  ステップ1とステップ3のみがEthereumのトランザクションを必要とし、ステップ2は送信者が暗号化されたメッセージをオフチェーン方式（例：電子メール）で受信者に送信することを意味します。つまり、2つのトランザクションだけで、任意の数の転送をサポートできます。
+  ステップ1とステップ3のみがEthereumのトランザクションを必要とし、ステップ2は送信者が暗号化されたメッセージをオフチェーン方式（例: 電子メール）で受信者に送信することを意味します。つまり、2つのトランザクションだけで、任意の数の転送をサポートできます。
 
 .. Bob is guaranteed to receive his funds because the smart contract escrows the
 .. Ether and honours a valid signed message. The smart contract also enforces a

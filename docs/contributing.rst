@@ -374,15 +374,15 @@ out the separator and the comments that follow it.
 
 .. - ``update``: Updates the expectations for contract under test. This updates the annotations by removing unmet expectations and adding missing expectations. The test is then run again.
 
-- ``update`` ：テスト中のコントラクトに対する期待値を更新。これは、満たされていない期待値を削除し、満たされていない期待値を追加することで、アノテーションを更新します。その後、テストが再度実行される。
+- ``update`` : テスト中のコントラクトに対する期待値を更新。これは、満たされていない期待値を削除し、満たされていない期待値を追加することで、アノテーションを更新します。その後、テストが再度実行される。
 
 .. - ``skip``: Skips the execution of this particular test.
 
-- ``skip`` ：この特定のテストの実行をスキップします。
+- ``skip`` : この特定のテストの実行をスキップします。
 
 .. - ``quit``: Quits ``isoltest``.
 
-- ``quit`` ：やめる  ``isoltest`` 。
+- ``quit`` : やめる  ``isoltest`` 。
 
 .. All of these options apply to the current contract, expect ``quit`` which stops the entire testing process.
 

@@ -68,47 +68,47 @@ Types
 
 .. - ``uint<M>``: unsigned integer type of ``M`` bits, ``0 < M <= 256``, ``M % 8 == 0``. e.g. ``uint32``, ``uint8``, ``uint256``.
 
-- ``uint<M>`` ： ``M`` ビット、 ``0 < M <= 256`` 、 ``M % 8 == 0`` の符号なし整数型 例： ``uint32`` 、 ``uint8`` 、 ``uint256``
+- ``uint<M>`` :  ``M`` ビット、 ``0 < M <= 256`` 、 ``M % 8 == 0`` の符号なし整数型 例:  ``uint32`` 、 ``uint8`` 、 ``uint256``
 
 .. - ``int<M>``: two's complement signed integer type of ``M`` bits, ``0 < M <= 256``, ``M % 8 == 0``.
 
-- ``int<M>`` ： ``M`` ビットの2の補数符号付き整数型、 ``0 < M <= 256`` 、 ``M % 8 == 0`` 。
+- ``int<M>`` :  ``M`` ビットの2の補数符号付き整数型、 ``0 < M <= 256`` 、 ``M % 8 == 0`` 。
 
 .. - ``address``: equivalent to ``uint160``, except for the assumed interpretation and language typing.
 ..   For computing the function selector, ``address`` is used.
 
-- ``address`` ：想定される解釈と言語の型付けを除き、 ``uint160`` と同等です。   関数セレクタの計算には、 ``address`` を使用します。
+- ``address`` : 想定される解釈と言語の型付けを除き、 ``uint160`` と同等です。   関数セレクタの計算には、 ``address`` を使用します。
 
 .. - ``uint``, ``int``: synonyms for ``uint256``, ``int256`` respectively. For computing the function
 ..   selector, ``uint256`` and ``int256`` have to be used.
 
-- ``uint`` 、 ``int`` ：それぞれ ``uint256`` 、 ``int256`` の同義語です。ファンクションセレクタの計算には、 ``uint256`` と ``int256`` を使用する必要があります。
+- ``uint`` 、 ``int`` : それぞれ ``uint256`` 、 ``int256`` の同義語です。ファンクションセレクタの計算には、 ``uint256`` と ``int256`` を使用する必要があります。
 
 .. - ``bool``: equivalent to ``uint8`` restricted to the values 0 and 1. For computing the function selector, ``bool`` is used.
 
-- ``bool`` ：0と1に限定された ``uint8`` に相当し、ファンクションセレクターの演算には ``bool`` を使用します。
+- ``bool`` : 0と1に限定された ``uint8`` に相当し、ファンクションセレクターの演算には ``bool`` を使用します。
 
 .. - ``fixed<M>x<N>``: signed fixed-point decimal number of ``M`` bits, ``8 <= M <= 256``,
 ..   ``M % 8 == 0``, and ``0 < N <= 80``, which denotes the value ``v`` as ``v / (10 ** N)``.
 
-- ``fixed<M>x<N>`` ： ``M`` ビット、 ``8 <= M <= 256`` 、 ``M % 8 == 0`` 、 ``0 < N <= 80`` の符号付き固定小数点10進数で、 ``v`` の値を ``v / (10 ** N)`` と表記します。
+- ``fixed<M>x<N>`` :  ``M`` ビット、 ``8 <= M <= 256`` 、 ``M % 8 == 0`` 、 ``0 < N <= 80`` の符号付き固定小数点10進数で、 ``v`` の値を ``v / (10 ** N)`` と表記します。
 
 .. - ``ufixed<M>x<N>``: unsigned variant of ``fixed<M>x<N>``.
 
-- ``ufixed<M>x<N>`` ： ``fixed<M>x<N>`` の符号なしの変型。
+- ``ufixed<M>x<N>`` :  ``fixed<M>x<N>`` の符号なしの変型。
 
 .. - ``fixed``, ``ufixed``: synonyms for ``fixed128x18``, ``ufixed128x18`` respectively. For
 ..   computing the function selector, ``fixed128x18`` and ``ufixed128x18`` have to be used.
 
-- ``fixed`` 、 ``ufixed`` ：それぞれ ``fixed128x18`` 、 ``ufixed128x18`` の同義語です。ファンクションセレクタの計算には、 ``fixed128x18`` と ``ufixed128x18`` を使用する必要があります。
+- ``fixed`` 、 ``ufixed`` : それぞれ ``fixed128x18`` 、 ``ufixed128x18`` の同義語です。ファンクションセレクタの計算には、 ``fixed128x18`` と ``ufixed128x18`` を使用する必要があります。
 
 .. - ``bytes<M>``: binary type of ``M`` bytes, ``0 < M <= 32``.
 
-- ``bytes<M>`` ： ``M`` バイトのバイナリタイプ、 ``0 < M <= 32`` 。
+- ``bytes<M>`` :  ``M`` バイトのバイナリタイプ、 ``0 < M <= 32`` 。
 
 .. - ``function``: an address (20 bytes) followed by a function selector (4 bytes). Encoded identical to ``bytes24``.
 
-- ``function`` ：アドレス（20バイト）の後に関数セレクター（4バイト）が続く。 ``bytes24`` と同じようにエンコードされます。
+- ``function`` : アドレス（20バイト）の後に関数セレクター（4バイト）が続く。 ``bytes24`` と同じようにエンコードされます。
 
 .. The following (fixed-size) array type exists:
 
@@ -120,7 +120,7 @@ Types
 
 ..       While this ABI specification can express fixed-length arrays with zero elements, they're not supported by the compiler.
 
-- ``<type>[M]`` ：与えられた型の ``M`` 要素の固定長の配列、 ``M >= 0`` 。
+- ``<type>[M]`` : 与えられた型の ``M`` 要素の固定長の配列、 ``M >= 0`` 。
 
   .. note::
 
@@ -132,15 +132,15 @@ Types
 
 .. - ``bytes``: dynamic sized byte sequence.
 
-- ``bytes`` ：ダイナミックサイズのバイトシーケンス。
+- ``bytes`` : ダイナミックサイズのバイトシーケンス。
 
 .. - ``string``: dynamic sized unicode string assumed to be UTF-8 encoded.
 
-- ``string`` ：UTF-8でエンコードされていると仮定したダイナミックサイズのユニコード文字列。
+- ``string`` : UTF-8でエンコードされていると仮定したダイナミックサイズのユニコード文字列。
 
 .. - ``<type>[]``: a variable-length array of elements of the given type.
 
-- ``<type>[]`` ：指定された型の要素を持つ可変長の配列。
+- ``<type>[]`` : 指定された型の要素を持つ可変長の配列。
 
 .. Types can be combined to a tuple by enclosing them inside parentheses, separated by commas:
 
@@ -148,7 +148,7 @@ Types
 
 .. - ``(T1,T2,...,Tn)``: tuple consisting of the types ``T1``, ..., ``Tn``, ``n >= 0``
 
-- ``(T1,T2,...,Tn)`` ： ``T1`` , ...,  ``Tn`` ,  ``n >= 0`` の各タイプからなるタプル
+- ``(T1,T2,...,Tn)`` :  ``T1`` , ...,  ``Tn`` ,  ``n >= 0`` の各タイプからなるタプル
 
 .. It is possible to form tuples of tuples, arrays of tuples and so on. It is also possible to form zero-tuples (where ``n == 0``).
 
@@ -348,7 +348,7 @@ Formal Specification of the Encoding
 
 .. - ``address``: as in the ``uint160`` case
 
-- ``address`` ： ``uint160`` の場合と同様
+- ``address`` :  ``uint160`` の場合と同様
 
 .. - ``int<M>``: ``enc(X)`` is the big-endian two's complement encoding of ``X``, padded on the higher-order (left) side with ``0xff`` bytes for negative ``X`` and with zero-bytes for non-negative ``X`` such that the length is 32 bytes.
 
@@ -356,7 +356,7 @@ Formal Specification of the Encoding
 
 .. - ``bool``: as in the ``uint8`` case, where ``1`` is used for ``true`` and ``0`` for ``false``
 
-- ``bool`` ： ``uint8`` の場合と同様に、 ``true`` には ``1`` 、 ``false`` には ``0`` が使われる
+- ``bool`` :  ``uint8`` の場合と同様に、 ``true`` には ``1`` 、 ``false`` には ``0`` が使われる
 
 .. - ``fixed<M>x<N>``: ``enc(X)`` is ``enc(X * 10**N)`` where ``X * 10**N`` is interpreted as a ``int256``.
 
@@ -364,7 +364,7 @@ Formal Specification of the Encoding
 
 .. - ``fixed``: as in the ``fixed128x18`` case
 
-- ``fixed`` ： ``fixed128x18`` の場合と同様
+- ``fixed`` :  ``fixed128x18`` の場合と同様
 
 .. - ``ufixed<M>x<N>``: ``enc(X)`` is ``enc(X * 10**N)`` where ``X * 10**N`` is interpreted as a ``uint256``.
 
@@ -372,7 +372,7 @@ Formal Specification of the Encoding
 
 .. - ``ufixed``: as in the ``ufixed128x18`` case
 
-- ``ufixed`` ： ``ufixed128x18`` の場合と同様
+- ``ufixed`` :  ``ufixed128x18`` の場合と同様
 
 .. - ``bytes<M>``: ``enc(X)`` is the sequence of bytes in ``X`` padded with trailing zero-bytes to a length of 32 bytes.
 
@@ -432,16 +432,16 @@ Examples
 .. - ``0xcdcd77c0``: the Method ID. This is derived as the first 4 bytes of the Keccak hash of
 ..   the ASCII form of the signature ``baz(uint32,bool)``.
 
-- ``0xcdcd77c0`` ：メソッドID。これは、署名 ``baz(uint32,bool)`` のASCII形式のKeccakハッシュの最初の4バイトとして導出される。
+- ``0xcdcd77c0`` : メソッドID。これは、署名 ``baz(uint32,bool)`` のASCII形式のKeccakハッシュの最初の4バイトとして導出される。
 
 .. - ``0x0000000000000000000000000000000000000000000000000000000000000045``: the first parameter,
 ..   a uint32 value ``69`` padded to 32 bytes
 
-- ``0x0000000000000000000000000000000000000000000000000000000000000045`` ：第1パラメータ、uint32値  ``69`` ：32バイトにパディングされた値
+- ``0x0000000000000000000000000000000000000000000000000000000000000045`` : 第1パラメータ、uint32値  ``69`` : 32バイトにパディングされた値
 
 .. - ``0x0000000000000000000000000000000000000000000000000000000000000001``: the second parameter
 
-- ``0x0000000000000000000000000000000000000000000000000000000000000001`` ：第2パラメータ
+- ``0x0000000000000000000000000000000000000000000000000000000000000001`` : 第2パラメータ
 
 .. - boolean
 ..   ``true``, padded to 32 bytes
@@ -467,17 +467,17 @@ Examples
 
 .. - ``0xfce353f6``: the Method ID. This is derived from the signature ``bar(bytes3[2])``.
 
-- ``0xfce353f6`` ：メソッドID。これはシグネチャー ``bar(bytes3[2])`` から得られる。
+- ``0xfce353f6`` : メソッドID。これはシグネチャー ``bar(bytes3[2])`` から得られる。
 
 .. - ``0x6162630000000000000000000000000000000000000000000000000000000000``: the first part of the first
 ..   parameter, a ``bytes3`` value ``"abc"`` (left-aligned).
 
-- ``0x6162630000000000000000000000000000000000000000000000000000000000`` ：第1パラメータの最初の部分で、 ``bytes3`` 値 ``"abc"`` （左寄せ）のこと。
+- ``0x6162630000000000000000000000000000000000000000000000000000000000`` : 第1パラメータの最初の部分で、 ``bytes3`` 値 ``"abc"`` （左寄せ）のこと。
 
 .. - ``0x6465660000000000000000000000000000000000000000000000000000000000``: the second part of the first
 ..   parameter, a ``bytes3`` value ``"def"`` (left-aligned).
 
-- ``0x6465660000000000000000000000000000000000000000000000000000000000`` ：第1パラメータの2番目の部分で、 ``bytes3`` 値 ``"def"`` （左寄せ）。
+- ``0x6465660000000000000000000000000000000000000000000000000000000000`` : 第1パラメータの2番目の部分で、 ``bytes3`` 値 ``"def"`` （左寄せ）。
 
 .. In total:
 
@@ -494,43 +494,43 @@ Examples
 
 .. - ``0xa5643bf2``: the Method ID. This is derived from the signature ``sam(bytes,bool,uint256[])``. Note that ``uint`` is replaced with its canonical representation ``uint256``.
 
-- ``0xa5643bf2`` ：メソッドID。これは署名 ``sam(bytes,bool,uint256[])`` から派生したものです。 ``uint`` はその正規表現 ``uint256`` に置き換えられていることに注意してください。
+- ``0xa5643bf2`` : メソッドID。これは署名 ``sam(bytes,bool,uint256[])`` から派生したものです。 ``uint`` はその正規表現 ``uint256`` に置き換えられていることに注意してください。
 
 .. - ``0x0000000000000000000000000000000000000000000000000000000000000060``: the location of the data part of the first parameter (dynamic type), measured in bytes from the start of the arguments block. In this case, ``0x60``.
 
-- ``0x0000000000000000000000000000000000000000000000000000000000000060`` ：第1パラメータ（ダイナミックタイプ）のデータ部の位置で、引数ブロックの先頭からのバイト数で表します。この場合は ``0x60`` 。
+- ``0x0000000000000000000000000000000000000000000000000000000000000060`` : 第1パラメータ（ダイナミックタイプ）のデータ部の位置で、引数ブロックの先頭からのバイト数で表します。この場合は ``0x60`` 。
 
 .. - ``0x0000000000000000000000000000000000000000000000000000000000000001``: the second parameter: boolean true.
 
-- ``0x0000000000000000000000000000000000000000000000000000000000000001`` ：第2パラメータ：真偽値
+- ``0x0000000000000000000000000000000000000000000000000000000000000001`` : 第2パラメータ: 真偽値
 
 .. - ``0x00000000000000000000000000000000000000000000000000000000000000a0``: the location of the data part of the third parameter (dynamic type), measured in bytes. In this case, ``0xa0``.
 
-- ``0x00000000000000000000000000000000000000000000000000000000000000a0`` ：3番目のパラメータ（ダイナミックタイプ）のデータ部分の位置で、単位はバイトです。ここでは ``0xa0`` とします。
+- ``0x00000000000000000000000000000000000000000000000000000000000000a0`` : 3番目のパラメータ（ダイナミックタイプ）のデータ部分の位置で、単位はバイトです。ここでは ``0xa0`` とします。
 
 .. - ``0x0000000000000000000000000000000000000000000000000000000000000004``: the data part of the first argument, it starts with the length of the byte array in elements, in this case, 4.
 
-- ``0x0000000000000000000000000000000000000000000000000000000000000004`` ：第1引数のデータ部で、バイト配列の長さを要素数で表したものから始まり、ここでは4としています。
+- ``0x0000000000000000000000000000000000000000000000000000000000000004`` : 第1引数のデータ部で、バイト配列の長さを要素数で表したものから始まり、ここでは4としています。
 
 .. - ``0x6461766500000000000000000000000000000000000000000000000000000000``: the contents of the first argument: the UTF-8 (equal to ASCII in this case) encoding of ``"dave"``, padded on the right to 32 bytes.
 
-- ``0x6461766500000000000000000000000000000000000000000000000000000000`` ：第1引数の内容： ``"dave"`` のUTF-8（ここではASCIIに相当）エンコードを右にパディングして32バイトにしたもの。
+- ``0x6461766500000000000000000000000000000000000000000000000000000000`` : 第1引数の内容:  ``"dave"`` のUTF-8（ここではASCIIに相当）エンコードを右にパディングして32バイトにしたもの。
 
 .. - ``0x0000000000000000000000000000000000000000000000000000000000000003``: the data part of the third argument, it starts with the length of the array in elements, in this case, 3.
 
-- ``0x0000000000000000000000000000000000000000000000000000000000000003`` ：第3引数のデータ部分で、配列の長さを要素数で表したものから始まり、この場合は3となります。
+- ``0x0000000000000000000000000000000000000000000000000000000000000003`` : 第3引数のデータ部分で、配列の長さを要素数で表したものから始まり、この場合は3となります。
 
 .. - ``0x0000000000000000000000000000000000000000000000000000000000000001``: the first entry of the third parameter.
 
-- ``0x0000000000000000000000000000000000000000000000000000000000000001`` ：第3パラメータの最初のエントリ。
+- ``0x0000000000000000000000000000000000000000000000000000000000000001`` : 第3パラメータの最初のエントリ。
 
 .. - ``0x0000000000000000000000000000000000000000000000000000000000000002``: the second entry of the third parameter.
 
-- ``0x0000000000000000000000000000000000000000000000000000000000000002`` ：第3パラメータの2番目のエントリ。
+- ``0x0000000000000000000000000000000000000000000000000000000000000002`` : 第3パラメータの2番目のエントリ。
 
 .. - ``0x0000000000000000000000000000000000000000000000000000000000000003``: the third entry of the third parameter.
 
-- ``0x0000000000000000000000000000000000000000000000000000000000000003`` ：3番目のパラメータのエントリー。
+- ``0x0000000000000000000000000000000000000000000000000000000000000003`` : 3番目のパラメータのエントリー。
 
 .. In total:
 
@@ -594,7 +594,7 @@ Use of Dynamic Types
 
 .. - ``0x000000000000000000000000000000000000000000000000000000000000000d`` (number of elements (bytes in this case): 13)
 
-- ``0x000000000000000000000000000000000000000000000000000000000000000d`` （要素数（ここではバイト）：13)
+- ``0x000000000000000000000000000000000000000000000000000000000000000d`` （要素数（ここではバイト）: 13)
 
 .. - ``0x48656c6c6f2c20776f726c642100000000000000000000000000000000000000`` (``"Hello, world!"`` padded to 32 bytes on the right)
 
@@ -820,7 +820,7 @@ Events
 
 .. - ``address``: the address of the contract (intrinsically provided by Ethereum);
 
-- ``address`` ：コントラクトのアドレス（Ethereumが本質的に提供するもの）。
+- ``address`` : コントラクトのアドレス（Ethereumが本質的に提供するもの）。
 
 .. - ``topics[0]``: ``keccak(EVENT_NAME+"("+EVENT_ARGS.map(canonical_type_of).join(",")+")")`` (``canonical_type_of``
 ..   is a function that simply returns the canonical type of a given argument, e.g. for ``uint indexed foo``, it would
@@ -832,7 +832,7 @@ Events
 ..   or ``abi_encode(EVENT_INDEXED_ARGS[n])`` if it is (``EVENT_INDEXED_ARGS`` is the series of ``EVENT_ARGS`` that
 ..   are indexed);
 
-- ``topics[n]`` ： ``abi_encode(EVENT_INDEXED_ARGS[n]) - 1])`` イベントが ``anonymous`` として宣言されていない場合は ``abi_encode(EVENT_INDEXED_ARGS[n])``、宣言されている場合は ``abi_encode(EVENT_INDEXED_ARGS[n])`` となります（ ``EVENT_INDEXED_ARGS`` はインデックス化された ``EVENT_ARGS`` のシリーズです）。
+- ``topics[n]`` :  ``abi_encode(EVENT_INDEXED_ARGS[n]) - 1])`` イベントが ``anonymous`` として宣言されていない場合は ``abi_encode(EVENT_INDEXED_ARGS[n])``、宣言されている場合は ``abi_encode(EVENT_INDEXED_ARGS[n])`` となります（ ``EVENT_INDEXED_ARGS`` はインデックス化された ``EVENT_ARGS`` のシリーズです）。
 
 .. - ``data``: ABI encoding of ``EVENT_NON_INDEXED_ARGS`` (``EVENT_NON_INDEXED_ARGS`` is the series of ``EVENT_ARGS``
 ..   that are not indexed, ``abi_encode`` is the ABI encoding function used for returning a series of typed values
@@ -924,7 +924,7 @@ JSON
 
 .. - ``name``: the name of the function;
 
-- ``name`` ：関数の名前。
+- ``name`` : 関数の名前。
 
 .. - ``inputs``: an array of objects, each of which contains:
 
@@ -936,7 +936,7 @@ JSON
 
 - ``inputs`` : オブジェクトの配列で、それぞれのオブジェクトには
 
-  *  ``name`` ：パラメータの名前です。
+  *  ``name`` : パラメータの名前です。
 
   *  ``type`` : パラメータの正規の型（詳細は後述）。
 
@@ -944,13 +944,13 @@ JSON
 
 .. - ``outputs``: an array of objects similar to ``inputs``.
 
-- ``outputs`` ： ``inputs`` に似たオブジェクトの配列。
+- ``outputs`` :  ``inputs`` に似たオブジェクトの配列。
 
 .. - ``stateMutability``: a string with one of the following values: ``pure`` (:ref:`specified to not read
 ..   blockchain state <pure-functions>`), ``view`` (:ref:`specified to not modify the blockchain
 ..   state <view-functions>`), ``nonpayable`` (function does not accept Ether
 
-- ``stateMutability`` ：以下のいずれかの値を持つ文字列。 ``pure`` （ :ref:`specified to not read   blockchain state <pure-functions>` ）、 ``view`` （ :ref:`specified to not modify the blockchain   state <view-functions>` ）、 ``nonpayable`` （関数はイーサを受け付けません
+- ``stateMutability`` : 以下のいずれかの値を持つ文字列。 ``pure`` （ :ref:`specified to not read   blockchain state <pure-functions>` ）、 ``view`` （ :ref:`specified to not modify the blockchain   state <view-functions>` ）、 ``nonpayable`` （関数はイーサを受け付けません
 
 .. - the default) and ``payable`` (function accepts Ether).
 
@@ -983,11 +983,11 @@ JSON
 
 .. - ``type``: always ``"event"``
 
-- ``type`` ：常に ``"event"``
+- ``type`` : 常に ``"event"``
 
 .. - ``name``: the name of the event.
 
-- ``name`` ：イベントの名前です。
+- ``name`` : イベントの名前です。
 
 .. - ``inputs``: an array of objects, each of which contains:
 
@@ -1001,13 +1001,13 @@ JSON
 
 - ``inputs`` : オブジェクトの配列で、それぞれのオブジェクトには
 
-  *  ``name`` ：パラメータの名前です。
+  *  ``name`` : パラメータの名前です。
 
   *  ``type`` : パラメータの正規の型（詳細は後述）。
 
   *  ``components`` : タプルタイプに使用されます（詳細は後述）。
 
-  *  ``indexed`` ：フィールドがログのトピックの一部である場合は ``true`` 、ログのデータセグメントの一つである場合は ``false`` 。
+  *  ``indexed`` : フィールドがログのトピックの一部である場合は ``true`` 、ログのデータセグメントの一つである場合は ``false`` 。
 
 .. - ``anonymous``: ``true`` if the event was declared as ``anonymous``.
 
@@ -1019,11 +1019,11 @@ JSON
 
 .. - ``type``: always ``"error"``
 
-- ``type`` ：常に ``"error"``
+- ``type`` : 常に ``"error"``
 
 .. - ``name``: the name of the error.
 
-- ``name`` ：エラーの名前です。
+- ``name`` : エラーの名前です。
 
 .. - ``inputs``: an array of objects, each of which contains:
 
@@ -1035,7 +1035,7 @@ JSON
 
 - ``inputs`` : オブジェクトの配列で、それぞれのオブジェクトには
 
-  *  ``name`` ：パラメータの名前です。
+  *  ``name`` : パラメータの名前です。
 
   *  ``type`` : パラメータの正規の型（詳細は後述）。
 

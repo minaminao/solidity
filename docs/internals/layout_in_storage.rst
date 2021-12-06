@@ -286,13 +286,13 @@ JSON Output
 
 - ``encoding`` は、データがストレージでどのようにエンコードされているかを示すもので、可能な値は以下の通りです。
 
-  -  ``inplace`` ：データがストレージに連続してレイアウトされている（ :ref:`above <storage-inplace-encoding>` 参照）。
+  -  ``inplace`` : データがストレージに連続してレイアウトされている（ :ref:`above <storage-inplace-encoding>` 参照）。
 
-  -  ``mapping`` ：Keccak-256ハッシュベースの方式（ :ref:`above <storage-hashed-encoding>` 参照）。
+  -  ``mapping`` : Keccak-256ハッシュベースの方式（ :ref:`above <storage-hashed-encoding>` 参照）。
 
-  -  ``dynamic_array`` ：Keccak-256ハッシュベースの方式（ :ref:`above <storage-hashed-encoding>` 参照）。
+  -  ``dynamic_array`` : Keccak-256ハッシュベースの方式（ :ref:`above <storage-hashed-encoding>` 参照）。
 
-  -  ``bytes`` ：データサイズに応じて、シングルスロットまたはKeccak-256ハッシュベース（ :ref:`above <bytes-and-string>` 参照）。
+  -  ``bytes`` : データサイズに応じて、シングルスロットまたはKeccak-256ハッシュベース（ :ref:`above <bytes-and-string>` 参照）。
 
 .. - ``label`` is the canonical type name.
 

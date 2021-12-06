@@ -17,7 +17,7 @@ Booleans
 
 .. ``bool``: The possible values are constants ``true`` and ``false``.
 
-``bool`` ：可能な値は、定数 ``true`` と ``false`` です。
+``bool`` : 可能な値は、定数 ``true`` と ``false`` です。
 
 .. Operators:
 
@@ -55,7 +55,7 @@ Integers
 
 .. ``int`` / ``uint``: Signed and unsigned integers of various sizes. Keywords ``uint8`` to ``uint256`` in steps of ``8`` (unsigned of 8 up to 256 bits) and ``int8`` to ``int256``. ``uint`` and ``int`` are aliases for ``uint256`` and ``int256``, respectively.
 
-``int``  /  ``uint`` ：さまざまなサイズの符号付きおよび符号なし整数。キーワード ``uint8`` ～ ``uint256`` を ``8`` （8～256ビットの符号なし）、 ``int8`` ～ ``int256`` のステップで表したもの。 ``uint`` と ``int`` は、それぞれ ``uint256`` と ``int256`` の別名です。
+``int``  /  ``uint`` : さまざまなサイズの符号付きおよび符号なし整数。キーワード ``uint8`` ～ ``uint256`` を ``8`` （8～256ビットの符号なし）、 ``int8`` ～ ``int256`` のステップで表したもの。 ``uint`` と ``int`` は、それぞれ ``uint256`` と ``int256`` の別名です。
 
 .. Operators:
 
@@ -287,7 +287,7 @@ Fixed Point Numbers
 .. the type and ``N`` represents how many decimal points are available. ``M`` must be divisible by 8 and goes from 8 to 256 bits. ``N`` must be between 0 and 80, inclusive.
 .. ``ufixed`` and ``fixed`` are aliases for ``ufixed128x18`` and ``fixed128x18``, respectively.
 
-``fixed``  /  ``ufixed`` ：さまざまなサイズの符号付きおよび符号なしの固定小数点数。キーワード ``ufixedMxN`` と ``fixedMxN`` 、 ``M`` は型で取るビット数、 ``N`` は小数点以下の数を表します。 ``M`` は8で割り切れるものでなければならず、8から256ビットまであります。 ``N`` は0から80までの値でなければなりません。 ``ufixed`` と ``fixed`` は、それぞれ ``ufixed128x18`` と ``fixed128x18`` のエイリアスです。
+``fixed``  /  ``ufixed`` : さまざまなサイズの符号付きおよび符号なしの固定小数点数。キーワード ``ufixedMxN`` と ``fixedMxN`` 、 ``M`` は型で取るビット数、 ``N`` は小数点以下の数を表します。 ``M`` は8で割り切れるものでなければならず、8から256ビットまであります。 ``N`` は0から80までの値でなければなりません。 ``ufixed`` と ``fixed`` は、それぞれ ``ufixed128x18`` と ``fixed128x18`` のエイリアスです。
 
 .. Operators:
 
@@ -325,11 +325,11 @@ Address
 
 .. - ``address``: Holds a 20 byte value (size of an Ethereum address).
 
--  ``address`` ：20バイトの値（Ethereumのアドレスのサイズ）を保持します。
+-  ``address`` : 20バイトの値（Ethereumのアドレスのサイズ）を保持します。
 
 .. - ``address payable``: Same as ``address``, but with the additional members ``transfer`` and ``send``.
 
--  ``address payable`` ： ``address`` と同じですが、メンバーの ``transfer`` と ``send`` が追加されます。
+-  ``address payable`` :  ``address`` と同じですが、メンバーの ``transfer`` と ``send`` が追加されます。
 
 .. The idea behind this distinction is that ``address payable`` is an address you can send Ether to,
 .. while a plain ``address`` cannot be sent Ether.
@@ -708,7 +708,7 @@ Dynamically-sized byte array
 .. ``string``:
 ..     Dynamically-sized UTF-8-encoded string, see :ref:`arrays`. Not a value-type!
 
-``bytes`` : 動的なサイズのバイト配列、 :ref:`arrays` を参照。値型ではありません ``string`` ：動的サイズのUTF-8エンコードされた文字列で、 :ref:`arrays` を参照。Value-Typeではありません。
+``bytes`` : 動的なサイズのバイト配列、 :ref:`arrays` を参照。値型ではありません ``string`` : 動的サイズのUTF-8エンコードされた文字列で、 :ref:`arrays` を参照。Value-Typeではありません。
 
 .. index:: address, literal;address
 
@@ -723,7 +723,7 @@ Address Literals
 .. long and do not pass the checksum test produce
 .. an error. You can prepend (for integer types) or append (for bytesNN types) zeros to remove the error.
 
-アドレスチェックサムテストに合格した16進数リテラル（例： ``0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF`` ）は ``address`` タイプです。16進数リテラルの長さが39桁から41桁の間で、チェックサムテストに合格しない場合はエラーになります。エラーを取り除くには、ゼロを前置（整数型の場合）または後置（バイトNN型の場合）する必要があります。
+アドレスチェックサムテストに合格した16進数リテラル（例:  ``0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF`` ）は ``address`` タイプです。16進数リテラルの長さが39桁から41桁の間で、チェックサムテストに合格しない場合はエラーになります。エラーを取り除くには、ゼロを前置（整数型の場合）または後置（バイトNN型の場合）する必要があります。
 
 .. .. note::
 

@@ -44,7 +44,7 @@ Solidityでは、スマートコントラクトを使ってトークンや、も
 .. `in Guy Lando's knowledge list <https://github.com/guylando/KnowledgeLists/blob/master/EthereumSmartContracts.md>`_ and
 .. `the Consensys GitHub repo <https://consensys.github.io/smart-contract-best-practices/>`_.
 
-注：以下のリストの他にも、セキュリティに関する推奨事項やベストプラクティスが `in Guy Lando's knowledge list <https://github.com/guylando/KnowledgeLists/blob/master/EthereumSmartContracts.md>`_ および `the Consensys GitHub repo <https://consensys.github.io/smart-contract-best-practices/>`_ に掲載されています。
+注: 以下のリストの他にも、セキュリティに関する推奨事項やベストプラクティスが `in Guy Lando's knowledge list <https://github.com/guylando/KnowledgeLists/blob/master/EthereumSmartContracts.md>`_ および `the Consensys GitHub repo <https://consensys.github.io/smart-contract-best-practices/>`_ に掲載されています。
 
 ********
 Pitfalls

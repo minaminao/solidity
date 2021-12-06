@@ -1334,7 +1334,7 @@ ControlFlowSimplifierは、トラバーサル中に ``break`` と ``continue`` �
 .. Prerequisite: Disambiguator, FunctionHoister, ForLoopInitRewriter.
 .. Important: Introduces EVM opcodes and thus can only be used on EVM code for now.
 
-前提条件Disambiguator、FunctionHoister、ForLoopInitRewriter。重要：EVMオペコードを導入しているため、当面はEVMコードにのみ使用可能です。
+前提条件Disambiguator、FunctionHoister、ForLoopInitRewriter。重要: EVMオペコードを導入しているため、当面はEVMコードにのみ使用可能です。
 
 .. _dead-code-eliminator:
 

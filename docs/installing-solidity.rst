@@ -57,7 +57,7 @@ npm / Node.js
 .. `solc-js` can be used in JavaScript projects directly (such as Remix).
 .. Please refer to the solc-js repository for instructions.
 
-注：solc-jsプロジェクトは、Emscriptenを使用してC++  `solc` から派生しており、両者は同じコンパイラのソースコードを使用しています。 `solc-js` はJavaScriptプロジェクト（Remixなど）で直接使用できます。使用方法はsolc-jsのリポジトリを参照してください。
+注: solc-jsプロジェクトは、Emscriptenを使用してC++  `solc` から派生しており、両者は同じコンパイラのソースコードを使用しています。 `solc-js` はJavaScriptプロジェクト（Remixなど）で直接使用できます。使用方法はsolc-jsのリポジトリを参照してください。
 
 .. code-block:: bash
 
@@ -716,7 +716,7 @@ they are found in the system. Each solver can be disabled by a `cmake` option.
 
 .. *Note: In some cases, this can also be a potential workaround for build failures.*
 
-*注：場合によっては、ビルドに失敗したときの回避策としても有効です。*
+*注: 場合によっては、ビルドに失敗したときの回避策としても有効です。*
 
 .. Inside the build folder you can disable them, since they are enabled by default:
 

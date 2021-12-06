@@ -108,31 +108,31 @@ Block and Transaction Properties
 
 .. - ``blockhash(uint blockNumber) returns (bytes32)``: hash of the given block when ``blocknumber`` is one of the 256 most recent blocks; otherwise returns zero
 
--  ``blockhash(uint blockNumber) returns (bytes32)`` ： ``blocknumber`` が256個の最新ブロックの一つである場合は、与えられたブロックのハッシュ、そうでない場合はゼロを返す
+-  ``blockhash(uint blockNumber) returns (bytes32)`` :  ``blocknumber`` が256個の最新ブロックの一つである場合は、与えられたブロックのハッシュ、そうでない場合はゼロを返す
 
 .. - ``block.basefee`` (``uint``): current block's base fee (`EIP-3198 <https://eips.ethereum.org/EIPS/eip-3198>`_ and `EIP-1559 <https://eips.ethereum.org/EIPS/eip-1559>`_)
 
--  ``block.basefee`` （ ``uint`` ）：現在のブロックの基本料金（ `EIP-3198 <https://eips.ethereum.org/EIPS/eip-3198>`_ と `EIP-1559 <https://eips.ethereum.org/EIPS/eip-1559>`_ ）
+-  ``block.basefee`` （ ``uint`` ）: 現在のブロックの基本料金（ `EIP-3198 <https://eips.ethereum.org/EIPS/eip-3198>`_ と `EIP-1559 <https://eips.ethereum.org/EIPS/eip-1559>`_ ）
 
 .. - ``block.chainid`` (``uint``): current chain id
 
--  ``block.chainid`` （ ``uint`` ）：現在のチェーンID
+-  ``block.chainid`` （ ``uint`` ）: 現在のチェーンID
 
 .. - ``block.coinbase`` (``address payable``): current block miner's address
 
--  ``block.coinbase`` （ ``address payable`` ）：現在のブロックマイナーのアドレス
+-  ``block.coinbase`` （ ``address payable`` ）: 現在のブロックマイナーのアドレス
 
 .. - ``block.difficulty`` (``uint``): current block difficulty
 
--  ``block.difficulty`` （ ``uint`` ）：現在のブロックの難易度
+-  ``block.difficulty`` （ ``uint`` ）: 現在のブロックの難易度
 
 .. - ``block.gaslimit`` (``uint``): current block gaslimit
 
--  ``block.gaslimit`` （ ``uint`` ）：カレントブロックのガスリミット
+-  ``block.gaslimit`` （ ``uint`` ）: カレントブロックのガスリミット
 
 .. - ``block.number`` (``uint``): current block number
 
--  ``block.number`` （ ``uint`` ）：現在のブロック番号
+-  ``block.number`` （ ``uint`` ）: 現在のブロック番号
 
 .. - ``block.timestamp`` (``uint``): current block timestamp as seconds since unix epoch
 
@@ -140,31 +140,31 @@ Block and Transaction Properties
 
 .. - ``gasleft() returns (uint256)``: remaining gas
 
--  ``gasleft() returns (uint256)`` ：残りのガス
+-  ``gasleft() returns (uint256)`` : 残りのガス
 
 .. - ``msg.data`` (``bytes calldata``): complete calldata
 
--  ``msg.data`` （ ``bytes calldata`` ）：コンプリートカルデータ
+-  ``msg.data`` （ ``bytes calldata`` ）: コンプリートカルデータ
 
 .. - ``msg.sender`` (``address``): sender of the message (current call)
 
--  ``msg.sender`` （ ``address`` ）：メッセージの送信者（現在の通話相手）
+-  ``msg.sender`` （ ``address`` ）: メッセージの送信者（現在のコール相手）
 
 .. - ``msg.sig`` (``bytes4``): first four bytes of the calldata (i.e. function identifier)
 
--  ``msg.sig`` （ ``bytes4`` ）：コールデータの最初の4バイト（＝関数識別子）
+-  ``msg.sig`` （ ``bytes4`` ）: コールデータの最初の4バイト（＝関数識別子）
 
 .. - ``msg.value`` (``uint``): number of wei sent with the message
 
--  ``msg.value`` （ ``uint`` ）：メッセージと一緒に送られたweiの数
+-  ``msg.value`` （ ``uint`` ）: メッセージと一緒に送られたweiの数
 
 .. - ``tx.gasprice`` (``uint``): gas price of the transaction
 
--  ``tx.gasprice`` （ ``uint`` ）：トランザクションのガス価格
+-  ``tx.gasprice`` （ ``uint`` ）: トランザクションのガス価格
 
 .. - ``tx.origin`` (``address``): sender of the transaction (full call chain)
 
--  ``tx.origin`` （ ``address`` ）：トランザクションの送信者（フルコールチェーン）
+-  ``tx.origin`` （ ``address`` ）: トランザクションの送信者（フルコールチェーン）
 
 .. .. note::
 
@@ -292,7 +292,7 @@ Members of bytes
 
 .. - ``bytes.concat(...) returns (bytes memory)``: :ref:`Concatenates variable number of bytes and bytes1, ..., bytes32 arguments to one byte array<bytes-concat>`
 
--  ``bytes.concat(...) returns (bytes memory)`` ： :ref:`Concatenates variable number of bytes and bytes1, ..., bytes32 arguments to one byte array<bytes-concat>`
+-  ``bytes.concat(...) returns (bytes memory)`` :  :ref:`Concatenates variable number of bytes and bytes1, ..., bytes32 arguments to one byte array<bytes-concat>`
 
 .. index:: assert, revert, require
 
@@ -418,7 +418,7 @@ Mathematical and Cryptographic Functions
 
 .. note::
 
-    ``sha256`` 、 ``ripemd160`` 、 ``ecrecover`` を*プライベートブロックチェーン*で実行すると、Out-of-Gasに遭遇することがあります。これは、これらの関数が「プリコンパイルされたコントラクト」として実装されており、最初のメッセージを受信して初めて実際に存在するからです（ただし、コントラクトコードはハードコードされています）。存在しないコントラクトへのメッセージはより高価であるため、実行時にOut-of-Gasエラーが発生する可能性があります。この問題を回避するには、実際のコントラクトで使用する前に、まず各コントラクトにWei（例：1）を送信することです。これは、メインネットやテストネットでは問題になりません。
+    ``sha256`` 、 ``ripemd160`` 、 ``ecrecover`` を*プライベートブロックチェーン*で実行すると、Out-of-Gasに遭遇することがあります。これは、これらの関数が「プリコンパイルされたコントラクト」として実装されており、最初のメッセージを受信して初めて実際に存在するからです（ただし、コントラクトコードはハードコードされています）。存在しないコントラクトへのメッセージはより高価であるため、実行時にOut-of-Gasエラーが発生する可能性があります。この問題を回避するには、実際のコントラクトで使用する前に、まず各コントラクトにWei（例: 1）を送信することです。これは、メインネットやテストネットでは問題になりません。
 
 .. index:: balance, codehash, send, transfer, call, callcode, delegatecall, staticcall
 

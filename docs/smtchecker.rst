@@ -209,7 +209,7 @@ Assert
 .. property is correct. You are encouraged to play with the property and the function
 .. definition to see what results come out!
 
-以下のコードでは、オーバーフローしないことを保証する関数 ``f`` を定義しています。関数 ``inv`` は、 ``f`` が単調増加であるという仕様を定義しています：すべての可能なペア ``(_a, _b)`` に対して、もし ``_b > _a`` ならば ``f(_b) > f(_a)`` です。 ``f`` は確かに単調増加なので、SMTCheckerは我々の特性が正しいことを証明します。この性質と関数の定義を使って、どんな結果が出るか試してみてください。
+以下のコードでは、オーバーフローしないことを保証する関数 ``f`` を定義しています。関数 ``inv`` は、 ``f`` が単調増加であるという仕様を定義しています: すべての可能なペア ``(_a, _b)`` に対して、もし ``_b > _a`` ならば ``f(_b) > f(_a)`` です。 ``f`` は確かに単調増加なので、SMTCheckerは我々の特性が正しいことを証明します。この性質と関数の定義を使って、どんな結果が出るか試してみてください。
 
 .. code-block:: Solidity
 
@@ -389,7 +389,7 @@ State Properties
 .. reader may want to prove that fact manually as well.  Hint: this invariant is
 .. inductive.
 
-関数 ``inv`` は、 ``x + y`` が偶数でなければならないというステートマシンの不変量を表しています。SMTCheckerは、ロボットにどんなに多くの命令を与えても、たとえ無限に与えても、不変量は*絶対に*失敗しないことを証明できます。興味のある方は、手動でこの事実を証明することもできます。  ヒント：この不変量は帰納的なものです。
+関数 ``inv`` は、 ``x + y`` が偶数でなければならないというステートマシンの不変量を表しています。SMTCheckerは、ロボットにどんなに多くの命令を与えても、たとえ無限に与えても、不変量は*絶対に*失敗しないことを証明できます。興味のある方は、手動でこの事実を証明することもできます。  ヒント: この不変量は帰納的なものです。
 
 .. We can also trick the SMTChecker into giving us a path to a certain position we
 .. think might be reachable.  We can add the property that (2, 4) is *not*
@@ -642,7 +642,7 @@ Verified Contracts
 .. and via the object ``settings.modelChecker.contracts`` in the :ref:`JSON input<compiler-api>`,
 .. which has the following form:
 
-選択されたコントラクトは、CLI： ``--model-checker-contracts "<source1.sol:contract1>,<source2.sol:contract2>,<source2.sol:contract3>"`` では<source>：<contract>のペアのコンマ区切りリスト（空白は許されない）を介して、 :ref:`JSON input<compiler-api>` ではオブジェクト ``settings.modelChecker.contracts`` を介して、次のような形式で与えられます。
+選択されたコントラクトは、CLI:  ``--model-checker-contracts "<source1.sol:contract1>,<source2.sol:contract2>,<source2.sol:contract3>"`` では<source>: <contract>のペアのコンマ区切りリスト（空白は許されない）を介して、 :ref:`JSON input<compiler-api>` ではオブジェクト ``settings.modelChecker.contracts`` を介して、次のような形式で与えられます。
 
 .. code-block:: json
 
@@ -664,13 +664,13 @@ CHCエンジンで安全性が証明された性質については、SMTChecker�
 .. - Contract Invariants: these are properties over the contract's state variables
 ..   that are true before and after every possible transaction that the contract may ever run. For example, ``x >= y``, where ``x`` and ``y`` are a contract's state variables.
 
-- コントラクト不変量：コントラクトの状態変数に関するプロパティで、コントラクトが実行する可能性のあるすべてのトランザクションの前後で真となるものです。例えば、 ``x`` と ``y`` がコントラクトの状態変数である場合、 ``x >= y`` となります。
+- コントラクト不変量: コントラクトの状態変数に関するプロパティで、コントラクトが実行する可能性のあるすべてのトランザクションの前後で真となるものです。例えば、 ``x`` と ``y`` がコントラクトの状態変数である場合、 ``x >= y`` となります。
 
 .. - Reentrancy Properties: they represent the behavior of the contract
 ..   in the presence of external calls to unknown code. These properties can express a relation
 ..   between the value of the state variables before and after the external call, where the external call is free to do anything, including making reentrant calls to the analyzed contract. Primed variables represent the state variables' values after said external call. Example: ``lock -> x = x'``.
 
-- 再帰性プロパティ：未知のコードへの外部呼び出しがある場合のコントラクトの動作を表します。これらのプロパティは、外部呼び出しの前と後の状態変数の値の間の関係を表現できます。外部呼び出しは、分析されたコントラクトへのリエントラントな呼び出しを行うことを含め、何でも自由に行うことができます。プライム化された変数は、前記外部呼び出し後の状態変数の値を表します。例 ``lock -> x = x'`` です。
+- 再帰性プロパティ: 未知のコードへの外部呼び出しがある場合のコントラクトの動作を表します。これらのプロパティは、外部呼び出しの前と後の状態変数の値の間の関係を表現できます。外部呼び出しは、分析されたコントラクトへのリエントラントな呼び出しを行うことを含め、何でも自由に行うことができます。プライム化された変数は、前記外部呼び出し後の状態変数の値を表します。例 ``lock -> x = x'`` です。
 
 .. The user can choose the type of invariants to be reported using the CLI option ``--model-checker-invariants "contract,reentrancy"`` or as an array in the field ``settings.modelChecker.invariants`` in the :ref:`JSON input<compiler-api>`.
 .. By default the SMTChecker does not report invariants.
