@@ -106,13 +106,13 @@ New Restrictions
 
 * リテラルの明示的な変換に関連する新しい制限があります。以下のようなケースでの従来の動作は、曖昧であったと思われます。
 
-  1.負のリテラルや ``type(uint160).max`` より大きいリテラルから ``address`` への明示的な変換は禁止されています。
+  1. 負のリテラルや ``type(uint160).max`` より大きいリテラルから ``address`` への明示的な変換は禁止されています。
 
-  2.リテラルと整数型 ``T`` の間の明示的な変換は、リテラルが ``type(T).min`` と ``type(T).max`` の間にある場合にのみ許される。特に、 ``uint(-1)`` の使用を ``type(uint).max`` に置き換えてください。
+  2. リテラルと整数型 ``T`` の間の明示的な変換は、リテラルが ``type(T).min`` と ``type(T).max`` の間にある場合にのみ許される。特に、 ``uint(-1)`` の使用を ``type(uint).max`` に置き換えてください。
 
-  3.リテラルと列挙型の間の明示的な変換は、リテラルが列挙型の値を表すことができる場合にのみ許可されます。
+  3. リテラルと列挙型の間の明示的な変換は、リテラルが列挙型の値を表すことができる場合にのみ許可されます。
 
-  4.リテラルと ``address`` 型の間の明示的な変換（例:  ``address(literal)`` ）は、 ``address payable`` の代わりに ``address`` 型を持つ。明示的な変換を使用することで、支払可能なアドレス・タイプを得ることができます、すなわち、 ``payable(literal)`` 。
+  4. リテラルと ``address`` 型の間の明示的な変換（例:  ``address(literal)`` ）は、 ``address payable`` の代わりに ``address`` 型を持つ。明示的な変換を使用することで、支払可能なアドレス・タイプを得ることができます、すなわち、 ``payable(literal)`` 。
 
 .. * :ref:`Address literals<address_literals>` have the type ``address`` instead of ``address
 ..   payable``. They can be converted to ``address payable`` by using an explicit conversion, e.g.

@@ -18,7 +18,7 @@ Solidityは、実際のEVMコール（「メッセージコール」とも呼ば
 .. ``public``, ``internal`` or ``private``.
 .. For state variables, ``external`` is not possible.
 
-関数は、 ``external`` 、 ``public`` 、 ``internal`` 、 ``private`` のいずれかを指定する必要があります。状態変数の場合、 ``external`` はできません。
+関数は、 ``external`` 、 ``public`` 、 ``internal`` 、 ``private`` のいずれかを指定する必要があります。状態変数の場合、 ``external`` は指定できません。
 
 .. ``external``
 ..     External functions are part of the contract interface,
@@ -26,7 +26,8 @@ Solidityは、実際のEVMコール（「メッセージコール」とも呼ば
 ..     via transactions. An external function ``f`` cannot be called
 ..     internally (i.e. ``f()`` does not work, but ``this.f()`` works).
 
-``external``  外部関数はコントラクト・インターフェースの一部であり、他のコントラクトやトランザクションを介して呼び出すことができることを意味します。外部関数 ``f`` は、内部で呼び出すことはできません（すなわち、 ``f()`` は動作しないが、 ``this.f()`` は動作する）。
+``external``
+    外部関数はコントラクト・インターフェースの一部であり、他のコントラクトやトランザクションを介して呼び出すことができることを意味します。外部関数 ``f`` は、内部で呼び出すことはできません（すなわち、 ``f()`` は動作しませんが、 ``this.f()`` は動作します）。
 
 .. ``public``
 ..     Public functions are part of the contract interface
@@ -34,7 +35,8 @@ Solidityは、実際のEVMコール（「メッセージコール」とも呼ば
 ..     messages. For public state variables, an automatic getter
 ..     function (see below) is generated.
 
-``public``  パブリック関数は、コントラクト・インターフェースの一部であり、内部またはメッセージ経由で呼び出すことができます。パブリックな状態の変数に対しては、自動的にゲッター関数（下記参照）が生成されます。
+``public``
+    パブリック関数は、コントラクト・インターフェースの一部であり、内部またはメッセージ経由で呼び出すことができます。パブリックな状態の変数に対しては、自動的にゲッター関数（下記参照）が生成されます。
 
 .. ``internal``
 ..     Those functions and state variables can only be
@@ -42,14 +44,16 @@ Solidityは、実際のEVMコール（「メッセージコール」とも呼ば
 ..     or contracts deriving from it), without using ``this``.
 ..     This is the default visibility level for state variables.
 
-``internal``  それらの関数とステート変数は、 ``this`` を使用せずに、内部的にのみ（すなわち、現在のコントラクトまたはそのコントラクトから派生したコントラクトの中から）アクセスできます。     これはステート変数のデフォルトの可視性レベルです。
+``internal``
+    それらの関数とステート変数は、 ``this`` を使用せずに、内部的にのみ（すなわち、現在のコントラクトまたはそのコントラクトから派生したコントラクトの中から）アクセスできます。これはステート変数のデフォルトの可視性レベルです。
 
 .. ``private``
 ..     Private functions and state variables are only
 ..     visible for the contract they are defined in and not in
 ..     derived contracts.
 
-``private``  プライベート関数とステート変数は、それらが定義されているコントラクトでのみ表示され、派生コントラクトでは表示されません。
+``private``
+    プライベート関数とステート変数は、それらが定義されているコントラクトでのみ表示され、派生コントラクトでは表示されません。
 
 .. .. note::
 
@@ -84,7 +88,7 @@ Solidityは、実際のEVMコール（「メッセージコール」とも呼ば
 .. ``data`` in state storage, but is not able to call ``f``. Contract ``E`` is derived from
 .. ``C`` and, thus, can call ``compute``.
 
-次の例では、 ``D`` は ``c.getData()`` を呼び出して状態記憶装置の ``data`` の値を取り出すことができますが、 ``f`` を呼び出すことはできません。コントラクト ``E`` は ``C`` から派生したものであるため、 ``compute`` を呼び出すことができる。
+次の例では、 ``D`` は ``c.getData()`` を呼び出して状態記憶装置の ``data`` の値を取り出すことができますが、 ``f`` を呼び出すことはできません。コントラクト ``E`` は ``C`` から派生したものであるため、 ``compute`` を呼び出すことができます。
 
 .. code-block:: solidity
 

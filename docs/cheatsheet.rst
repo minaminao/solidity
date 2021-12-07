@@ -95,7 +95,7 @@ Global Variables
 - ``abi.encodeWithSelector(bytes4 selector, ...) returns (bytes memory)``: 与えられた引数を2番目から順に :ref:`ABI <ABI>` エンコードし、与えられた4バイトのセレクタを前置する
 
 .. - ``abi.encodeWithSignature(string memory signature, ...) returns (bytes memory)``: Equivalent
-..   to ``abi.encodeWithSelector(bytes4(keccak256(bytes(signature)), ...)```
+..   to ``abi.encodeWithSelector(bytes4(keccak256(bytes(signature)), ...)``
 
 - ``abi.encodeWithSignature(string memory signature, ...) returns (bytes memory)``: ``abi.encodeWithSelector(bytes4(keccak256(bytes(signature)), ...)`` と同等です。
 

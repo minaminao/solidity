@@ -72,7 +72,7 @@ Re-Entrancy
 .. the following code contains a bug (it is just a snippet and not a
 .. complete contract):
 
-コントラクト（A）と他のコントラクト（B）とのやりとりや、Etherの転送は、コントラクト（B）に制御権を渡します。これにより、このやり取りが完了する前に、BがAにコールバックすることが可能になります。例として、以下のコードにはバグが含まれています（これは単なるスニペットであり、完全なコントラクトではありません）。
+コントラクト（A）と他のコントラクト（B）とのやりとりや、Etherの送金は、コントラクト（B）に制御権を渡します。これにより、このやり取りが完了する前に、BがAにコールバックすることが可能になります。例として、以下のコードにはバグが含まれています（これは単なるスニペットであり、完全なコントラクトではありません）。
 
 .. code-block:: solidity
 
@@ -98,7 +98,7 @@ Re-Entrancy
 .. following contract will allow an attacker to refund multiple times
 .. as it uses ``call`` which forwards all remaining gas by default:
 
-この問題は、 ``send`` の一部としての限定されたガスのため、ここではそれほど深刻ではありませんが、それでも弱点を露呈しています。Etherの転送には常にコードの実行が含まれるため、受信者は ``withdraw`` にコールバックするコントラクトになる可能性があります。これにより、複数回の払い戻しが可能となり、基本的にはコントラクト内のすべてのEtherを回収できます。特に、以下のコントラクトは、デフォルトで残りのガスをすべて転送する ``call`` を使用しているため、攻撃者は複数回返金できます。
+この問題は、 ``send`` の一部としての限定されたガスのため、ここではそれほど深刻ではありませんが、それでも弱点を露呈しています。Etherの送金には常にコードの実行が含まれるため、受信者は ``withdraw`` にコールバックするコントラクトになる可能性があります。これにより、複数回の払い戻しが可能となり、基本的にはコントラクト内のすべてのEtherを回収できます。特に、以下のコントラクトは、デフォルトで残りのガスをすべて転送する ``call`` を使用しているため、攻撃者は複数回返金できます。
 
 .. code-block:: solidity
 
@@ -143,7 +143,7 @@ Re-Entrancy
 .. multi-contract situations into account. A called contract could modify the
 .. state of another contract you depend on.
 
-リエントランシーは、Ether転送だけでなく、別のコントラクトでのあらゆる関数呼び出しの影響を受けることに注意してください。さらに、マルチコントラクトの状況も考慮に入れなければなりません。呼び出されたコントラクトが、依存している別のコントラクトの状態を変更する可能性があります。
+リエントランシーは、Ether送金だけでなく、別のコントラクトでのあらゆる関数呼び出しの影響を受けることに注意してください。さらに、マルチコントラクトの状況も考慮に入れなければなりません。呼び出されたコントラクトが、依存している別のコントラクトの状態を変更する可能性があります。
 
 Gas Limit and Loops
 ===================
@@ -189,12 +189,12 @@ Sending and Receiving Ether
 ..   into the sending contract or other state changes you might not have thought of.
 ..   So it allows for great flexibility for honest users but also for malicious actors.
 
-- ``addr.call{value: x}("")`` を使用して、より多くのガスを受信コントラクトに転送する方法があります。これは基本的に ``addr.transfer(x)`` と同じですが、残りのガスをすべて転送し、受信側がより高価なアクションを実行できるようにします（また、自動的にエラーを伝播するのではなく、失敗コードを返します）。これには、送信側のコントラクトにコールバックすることや、あなたが考えもしなかったような他の状態変化が含まれるかもしれません。   そのため、誠実なユーザーだけでなく、悪意のあるアクターにも大きな柔軟性を与えることができます。
+- ``addr.call{value: x}("")`` を使用して、より多くのガスを受信コントラクトに送金する方法があります。これは基本的に ``addr.transfer(x)`` と同じですが、残りのガスをすべて送金し、受信側がより高価なアクションを実行できるようにします（また、自動的にエラーを伝播するのではなく、失敗コードを返します）。これには、送信側のコントラクトにコールバックすることや、あなたが考えもしなかったような他の状態変化が含まれるかもしれません。   そのため、誠実なユーザーだけでなく、悪意のあるアクターにも大きな柔軟性を与えることができます。
 
 .. - Use the most precise units to represent the wei amount as possible, as you lose
 ..   any that is rounded due to a lack of precision.
 
-- ウェイの量を表す単位は、精度が低いために丸められたものは失われてしまうので、できるだけ正確な単位を使ってください。
+- weiの量を表す単位は、精度が低いために丸められたものは失われてしまうので、できるだけ正確な単位を使ってください。
 
 .. - If you want to send Ether using ``address.transfer``, there are certain details to be aware of:
 
@@ -221,13 +221,13 @@ Sending and Receiving Ether
 
 - ``address.transfer`` を使ってEtherを送信する場合、注意すべき点があります。
 
-  1.受信者がコントラクトの場合、その受信関数またはフォールバック関数を実行させ、その結果、送信側のコントラクトをコールバックできます。
+  1. 受信者がコントラクトの場合、その受信関数またはフォールバック関数を実行させ、その結果、送信側のコントラクトをコールバックできます。
 
-  2.コールデプスが102以上になると、イーサの送信に失敗することがある
+  2. コールデプスが102以上になると、イーサの送信に失敗することがある
 
-  3.呼び出し側は呼び出しの深さを完全にコントロールしているため、強制的に転送を失敗させることができます。この可能性を考慮して ``send`` を使用するか、その戻り値を常に確認するようにしてください。さらに言えば、受取人が代わりにEtherを引き出せるようなパターンでコントラクトを書いてください。
+  3. 呼び出し側は呼び出しの深さを完全にコントロールしているため、強制的に送金を失敗させることができます。この可能性を考慮して ``send`` を使用するか、その戻り値を常に確認するようにしてください。さらに言えば、受取人が代わりにEtherを引き出せるようなパターンでコントラクトを書いてください。
 
-  4.Etherの送信は、受信者のコントラクトの実行に割り当てられた量以上のガスが必要となるため（ :ref:`require <assert-and-require>` 、 :ref:`assert <assert-and-require>` 、 :ref:`revert <assert-and-require>` を使用して明示的に、または操作が高すぎるため）、「ガス切れ」（OOG）となって失敗することもあります。   ``transfer`` または ``send`` を戻り値のチェックとともに使用すると、受信者が送信側のコントラクトの進行をブロックする手段となる可能性があります。ここでも、 :ref:`"withdraw"      pattern instead of a "send" pattern <withdrawal_pattern>` を使用するのがベストです。
+  4. Etherの送信は、受信者のコントラクトの実行に割り当てられた量以上のガスが必要となるため（ :ref:`require <assert-and-require>` 、 :ref:`assert <assert-and-require>` 、 :ref:`revert <assert-and-require>` を使用して明示的に、または操作が高すぎるため）、「ガス切れ」（OOG）となって失敗することもあります。   ``transfer`` または ``send`` を戻り値のチェックとともに使用すると、受信者が送信側のコントラクトの進行をブロックする手段となる可能性があります。ここでも、 :ref:`"withdraw"      pattern instead of a "send" pattern <withdrawal_pattern>` を使用するのがベストです。
 
 Call Stack Depth
 ================

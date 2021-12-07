@@ -182,7 +182,7 @@ return変数を持つ関数を終了するためにearly  ``return`` を使用�
 
 .. note::
 
-    内部関数以外では、多次元の動的配列や構造体など、いくつかの型を返すことができません。ソースファイルに ``pragma abicoder v2;`` を追加してABI coder v2を有効にすると、より多くの型が利用できるようになりますが、 ``mapping`` 型はまだ1つのコントラクト内に限られており、転送できません。
+    内部関数以外では、多次元の動的配列や構造体など、いくつかの型を返すことができません。ソースファイルに ``pragma abicoder v2;`` を追加してABI coder v2を有効にすると、より多くの型が利用できるようになりますが、 ``mapping`` 型はまだ1つのコントラクト内に限られており、送金できません。
 
 .. _multi-return:
 
@@ -223,42 +223,28 @@ View Functions
 
 .. note::
 
-  コンパイラのEVMターゲットがByzantium以降（デフォルト）の場合、 ``view`` 関数が呼び出されるとオペコード ``STATICCALL`` が使用され、EVM実行の一部として状態が変更されないように強制されます。ライブラリー ``view`` 関数では、 ``DELEGATECALL`` と ``STATICCALL`` の組み合わせがないため、 ``DELEGATECALL`` が使用されます。   つまり、ライブラリ ``view`` 関数には、状態の変更を防ぐランタイムチェックがありません。ライブラリのコードは通常、コンパイル時に知られており、スタティック・チェッカーはコンパイル時のチェックを行うため、このことがセキュリティに悪影響を及ぼすことはありません。
+  コンパイラのEVMターゲットがByzantium以降（デフォルト）の場合、 ``view`` 関数が呼び出されるとオペコード ``STATICCALL`` が使用され、EVM実行の一部として状態が変更されないように強制されます。ライブラリ ``view`` 関数では、 ``DELEGATECALL`` と ``STATICCALL`` の組み合わせがないため、 ``DELEGATECALL`` が使用されます。   つまり、ライブラリ ``view`` 関数には、状態の変更を防ぐランタイムチェックがありません。ライブラリのコードは通常、コンパイル時に知られており、スタティック・チェッカーはコンパイル時のチェックを行うため、このことがセキュリティに悪影響を及ぼすことはありません。
 
 .. The following statements are considered modifying the state:
 
 次のような記述は、状態の修正とみなされます。
 
 .. #. Writing to state variables.
-
-#. 状態変数への書き込み。
-
 .. #. :ref:`Emitting events <events>`.
-
-#. :ref:`Emitting events <events>` です。
-
 .. #. :ref:`Creating other contracts <creating-contracts>`.
-
-#. :ref:`Creating other contracts <creating-contracts>` です。
-
 .. #. Using ``selfdestruct``.
-
-#. ``selfdestruct`` を使用する。
-
 .. #. Sending Ether via calls.
-
-#. コールでイーサを送る。
-
 .. #. Calling any function not marked ``view`` or ``pure``.
-
-#. ``view`` または ``pure`` と表示されていない関数を呼び出すこと。
-
 .. #. Using low-level calls.
-
-#. 低レベルコールの使用
-
 .. #. Using inline assembly that contains certain opcodes.
 
+#. 状態変数への書き込み。
+#. :ref:`Emitting events <events>` 。
+#. :ref:`Creating other contracts <creating-contracts>` 。
+#. ``selfdestruct`` の使用。
+#. コールでのイーサの送金。
+#. ``view`` または ``pure`` と表示されていない関数の呼び出し。
+#. 低レベルコールの使用。
 #. 特定のオペコードを含むインラインアセンブリの使用。
 
 .. code-block:: solidity
@@ -278,7 +264,7 @@ View Functions
 
 .. note::
 
-  ``constant``  on functionsは、かつては ``view`` の別名でしたが、バージョン0.5.0で廃止されました。
+  関数の ``constant`` は、かつては ``view`` の別名でしたが、バージョン0.5.0で廃止されました。
 
 .. .. note::
 
@@ -439,7 +425,7 @@ Receive Ether Function
 .. contract cannot receive Ether through regular transactions and throws an
 .. exception.
 
-受信関数は、空のcalldataを持つコントラクトへの呼び出しで実行されます。これは、プレーンなEther転送（例:  ``.send()`` または ``.transfer()`` 経由）で実行される関数です。このような関数が存在せず、payable  :ref:`fallback function <fallback-function>` が存在する場合は、プレーンなEther転送時にフォールバック関数が呼び出されます。受信 Ether も支払可能なフォールバック関数も存在しない場合、コントラクトは通常のトランザクションで Ether を受信できず、例外が発生します。
+receive関数は、空のcalldataを持つコントラクトへの呼び出しで実行されます。これは、プレーンなEther送金（例:  ``.send()`` または ``.transfer()`` 経由）で実行される関数です。このような関数が存在せず、payable  :ref:`fallback function <fallback-function>` が存在する場合は、プレーンなEther送金時にフォールバック関数が呼び出されます。receive Ether関数もpayable fallback関数も存在しない場合、コントラクトは通常のトランザクションで Ether を受信できず、例外が発生します。
 
 .. In the worst case, the ``receive`` function can only rely on 2300 gas being
 .. available (for example when ``send`` or ``transfer`` is used), leaving little
@@ -495,7 +481,7 @@ Receive Ether Function
 
     Etherを受け取る関数を持たないコントラクトは、 *coinbaseトランザクション* （別名: *minerブロックリワード* ）の受信者として、または ``selfdestruct`` の宛先としてEtherを受け取ることができます。
 
-    コントラクトは、そのようなEther転送に反応できず、したがって、それらを拒否することもできません。これはEVMの設計上の選択であり、Solidityはこれを回避できません。
+    コントラクトは、そのようなEther送金に反応できず、したがって、それらを拒否することもできません。これはEVMの設計上の選択であり、Solidityはこれを回避できません。
 
     また、 ``address(this).balance`` は、コントラクトに実装されている手動の会計処理（受信イーサ関数でカウンタを更新するなど）の合計よりも高くなる可能性があることを意味しています。
 
@@ -568,7 +554,7 @@ Fallback Function
 
 .. warning::
 
-    ``payable`` フォールバック関数は、 :ref:`receive Ether function <receive-ether-function>` が存在しない場合、プレーンなEther転送に対しても実行されます。Ether転送をインターフェイスの混乱と区別するために、payable fallback関数を定義する場合は、必ず受信Ether関数も定義することをお勧めします。
+    ``payable`` フォールバック関数は、 :ref:`receive Ether function <receive-ether-function>` が存在しない場合、プレーンなEther送金に対しても実行されます。Ether送金をインターフェイスの混乱と区別するために、payable fallback関数を定義する場合は、必ず受信Ether関数も定義することをお勧めします。
 
 .. .. note::
 

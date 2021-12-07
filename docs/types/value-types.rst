@@ -430,7 +430,7 @@ Members of Addresses
 .. or if the Ether transfer is rejected by the receiving account. The ``transfer`` function
 .. reverts on failure.
 
-``transfer`` 関数は、現在のコントラクトの残高が十分でない場合や、Ether転送が受信アカウントで拒否された場合に失敗します。 ``transfer`` 関数は失敗すると元に戻ります。
+``transfer`` 関数は、現在のコントラクトの残高が十分でない場合や、Ether送金が受信アカウントで拒否された場合に失敗します。 ``transfer`` 関数は失敗すると元に戻ります。
 
 .. .. note::
 
@@ -438,7 +438,7 @@ Members of Addresses
 
 .. note::
 
-    ``x`` がコントラクトアドレスの場合、そのコード（具体的には、 :ref:`receive-ether-function` があればその :ref:`receive-ether-function` 、 :ref:`fallback-function` があればその :ref:`fallback-function` ）が ``transfer`` コールとともに実行されます（これはEVMの機能であり、防ぐことはできません）。その実行がガス欠になるか、何らかの形で失敗した場合、Ether転送は元に戻され、現在のコントラクトは例外的に停止します。
+    ``x`` がコントラクトアドレスの場合、そのコード（具体的には、 :ref:`receive-ether-function` があればその :ref:`receive-ether-function` 、 :ref:`fallback-function` があればその :ref:`fallback-function` ）が ``transfer`` コールとともに実行されます（これはEVMの機能であり、防ぐことはできません）。その実行がガス欠になるか、何らかの形で失敗した場合、Ether送金は元に戻され、現在のコントラクトは例外的に停止します。
 
 .. * ``send``
 
@@ -457,7 +457,7 @@ Sendは、 ``transfer`` の低レベルのカウンターパートです。実�
 
 .. warning::
 
-    ``send`` の使用にはいくつかの危険性があります。コールスタックの深さが1024の場合（これは常に呼び出し側で強制できます）、転送は失敗し、また、受信者がガス欠になった場合も失敗します。したがって、安全なEther転送を行うためには、 ``send`` の戻り値を常にチェックするか、 ``transfer`` を使用するか、あるいはさらに良い方法として、受信者がお金を引き出すパターンを使用してください。
+    ``send`` の使用にはいくつかの危険性があります。コールスタックの深さが1024の場合（これは常に呼び出し側で強制できます）、送金は失敗し、また、受信者がガス欠になった場合も失敗します。したがって、安全なEther送金を行うためには、 ``send`` の戻り値を常にチェックするか、 ``transfer`` を使用するか、あるいはさらに良い方法として、受信者がお金を引き出すパターンを使用してください。
 
 .. * ``call``, ``delegatecall`` and ``staticcall``
 
@@ -1212,7 +1212,7 @@ Conversions:
 .. convention for their selectors <library-selectors>`.
 .. Functions declared in interfaces do not have definitions so pointing at them does not make sense either.
 
-内部型の関数は、どこで定義されているかに関わらず、内部関数型の変数に代入できます。これには、コントラクトとライブラリの両方のプライベート関数、内部関数、パブリック関数のほか、フリー関数も含まれます。一方、外部関数型は、パブリック関数と外部コントラクト関数にのみ対応しています。ライブラリーは、 ``delegatecall`` とuse  :ref:`a different ABI convention for their selectors <library-selectors>` を必要とするため、除外されます。インターフェースで宣言された関数は定義を持たないので、それを指し示すことも意味がありません。
+内部型の関数は、どこで定義されているかに関わらず、内部関数型の変数に代入できます。これには、コントラクトとライブラリの両方のプライベート関数、内部関数、パブリック関数のほか、フリー関数も含まれます。一方、外部関数型は、パブリック関数と外部コントラクト関数にのみ対応しています。ライブラリは、 ``delegatecall`` とuse  :ref:`a different ABI convention for their selectors <library-selectors>` を必要とするため、除外されます。インターフェースで宣言された関数は定義を持たないので、それを指し示すことも意味がありません。
 
 .. Members:
 
@@ -1241,7 +1241,7 @@ Conversions:
 
 .. note::
 
-  外部（またはパブリック）関数には、追加のメンバー ``.gas(uint)`` と ``.value(uint)`` がありました。これらはSolidity 0.6.2で非推奨となり、Solidity 0.7.0で削除されました。代わりに ``{gas: ...}`` と ``{value: ...}`` を使って、それぞれ関数に送られるガスの量やウェイの量を指定してください。詳細は :ref:`External Function Calls <external-function-calls>` を参照してください。
+  外部（またはパブリック）関数には、追加のメンバー ``.gas(uint)`` と ``.value(uint)`` がありました。これらはSolidity 0.6.2で非推奨となり、Solidity 0.7.0で削除されました。代わりに ``{gas: ...}`` と ``{value: ...}`` を使って、それぞれ関数に送られるガスの量やweiの量を指定してください。詳細は :ref:`External Function Calls <external-function-calls>` を参照してください。
 
 .. Example that shows how to use the members:
 

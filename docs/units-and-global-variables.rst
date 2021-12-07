@@ -112,27 +112,27 @@ Block and Transaction Properties
 
 .. - ``block.basefee`` (``uint``): current block's base fee (`EIP-3198 <https://eips.ethereum.org/EIPS/eip-3198>`_ and `EIP-1559 <https://eips.ethereum.org/EIPS/eip-1559>`_)
 
--  ``block.basefee`` （ ``uint`` ）: 現在のブロックの基本料金（ `EIP-3198 <https://eips.ethereum.org/EIPS/eip-3198>`_ と `EIP-1559 <https://eips.ethereum.org/EIPS/eip-1559>`_ ）
+-  ``block.basefee`` (``uint``): 現在のブロックの基本料金（ `EIP-3198 <https://eips.ethereum.org/EIPS/eip-3198>`_ と `EIP-1559 <https://eips.ethereum.org/EIPS/eip-1559>`_)
 
 .. - ``block.chainid`` (``uint``): current chain id
 
--  ``block.chainid`` （ ``uint`` ）: 現在のチェーンID
+-  ``block.chainid`` (``uint``): 現在のチェーンID
 
 .. - ``block.coinbase`` (``address payable``): current block miner's address
 
--  ``block.coinbase`` （ ``address payable`` ）: 現在のブロックマイナーのアドレス
+-  ``block.coinbase`` (``address payable``): 現在のブロックマイナーのアドレス
 
 .. - ``block.difficulty`` (``uint``): current block difficulty
 
--  ``block.difficulty`` （ ``uint`` ）: 現在のブロックの難易度
+-  ``block.difficulty`` (``uint``): 現在のブロックの難易度
 
 .. - ``block.gaslimit`` (``uint``): current block gaslimit
 
--  ``block.gaslimit`` （ ``uint`` ）: カレントブロックのガスリミット
+-  ``block.gaslimit`` (``uint``): カレントブロックのガスリミット
 
 .. - ``block.number`` (``uint``): current block number
 
--  ``block.number`` （ ``uint`` ）: 現在のブロック番号
+-  ``block.number`` (``uint``): 現在のブロック番号
 
 .. - ``block.timestamp`` (``uint``): current block timestamp as seconds since unix epoch
 
@@ -144,27 +144,27 @@ Block and Transaction Properties
 
 .. - ``msg.data`` (``bytes calldata``): complete calldata
 
--  ``msg.data`` （ ``bytes calldata`` ）: コンプリートカルデータ
+-  ``msg.data`` (``bytes calldata``): コンプリートカルデータ
 
 .. - ``msg.sender`` (``address``): sender of the message (current call)
 
--  ``msg.sender`` （ ``address`` ）: メッセージの送信者（現在のコール相手）
+-  ``msg.sender`` (``address``): メッセージの送信者（現在のコール相手）
 
 .. - ``msg.sig`` (``bytes4``): first four bytes of the calldata (i.e. function identifier)
 
--  ``msg.sig`` （ ``bytes4`` ）: コールデータの最初の4バイト（＝関数識別子）
+-  ``msg.sig`` (``bytes4``): コールデータの最初の4バイト（＝関数識別子）
 
 .. - ``msg.value`` (``uint``): number of wei sent with the message
 
--  ``msg.value`` （ ``uint`` ）: メッセージと一緒に送られたweiの数
+-  ``msg.value`` (``uint``): メッセージと一緒に送られたweiの数
 
 .. - ``tx.gasprice`` (``uint``): gas price of the transaction
 
--  ``tx.gasprice`` （ ``uint`` ）: トランザクションのガス価格
+-  ``tx.gasprice`` (``uint``): トランザクションのガス価格
 
 .. - ``tx.origin`` (``address``): sender of the transaction (full call chain)
 
--  ``tx.origin`` （ ``address`` ）: トランザクションの送信者（フルコールチェーン）
+-  ``tx.origin`` (``address``): トランザクションの送信者（フルコールチェーン）
 
 .. .. note::
 
@@ -242,7 +242,7 @@ Block and Transaction Properties
 
 .. note::
 
-    バージョン0.7.0では、 ``now`` （ ``block.timestamp`` ）というエイリアスを削除しました。
+    バージョン0.7.0では、 ``now`` (``block.timestamp``)というエイリアスを削除しました。
 
 .. index:: abi, encoding, packed
 
@@ -265,7 +265,7 @@ ABI Encoding and Decoding Functions
 
 -  ``abi.encodeWithSelector(bytes4 selector, ...) returns (bytes memory)`` : 与えられた引数を2番目から順にABIエンコードし、与えられた4バイトのセレクタを前置する。
 
-.. - ``abi.encodeWithSignature(string memory signature, ...) returns (bytes memory)``: Equivalent to ``abi.encodeWithSelector(bytes4(keccak256(bytes(signature))), ...)```
+.. - ``abi.encodeWithSignature(string memory signature, ...) returns (bytes memory)``: Equivalent to ``abi.encodeWithSelector(bytes4(keccak256(bytes(signature))), ...)``
 
 -  ``abi.encodeWithSignature(string memory signature, ...) returns (bytes memory)`` :  ``abi.encodeWithSelector(bytes4(keccak256(bytes(signature))), ...)`` に相当。
 
@@ -430,17 +430,17 @@ Members of Address Types
 .. ``<address>.balance`` (``uint256``)
 ..     balance of the :ref:`address` in Wei
 
-``<address>.balance`` （ ``uint256`` ） 魏の :ref:`address` のバランス
+``<address>.balance`` (``uint256``) 魏の :ref:`address` のバランス
 
 .. ``<address>.code`` (``bytes memory``)
 ..     code at the :ref:`address` (can be empty)
 
-:ref:`address` の ``<address>.code`` （ ``bytes memory`` ）コード（空でも可）
+:ref:`address` の ``<address>.code`` (``bytes memory``)コード（空でも可）
 
 .. ``<address>.codehash`` (``bytes32``)
 ..     the codehash of the :ref:`address`
 
-``<address>.codehash`` （ ``bytes32`` ） :ref:`address` のコードハッシュ
+``<address>.codehash`` (``bytes32``) :ref:`address` のコードハッシュ
 
 .. ``<address payable>.transfer(uint256 amount)``
 ..     send given amount of Wei to :ref:`address`, reverts on failure, forwards 2300 gas stipend, not adjustable
@@ -455,17 +455,17 @@ Members of Address Types
 .. ``<address>.call(bytes memory) returns (bool, bytes memory)``
 ..     issue low-level ``CALL`` with the given payload, returns success condition and return data, forwards all available gas, adjustable
 
-``<address>.call(bytes memory) returns (bool, bytes memory)`` は与えられたペイロードで低レベルの ``CALL`` を発行し、成功条件とリターンデータを返し、利用可能なすべてのガスを転送し、調整可能な
+``<address>.call(bytes memory) returns (bool, bytes memory)`` は与えられたペイロードで低レベルの ``CALL`` を発行し、成功条件とリターンデータを返し、利用可能なすべてのガスを送金し、調整可能な
 
 .. ``<address>.delegatecall(bytes memory) returns (bool, bytes memory)``
 ..     issue low-level ``DELEGATECALL`` with the given payload, returns success condition and return data, forwards all available gas, adjustable
 
-``<address>.delegatecall(bytes memory) returns (bool, bytes memory)`` は与えられたペイロードで低レベルの ``DELEGATECALL`` を発行し、成功条件とリターンデータを返し、利用可能なすべてのガスを転送し、調整可能な
+``<address>.delegatecall(bytes memory) returns (bool, bytes memory)`` は与えられたペイロードで低レベルの ``DELEGATECALL`` を発行し、成功条件とリターンデータを返し、利用可能なすべてのガスを送金し、調整可能な
 
 .. ``<address>.staticcall(bytes memory) returns (bool, bytes memory)``
 ..     issue low-level ``STATICCALL`` with the given payload, returns success condition and return data, forwards all available gas, adjustable
 
-``<address>.staticcall(bytes memory) returns (bool, bytes memory)`` は、与えられたペイロードで低レベルの ``STATICCALL`` を発行し、成功条件とリターンデータを返し、利用可能なすべてのガスを転送し、調整可能です。
+``<address>.staticcall(bytes memory) returns (bool, bytes memory)`` は、与えられたペイロードで低レベルの ``STATICCALL`` を発行し、成功条件とリターンデータを返し、利用可能なすべてのガスを送金し、調整可能です。
 
 .. For more information, see the section on :ref:`address`.
 
@@ -489,7 +489,7 @@ Members of Address Types
 
 .. warning::
 
-    ``send`` の使用にはいくつかの危険があります。コールスタックの深さが1024の場合、転送は失敗し（これは常に呼び出し側で強制できます）、受信者がガス欠になった場合も失敗します。そのため、安全なEther転送を行うためには、 ``send`` の戻り値を常にチェックし、 ``transfer`` を使用するか、あるいはそれ以上の方法をとる必要があります。     受信者がお金を引き出すパターンを使いましょう。
+    ``send`` の使用にはいくつかの危険があります。コールスタックの深さが1024の場合、送金は失敗し（これは常に呼び出し側で強制できます）、受信者がガス欠になった場合も失敗します。そのため、安全なEther送金を行うためには、 ``send`` の戻り値を常にチェックし、 ``transfer`` を使用するか、あるいはそれ以上の方法をとる必要があります。     受信者がお金を引き出すパターンを使いましょう。
 
 .. .. warning::
 

@@ -57,7 +57,7 @@ SMTCheckerがコンパイル時にチェックするその他の検証対象は�
 
 .. - Insufficient funds for a transfer.
 
-- 転送に必要な資金が不足しています。
+- 送金に必要な資金が不足しています。
 
 .. All the targets above are automatically checked by default if all engines are
 .. enabled, except underflow and overflow for Solidity >=0.8.7.
@@ -260,15 +260,15 @@ Assert
 
 .. 1. ``++i`` in the first loop does not overflow.
 
-1.最初のループの ``++i`` はオーバーフローしません。
+1. 最初のループの ``++i`` はオーバーフローしません。
 
 .. 2. ``++i`` in the second loop does not overflow.
 
-2.2つ目のループの ``++i`` はオーバーフローしません。
+2. 2つ目のループの ``++i`` はオーバーフローしません。
 
 .. 3. The assertion is always true.
 
-3.アサーションは常に真です。
+3. アサーションは常に真です。
 
 .. .. note::
 
@@ -590,7 +590,7 @@ SMTCheckerによって作成される検証ターゲットの種類は、CLIオ�
 
 .. - Insufficient funds for a transfer: ``balance``.
 
-- 転送に必要な資金が不足しています。 ``balance`` .
+- 送金に必要な資金が不足しています。 ``balance`` .
 
 .. - All of the above: ``default`` (CLI only).
 
@@ -808,7 +808,7 @@ SMT and Horn solvers
 
   -  ``solc`` がコンパイルされていれば
 
-  - Linuxシステムにバージョン4.8.xのダイナミック ``z3`` ライブラリーがインストールされている場合（Solidity 0.7.6以降）。
+  - Linuxシステムにバージョン4.8.xのダイナミック ``z3`` ライブラリがインストールされている場合（Solidity 0.7.6以降）。
 
   -  ``soljson.js``  (Solidity 0.6.9 以降)では静的に、つまりコンパイラの Javascript バイナリを使用しています。
 

@@ -327,7 +327,7 @@ Relative Imports
 ..       For every ``..`` segment found in this part the last path segment with preceding slashes is
 ..       removed from the prefix.
 
-1.まず、プレフィックスを計算します。
+1. まず、プレフィックスを計算します。
 
     - Prefixは、インポートするソースユニットのソースユニット名で初期化されます。
 
@@ -338,7 +338,7 @@ Relative Imports
 .. 2. Then the prefix is prepended to the normalized import path.
 ..    If the prefix is non-empty, a single slash is inserted between it and the import path.
 
-2.そして、正規化されたインポートパスの前にプレフィックスが付けられる。    プレフィックスが空でない場合は、プレフィックスとインポートパスの間にスラッシュが1つ挿入されます。
+2. そして、正規化されたインポートパスの前にプレフィックスが付けられる。    プレフィックスが空でない場合は、プレフィックスとインポートパスの間にスラッシュが1つ挿入されます。
 
 .. The removal of the last path segment with preceding slashes is understood to
 .. work as follows:
@@ -347,11 +347,11 @@ Relative Imports
 
 .. 1. Everything past the last slash is removed (i.e. ``a/b//c.sol`` becomes ``a/b//``).
 
-1.最後のスラッシュから先はすべて削除されます（例:  ``a/b//c.sol`` が ``a/b//`` になります）。
+1. 最後のスラッシュから先はすべて削除されます（例:  ``a/b//c.sol`` が ``a/b//`` になります）。
 
 .. 2. All trailing slashes are removed (i.e. ``a/b//`` becomes ``a/b``).
 
-2.後続のスラッシュはすべて削除されます（例:  ``a/b//`` が ``a/b`` になります）。
+2. 後続のスラッシュはすべて削除されます（例:  ``a/b//`` が ``a/b`` になります）。
 
 .. The normalization rules are the same as for UNIX paths, namely:
 

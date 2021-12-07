@@ -656,13 +656,13 @@ Delegatecall / Callcode and Libraries
 .. contract and ``msg.sender`` and ``msg.value`` do not change their values.
 
 メッセージコールには、 **delegatecall** という特別なバリエーションがあります。
-これは、ターゲットアドレスのコードが呼び出し元のコントラクトのコンテキストで実行され、 ``msg.sender`` と ``msg.value`` が値を変更しないという点を除けば、メッセージコールと同じです。
+これは、ターゲットアドレスのコードが呼び出し元のコントラクトのコンテキストで実行され、 ``msg.sender`` と ``msg.value`` の値が変更されないという点を除けば、メッセージコールと同じです。
 
 .. This means that a contract can dynamically load code from a different
 .. address at runtime. Storage, current address and balance still
 .. refer to the calling contract, only the code is taken from the called address.
 
-これは、コントラクトが実行時に異なるアドレスからコードを動的にロードできることを意味します。ストレージ、現在のアドレス、バランスは依然として呼び出したコントラクトを参照しており、コードだけが呼び出されたアドレスから取得されます。
+これは、コントラクトが実行時に異なるアドレスからコードを動的にロードできることを意味します。ストレージ、現在のアドレス、バランスは依然として呼び出したコントラクトのものを参照しており、コードだけが呼び出されたアドレスから取得されます。
 
 .. This makes it possible to implement the "library" feature in Solidity:
 .. Reusable library code that can be applied to a contract's storage, e.g. in

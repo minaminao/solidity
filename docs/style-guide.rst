@@ -75,7 +75,7 @@ solidity sourceのトップレベル宣言を2行の空行で囲む。
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -96,7 +96,7 @@ solidity sourceのトップレベル宣言を2行の空行で囲む。
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 
@@ -124,7 +124,7 @@ solidity sourceのトップレベル宣言を2行の空行で囲む。
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -148,7 +148,7 @@ solidity sourceのトップレベル宣言を2行の空行で囲む。
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 
@@ -185,19 +185,19 @@ Maximum Line Length
 
 .. 1. The first argument should not be attached to the opening parenthesis.
 
-1.第1引数は、開始括弧に付けてはいけません。
+1. 第1引数は、開始括弧に付けてはいけません。
 
 .. 2. One, and only one, indent should be used.
 
-2.インデントは1つだけにしてください。
+2. インデントは1つだけにしてください。
 
 .. 3. Each argument should fall on its own line.
 
-3.それぞれの主張は、それぞれのライン上にあるべきものです。
+3. それぞれの主張は、それぞれのライン上にあるべきものです。
 
 .. 4. The terminating element, :code:`);`, should be placed on the final line by itself.
 
-4.終端要素である :code: `);`  は、それ自体で最終行に配置する必要があります。
+4. 終端要素である :code: `);`  は、それ自体で最終行に配置する必要があります。
 
 .. Function Calls
 
@@ -205,7 +205,7 @@ Maximum Line Length
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -217,7 +217,7 @@ Maximum Line Length
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 
@@ -249,11 +249,11 @@ Maximum Line Length
 
 .. Assignment Statements
 
-課題文
+アサインメント・ステートメント
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -266,7 +266,7 @@ Maximum Line Length
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 
@@ -281,7 +281,7 @@ Maximum Line Length
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -303,7 +303,7 @@ Maximum Line Length
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 
@@ -335,7 +335,7 @@ Imports
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -354,7 +354,7 @@ Imports
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 
@@ -416,7 +416,7 @@ Order of Functions
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -456,7 +456,7 @@ Order of Functions
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 
@@ -501,7 +501,7 @@ Whitespace in Expressions
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -509,7 +509,7 @@ Whitespace in Expressions
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 
@@ -517,7 +517,7 @@ Whitespace in Expressions
 
 .. Exception:
 
-例外です。
+例外:
 
 .. code-block:: solidity
 
@@ -529,7 +529,7 @@ Whitespace in Expressions
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -537,7 +537,7 @@ Whitespace in Expressions
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 
@@ -549,7 +549,7 @@ Whitespace in Expressions
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -559,7 +559,7 @@ Whitespace in Expressions
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 
@@ -573,7 +573,7 @@ Whitespace in Expressions
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -587,7 +587,7 @@ Whitespace in Expressions
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 
@@ -622,7 +622,7 @@ Control Structures
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -638,7 +638,7 @@ Control Structures
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 
@@ -667,7 +667,7 @@ Control Structures
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -681,7 +681,7 @@ Control Structures
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 
@@ -703,7 +703,7 @@ Control Structures
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -712,7 +712,7 @@ Control Structures
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 
@@ -730,7 +730,7 @@ Control Structures
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -749,7 +749,7 @@ Control Structures
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 
@@ -779,7 +779,7 @@ Function Declaration
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -793,7 +793,7 @@ Function Declaration
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 
@@ -819,27 +819,27 @@ Function Declaration
 
 .. 1. Visibility
 
-1.視認性
+1. 視認性
 
 .. 2. Mutability
 
-2.可変型
+2. 可変型
 
 .. 3. Virtual
 
-3.バーチャル
+3. バーチャル
 
 .. 4. Override
 
-4.オーバーライド
+4. オーバーライド
 
 .. 5. Custom modifiers
 
-5.カスタムモディファイア
+5. カスタムモディファイア
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -853,7 +853,7 @@ Function Declaration
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 
@@ -874,7 +874,7 @@ Function Declaration
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -893,7 +893,7 @@ Function Declaration
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 
@@ -928,7 +928,7 @@ Function Declaration
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -956,7 +956,7 @@ Function Declaration
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 
@@ -988,7 +988,7 @@ Function Declaration
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -1015,7 +1015,7 @@ Function Declaration
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 
@@ -1044,7 +1044,7 @@ Function Declaration
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -1079,7 +1079,7 @@ Function Declaration
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 
@@ -1153,7 +1153,7 @@ Mappings
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -1164,7 +1164,7 @@ Mappings
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 
@@ -1183,7 +1183,7 @@ Variable Declarations
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -1191,7 +1191,7 @@ Variable Declarations
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 
@@ -1206,7 +1206,7 @@ Other Recommendations
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -1215,7 +1215,7 @@ Other Recommendations
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 
@@ -1228,7 +1228,7 @@ Other Recommendations
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
     :force:
@@ -1240,7 +1240,7 @@ Other Recommendations
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
     :force:
@@ -1259,7 +1259,7 @@ Other Recommendations
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -1269,7 +1269,7 @@ Other Recommendations
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 
@@ -1287,23 +1287,23 @@ Order of Layout
 
 .. 1. Pragma statements
 
-1.プラグマ・ステートメント
+1. プラグマ・ステートメント
 
 .. 2. Import statements
 
-2.ステートメントの取り込み
+2. ステートメントの取り込み
 
 .. 3. Interfaces
 
-3.インターフェイス
+3. インターフェイス
 
 .. 4. Libraries
 
-4.ライブラリー
+4. ライブラリ
 
 .. 5. Contracts
 
-5.コントラクト内容
+5. コントラクト
 
 .. Inside each contract, library or interface, use the following order:
 
@@ -1311,19 +1311,19 @@ Order of Layout
 
 .. 1. Type declarations
 
-1.型の宣言
+1. 型の宣言
 
 .. 2. State variables
 
-2.状態変数
+2. 状態変数
 
 .. 3. Events
 
-3.イベント情報
+3. イベント情報
 
 .. 4. Functions
 
-4.関数
+4. 関数
 
 .. .. note::
 
@@ -1445,7 +1445,7 @@ Contract and Library Names
 
 .. Yes:
 
-はい。
+OK: 
 
 .. code-block:: solidity
 
@@ -1487,7 +1487,7 @@ Contract and Library Names
 
 .. No:
 
-いいえ。
+NG: 
 
 .. code-block:: solidity
 

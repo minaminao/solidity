@@ -201,12 +201,12 @@ Design Criteria for the Encoding
 ..    previous version of the ABI, the number of reads scaled linearly with the total number of dynamic
 ..    parameters in the worst case.
 
-1.値にアクセスするために必要な読み取り回数は、最大でも引数配列構造内の値の深さ分であり、すなわち ``a_i[k][l][r]`` を取得するためには4回の読み取りが必要です。以前のバージョンのABIでは、最悪の場合、読み取り回数は動的パラメータの総数に比例していました。
+1. 値にアクセスするために必要な読み取り回数は、最大でも引数配列構造内の値の深さ分であり、すなわち ``a_i[k][l][r]`` を取得するためには4回の読み取りが必要です。以前のバージョンのABIでは、最悪の場合、読み取り回数は動的パラメータの総数に比例していました。
 
 .. 2. The data of a variable or array element is not interleaved with other data and it is
 ..    relocatable, i.e. it only uses relative "addresses".
 
-2.変数や配列要素のデータは、他のデータとインターリーブされておらず、相対的な「アドレス」のみを使用する、リロケータブルなものです。
+2. 変数や配列要素のデータは、他のデータとインターリーブされておらず、相対的な「アドレス」のみを使用する、リロケータブルなものです。
 
 Formal Specification of the Encoding
 ====================================

@@ -61,7 +61,7 @@ Explicitness Requirements
 
 .. * Libraries have to implement all their functions, not only the internal ones.
 
-* ライブラリーは、内部だけでなく、すべての関数を実装しなければなりません。
+* ライブラリは、内部だけでなく、すべての関数を実装しなければなりません。
 
 .. * The names of variables declared in inline assembly may no longer end in ``_slot`` or ``_offset``.
 
@@ -101,12 +101,12 @@ Semantic and Syntactic Changes
 ..   fallback function that is defined using the ``fallback`` keyword and a receive ether function
 ..   defined using the ``receive`` keyword.
 
-* 一般的に「フォールバック関数」と呼ばれる無名関数は、 ``fallback`` キーワードで定義される新しいフォールバック関数と、 ``receive`` キーワードで定義されるレシーブ・イーサ関数に分割されました。
+* 一般的に「fallback関数」と呼ばれる無名関数は、 ``fallback`` キーワードで定義される新しいfallback関数と、 ``receive`` キーワードで定義されるreceive Ether関数に分割されました。
 
 ..   * If present, the receive ether function is called whenever the call data is empty (whether
 ..     or not ether is received). This function is implicitly ``payable``.
 
-* 存在する場合、コールデータが空になるたびに（etherを受信したかどうかに関わらず）receive ether関数が呼び出されます。この関数は暗黙のうちに ``payable`` 
+* 存在する場合、コールデータが空になるたびに（Etherを受信したかどうかに関わらず）receive Ether関数が呼び出されます。この関数は暗黙のうちに ``payable`` です。
 
 ..   * The new fallback function is called when no other function matches (if the receive ether
 ..     function does not exist then this includes calls with empty call data).
@@ -114,7 +114,7 @@ Semantic and Syntactic Changes
 ..     not matching any other function which send value will revert. You should only need to
 ..     implement the new fallback function if you are following an upgrade or proxy pattern.
 
-* 新しいフォールバック関数は、他の関数がマッチしない場合に呼び出されます（receive ether関数が存在しない場合は、コールデータが空のコールも含まれます）。この関数を ``payable`` にするかどうかは自由です。 ``payable`` でない場合は、値を送信する他の関数にマッチしないトランザクションが復帰します。新しいフォールバック関数を実装する必要があるのは、アップグレードやプロキシのパターンに従っている場合だけです。
+* 新しいフォールバック関数は、他の関数がマッチしない場合に呼び出されます（receive Ether関数が存在しない場合は、コールデータが空のコールも含まれます）。この関数を ``payable`` にするかどうかは自由です。 ``payable`` でない場合は、値を送信する他の関数にマッチしないトランザクションが復帰します。新しいフォールバック関数を実装する必要があるのは、アップグレードやプロキシのパターンに従っている場合だけです。
 
 
 New Features

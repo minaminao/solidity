@@ -25,7 +25,7 @@ Solidityコントラクトでは、コメントの特別な形式を使用して
 .. messages. These messages may be shown to the end user (the human) at the
 .. time that they will interact with the contract (i.e. sign a transaction).
 
-このドキュメントは、開発者向けのメッセージと、エンドユーザー向けのメッセージに分けられます。これらのメッセージは、エンドユーザー(人間)がコントラクトと対話する(すなわち、トランザクションに署名する)際に表示されることがあります。
+このドキュメントは、開発者向けのメッセージと、エンドユーザー向けのメッセージに分けられます。これらのメッセージは、エンドユーザー（人間）がコントラクトと対話する（すなわち、トランザクションに署名する）際に表示されることがあります。
 
 .. It is recommended that Solidity contracts are fully annotated using NatSpec for
 .. all public interfaces (everything in the ABI).
