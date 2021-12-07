@@ -12,26 +12,17 @@ Interfaces
 インターフェイスは、抽象的なコントラクトと似ていますが、いかなる関数も実装できません。さらに制限があります。
 
 .. - They cannot inherit from other contracts, but they can inherit from other interfaces.
+.. - All declared functions must be external.
+.. - They cannot declare a constructor.
+.. - They cannot declare state variables.
+.. - They cannot declare modifiers.
+.. Some of these restrictions might be lifted in the future.
 
 - 他のコントラクトを継承できませんが、他のインターフェースを継承できます。
-
-.. - All declared functions must be external.
-
-- 宣言された関数はすべて外付けでなければなりません。
-
-.. - They cannot declare a constructor.
-
+- 宣言された関数はすべてexternalでなければなりません。
 - コンストラクタを宣言できません。
-
-.. - They cannot declare state variables.
-
 - 状態変数を宣言できません。
-
-.. - They cannot declare modifiers.
-
-- 修飾を宣言できない。
-
-.. Some of these restrictions might be lifted in the future.
+- 修飾子を宣言できません。
 
 これらの制限の一部は、将来的に解除される可能性があります。
 

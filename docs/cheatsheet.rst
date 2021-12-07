@@ -178,13 +178,9 @@ Global Variables
 
 - ``revert(string memory message)``: 実行を中止し、説明文字列を提供して状態変化を元に戻す
 
-.. - ``blockhash(uint blockNumber) returns (bytes32)``: hash of the given block
+.. - ``blockhash(uint blockNumber) returns (bytes32)``: hash of the given block - only works for 256 most recent blocks
 
-- ``blockhash(uint blockNumber) returns (bytes32)``: 与えられたブロックのハッシュ
-
-.. - only works for 256 most recent blocks
-
-- 最新の256ブロックに対してのみ動作
+- ``blockhash(uint blockNumber) returns (bytes32)``: 与えられたブロックのハッシュ - 最新の256ブロックに対してのみ動作
 
 .. - ``keccak256(bytes memory) returns (bytes32)``: compute the Keccak-256 hash of the input
 
@@ -244,7 +240,7 @@ Global Variables
 
 .. - ``<address payable>.transfer(uint256 amount)``: send given amount of Wei to :ref:`address`, throws on failure
 
-- ``<address payable>.transfer(uint256 amount)``: 与えられた量のWeiを :ref:`address` に送り、失敗したら投げる
+- ``<address payable>.transfer(uint256 amount)``: 与えられた量のWeiを :ref:`address` に送り、失敗したら例外を投げる
 
 .. - ``type(C).name`` (``string``): the name of the contract
 
@@ -327,7 +323,7 @@ Global Variables
     
 .. note::
 
-    バージョン0.7.0では、 ``now`` （ ``block.timestamp`` ）のエイリアスを削除しました。
+    バージョン0.7.0では、 エイリアス ``now`` （ ``block.timestamp`` に対するもの ）を削除しました。
 
 .. index:: visibility, public, private, external, internal
 

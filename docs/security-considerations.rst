@@ -72,7 +72,7 @@ Re-Entrancy
 .. the following code contains a bug (it is just a snippet and not a
 .. complete contract):
 
-コントラクト（A）と他のコントラクト（B）とのやりとりや、Etherの送金は、コントラクト（B）に制御権を渡します。これにより、このやり取りが完了する前に、BがAにコールバックすることが可能になります。例として、以下のコードにはバグが含まれています（これは単なるスニペットであり、完全なコントラクトではありません）。
+コントラクト（A）と別のコントラクト（B）とのインタラクションやEtherの送金は、コントラクト（B）に制御権を渡します。これにより、このインタラクションが完了する前に、BがAにコールバックすることが可能になります。例として、以下のコードにはバグが含まれています（これは単なるスニペットであり、完全なコントラクトではありません）。
 
 .. code-block:: solidity
 
@@ -98,7 +98,7 @@ Re-Entrancy
 .. following contract will allow an attacker to refund multiple times
 .. as it uses ``call`` which forwards all remaining gas by default:
 
-この問題は、 ``send`` の一部としての限定されたガスのため、ここではそれほど深刻ではありませんが、それでも弱点を露呈しています。Etherの送金には常にコードの実行が含まれるため、受信者は ``withdraw`` にコールバックするコントラクトになる可能性があります。これにより、複数回の払い戻しが可能となり、基本的にはコントラクト内のすべてのEtherを回収できます。特に、以下のコントラクトは、デフォルトで残りのガスをすべて転送する ``call`` を使用しているため、攻撃者は複数回返金できます。
+この問題は、 ``send`` の一部としての限定されたガスのため、ここではそれほど深刻ではありませんが、それでも弱点を露呈しています。Etherの送金には常にコードの実行が含まれるため、受信者は ``withdraw`` にコールバックするコントラクトになる可能性があります。これにより、複数回の払い戻しが可能となり、基本的にはコントラクト内のすべてのEtherを回収できます。特に、以下のコントラクトは、デフォルトで残りのガスをすべて送金する ``call`` を使用しているため、攻撃者は複数回返金できます。
 
 .. code-block:: solidity
 
@@ -120,7 +120,7 @@ Re-Entrancy
 .. To avoid re-entrancy, you can use the Checks-Effects-Interactions pattern as
 .. outlined further below:
 
-リエントランシーを避けるために、以下のようなChecks-Effects-Interactionsパターンを使用できます。
+re-entrancyを避けるために、以下のようなChecks-Effects-Interactionsパターンを使用できます。
 
 .. code-block:: solidity
 
@@ -143,7 +143,7 @@ Re-Entrancy
 .. multi-contract situations into account. A called contract could modify the
 .. state of another contract you depend on.
 
-リエントランシーは、Ether送金だけでなく、別のコントラクトでのあらゆる関数呼び出しの影響を受けることに注意してください。さらに、マルチコントラクトの状況も考慮に入れなければなりません。呼び出されたコントラクトが、依存している別のコントラクトの状態を変更する可能性があります。
+re-entrancyは、Ether送金だけでなく、別のコントラクトでのあらゆる関数呼び出しの影響を受けることに注意してください。さらに、マルチコントラクトの状況も考慮に入れなければなりません。呼び出されたコントラクトが、依存している別のコントラクトの状態を変更する可能性があります。
 
 Gas Limit and Loops
 ===================
@@ -524,7 +524,7 @@ Use the Checks-Effects-Interactions Pattern
 .. calls to return in a non-error state. This is often a serious mistake
 .. because of the re-entrancy problem explained above.
 
-初期のコントラクトでは、いくつかの効果を遅らせ、外部の関数呼び出しが非エラー状態で戻ってくるのを待っていました。これは、上で説明したリエントランシーの問題のため、しばしば重大な誤りとなります。
+初期のコントラクトでは、いくつかの効果を遅らせ、外部の関数呼び出しが非エラー状態で戻ってくるのを待っていました。これは、上で説明したre-entrancyの問題のため、しばしば重大な誤りとなります。
 
 .. Note that, also, calls to known contracts might in turn cause calls to
 .. unknown contracts, so it is probably better to just always apply this pattern.

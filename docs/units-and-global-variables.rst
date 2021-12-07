@@ -312,7 +312,7 @@ Error Handling
 .. ``require(bool condition)``
 ..     reverts if the condition is not met - to be used for errors in inputs or external components.
 
-``require(bool condition)`` は、条件が満たされないと復帰します。入力や外付け部品のエラーに使用されます。
+``require(bool condition)`` は、条件が満たされないと復帰します。入力や外部コンポーネントのエラーに使用されます。
 
 .. ``require(bool condition, string memory message)``
 ..     reverts if the condition is not met - to be used for errors in inputs or external components. Also provides an error message.
